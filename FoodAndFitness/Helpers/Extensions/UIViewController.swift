@@ -1,9 +1,9 @@
 //
 //  UIViewController.swift
-//  RideShare
+//  FoodAndFitness
 //
 //  Created by Mylo Ho on 3/8/17.
-//  Copyright © 2017 Asian Tech Co., Ltd. All rights reserved.
+//  Copyright © 2017 SuHoVan. All rights reserved.
 //
 
 import UIKit

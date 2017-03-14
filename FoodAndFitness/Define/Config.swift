@@ -1,9 +1,9 @@
 //
 //  AppConfig.swift
-//  CM
+//  FoodAndFitness
 //
-//  Created by DaoNV on 3/7/16.
-//  Copyright © 2016 AsianTech Inc. All rights reserved.
+//  Created by Mylo Ho on 3/7/16.
+//  Copyright © 2016 SuHoVan. All rights reserved.
 //
 
 import Foundation
