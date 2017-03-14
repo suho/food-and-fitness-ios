@@ -17,7 +17,7 @@ env:
     - CONFIGURATION='Debug'
 install:
   - set -o pipefail
-  - ./scripts/install
+  - travis_wait ./scripts/install
 script:
   # export custom environment variables
   - export REPO_SLUG="$TRAVIS_REPO_SLUG"
