@@ -1,7 +1,7 @@
 # FoodAndFitness
 DUT's Project
 
-[![Build Status](https://travis-ci.com/wakumo/Rideshare_iOS.svg?token=xAfxZdTxXLSX4H5MsXPg&branch=master)](https://travis-ci.com/wakumo/Rideshare_iOS)
+[![Build Status](https://travis-ci.org/hovansuit/FoodAndFitness.svg?branch=master)](https://travis-ci.org/hovansuit/FoodAndFitness)
 
 ## Setup Development Environment
 
