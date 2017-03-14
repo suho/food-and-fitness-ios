@@ -101,11 +101,6 @@ custom_rules:
     regex: "(unowned)"
     message: "Please use `weak` instead. "
     severity: error
-  vc_suffix:
-    name: "VC Suffix"
-    regex: "( \w+(vc|VC|ViewController\s=))"
-    message: "Please simplify with `Controller, navi, root...`. "
-    severity: warning
   empty_string:
     name: "Empty String"
     regex: "(.length\s*(==|!=|<|<=|>|>=)\s*0)"

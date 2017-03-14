@@ -38,7 +38,11 @@ final class UserProfile: Object, Mappable {
         }
         get {
             let gender = Gender(rawValue: genderRaw)
-            return gender ?? .others
+            if let gender = gender {
+                return gender
+            } else {
+                return .others
+            }
         }
     }
 

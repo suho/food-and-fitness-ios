@@ -129,7 +129,7 @@ extension UIDevice {
         }
 
         guard let bundleIdentifier = Bundle.main.bundleIdentifier else {
-            RSError.fatal(message: "This app has no bundle identifier ???")
+            RSError.fatal(message: "This app has no bundle identifier?")
             return ""
         }
 
@@ -157,39 +157,63 @@ extension UIDevice {
 // MARK: - UILabel
 extension UILabel {
     var string: String {
-        return text ?? ""
+        if let text = text {
+            return text
+        } else {
+            return ""
+        }
     }
 }
 
 // MARK: - UITextView
 extension UITextView {
     var string: String {
-        return text ?? ""
+        if let text = text {
+            return text
+        } else {
+            return ""
+        }
     }
 }
 
 // MARK: - UITextField
 extension UITextField {
     var string: String {
-        return text ?? ""
+        if let text = text {
+            return text
+        } else {
+            return ""
+        }
     }
 }
 
 // MARK: - UISearchBar
 extension UISearchBar {
     var string: String {
-        return text ?? ""
+        if let text = text {
+            return text
+        } else {
+            return ""
+        }
     }
 }
 
 // MARK: - UIButton
 extension UIButton {
     func title(state: UIControlState) -> String {
-        return title(for: state) ?? ""
+        if let text = title(for: state) {
+            return text
+        } else {
+            return ""
+        }
     }
 
     func attributedTitle(state: UIControlState) -> NSAttributedString {
-        return attributedTitle(for: state) ?? NSAttributedString()
+        if let text = attributedTitle(for: state) {
+            return text
+        } else {
+            return NSAttributedString()
+        }
     }
 }
 

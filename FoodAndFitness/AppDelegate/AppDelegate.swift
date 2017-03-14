@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import SwiftyBeaver
+
+let logger = SwiftyBeaver.self
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,4 +27,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
-

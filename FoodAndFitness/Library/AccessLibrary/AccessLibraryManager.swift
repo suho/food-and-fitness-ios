@@ -58,7 +58,8 @@ class AccessLibraryManager: NSObject {
     // MARK: - Private
     private func present(pickerController: UIImagePickerController?) {
         guard let picker = pickerController else { return }
-        guard let root = UIApplication.shared.delegate?.window??.rootViewController else { return }
+        guard let window = UIApplication.shared.delegate?.window else { return }
+        guard let root = window?.rootViewController else { return }
         manager = self
         root.present(picker, animated: true, completion: nil)
     }

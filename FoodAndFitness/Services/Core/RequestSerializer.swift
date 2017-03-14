@@ -32,7 +32,11 @@ private var clientId: String {
     #if RELEASE
         return clientIdPro
     #else
-        return ApiPath.isPro ? clientIdPro : clientIdStaging
+        if ApiPath.isPro {
+            return clientIdPro
+        } else {
+            return clientIdStaging
+        }
     #endif
 }
 
@@ -51,8 +55,10 @@ extension ApiManager {
         logger.debug("\n headers -> \(headers)")
         logger.debug("\n parameters -> \(parameters)\n")
 
-        let encoding: ParameterEncoding = (method == .post) ? JSONEncoding.default : URLEncoding.default
-
+        var encoding: ParameterEncoding = JSONEncoding.default
+        if method != .post {
+            encoding = URLEncoding.default
+        }
         var _headers = api.defaultHTTPHeaders
         _headers.updateValues(headers)
 

@@ -9,7 +9,6 @@
 import Foundation
 import SwiftUtils
 import Alamofire
-import Crashlytics
 
 // MARK: - NetworkReachabilityManager
 extension NetworkReachabilityManager {
@@ -27,8 +26,7 @@ class RSError {
     }
 
     static func fatal(message: String) {
-        let error = NSError(message: message)
-        Crashlytics.sharedInstance().recordError(error)
+//        let error = NSError(message: message)
         #if RELEASE
             let msg = "問題が発生しました。\nアプリを再起動してください。"
         #else
@@ -44,7 +42,6 @@ class RSError {
     static func assert(condition: Bool, _ message: String) {
         guard !condition else { return }
         let error = NSError(message: message)
-        Crashlytics.sharedInstance().recordError(error)
         #if DEBUG || ADHOC
             DispatchQueue.main.async {
                 AlertController.alertWithError(error, level: .require, handler: nil).present()
