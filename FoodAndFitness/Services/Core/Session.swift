@@ -9,11 +9,6 @@
 import Foundation
 import SAMKeychain
 
-let kUserIDKey = "UserID"
-let kUidKey = "uid"
-let kAccessTokenKey = "AccessToken"
-let kClientKey = "client"
-
 class Session {
 
     struct Credential {
@@ -33,8 +28,6 @@ class Session {
 
     struct HeaderToken {
         let accessToken: String
-        let clientId: String
-        let uid: String
     }
     
     var headerToken: HeaderToken? {
@@ -47,10 +40,10 @@ class Session {
         }
     }
 
-    var userID: Int? = UserDefaults.standard.integer(forKey: kUserIDKey) {
+    var userID: Int? = UserDefaults.standard.integer(forKey: UserDefaultsKey.userIDKey) {
         didSet {
             let userDefaults = UserDefaults.standard
-            userDefaults.set(userID, forKey: kUserIDKey)
+            userDefaults.set(userID, forKey: UserDefaultsKey.userIDKey)
             userDefaults.synchronize()
         }
     }
@@ -80,25 +73,20 @@ class Session {
 
     private func saveHeaderToken(_ headerToken: HeaderToken) {
         let userDefaults = UserDefaults.standard
-        userDefaults.set(headerToken.accessToken, forKey: kAccessTokenKey)
-        userDefaults.set(headerToken.uid, forKey: kUidKey)
-        userDefaults.set(headerToken.clientId, forKey: kClientKey)
+        userDefaults.set(headerToken.accessToken, forKey: UserDefaultsKey.accessToken)
         userDefaults.synchronize()
     }
 
     func loadAccessToken() {
         let userDefaults = UserDefaults.standard
-        
-        if let token = userDefaults.string(forKey: kAccessTokenKey), let uid = userDefaults.string(forKey: kUidKey), let client = userDefaults.string(forKey: kClientKey) {
-            headerToken = HeaderToken(accessToken: token, clientId: client, uid: uid)
+        if let token = userDefaults.string(forKey: UserDefaultsKey.accessToken) {
+            headerToken = HeaderToken(accessToken: token)
         }
     }
 
     private func clearHeaderToken() {
         let userDefaults = UserDefaults.standard
-        userDefaults.removeObject(forKey: kAccessTokenKey)
-        userDefaults.removeObject(forKey: kUidKey)
-        userDefaults.removeObject(forKey: kClientKey)
+        userDefaults.removeObject(forKey: UserDefaultsKey.accessToken)
         userDefaults.synchronize()
     }
 

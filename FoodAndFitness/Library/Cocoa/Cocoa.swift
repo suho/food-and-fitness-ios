@@ -58,13 +58,6 @@ extension Bundle {
     func hasNib(name: String) -> Bool {
         return path(forResource: name, ofType: "nib") != nil
     }
-
-//    func jsonFromResource(name: String, ext: String) -> JSObject! {
-//        guard let filePath = pathForResource(name, ofType: ext),
-//            data = NSData(contentsOfFile: filePath) else { fatalError("not json file `\(name).\(ext)`") }
-//        guard let json = data.toJSON() as? JSObject else { fatalError("not valid json") }
-//        return json
-//    }
 }
 
 // MARK: - Double

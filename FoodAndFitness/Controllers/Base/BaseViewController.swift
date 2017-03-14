@@ -28,7 +28,7 @@ class BaseViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isTranslucent = false
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: Strings.BackNavi, style: .plain, target: self, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: Strings.backNavi, style: .plain, target: self, action: nil)
         setupData()
         setupUI()
     }
@@ -57,25 +57,6 @@ class BaseViewController: ViewController {
     func loadData() {
         guard isViewFirstAppear else { return }
     }
-
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        super.touchesBegan(touches, with: event)
-//        view.endEditing(true)
-//    }
-
-//    override class func vc() -> Self {
-//        let bundle = Bundle.main
-//        var xib: String?
-//        let name = String(describing: self)
-//
-//        if bundle.hasNib(name: name) {
-//            xib = name
-//        }
-//        
-//        Error.assert(condition: xib != nil, "missing xib `\(name)`")
-//
-//        return self.init(nibName: xib, bundle: nil)
-//    }
 }
 
 // MARK: - Action

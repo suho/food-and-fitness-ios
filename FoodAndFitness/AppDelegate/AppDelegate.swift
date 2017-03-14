@@ -8,7 +8,9 @@
 
 import UIKit
 import SwiftyBeaver
+import SVProgressHUD
 
+typealias ProgressHUD = SVProgressHUD
 let logger = SwiftyBeaver.self
 
 @UIApplicationMain

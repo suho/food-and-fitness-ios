@@ -26,8 +26,6 @@ class ApiManager {
         var headers: [String: String] = [:]
         if let headerToken = session.headerToken {
             headers["access-token"] = headerToken.accessToken
-            headers["client"] = headerToken.clientId
-            headers["uid"] = headerToken.uid
         }
 
         return headers

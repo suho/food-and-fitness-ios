@@ -10,4 +10,6 @@ import Foundation
 
 class UserDefaultsKey {
     static let timeInterval = "TimeInterval"
+    static let userIDKey = "UserID"
+    static let accessToken = "AccessToken"
 }

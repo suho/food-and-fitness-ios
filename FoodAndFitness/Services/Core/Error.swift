@@ -20,18 +20,15 @@ class RSError {
     static let Authentication = NSError(domain: ApiPath.baseURL.host, status: HTTPStatus.unauthorized)
     static let JSON = NSError(domain: NSCocoaErrorDomain, code: 3840, message: Strings.Errors.json)
     static let ApiKey = NSError(domain: ApiPath.baseURL.host, code: 120, message: "")
-    
+
     static var isNetworkError: Bool {
         return NetworkReachabilityManager.sharedInstance.isReachable == false
     }
 
     static func fatal(message: String) {
-//        let error = NSError(message: message)
-        #if RELEASE
-            let msg = "問題が発生しました。\nアプリを再起動してください。"
-        #else
-            let msg = message + "\nYou must restart this application.\nThanks you!"
-        #endif
+        let error = NSError(message: message)
+        logger.error(error)
+        let msg = message + "\nYou must restart this application.\nThanks you!"
         DispatchQueue.main.async {
             let alert = AlertController(title: App.name, message: msg, preferredStyle: .alert)
             alert.level = .require
@@ -42,11 +39,9 @@ class RSError {
     static func assert(condition: Bool, _ message: String) {
         guard !condition else { return }
         let error = NSError(message: message)
-        #if DEBUG || ADHOC
             DispatchQueue.main.async {
                 AlertController.alertWithError(error, level: .require, handler: nil).present()
             }
-        #endif
     }
 }
 
