@@ -1,0 +1,239 @@
+//
+//  Cocoa.swift
+//  CM
+//
+//  Created by DaoNV on 3/25/16.
+//  Copyright © 2016 AsianTech Inc. All rights reserved.
+//
+
+import UIKit
+import SwiftUtils
+import SAMKeychain
+import MWFeedParser
+
+// MAKK: NSObject
+extension NSObject {
+    func copy<T>() -> T! {
+        return copy() as? T
+    }
+
+    func dictionaryWithValuesForKeyPaths(keyPaths: [String]) -> [String: AnyObject] {
+        var info: [String: AnyObject] = [:]
+        for keyPath in keyPaths {
+            if let value = value(forKeyPath: keyPath) {
+                info[keyPath] = value as AnyObject?
+            }
+        }
+        return info
+    }
+}
+
+// MARK: - CollectionType
+extension Collection {
+    var isNotEmpty: Bool {
+        return !isEmpty
+    }
+}
+
+struct Ratio {
+    static let horizontal = kScreenSize.width / SwiftUtils.DeviceType.iPhone6.size.width
+    static let vertical = kScreenSize.height / SwiftUtils.DeviceType.iPhone6.size.height
+}
+
+public func * (lhs: UIEdgeInsets, rhs: CGFloat) -> UIEdgeInsets {
+    let top = lhs.top * rhs
+    let left = lhs.left * rhs
+    let bottom = lhs.bottom * rhs
+    let right = lhs.right * rhs
+    return UIEdgeInsets(top: top, left: left, bottom: bottom, right: right)
+}
+
+enum RegularExpressionPattern: String {
+    case RFCStandarEmail = "^([a-z0-9\\+_\\-]+)(.[a-z0-9\\+_\\-]+)*@([a-z0-9\\-]+\\.)+[a-z]{2,6}$"
+    case Password6To16Characters = "^[a-z0-9]{6,16}$"
+}
+
+// MARK: - NSBundle
+extension Bundle {
+    func hasNib(name: String) -> Bool {
+        return path(forResource: name, ofType: "nib") != nil
+    }
+
+//    func jsonFromResource(name: String, ext: String) -> JSObject! {
+//        guard let filePath = pathForResource(name, ofType: ext),
+//            data = NSData(contentsOfFile: filePath) else { fatalError("not json file `\(name).\(ext)`") }
+//        guard let json = data.toJSON() as? JSObject else { fatalError("not valid json") }
+//        return json
+//    }
+}
+
+// MARK: - Double
+extension Double {
+    // to radiant
+    var degree: Double {
+        return M_PI * self / 180.0
+    }
+
+    func percent(max: Double) -> Double {
+        return 100 * self / max
+    }
+
+    // to meter
+    var kilometer: Double {
+        return self * 1000
+    }
+
+    // to gram
+    var kilogram: Double {
+        return self * 1000
+    }
+
+    // to second
+    var hour: Double {
+        return self * 3600
+    }
+
+    // to second
+    var minute: Double {
+        return self * 60
+    }
+}
+
+// MARK: - UICollectionView
+extension UICollectionView {
+    var flowLayout: UICollectionViewFlowLayout! {
+        return collectionViewLayout as? UICollectionViewFlowLayout
+    }
+}
+
+// MARK: - CABasicAnimation
+extension CABasicAnimation {
+    class func circle(fromValue: CGFloat, toValue: CGFloat) -> CABasicAnimation {
+        let anim = CABasicAnimation(keyPath: "strokeEnd")
+        anim.duration = 0.5
+        anim.repeatCount = 0
+        anim.autoreverses = false
+        anim.fromValue = fromValue
+        anim.toValue = toValue
+        return anim
+    }
+}
+
+let kDeviceUUIDKey = "DeviceUUID"
+
+// MARK: - UIDevice
+extension UIDevice {
+    var UUIDString: String {
+        if let uuid = identifierForVendor {
+            return uuid.uuidString
+        }
+
+        guard let bundleIdentifier = Bundle.main.bundleIdentifier else {
+            RSError.fatal(message: "This app has no bundle identifier ???")
+            return ""
+        }
+
+        if let uuid = SAMKeychain.password(forService: bundleIdentifier, account: kDeviceUUIDKey) {
+            return uuid
+        }
+
+        let uuid = NSUUID().uuidString
+        SAMKeychain.setPassword(uuid, forService: bundleIdentifier, account: kDeviceUUIDKey)
+        return uuid
+    }
+
+    /// Get device platform name. Ex: iPhone8,2...
+    
+    func platformName() -> String {
+        var sysinfo = utsname()
+        uname(&sysinfo) // ignore return value
+        guard let info = NSString(bytes: &sysinfo.machine, length: Int(_SYS_NAMELEN), encoding: String.Encoding.ascii.rawValue) as String? else {
+            fatalError("Cannot get system info.")
+        }
+        return info
+    }
+}
+
+// MARK: - UILabel
+extension UILabel {
+    var string: String {
+        return text ?? ""
+    }
+}
+
+// MARK: - UITextView
+extension UITextView {
+    var string: String {
+        return text ?? ""
+    }
+}
+
+// MARK: - UITextField
+extension UITextField {
+    var string: String {
+        return text ?? ""
+    }
+}
+
+// MARK: - UISearchBar
+extension UISearchBar {
+    var string: String {
+        return text ?? ""
+    }
+}
+
+// MARK: - UIButton
+extension UIButton {
+    func title(state: UIControlState) -> String {
+        return title(for: state) ?? ""
+    }
+
+    func attributedTitle(state: UIControlState) -> NSAttributedString {
+        return attributedTitle(for: state) ?? NSAttributedString()
+    }
+}
+
+// MARK: - UIView
+extension UIView {
+    func addTapGesture(target: AnyObject?, action: Selector) {
+        let tap = UITapGestureRecognizer(target: target, action: action)
+        addGestureRecognizer(tap)
+    }
+}
+
+// MARK: - String
+extension String {
+    var isNotEmpty: Bool {
+        return !isEmpty
+    }
+
+    func hourMinute() -> String {
+        var comps = components(separatedBy: ":")
+        comps.removeLast()
+        return comps.joined(separator: ":")
+    }
+
+    func boundingRectWithWidth(width: CGFloat, font: UIFont) -> CGRect {
+        let rect = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
+        return self.boundingRect(with: rect, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+    }
+
+    /// Convert String to Halfwidth
+    public var halfSize: String {
+        let text: CFMutableString = NSMutableString(string: self) as CFMutableString
+        CFStringTransform(text, nil, kCFStringTransformFullwidthHalfwidth, false)
+        return text as String
+    }
+
+    /// Convert String to Fullwidth
+    public var fullSize: String {
+        let text: CFMutableString = NSMutableString(string: self) as CFMutableString
+        CFStringTransform(text, nil, kCFStringTransformFullwidthHalfwidth, true)
+        return text as String
+    }
+
+    public var decodeHTML: String? {
+        guard let decoded = self.removingPercentEncoding else { return nil }
+        return decoded.decodingHTMLEntities()
+    }
+}
