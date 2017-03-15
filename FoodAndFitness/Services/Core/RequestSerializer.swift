@@ -16,8 +16,8 @@ extension ApiManager {
                        parameters: [String: Any]? = nil,
                        headers: [String: String]? = nil,
                        completion: Completion?) -> Request? {
-        guard !RSError.isNetworkError else {
-            completion?(.failure( RSError.Network))
+        guard !FFError.isNetworkError else {
+            completion?(.failure( FFError.Network))
             return nil
         }
 

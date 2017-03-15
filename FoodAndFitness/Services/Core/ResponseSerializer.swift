@@ -49,7 +49,7 @@ extension Request {
         }
 
         guard let data = data, let json = data.toJSON() as? JSObject else {
-            return Result.failure(RSError.JSON)
+            return Result.failure(FFError.JSON)
         }
 
         logger.info("\n data -> \(json)")

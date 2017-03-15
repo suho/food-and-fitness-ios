@@ -15,7 +15,7 @@ extension NetworkReachabilityManager {
     static let sharedInstance: NetworkReachabilityManager! = NetworkReachabilityManager()
 }
 
-class RSError {
+class FFError {
     static let Network = NSError(domain: ApiPath.baseURL.host, status: HTTPStatus.requestTimeout, message: Strings.Errors.notNetwork)
     static let Authentication = NSError(domain: ApiPath.baseURL.host, status: HTTPStatus.unauthorized)
     static let JSON = NSError(domain: NSCocoaErrorDomain, code: 3840, message: Strings.Errors.json)

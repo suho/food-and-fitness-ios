@@ -9,7 +9,7 @@
 import SwiftDate
 import SwiftUtils
 
-enum RSDateFormat {
+enum FFDateFormat {
     /// yyyy-MM-dd
     case Date
     /// yyyy/M/d
@@ -51,14 +51,14 @@ enum RSDateFormat {
 
 // MARK: - DateInRegion
 extension DateInRegion {
-    func toString(format: RSDateFormat) -> String! {
+    func toString(format: FFDateFormat) -> String! {
         return string(format: format.dateFormat)
     }
 }
 
 // MARK: - String to Date
 extension String {
-    func toDate(format: RSDateFormat, region: Region) -> DateInRegion {
+    func toDate(format: FFDateFormat, region: Region) -> DateInRegion {
         do {
             return try DateInRegion(string: self, format: format.dateFormat, fromRegion: region)
         } catch {
@@ -81,7 +81,7 @@ extension NSDateComponents {
     convenience init(time: String) {
         var comps = time.components(separatedBy: ":")
         if comps.count != 3 {
-            RSError.fatal(message: "Invalid Time `\(time)`, must be `hh:mm:ss`")
+            FFError.fatal(message: "Invalid Time `\(time)`, must be `hh:mm:ss`")
             comps = ["0", "0", "0"]
         }
         self.init()
