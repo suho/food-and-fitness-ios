@@ -1,15 +1,14 @@
 //
 //  Error.swift
-//  CM
+//  FoodAndFitness
 //
-//  Created by DaoNV on 3/7/16.
-//  Copyright © 2016 AsianTech Inc. All rights reserved.
+//  Created by Mylo Ho on 3/7/16.
+//  Copyright © 2016 SuHoVan. All rights reserved.
 //
 
 import Foundation
 import SwiftUtils
 import Alamofire
-import Crashlytics
 
 // MARK: - NetworkReachabilityManager
 extension NetworkReachabilityManager {
@@ -21,19 +20,15 @@ class RSError {
     static let Authentication = NSError(domain: ApiPath.baseURL.host, status: HTTPStatus.unauthorized)
     static let JSON = NSError(domain: NSCocoaErrorDomain, code: 3840, message: Strings.Errors.json)
     static let ApiKey = NSError(domain: ApiPath.baseURL.host, code: 120, message: "")
-    
+
     static var isNetworkError: Bool {
         return NetworkReachabilityManager.sharedInstance.isReachable == false
     }
 
     static func fatal(message: String) {
         let error = NSError(message: message)
-        Crashlytics.sharedInstance().recordError(error)
-        #if RELEASE
-            let msg = "問題が発生しました。\nアプリを再起動してください。"
-        #else
-            let msg = message + "\nYou must restart this application.\nThanks you!"
-        #endif
+        logger.error(error)
+        let msg = message + "\nYou must restart this application.\nThanks you!"
         DispatchQueue.main.async {
             let alert = AlertController(title: App.name, message: msg, preferredStyle: .alert)
             alert.level = .require
@@ -44,12 +39,9 @@ class RSError {
     static func assert(condition: Bool, _ message: String) {
         guard !condition else { return }
         let error = NSError(message: message)
-        Crashlytics.sharedInstance().recordError(error)
-        #if DEBUG || ADHOC
             DispatchQueue.main.async {
                 AlertController.alertWithError(error, level: .require, handler: nil).present()
             }
-        #endif
     }
 }
 

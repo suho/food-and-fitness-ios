@@ -19,7 +19,6 @@
 		99BF6F881E77F67D00FD743F /* ApiPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F5C1E77F67D00FD743F /* ApiPath.swift */; };
 		99BF6F891E77F67D00FD743F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F5D1E77F67D00FD743F /* Colors.swift */; };
 		99BF6F8A1E77F67D00FD743F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F5E1E77F67D00FD743F /* Config.swift */; };
-		99BF6F8B1E77F67D00FD743F /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F5F1E77F67D00FD743F /* README.md */; };
 		99BF6F8C1E77F67D00FD743F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F601E77F67D00FD743F /* Strings.swift */; };
 		99BF6F8D1E77F67D00FD743F /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F611E77F67D00FD743F /* UserDefaultsKey.swift */; };
 		99BF6F8E1E77F67D00FD743F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F651E77F67D00FD743F /* UIViewController.swift */; };
@@ -35,7 +34,6 @@
 		99BF6F981E77F67D00FD743F /* RequestSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F7B1E77F67D00FD743F /* RequestSerializer.swift */; };
 		99BF6F991E77F67D00FD743F /* ResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F7C1E77F67D00FD743F /* ResponseSerializer.swift */; };
 		99BF6F9A1E77F67D00FD743F /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F7D1E77F67D00FD743F /* Session.swift */; };
-		99BF6F9B1E77F67D00FD743F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99BF6F7F1E77F67D00FD743F /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +52,6 @@
 		99BF6F5C1E77F67D00FD743F /* ApiPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiPath.swift; sourceTree = "<group>"; };
 		99BF6F5D1E77F67D00FD743F /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		99BF6F5E1E77F67D00FD743F /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		99BF6F5F1E77F67D00FD743F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		99BF6F601E77F67D00FD743F /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		99BF6F611E77F67D00FD743F /* UserDefaultsKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		99BF6F651E77F67D00FD743F /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -197,7 +194,6 @@
 				99BF6F5C1E77F67D00FD743F /* ApiPath.swift */,
 				99BF6F5D1E77F67D00FD743F /* Colors.swift */,
 				99BF6F5E1E77F67D00FD743F /* Config.swift */,
-				99BF6F5F1E77F67D00FD743F /* README.md */,
 				99BF6F601E77F67D00FD743F /* Strings.swift */,
 				99BF6F611E77F67D00FD743F /* UserDefaultsKey.swift */,
 			);
@@ -404,7 +400,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99BF6F9B1E77F67D00FD743F /* Info.plist in Resources */,
 				99BF6F851E77F67D00FD743F /* HomeViewController.xib in Resources */,
 				99BF6F951E77F67D00FD743F /* Assets.xcassets in Resources */,
 				99BF6F8F1E77F67D00FD743F /* LaunchScreen.storyboard in Resources */,
@@ -509,7 +504,6 @@
 				99BF6F911E77F67D00FD743F /* Cocoa.swift in Sources */,
 				99BF6F821E77F67D00FD743F /* PopupViewController.swift in Sources */,
 				99BF6F991E77F67D00FD743F /* ResponseSerializer.swift in Sources */,
-				99BF6F8B1E77F67D00FD743F /* README.md in Sources */,
 				99BF6F941E77F67D00FD743F /* UserProfile.swift in Sources */,
 				99BF6F961E77F67D00FD743F /* ApiMananger.swift in Sources */,
 				99BF6F931E77F67D00FD743F /* User.swift in Sources */,

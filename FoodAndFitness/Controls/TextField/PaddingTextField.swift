@@ -1,9 +1,9 @@
 //
 //  PaddingTextField.swift
-//  CM
+//  FoodAndFitness
 //
-//  Created by HaiPhung on 6/24/16.
-//  Copyright © 2016 AsianTech Co., Ltd. All rights reserved.
+//  Created by Mylo Ho on 6/24/16.
+//  Copyright © 2016 SuHoVan. All rights reserved.
 //
 
 import UIKit

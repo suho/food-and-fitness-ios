@@ -1,9 +1,9 @@
 //
 //  PopupViewController.swift
-//  RideShare
+//  FoodAndFitness
 //
-//  Created by DaoNV on 2/15/17.
-//  Copyright © 2017 Asian Tech Co., Ltd. All rights reserved.
+//  Created by Mylo Ho on 2/15/17.
+//  Copyright © 2017 SuHoVan. All rights reserved.
 //
 
 import UIKit

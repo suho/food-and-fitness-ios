@@ -1,9 +1,9 @@
 //
 //  Cocoa.swift
-//  CM
+//  FoodAndFitness
 //
-//  Created by DaoNV on 3/25/16.
-//  Copyright © 2016 AsianTech Inc. All rights reserved.
+//  Created by Mylo Ho on 3/25/16.
+//  Copyright © 2016 SuHoVan. All rights reserved.
 //
 
 import UIKit
@@ -58,13 +58,6 @@ extension Bundle {
     func hasNib(name: String) -> Bool {
         return path(forResource: name, ofType: "nib") != nil
     }
-
-//    func jsonFromResource(name: String, ext: String) -> JSObject! {
-//        guard let filePath = pathForResource(name, ofType: ext),
-//            data = NSData(contentsOfFile: filePath) else { fatalError("not json file `\(name).\(ext)`") }
-//        guard let json = data.toJSON() as? JSObject else { fatalError("not valid json") }
-//        return json
-//    }
 }
 
 // MARK: - Double
@@ -129,7 +122,7 @@ extension UIDevice {
         }
 
         guard let bundleIdentifier = Bundle.main.bundleIdentifier else {
-            RSError.fatal(message: "This app has no bundle identifier ???")
+            RSError.fatal(message: "This app has no bundle identifier?")
             return ""
         }
 
@@ -157,39 +150,63 @@ extension UIDevice {
 // MARK: - UILabel
 extension UILabel {
     var string: String {
-        return text ?? ""
+        if let text = text {
+            return text
+        } else {
+            return ""
+        }
     }
 }
 
 // MARK: - UITextView
 extension UITextView {
     var string: String {
-        return text ?? ""
+        if let text = text {
+            return text
+        } else {
+            return ""
+        }
     }
 }
 
 // MARK: - UITextField
 extension UITextField {
     var string: String {
-        return text ?? ""
+        if let text = text {
+            return text
+        } else {
+            return ""
+        }
     }
 }
 
 // MARK: - UISearchBar
 extension UISearchBar {
     var string: String {
-        return text ?? ""
+        if let text = text {
+            return text
+        } else {
+            return ""
+        }
     }
 }
 
 // MARK: - UIButton
 extension UIButton {
     func title(state: UIControlState) -> String {
-        return title(for: state) ?? ""
+        if let text = title(for: state) {
+            return text
+        } else {
+            return ""
+        }
     }
 
     func attributedTitle(state: UIControlState) -> NSAttributedString {
-        return attributedTitle(for: state) ?? NSAttributedString()
+        if let text = attributedTitle(for: state) {
+            return text
+        } else {
+            return NSAttributedString()
+        }
     }
 }
 

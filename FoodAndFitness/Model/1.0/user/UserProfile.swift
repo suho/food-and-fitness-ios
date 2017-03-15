@@ -1,9 +1,9 @@
 //
 //  UserProfile.swift
-//  CM
+//  FoodAndFitness
 //
-//  Created by DaoNV on 7/26/16.
-//  Copyright © 2016 AsianTech Co., Ltd. All rights reserved.
+//  Created by Mylo Ho on 7/26/16.
+//  Copyright © 2016 SuHoVan. All rights reserved.
 //
 
 import RealmSwift
@@ -38,7 +38,11 @@ final class UserProfile: Object, Mappable {
         }
         get {
             let gender = Gender(rawValue: genderRaw)
-            return gender ?? .others
+            if let gender = gender {
+                return gender
+            } else {
+                return .others
+            }
         }
     }
 

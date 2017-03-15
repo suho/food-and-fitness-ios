@@ -54,5 +54,3 @@ if ! bundle exec pod install; then
     bundle exec pod repo update --silent
     bundle exec pod install
 fi
-
-cd OpenAssets && bundle exec pod install

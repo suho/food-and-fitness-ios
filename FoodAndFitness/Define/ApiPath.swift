@@ -1,9 +1,9 @@
 //
 //  ApiPath.swift
-//  CM
+//  FoodAndFitness
 //
-//  Created by DaoNV on 3/7/16.
-//  Copyright © 2016 AsianTech Inc. All rights reserved.
+//  Created by Mylo Ho on 3/7/16.
+//  Copyright © 2016 SuHoVan. All rights reserved.
 //
 
 import Foundation
@@ -16,17 +16,8 @@ private protocol URLStringConvertible {
 
 class ApiPath {
 
-    #if RELEASE
-        static var baseURL = "https://apis-ssl.unit-hosting.com/rideshare/develop/api/v1"
-        static var googleBaseURL = "https://maps.googleapis.com/maps/api/"
-    #else
-        static var baseURL = "https://apis-ssl.unit-hosting.com/rideshare/develop/api/v1"
-        static var googleBaseURL = "https://maps.googleapis.com/maps/api/"
-    #endif
-
-    static var isPro: Bool {
-        return baseURL == "https://api.asiantech.vn/api/v2"
-    }
+    static var baseURL = "https://apis-ssl.unit-hosting.com/FoodAndFitness/develop/api/v1"
+    static var googleBaseURL = "https://maps.googleapis.com/maps/api/"
 
     // MARK: - Roots
     static var users: String { return baseURL / "users" }

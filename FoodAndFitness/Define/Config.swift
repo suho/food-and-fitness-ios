@@ -1,9 +1,9 @@
 //
 //  AppConfig.swift
-//  CM
+//  FoodAndFitness
 //
-//  Created by DaoNV on 3/7/16.
-//  Copyright © 2016 AsianTech Inc. All rights reserved.
+//  Created by Mylo Ho on 3/7/16.
+//  Copyright © 2016 SuHoVan. All rights reserved.
 //
 
 import Foundation
@@ -30,21 +30,7 @@ let kRefreshTimelineName = "RefreshTimeline"
 
 final class App {
 
-    static let name = "カラダかわるNavi"
-
-    // Multi app
-    #if RENA
-        static let code = "RN"
-    #else
-        static let code = "TH"
-    #endif
-
-    #if RELEASE
-        static let GATrackID = "UA-xxxxxxxx-x" // product
-    #else
-        static let GATrackID = "UA-xxxxxxxx-x" // staging
-    #endif
-
+    static let name = "FoodAndFitness"
     static let storeLink = "itms-apps://itunes.apple.com/app/idxxxxxxxxx"
     static let storeLinkCaloriMaMa = "itms-apps://itunes.apple.com/app/ixxxxxxxx"
 }

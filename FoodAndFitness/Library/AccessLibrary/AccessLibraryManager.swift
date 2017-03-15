@@ -1,9 +1,9 @@
 //
 //  AccessLibraryManager.swift
-//  CM
+//  FoodAndFitness
 //
-//  Created by AST_HieuTT_PC on 6/30/16.
-//  Copyright © 2016 AsianTech Co., Ltd. All rights reserved.
+//  Created by Mylo Ho on 6/30/16.
+//  Copyright © 2016 SuHoVan. All rights reserved.
 //
 
 import UIKit
@@ -58,7 +58,8 @@ class AccessLibraryManager: NSObject {
     // MARK: - Private
     private func present(pickerController: UIImagePickerController?) {
         guard let picker = pickerController else { return }
-        guard let root = UIApplication.shared.delegate?.window??.rootViewController else { return }
+        guard let window = UIApplication.shared.delegate?.window else { return }
+        guard let root = window?.rootViewController else { return }
         manager = self
         root.present(picker, animated: true, completion: nil)
     }

@@ -1,13 +1,15 @@
 //
 //  UserDefaultsKey.swift
-//  RideShare
+//  FoodAndFitness
 //
 //  Created by Mylo Ho on 3/9/17.
-//  Copyright © 2017 Asian Tech Co., Ltd. All rights reserved.
+//  Copyright © 2017 SuHoVan. All rights reserved.
 //
 
 import Foundation
 
 class UserDefaultsKey {
     static let timeInterval = "TimeInterval"
+    static let userIDKey = "UserID"
+    static let accessToken = "AccessToken"
 }

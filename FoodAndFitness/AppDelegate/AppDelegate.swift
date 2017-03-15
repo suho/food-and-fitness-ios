@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import SwiftyBeaver
+import SVProgressHUD
+
+typealias ProgressHUD = SVProgressHUD
+let logger = SwiftyBeaver.self
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,4 +29,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
-
