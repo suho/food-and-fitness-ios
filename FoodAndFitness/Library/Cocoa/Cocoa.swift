@@ -122,7 +122,7 @@ extension UIDevice {
         }
 
         guard let bundleIdentifier = Bundle.main.bundleIdentifier else {
-            FFError.fatal(message: "This app has no bundle identifier?")
+            fatal("This app has no bundle identifier?")
             return ""
         }
 

@@ -17,19 +17,11 @@ private protocol URLStringConvertible {
 class ApiPath {
 
     static var baseURL = "https://apis-ssl.unit-hosting.com/FoodAndFitness/develop/api/v1"
-    static var googleBaseURL = "https://maps.googleapis.com/maps/api/"
+    static var googleMapURL = "https://maps.googleapis.com/maps/api/"
 
     // MARK: - Roots
-    static var users: String { return baseURL / "users" }
-    static var images: String { return baseURL / "images" }
-    static var htmlFAQ: String { return baseURL / "faq" }
-    static var htmlPolicy: String { return baseURL / "policy" }
-    static var htmlTermsOfUse: String { return baseURL / "rule" }
-    static var htmlAboutCompany: String { return baseURL / "about-company" }
     private static var auth: String { return baseURL / "auth" }
-    static var offers: String { return baseURL / "offers" }
-    static var locations: String { return baseURL / "locations" }
-    static var cars: String { return baseURL / "car_types" }
+    static var users: String { return baseURL / "users" }
 
     struct Auth {
         static var login: String {
@@ -55,15 +47,15 @@ class ApiPath {
 
     struct Google: URLStringConvertible {
         var URLString: String {
-            return ApiPath.googleBaseURL
+            return ApiPath.googleMapURL
         }
 
         static var placeAutoComplete: String {
-            return ApiPath.googleBaseURL / "place" / "autocomplete" / "json"
+            return ApiPath.googleMapURL / "place" / "autocomplete" / "json"
         }
 
         static var directions: String {
-            return ApiPath.googleBaseURL / "directions" / "json"
+            return ApiPath.googleMapURL / "directions" / "json"
         }
 
         static var componentsCountry: String {

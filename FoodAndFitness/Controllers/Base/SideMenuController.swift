@@ -10,5 +10,5 @@ import Foundation
 import LGSideMenuController
 
 class SideMenuController: LGSideMenuController {
-    static weak var sharedInstance: SideMenuController!
+    static weak var shared: SideMenuController!
 }

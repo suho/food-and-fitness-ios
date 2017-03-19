@@ -14,7 +14,11 @@ import RealmS
 import SwiftyJSON
 
 extension Request {
-    static func responseJSONSerializer(log: Bool = true, response: HTTPURLResponse?, data: Data?, error: Error?) -> Result<Any> {
+    static func responseJSONSerializer(
+        log: Bool = true,
+        response: HTTPURLResponse?,
+        data: Data?,
+        error: Error?) -> Result<Any> {
         guard let response = response else {
             return .failure(NSError(status: .noResponse))
         }
@@ -24,7 +28,7 @@ extension Request {
         if let error = error {
             return .failure(error)
         }
-        
+
         let statusCode = response.statusCode
 
         if 204...205 ~= statusCode { // empty data status code
@@ -55,9 +59,9 @@ extension Request {
         logger.info("\n data -> \(json)")
 
         let allHeaderFields = JSON(response.allHeaderFields)
-        if let accessToken = allHeaderFields["access-token"].string {
+        if let accessToken = allHeaderFields["access-token"].string, let client = allHeaderFields["client"].string, let uid = allHeaderFields["uid"].string {
             // save header token
-            api.session.headerToken = Session.HeaderToken(accessToken: accessToken)
+            api.session.headerToken = Session.HeaderToken(accessToken: accessToken, clientId: client, uid: uid)
         }
 
         return .success(json)
@@ -82,7 +86,34 @@ enum DataType: Int {
 }
 
 extension Mapper where N: Object {
-    func map(jsonData: Any, type: DataType, completion: Completion) {
+
+    func map(jsonData: Any, type: DataType, inKey: String, refresh: Bool = false, completion: Completion) {
+        switch type {
+        case .object:
+            if let jsonObject = (jsonData as AnyObject)[inKey] as? JSObject {
+                map(jsonData: jsonObject, type: type, refresh: refresh, completion: completion)
+                return
+            }
+        case .array:
+            if let jsonArray = (jsonData as AnyObject)[inKey] as? JSArray {
+                map(jsonData: jsonArray, type: type, refresh: refresh, completion: completion)
+                return
+            }
+        }
+
+        completion(.failure(FFError.JSON))
+    }
+
+    func map(jsonData: Any, type: DataType, refresh: Bool = false, completion: Completion) {
+        if refresh {
+            // clean objects in database
+            let realm = RealmS()
+            realm.write {
+                realm.delete(realm.objects(N.self))
+            }
+        }
+
+        var result: Result<Any> = .failure(FFError.JSON)
         switch type {
         case .object:
             if let jsonObject = (jsonData as? JSObject), jsonObject.keys.isNotEmpty {
@@ -90,25 +121,151 @@ extension Mapper where N: Object {
                 realm.write {
                     if let obj: N = Mapper<N>().map(JSON: jsonObject) {
                         realm.add(obj)
-                        completion(.success(obj))
+                        result = .success(obj)
                     }
                 }
-                return
             }
         case .array:
-            if let jsonArray = (jsonData as? JSArray), jsonArray.isNotEmpty {
+            if let jsonArray = (jsonData as? JSArray) {
                 let realm = RealmS()
                 realm.write {
                     if let array: [N] = Mapper<N>().mapArray(JSONArray: jsonArray) {
                         for item in array {
                             realm.add(item)
                         }
-                        completion(.success(array))
+                        result = .success(array)
                     }
                 }
-                return
             }
         }
-        completion(.success(jsonData))
+
+        completion(result)
+    }
+}
+
+final class Meta: Mappable {
+    var currentPage = 0
+    var nextPage = 0
+    var prevPage = 0
+    var totalCount = 0
+    var totalPages = 0
+
+    init() { }
+
+    init(map: Map) { }
+
+    func mapping(map: Map) {
+        currentPage <- map["current_page"]
+        nextPage <- map["next_page"]
+        prevPage <- map["prev_page"]
+        totalCount <- map["total_count"]
+        totalPages <- map["total_pages"]
+    }
+
+    private func getPage(fromUrl url: String) -> Int {
+        guard let page = url.components(separatedBy: "=").last else { return 0 }
+        return page.intValue
+    }
+}
+
+// MARK: - Extract `next_page_url` from response
+extension Result {
+    var meta: Meta {
+        let meta = Meta()
+        switch self {
+        case .success(let value):
+            if let json = (value as AnyObject)["meta"] as? JSObject {
+                return Mapper<Meta>().map(JSON: json, toObject: meta)
+            }
+        default: break
+        }
+        return meta
+    }
+}
+
+// MARK: Data Transform
+class DataTransform {
+    static let date = TransformOf<Date, String>(
+        fromJSON: { (string: String?) -> Date in
+            if let result = string?.toDate(format: .Full, region: App.region).absoluteDate {
+                return result
+            }
+            return Foundation.Date.null
+    },
+        toJSON: { (date: Date?) -> String? in
+            return date?.inRegion(region: App.region).toString(format: .Date)
+    }
+    )
+
+    static let dateTime = TransformOf<Date, String>(
+        fromJSON: { (string: String?) -> Date? in
+            if let result = string?.toDate(format: .DateTime, region: App.region).absoluteDate {
+                return result
+            }
+            return Foundation.Date.null
+    },
+        toJSON: { (date: Date?) -> String? in
+            return date?.inRegion(region: App.region).toString(format: .DateTime)
+    }
+    )
+}
+
+func <- ( left: inout String, right: Map) {
+    var str: String? = left
+    str <- right
+    if right.mappingType == .fromJSON {
+        if let str = str {
+            left = str
+        } else {
+            left = ""
+        }
+    }
+}
+
+func <- ( left: inout Int, right: Map) {
+    var value: Int? = left
+    value <- right
+    if right.mappingType == .fromJSON {
+        if let value = value {
+            left = value
+        } else {
+            left = 0
+        }
+    }
+}
+
+func <- ( left: inout Float, right: Map) {
+    var value: Float? = left
+    value <- right
+    if right.mappingType == .fromJSON {
+        if let value = value {
+            left = value
+        } else {
+            left = 0.0
+        }
+    }
+}
+
+func <- ( left: inout Double, right: Map) {
+    var value: Double? = left
+    value <- right
+    if right.mappingType == .fromJSON {
+        if let value = value {
+            left = value
+        } else {
+            left = 0.0
+        }
+    }
+}
+
+func <- ( left: inout Bool, right: Map) {
+    var value: Bool? = left
+    value <- right
+    if right.mappingType == .fromJSON {
+        if let value = value {
+            left = value
+        } else {
+            left = false
+        }
     }
 }

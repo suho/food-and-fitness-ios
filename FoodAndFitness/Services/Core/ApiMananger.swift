@@ -15,7 +15,6 @@ import RealmS
 typealias JSObject = [String: Any]
 typealias JSArray = [JSObject]
 typealias Completion = (Result<Any>) -> Void
-typealias ViewModelCompletion = (_ success: Bool, _ error: Error?) -> Void
 
 let api: ApiManager = ApiManager()
 
@@ -26,6 +25,8 @@ class ApiManager {
         var headers: [String: String] = [:]
         if let headerToken = session.headerToken {
             headers["access-token"] = headerToken.accessToken
+            headers["client"] = headerToken.clientId
+            headers["uid"] = headerToken.uid
         }
 
         return headers

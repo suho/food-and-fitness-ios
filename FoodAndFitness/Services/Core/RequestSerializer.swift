@@ -16,19 +16,21 @@ extension ApiManager {
                        parameters: [String: Any]? = nil,
                        headers: [String: String]? = nil,
                        completion: Completion?) -> Request? {
-        guard !FFError.isNetworkError else {
-            completion?(.failure( FFError.Network))
+        guard Network.shared.isReachable else {
+            completion?(.failure(FFError.Network))
             return nil
         }
 
         logger.debug("\n url -> \(urlString)")
         logger.debug("\n headers -> \(headers)")
         logger.debug("\n parameters -> \(parameters)\n")
-        
-        var encoding: ParameterEncoding = JSONEncoding.default
-        if method != .post {
-            encoding = URLEncoding.default
+
+        var encoding: ParameterEncoding = URLEncoding.default
+
+        if method == .post {
+            encoding = JSONEncoding.default
         }
+
         var _headers = api.defaultHTTPHeaders
         _headers.updateValues(headers)
 
@@ -37,5 +39,4 @@ extension ApiManager {
             completion?(response.result)
         })
         return request
-    }
-}
+    }}

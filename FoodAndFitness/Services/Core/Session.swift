@@ -28,8 +28,10 @@ class Session {
 
     struct HeaderToken {
         let accessToken: String
+        let clientId: String
+        let uid: String
     }
-    
+
     var headerToken: HeaderToken? {
         didSet {
             guard let token = headerToken else {
@@ -40,14 +42,14 @@ class Session {
         }
     }
 
-    var userID: Int? = UserDefaults.standard.integer(forKey: UserDefaultsKey.userIDKey) {
+    var userID: Int? = UserDefaults.standard.integer(forKey: Key.userId) {
         didSet {
             let userDefaults = UserDefaults.standard
-            userDefaults.set(userID, forKey: UserDefaultsKey.userIDKey)
+            userDefaults.set(userID, forKey: Key.userId)
             userDefaults.synchronize()
         }
     }
-    
+
     var isAuthenticated: Bool {
         return headerToken != nil
     }
@@ -58,7 +60,7 @@ class Session {
         let host = ApiPath.baseURL.host
         guard let accounts = SAMKeychain.accounts(forService: host)?.last,
             let account = accounts[kSAMKeychainAccountKey] as? String
-        else { return }
+            else { return }
 
         guard let password = SAMKeychain.password(forService: host, account: account) else { return }
         credential.username = account
@@ -73,20 +75,25 @@ class Session {
 
     private func saveHeaderToken(_ headerToken: HeaderToken) {
         let userDefaults = UserDefaults.standard
-        userDefaults.set(headerToken.accessToken, forKey: UserDefaultsKey.accessToken)
+        userDefaults.set(headerToken.accessToken, forKey: Key.accessToken)
+        userDefaults.set(headerToken.uid, forKey: Key.uId)
+        userDefaults.set(headerToken.clientId, forKey: Key.client)
         userDefaults.synchronize()
     }
 
     func loadAccessToken() {
         let userDefaults = UserDefaults.standard
-        if let token = userDefaults.string(forKey: UserDefaultsKey.accessToken) {
-            headerToken = HeaderToken(accessToken: token)
+
+        if let token = userDefaults.string(forKey: Key.accessToken), let uid = userDefaults.string(forKey: Key.uId), let client = userDefaults.string(forKey: Key.client) {
+            headerToken = HeaderToken(accessToken: token, clientId: client, uid: uid)
         }
     }
 
     private func clearHeaderToken() {
         let userDefaults = UserDefaults.standard
-        userDefaults.removeObject(forKey: UserDefaultsKey.accessToken)
+        userDefaults.removeObject(forKey: Key.accessToken)
+        userDefaults.removeObject(forKey: Key.uId)
+        userDefaults.removeObject(forKey: Key.client)
         userDefaults.synchronize()
     }
 
