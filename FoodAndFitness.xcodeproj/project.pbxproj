@@ -15,12 +15,10 @@
 		99BF6F841E77F67D00FD743F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F551E77F67D00FD743F /* HomeViewController.swift */; };
 		99BF6F851E77F67D00FD743F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99BF6F561E77F67D00FD743F /* HomeViewController.xib */; };
 		99BF6F861E77F67D00FD743F /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F591E77F67D00FD743F /* PaddingTextField.swift */; };
-		99BF6F871E77F67D00FD743F /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F5B1E77F67D00FD743F /* ApiKey.swift */; };
 		99BF6F881E77F67D00FD743F /* ApiPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F5C1E77F67D00FD743F /* ApiPath.swift */; };
 		99BF6F891E77F67D00FD743F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F5D1E77F67D00FD743F /* Colors.swift */; };
 		99BF6F8A1E77F67D00FD743F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F5E1E77F67D00FD743F /* Config.swift */; };
 		99BF6F8C1E77F67D00FD743F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F601E77F67D00FD743F /* Strings.swift */; };
-		99BF6F8D1E77F67D00FD743F /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F611E77F67D00FD743F /* UserDefaultsKey.swift */; };
 		99BF6F8E1E77F67D00FD743F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F651E77F67D00FD743F /* UIViewController.swift */; };
 		99BF6F8F1E77F67D00FD743F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99BF6F671E77F67D00FD743F /* LaunchScreen.storyboard */; };
 		99BF6F901E77F67D00FD743F /* AccessLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F6A1E77F67D00FD743F /* AccessLibraryManager.swift */; };
@@ -48,12 +46,10 @@
 		99BF6F551E77F67D00FD743F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		99BF6F561E77F67D00FD743F /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		99BF6F591E77F67D00FD743F /* PaddingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
-		99BF6F5B1E77F67D00FD743F /* ApiKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		99BF6F5C1E77F67D00FD743F /* ApiPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiPath.swift; sourceTree = "<group>"; };
 		99BF6F5D1E77F67D00FD743F /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		99BF6F5E1E77F67D00FD743F /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		99BF6F601E77F67D00FD743F /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
-		99BF6F611E77F67D00FD743F /* UserDefaultsKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		99BF6F651E77F67D00FD743F /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		99BF6F671E77F67D00FD743F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99BF6F6A1E77F67D00FD743F /* AccessLibraryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessLibraryManager.swift; sourceTree = "<group>"; };
@@ -190,12 +186,10 @@
 		99BF6F5A1E77F67D00FD743F /* Define */ = {
 			isa = PBXGroup;
 			children = (
-				99BF6F5B1E77F67D00FD743F /* ApiKey.swift */,
 				99BF6F5C1E77F67D00FD743F /* ApiPath.swift */,
 				99BF6F5D1E77F67D00FD743F /* Colors.swift */,
 				99BF6F5E1E77F67D00FD743F /* Config.swift */,
 				99BF6F601E77F67D00FD743F /* Strings.swift */,
-				99BF6F611E77F67D00FD743F /* UserDefaultsKey.swift */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -493,11 +487,9 @@
 				99BF6F841E77F67D00FD743F /* HomeViewController.swift in Sources */,
 				99BF6F891E77F67D00FD743F /* Colors.swift in Sources */,
 				99BF6F981E77F67D00FD743F /* RequestSerializer.swift in Sources */,
-				99BF6F8D1E77F67D00FD743F /* UserDefaultsKey.swift in Sources */,
 				99BF6F861E77F67D00FD743F /* PaddingTextField.swift in Sources */,
 				99BF6F801E77F67D00FD743F /* AppDelegate.swift in Sources */,
 				99BF6F831E77F67D00FD743F /* SideMenuController.swift in Sources */,
-				99BF6F871E77F67D00FD743F /* ApiKey.swift in Sources */,
 				99BF6F811E77F67D00FD743F /* BaseViewController.swift in Sources */,
 				99BF6F901E77F67D00FD743F /* AccessLibraryManager.swift in Sources */,
 				99BF6F8A1E77F67D00FD743F /* Config.swift in Sources */,

@@ -10,6 +10,7 @@ import SwiftDate
 import SwiftUtils
 
 enum FFDateFormat {
+    case Full
     /// yyyy-MM-dd
     case Date
     /// yyyy/M/d
@@ -26,9 +27,11 @@ enum FFDateFormat {
     case HourMinute
     /// yyyy.M.d H:mm
     case DateTime2
-    
+
     var dateFormat: DateFormat {
         switch self {
+        case .Full:
+            return .custom("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
         case .Date:
             return .custom("yyyy-MM-dd")
         case .DateShort:
@@ -58,7 +61,7 @@ extension DateInRegion {
 
 // MARK: - String to Date
 extension String {
-    func toDate(format: FFDateFormat, region: Region) -> DateInRegion {
+    func toDate(format: FFDateFormat, region: Region = App.region) -> DateInRegion {
         do {
             return try DateInRegion(string: self, format: format.dateFormat, fromRegion: region)
         } catch {
@@ -81,12 +84,20 @@ extension NSDateComponents {
     convenience init(time: String) {
         var comps = time.components(separatedBy: ":")
         if comps.count != 3 {
-            FFError.fatal(message: "Invalid Time `\(time)`, must be `hh:mm:ss`")
+            fatal("Invalid Time `\(time)`, must be `hh:mm:ss`")
             comps = ["0", "0", "0"]
         }
         self.init()
         hour = comps[0].intValue
         minute = comps[1].intValue
         second = comps[2].intValue
+    }
+}
+
+// MARK: NSDate
+extension Date {
+    static var null: Date {
+        let date: Date! = DateComponents(year: 0, month: 0, day: 0).date
+        return date
     }
 }
