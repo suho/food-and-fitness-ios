@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		82DD737526B668AC2735D9DF /* Pods_FoodAndFitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC2C5A9C9A5C9BBFE5E0265 /* Pods_FoodAndFitness.framework */; };
+		99993E8C1E80B7430052372A /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99993E8B1E80B7430052372A /* SideMenuController.swift */; };
+		99993E8E1E80B7840052372A /* LeftSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99993E8D1E80B7840052372A /* LeftSideViewController.swift */; };
 		99BF6F801E77F67D00FD743F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F4E1E77F67D00FD743F /* AppDelegate.swift */; };
 		99BF6F811E77F67D00FD743F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F511E77F67D00FD743F /* BaseViewController.swift */; };
 		99BF6F821E77F67D00FD743F /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F521E77F67D00FD743F /* PopupViewController.swift */; };
-		99BF6F831E77F67D00FD743F /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F531E77F67D00FD743F /* SideMenuController.swift */; };
 		99BF6F841E77F67D00FD743F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F551E77F67D00FD743F /* HomeViewController.swift */; };
 		99BF6F851E77F67D00FD743F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99BF6F561E77F67D00FD743F /* HomeViewController.xib */; };
 		99BF6F861E77F67D00FD743F /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F591E77F67D00FD743F /* PaddingTextField.swift */; };
@@ -38,11 +39,12 @@
 		2CC2C5A9C9A5C9BBFE5E0265 /* Pods_FoodAndFitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodAndFitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		414B90741E59EF7A2149478D /* Pods-FoodAndFitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodAndFitness.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodAndFitness/Pods-FoodAndFitness.release.xcconfig"; sourceTree = "<group>"; };
 		55C6C2C4F08C322327521329 /* Pods-FoodAndFitness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodAndFitness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodAndFitness/Pods-FoodAndFitness.debug.xcconfig"; sourceTree = "<group>"; };
+		99993E8B1E80B7430052372A /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
+		99993E8D1E80B7840052372A /* LeftSideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSideViewController.swift; sourceTree = "<group>"; };
 		99BF6F381E77F41500FD743F /* FoodAndFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodAndFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99BF6F4E1E77F67D00FD743F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99BF6F511E77F67D00FD743F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		99BF6F521E77F67D00FD743F /* PopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
-		99BF6F531E77F67D00FD743F /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 		99BF6F551E77F67D00FD743F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		99BF6F561E77F67D00FD743F /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		99BF6F591E77F67D00FD743F /* PaddingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
@@ -95,6 +97,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		99993E8A1E80B7430052372A /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				99993E8B1E80B7430052372A /* SideMenuController.swift */,
+				99993E8D1E80B7840052372A /* LeftSideViewController.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
 		99BF6F2F1E77F41500FD743F = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +155,7 @@
 			children = (
 				99BF6F501E77F67D00FD743F /* Base */,
 				99BF6F541E77F67D00FD743F /* Home */,
+				99993E8A1E80B7430052372A /* SideMenu */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -153,7 +165,6 @@
 			children = (
 				99BF6F511E77F67D00FD743F /* BaseViewController.swift */,
 				99BF6F521E77F67D00FD743F /* PopupViewController.swift */,
-				99BF6F531E77F67D00FD743F /* SideMenuController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -483,13 +494,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99993E8E1E80B7840052372A /* LeftSideViewController.swift in Sources */,
 				99BF6F8E1E77F67D00FD743F /* UIViewController.swift in Sources */,
 				99BF6F841E77F67D00FD743F /* HomeViewController.swift in Sources */,
 				99BF6F891E77F67D00FD743F /* Colors.swift in Sources */,
 				99BF6F981E77F67D00FD743F /* RequestSerializer.swift in Sources */,
+				99993E8C1E80B7430052372A /* SideMenuController.swift in Sources */,
 				99BF6F861E77F67D00FD743F /* PaddingTextField.swift in Sources */,
 				99BF6F801E77F67D00FD743F /* AppDelegate.swift in Sources */,
-				99BF6F831E77F67D00FD743F /* SideMenuController.swift in Sources */,
 				99BF6F811E77F67D00FD743F /* BaseViewController.swift in Sources */,
 				99BF6F901E77F67D00FD743F /* AccessLibraryManager.swift in Sources */,
 				99BF6F8A1E77F67D00FD743F /* Config.swift in Sources */,
