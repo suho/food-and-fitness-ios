@@ -23,11 +23,6 @@ class SideMenuController: LGSideMenuController {
     func setup(_ style: LGSideMenuPresentationStyle) {
         leftViewController = leftSideViewController
         leftViewWidth = kScreenSize.width * (3 / 4)
-//        leftViewBackgroundImage
-//        leftViewBackgroundColor
-//        rootViewCoverColorForLeftView
-//        rootViewCoverBlurEffectForLeftView = UIBlurEffect(style: regularStyle)
         leftViewPresentationStyle = style
-
     }
 }

@@ -8,6 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		82DD737526B668AC2735D9DF /* Pods_FoodAndFitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC2C5A9C9A5C9BBFE5E0265 /* Pods_FoodAndFitness.framework */; };
+		993404DE1E838306009A445F /* UserProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993404DC1E838306009A445F /* UserProfileCell.swift */; };
+		993404DF1E838306009A445F /* UserProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 993404DD1E838306009A445F /* UserProfileCell.xib */; };
+		993404E11E8383F3009A445F /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993404E01E8383F3009A445F /* BaseTableViewCell.swift */; };
+		993404E41E83849D009A445F /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993404E31E83849D009A445F /* View.swift */; };
+		993404ED1E83C3F6009A445F /* NutritionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993404EB1E83C3F6009A445F /* NutritionViewController.swift */; };
+		993404EE1E83C3F6009A445F /* NutritionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 993404EC1E83C3F6009A445F /* NutritionViewController.xib */; };
+		993404F11E83C41B009A445F /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993404EF1E83C41B009A445F /* AnalysisViewController.swift */; };
+		993404F21E83C41B009A445F /* AnalysisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 993404F01E83C41B009A445F /* AnalysisViewController.xib */; };
+		993404F51E83C433009A445F /* FitnessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993404F31E83C433009A445F /* FitnessViewController.swift */; };
+		993404F61E83C433009A445F /* FitnessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 993404F41E83C433009A445F /* FitnessViewController.xib */; };
+		993404F91E83C44E009A445F /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993404F71E83C44E009A445F /* HistoryViewController.swift */; };
+		993404FA1E83C44E009A445F /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 993404F81E83C44E009A445F /* HistoryViewController.xib */; };
+		993404FD1E83C45D009A445F /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993404FB1E83C45D009A445F /* InformationViewController.swift */; };
+		993404FE1E83C45D009A445F /* InformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 993404FC1E83C45D009A445F /* InformationViewController.xib */; };
+		993405011E83C46D009A445F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993404FF1E83C46D009A445F /* ProfileViewController.swift */; };
+		993405021E83C46D009A445F /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 993405001E83C46D009A445F /* ProfileViewController.xib */; };
 		99993E8C1E80B7430052372A /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99993E8B1E80B7430052372A /* SideMenuController.swift */; };
 		99993E8E1E80B7840052372A /* LeftSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99993E8D1E80B7840052372A /* LeftSideViewController.swift */; };
 		99BF6F801E77F67D00FD743F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F4E1E77F67D00FD743F /* AppDelegate.swift */; };
@@ -39,6 +55,22 @@
 		2CC2C5A9C9A5C9BBFE5E0265 /* Pods_FoodAndFitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodAndFitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		414B90741E59EF7A2149478D /* Pods-FoodAndFitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodAndFitness.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodAndFitness/Pods-FoodAndFitness.release.xcconfig"; sourceTree = "<group>"; };
 		55C6C2C4F08C322327521329 /* Pods-FoodAndFitness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodAndFitness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodAndFitness/Pods-FoodAndFitness.debug.xcconfig"; sourceTree = "<group>"; };
+		993404DC1E838306009A445F /* UserProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileCell.swift; sourceTree = "<group>"; };
+		993404DD1E838306009A445F /* UserProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserProfileCell.xib; sourceTree = "<group>"; };
+		993404E01E8383F3009A445F /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		993404E31E83849D009A445F /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		993404EB1E83C3F6009A445F /* NutritionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionViewController.swift; sourceTree = "<group>"; };
+		993404EC1E83C3F6009A445F /* NutritionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutritionViewController.xib; sourceTree = "<group>"; };
+		993404EF1E83C41B009A445F /* AnalysisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
+		993404F01E83C41B009A445F /* AnalysisViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalysisViewController.xib; sourceTree = "<group>"; };
+		993404F31E83C433009A445F /* FitnessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitnessViewController.swift; sourceTree = "<group>"; };
+		993404F41E83C433009A445F /* FitnessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FitnessViewController.xib; sourceTree = "<group>"; };
+		993404F71E83C44E009A445F /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		993404F81E83C44E009A445F /* HistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
+		993404FB1E83C45D009A445F /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		993404FC1E83C45D009A445F /* InformationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InformationViewController.xib; sourceTree = "<group>"; };
+		993404FF1E83C46D009A445F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		993405001E83C46D009A445F /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		99993E8B1E80B7430052372A /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 		99993E8D1E80B7840052372A /* LeftSideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSideViewController.swift; sourceTree = "<group>"; };
 		99BF6F381E77F41500FD743F /* FoodAndFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodAndFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,9 +129,81 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		993404DB1E8382F0009A445F /* UserProfileCell */ = {
+			isa = PBXGroup;
+			children = (
+				993404DC1E838306009A445F /* UserProfileCell.swift */,
+				993404DD1E838306009A445F /* UserProfileCell.xib */,
+			);
+			path = UserProfileCell;
+			sourceTree = "<group>";
+		};
+		993404E21E838481009A445F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				993404E31E83849D009A445F /* View.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		993404E51E83C3A5009A445F /* Analysis */ = {
+			isa = PBXGroup;
+			children = (
+				993404EF1E83C41B009A445F /* AnalysisViewController.swift */,
+				993404F01E83C41B009A445F /* AnalysisViewController.xib */,
+			);
+			path = Analysis;
+			sourceTree = "<group>";
+		};
+		993404E61E83C3AB009A445F /* Fitness */ = {
+			isa = PBXGroup;
+			children = (
+				993404F31E83C433009A445F /* FitnessViewController.swift */,
+				993404F41E83C433009A445F /* FitnessViewController.xib */,
+			);
+			path = Fitness;
+			sourceTree = "<group>";
+		};
+		993404E71E83C3B1009A445F /* History */ = {
+			isa = PBXGroup;
+			children = (
+				993404F71E83C44E009A445F /* HistoryViewController.swift */,
+				993404F81E83C44E009A445F /* HistoryViewController.xib */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		993404E81E83C3B8009A445F /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				993404FB1E83C45D009A445F /* InformationViewController.swift */,
+				993404FC1E83C45D009A445F /* InformationViewController.xib */,
+			);
+			path = Information;
+			sourceTree = "<group>";
+		};
+		993404E91E83C3BD009A445F /* Nutrition */ = {
+			isa = PBXGroup;
+			children = (
+				993404EB1E83C3F6009A445F /* NutritionViewController.swift */,
+				993404EC1E83C3F6009A445F /* NutritionViewController.xib */,
+			);
+			path = Nutrition;
+			sourceTree = "<group>";
+		};
+		993404EA1E83C3C8009A445F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				993404FF1E83C46D009A445F /* ProfileViewController.swift */,
+				993405001E83C46D009A445F /* ProfileViewController.xib */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		99993E8A1E80B7430052372A /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				993404DB1E8382F0009A445F /* UserProfileCell */,
 				99993E8B1E80B7430052372A /* SideMenuController.swift */,
 				99993E8D1E80B7840052372A /* LeftSideViewController.swift */,
 			);
@@ -153,8 +257,14 @@
 		99BF6F4F1E77F67D00FD743F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				993404E51E83C3A5009A445F /* Analysis */,
 				99BF6F501E77F67D00FD743F /* Base */,
+				993404E61E83C3AB009A445F /* Fitness */,
+				993404E71E83C3B1009A445F /* History */,
 				99BF6F541E77F67D00FD743F /* Home */,
+				993404E81E83C3B8009A445F /* Information */,
+				993404E91E83C3BD009A445F /* Nutrition */,
+				993404EA1E83C3C8009A445F /* Profile */,
 				99993E8A1E80B7430052372A /* SideMenu */,
 			);
 			path = Controllers;
@@ -165,6 +275,7 @@
 			children = (
 				99BF6F511E77F67D00FD743F /* BaseViewController.swift */,
 				99BF6F521E77F67D00FD743F /* PopupViewController.swift */,
+				993404E01E8383F3009A445F /* BaseTableViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -243,6 +354,7 @@
 				99BF6F691E77F67D00FD743F /* AccessLibrary */,
 				99BF6F6B1E77F67D00FD743F /* Cocoa */,
 				99BF6F6D1E77F67D00FD743F /* SwiftDate */,
+				993404E21E838481009A445F /* View */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -405,8 +517,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				993404F21E83C41B009A445F /* AnalysisViewController.xib in Resources */,
+				993404DF1E838306009A445F /* UserProfileCell.xib in Resources */,
+				993404F61E83C433009A445F /* FitnessViewController.xib in Resources */,
+				993404FA1E83C44E009A445F /* HistoryViewController.xib in Resources */,
 				99BF6F851E77F67D00FD743F /* HomeViewController.xib in Resources */,
+				993404FE1E83C45D009A445F /* InformationViewController.xib in Resources */,
 				99BF6F951E77F67D00FD743F /* Assets.xcassets in Resources */,
+				993404EE1E83C3F6009A445F /* NutritionViewController.xib in Resources */,
+				993405021E83C46D009A445F /* ProfileViewController.xib in Resources */,
 				99BF6F8F1E77F67D00FD743F /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,28 +613,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				993404F91E83C44E009A445F /* HistoryViewController.swift in Sources */,
 				99993E8E1E80B7840052372A /* LeftSideViewController.swift in Sources */,
 				99BF6F8E1E77F67D00FD743F /* UIViewController.swift in Sources */,
 				99BF6F841E77F67D00FD743F /* HomeViewController.swift in Sources */,
 				99BF6F891E77F67D00FD743F /* Colors.swift in Sources */,
 				99BF6F981E77F67D00FD743F /* RequestSerializer.swift in Sources */,
+				993404F51E83C433009A445F /* FitnessViewController.swift in Sources */,
 				99993E8C1E80B7430052372A /* SideMenuController.swift in Sources */,
 				99BF6F861E77F67D00FD743F /* PaddingTextField.swift in Sources */,
 				99BF6F801E77F67D00FD743F /* AppDelegate.swift in Sources */,
 				99BF6F811E77F67D00FD743F /* BaseViewController.swift in Sources */,
 				99BF6F901E77F67D00FD743F /* AccessLibraryManager.swift in Sources */,
+				993405011E83C46D009A445F /* ProfileViewController.swift in Sources */,
 				99BF6F8A1E77F67D00FD743F /* Config.swift in Sources */,
 				99BF6F911E77F67D00FD743F /* Cocoa.swift in Sources */,
 				99BF6F821E77F67D00FD743F /* PopupViewController.swift in Sources */,
 				99BF6F991E77F67D00FD743F /* ResponseSerializer.swift in Sources */,
+				993404F11E83C41B009A445F /* AnalysisViewController.swift in Sources */,
 				99BF6F941E77F67D00FD743F /* UserProfile.swift in Sources */,
 				99BF6F961E77F67D00FD743F /* ApiMananger.swift in Sources */,
+				993404E11E8383F3009A445F /* BaseTableViewCell.swift in Sources */,
 				99BF6F931E77F67D00FD743F /* User.swift in Sources */,
 				99BF6F921E77F67D00FD743F /* SwiftDate.swift in Sources */,
 				99BF6F9A1E77F67D00FD743F /* Session.swift in Sources */,
 				99BF6F8C1E77F67D00FD743F /* Strings.swift in Sources */,
 				99BF6F971E77F67D00FD743F /* Error.swift in Sources */,
+				993404E41E83849D009A445F /* View.swift in Sources */,
 				99BF6F881E77F67D00FD743F /* ApiPath.swift in Sources */,
+				993404DE1E838306009A445F /* UserProfileCell.swift in Sources */,
+				993404ED1E83C3F6009A445F /* NutritionViewController.swift in Sources */,
+				993404FD1E83C45D009A445F /* InformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,6 +750,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/FoodAndFitness/Supports/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = com.suhv.datn.FoodAndFitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -638,6 +767,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/FoodAndFitness/Supports/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = com.suhv.datn.FoodAndFitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
