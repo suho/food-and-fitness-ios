@@ -14,7 +14,7 @@ def app_pods
     # UI
     pod 'SVProgressHUD',        '~> 2.1.2'
     pod 'PureLayout',           '~> 3.0.2'
-    pod 'TPKeyboardAvoiding' ,  '~> 1.3'
+    pod 'IQKeyboardManagerSwift', '~> 4.0.8'
     pod 'LGSideMenuController', '~> 2.0.5'
 
     # Security
