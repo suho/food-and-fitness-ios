@@ -9,6 +9,10 @@
 import UIKit
 import SwiftUtils
 
+protocol LeftSideViewControllerDelegate: NSObjectProtocol {
+    func viewController(_ viewController: LeftSideViewController, needsPerformAction action: LeftSideViewController.SideMenu)
+}
+
 class LeftSideViewController: UITableViewController {
 
     enum SideMenu: Int {
@@ -66,6 +70,8 @@ class LeftSideViewController: UITableViewController {
             }
         }
     }
+
+    weak var delegate: LeftSideViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,5 +117,12 @@ extension LeftSideViewController {
             fatalError("Wrong Index Of Enum")
         }
         return sideMenu.heightForRow
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let sideMenu = SideMenu(rawValue: indexPath.row) else {
+            fatalError("Wrong Index Of Enum")
+        }
+        delegate?.viewController(self, needsPerformAction: sideMenu)
     }
 }

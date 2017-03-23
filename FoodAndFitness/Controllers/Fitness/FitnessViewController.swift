@@ -8,5 +8,5 @@
 
 import UIKit
 
-class FitnessViewController: BaseViewController {
+class FitnessViewController: RootSideMenuViewController {
 }

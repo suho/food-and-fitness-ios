@@ -8,5 +8,5 @@
 
 import UIKit
 
-class ProfileViewController: BaseViewController {
+class ProfileViewController: RootSideMenuViewController {
 }

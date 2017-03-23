@@ -57,22 +57,11 @@ class BaseViewController: ViewController {
     func loadData() {
         guard isViewFirstAppear else { return }
     }
-
-    func showLeftView(sender: Any?) {
-        sideMenuViewController.showLeftView(animated: true, completionHandler: nil)
-    }
 }
 
 // MARK: - Action
 extension BaseViewController {
     dynamic func back(sender: AnyObject?) {
         _ = navigationController?.popViewController(animated: true)
-    }
-
-    var sideMenuViewController: SideMenuController {
-        guard let sideMenuController = AppDelegate.shared.window?.rootViewController as? SideMenuController else {
-            fatalError("Miss SideMenu")
-        }
-        return sideMenuController
     }
 }

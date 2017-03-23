@@ -27,16 +27,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let homeController = HomeViewController()
-        let navi = UINavigationController(rootViewController: homeController)
-        let sideMenuController = SideMenuController()
-        sideMenuController.rootViewController = navi
-        sideMenuController.setup(.slideAbove)
+        gotoHome()
         if let window = window {
-            window.rootViewController = sideMenuController
             window.backgroundColor = .white
             window.makeKeyAndVisible()
         }
         return true
+    }
+
+    func gotoHome() {
+        let nutritionController = UINavigationController(rootViewController: NutritionViewController())
+        let sideMenuController = SideMenuController()
+        sideMenuController.rootViewController = nutritionController
+        sideMenuController.setup(.slideAbove)
+        window?.rootViewController = sideMenuController
     }
 }

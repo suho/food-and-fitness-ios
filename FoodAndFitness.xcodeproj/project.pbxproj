@@ -24,6 +24,7 @@
 		993404FE1E83C45D009A445F /* InformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 993404FC1E83C45D009A445F /* InformationViewController.xib */; };
 		993405011E83C46D009A445F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993404FF1E83C46D009A445F /* ProfileViewController.swift */; };
 		993405021E83C46D009A445F /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 993405001E83C46D009A445F /* ProfileViewController.xib */; };
+		993405041E83C58F009A445F /* RootSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993405031E83C58F009A445F /* RootSideMenuViewController.swift */; };
 		99993E8C1E80B7430052372A /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99993E8B1E80B7430052372A /* SideMenuController.swift */; };
 		99993E8E1E80B7840052372A /* LeftSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99993E8D1E80B7840052372A /* LeftSideViewController.swift */; };
 		99BF6F801E77F67D00FD743F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F4E1E77F67D00FD743F /* AppDelegate.swift */; };
@@ -71,6 +72,7 @@
 		993404FC1E83C45D009A445F /* InformationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InformationViewController.xib; sourceTree = "<group>"; };
 		993404FF1E83C46D009A445F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		993405001E83C46D009A445F /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		993405031E83C58F009A445F /* RootSideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootSideMenuViewController.swift; sourceTree = "<group>"; };
 		99993E8B1E80B7430052372A /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 		99993E8D1E80B7840052372A /* LeftSideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSideViewController.swift; sourceTree = "<group>"; };
 		99BF6F381E77F41500FD743F /* FoodAndFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodAndFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -276,6 +278,7 @@
 				99BF6F511E77F67D00FD743F /* BaseViewController.swift */,
 				99BF6F521E77F67D00FD743F /* PopupViewController.swift */,
 				993404E01E8383F3009A445F /* BaseTableViewCell.swift */,
+				993405031E83C58F009A445F /* RootSideMenuViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 				99BF6F8A1E77F67D00FD743F /* Config.swift in Sources */,
 				99BF6F911E77F67D00FD743F /* Cocoa.swift in Sources */,
 				99BF6F821E77F67D00FD743F /* PopupViewController.swift in Sources */,
+				993405041E83C58F009A445F /* RootSideMenuViewController.swift in Sources */,
 				99BF6F991E77F67D00FD743F /* ResponseSerializer.swift in Sources */,
 				993404F11E83C41B009A445F /* AnalysisViewController.swift in Sources */,
 				99BF6F941E77F67D00FD743F /* UserProfile.swift in Sources */,

@@ -8,5 +8,5 @@
 
 import UIKit
 
-class NutritionViewController: BaseViewController {
+class NutritionViewController: RootSideMenuViewController {
 }

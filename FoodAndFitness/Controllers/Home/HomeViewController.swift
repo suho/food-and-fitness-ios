@@ -8,11 +8,4 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController {
-
-    override func setupUI() {
-        super.setupUI()
-        // WARN: - ForTest
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_menu"), style: .plain, target: self, action: #selector(showLeftView(sender:)))
-    }
-}
+class HomeViewController: RootSideMenuViewController {}

@@ -8,5 +8,5 @@
 
 import UIKit
 
-class AnalysisViewController: BaseViewController {
+class AnalysisViewController: RootSideMenuViewController {
 }

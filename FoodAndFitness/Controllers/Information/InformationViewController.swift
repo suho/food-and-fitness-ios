@@ -8,5 +8,5 @@
 
 import UIKit
 
-class InformationViewController: BaseViewController {
+class InformationViewController: RootSideMenuViewController {
 }

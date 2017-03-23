@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HistoryViewController: BaseViewController {
+class HistoryViewController: RootSideMenuViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
