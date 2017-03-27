@@ -16,6 +16,8 @@ def app_pods
     pod 'PureLayout',           '~> 3.0.2'
     pod 'TPKeyboardAvoiding' ,  '~> 1.3'
     pod 'LGSideMenuController', '~> 2.0.5'
+    pod 'Charts', '~> 3.0.1'
+    pod 'UICircularProgressRing', '~> 1.4.2'
 
     # Security
     pod 'SAMKeychain', '~> 1.5.1'
