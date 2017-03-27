@@ -10,60 +10,70 @@ import SwiftDate
 import SwiftUtils
 
 enum FFDateFormat {
-    case Full
+    /// yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
+    case full
     /// yyyy-MM-dd
-    case Date
+    case date
     /// yyyy/M/d
-    case DateShort
+    case dateShort
     /// yyyy-MM-dd hh:mm:ss
-    case DateTime
+    case dateTime
     /// M/d
-    case MonthDay
+    case monthDay
     /// EEE
-    case Weekday
+    case weekday
     /// hh:mm:ss
-    case Time
+    case time
     /// hh:mm
-    case HourMinute
+    case hourMinute
     /// yyyy.M.d H:mm
-    case DateTime2
+    case dateTime2
 
     var dateFormat: DateFormat {
         switch self {
-        case .Full:
+        case .full:
             return .custom("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
-        case .Date:
+        case .date:
             return .custom("yyyy-MM-dd")
-        case .DateShort:
+        case .dateShort:
             return .custom("yyyy/M/d")
-        case .DateTime:
+        case .dateTime:
             return .custom("yyyy-MM-dd HH:mm:ss")
-        case .MonthDay:
-            return .custom("M/d")
-        case .Weekday:
-            return .custom("EEE")
-        case .Time:
-            return .custom("HH:mm:ss")
-        case .HourMinute:
-            return .custom("HH:mm")
-        case .DateTime2:
+        case .dateTime2:
             return .custom("yyyy.M.d H:mm")
+        case .monthDay:
+            return .custom("M/d")
+        case .weekday:
+            return .custom("EEE")
+        case .time:
+            return .custom("HH:mm:ss")
+        case .hourMinute:
+            return .custom("HH:mm")
         }
     }
 }
 
 // MARK: - DateInRegion
 extension DateInRegion {
-    func toString(format: FFDateFormat) -> String! {
+    func toString(format: FFDateFormat) -> String {
         return string(format: format.dateFormat)
+    }
+
+    func ffDate(format: FFDateFormat = .date) -> DateInRegion {
+        let dateString = self.toString(format: format)
+        do {
+            return try DateInRegion(string: dateString, format: format.dateFormat)
+        } catch {
+            fatalError(error.localizedDescription)
+        }
     }
 }
 
 // MARK: - String to Date
 extension String {
-    func toDate(format: FFDateFormat, region: Region = App.region) -> DateInRegion {
+    func toDate(format: FFDateFormat) -> DateInRegion {
         do {
-            return try DateInRegion(string: self, format: format.dateFormat, fromRegion: region)
+            return try DateInRegion(string: self, format: format.dateFormat)
         } catch {
             fatalError(error.localizedDescription)
         }

@@ -15,10 +15,10 @@ import SwiftyJSON
 
 extension Request {
     static func responseJSONSerializer(
-        log: Bool = true,
-        response: HTTPURLResponse?,
-        data: Data?,
-        error: Error?) -> Result<Any> {
+                                       log: Bool = true,
+                                       response: HTTPURLResponse?,
+                                       data: Data?,
+                                       error: Error?) -> Result<Any> {
         guard let response = response else {
             return .failure(NSError(status: .noResponse))
         }
@@ -186,26 +186,24 @@ extension Result {
 // MARK: Data Transform
 class DataTransform {
     static let date = TransformOf<Date, String>(
-        fromJSON: { (string: String?) -> Date in
-            if let result = string?.toDate(format: .Full, region: App.region).absoluteDate {
-                return result
-            }
-            return Foundation.Date.null
-    },
-        toJSON: { (date: Date?) -> String? in
-            return date?.inRegion(region: App.region).toString(format: .Date)
+                                                fromJSON: { (string: String?) -> Date in
+        if let result = string?.toDate(format: .full).absoluteDate {
+            return result
+        }
+        return Foundation.Date.null
+    }, toJSON: { (date: Date?) -> String? in
+        return date?.ffDate(format: .date).toString(format: .date)
     }
     )
 
     static let dateTime = TransformOf<Date, String>(
-        fromJSON: { (string: String?) -> Date? in
-            if let result = string?.toDate(format: .DateTime, region: App.region).absoluteDate {
-                return result
-            }
-            return Foundation.Date.null
-    },
-        toJSON: { (date: Date?) -> String? in
-            return date?.inRegion(region: App.region).toString(format: .DateTime)
+                                                    fromJSON: { (string: String?) -> Date? in
+        if let result = string?.toDate(format: .dateTime).absoluteDate {
+            return result
+        }
+        return Foundation.Date.null
+    }, toJSON: { (date: Date?) -> String? in
+        return date?.ffDate(format: .dateTime).toString(format: .dateTime)
     }
     )
 }

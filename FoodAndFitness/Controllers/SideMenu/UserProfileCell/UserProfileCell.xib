@@ -35,7 +35,6 @@
                             <constraint firstAttribute="bottom" secondItem="3bk-Uf-7ao" secondAttribute="bottom" id="mPN-JE-2K7"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="NO"/>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="-1"/>

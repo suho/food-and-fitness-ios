@@ -57,6 +57,7 @@
 		99BF6F981E77F67D00FD743F /* RequestSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F7B1E77F67D00FD743F /* RequestSerializer.swift */; };
 		99BF6F991E77F67D00FD743F /* ResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F7C1E77F67D00FD743F /* ResponseSerializer.swift */; };
 		99BF6F9A1E77F67D00FD743F /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F7D1E77F67D00FD743F /* Session.swift */; };
+		99E80FF61E88FC3C0093F0BF /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E80FF51E88FC3C0093F0BF /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +115,7 @@
 		99BF6F7C1E77F67D00FD743F /* ResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerializer.swift; sourceTree = "<group>"; };
 		99BF6F7D1E77F67D00FD743F /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		99BF6F7F1E77F67D00FD743F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99E80FF51E88FC3C0093F0BF /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -392,6 +394,7 @@
 			children = (
 				99BF6F651E77F67D00FD743F /* UIViewController.swift */,
 				99AEA1791E87A9B2000DA06F /* UIView.swift */,
+				99E80FF51E88FC3C0093F0BF /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -703,6 +706,7 @@
 				99BF6F8C1E77F67D00FD743F /* Strings.swift in Sources */,
 				99BF6F971E77F67D00FD743F /* Error.swift in Sources */,
 				993404E41E83849D009A445F /* View.swift in Sources */,
+				99E80FF61E88FC3C0093F0BF /* Date.swift in Sources */,
 				99AEA1861E87B99B000DA06F /* AddNutritionViewController.swift in Sources */,
 				99BF6F881E77F67D00FD743F /* ApiPath.swift in Sources */,
 				993404DE1E838306009A445F /* UserProfileCell.swift in Sources */,

@@ -14,7 +14,6 @@ import SwiftDate
 final class App {
     static let name = "FoodAndFitness"
     static let code = "FF"
-    static let region = Region(tz: TimeZoneName.asiaBangkok, cal: CalendarName.gregorian, loc: LocaleName.vietnamese)
 }
 
 class Key {
