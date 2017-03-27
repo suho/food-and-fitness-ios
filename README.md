@@ -1,5 +1,4 @@
-# FoodAndFitness
-DUT's Project
+# FoodAndFitness - DUT's Project
 
 [![Build Status](https://travis-ci.org/hovansuit/FoodAndFitness.svg?branch=master)](https://travis-ci.org/hovansuit/FoodAndFitness)
 
@@ -12,10 +11,6 @@ DUT's Project
 - [rbenv](https://github.com/rbenv/rbenv) & necessary gems
 - [CocoaPods](https://cocoapods.org/) & project's dependences
 > Please use command `bundle exec pod install` instead of `pod install` to update `Pods`.
-
-## Distribution
-
-- [Gym](https://github.com/fastlane/fastlane/tree/master/gym)
 
 ## Coding Convension
 

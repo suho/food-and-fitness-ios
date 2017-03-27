@@ -18,14 +18,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    class var shared: AppDelegate {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            fatalError("Index Is Invalid")
+        }
+        return appDelegate
+    }
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let homeViewController = HomeViewController()
+        gotoHome()
         if let window = window {
-            window.rootViewController = homeViewController
             window.backgroundColor = .white
             window.makeKeyAndVisible()
         }
         return true
+    }
+
+    func gotoHome() {
+        let homeController = UINavigationController(rootViewController: HomeViewController())
+        let sideMenuController = SideMenuController()
+        sideMenuController.rootViewController = homeController
+        sideMenuController.setup(.slideBelow)
+        window?.rootViewController = sideMenuController
     }
 }

@@ -1,12 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="FoodAndFitness" customModuleProvider="target">
             <connections>
+                <outlet property="contentView" destination="Rcl-r1-7jy" id="v9t-Xe-4Nf"/>
+                <outlet property="fitnessButton" destination="U9F-Yq-hWd" id="1C9-yg-Wi2"/>
+                <outlet property="nutritionButton" destination="64Q-AU-2Hv" id="HSV-fL-xL3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +20,64 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rcl-r1-7jy">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qVF-Py-kdg">
+                    <rect key="frame" x="0.0" y="603" width="375" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64Q-AU-2Hv">
+                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="64"/>
+                            <state key="normal" title="Nutrition"/>
+                            <connections>
+                                <action selector="nutritionTabClicked:" destination="-1" eventType="touchUpInside" id="0IS-vV-7qP"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9F-Yq-hWd">
+                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="64"/>
+                            <state key="normal" title="Fitness"/>
+                            <connections>
+                                <action selector="fitnessTabClicked:" destination="-1" eventType="touchUpInside" id="onu-qZ-O4w"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="U9F-Yq-hWd" secondAttribute="bottom" id="B1A-rT-lG0"/>
+                        <constraint firstItem="64Q-AU-2Hv" firstAttribute="centerY" secondItem="qVF-Py-kdg" secondAttribute="centerY" id="IK2-gt-PTN"/>
+                        <constraint firstItem="U9F-Yq-hWd" firstAttribute="centerY" secondItem="qVF-Py-kdg" secondAttribute="centerY" id="Llr-Y5-W7V"/>
+                        <constraint firstItem="U9F-Yq-hWd" firstAttribute="leading" secondItem="64Q-AU-2Hv" secondAttribute="trailing" id="OIH-X9-cMb"/>
+                        <constraint firstAttribute="height" constant="64" id="RiL-SG-zYp"/>
+                        <constraint firstAttribute="trailing" secondItem="U9F-Yq-hWd" secondAttribute="trailing" id="Srj-fE-lsq"/>
+                        <constraint firstItem="U9F-Yq-hWd" firstAttribute="width" secondItem="64Q-AU-2Hv" secondAttribute="width" id="YZT-6x-Qnd"/>
+                        <constraint firstItem="U9F-Yq-hWd" firstAttribute="top" secondItem="qVF-Py-kdg" secondAttribute="top" id="a1g-5q-GiL"/>
+                        <constraint firstAttribute="bottom" secondItem="64Q-AU-2Hv" secondAttribute="bottom" id="aO5-rw-JMo"/>
+                        <constraint firstItem="64Q-AU-2Hv" firstAttribute="leading" secondItem="qVF-Py-kdg" secondAttribute="leading" id="dRd-64-6J7"/>
+                        <constraint firstItem="64Q-AU-2Hv" firstAttribute="top" secondItem="qVF-Py-kdg" secondAttribute="top" id="jXa-aY-peU"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zWX-tI-Hc7">
+                    <rect key="frame" x="164" y="573" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="showAddMenu:" destination="-1" eventType="touchUpInside" id="bZF-qf-Erj"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Rcl-r1-7jy" secondAttribute="trailing" id="EBT-7q-7rQ"/>
+                <constraint firstItem="qVF-Py-kdg" firstAttribute="top" secondItem="Rcl-r1-7jy" secondAttribute="bottom" id="JnO-BD-Ogj"/>
+                <constraint firstAttribute="trailing" secondItem="qVF-Py-kdg" secondAttribute="trailing" id="fgm-2g-rQC"/>
+                <constraint firstItem="Rcl-r1-7jy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="geB-BR-ueB"/>
+                <constraint firstItem="zWX-tI-Hc7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gpJ-lL-Ojk"/>
+                <constraint firstAttribute="bottom" secondItem="qVF-Py-kdg" secondAttribute="bottom" id="j4Q-Ei-nsa"/>
+                <constraint firstItem="Rcl-r1-7jy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uzl-na-QI1"/>
+                <constraint firstAttribute="bottom" secondItem="zWX-tI-Hc7" secondAttribute="bottom" constant="64" id="xj1-MW-9Zd"/>
+                <constraint firstItem="qVF-Py-kdg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yUr-DZ-S73"/>
+            </constraints>
+            <point key="canvasLocation" x="-1237" y="57"/>
         </view>
     </objects>
 </document>
