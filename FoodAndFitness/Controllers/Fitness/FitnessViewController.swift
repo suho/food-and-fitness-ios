@@ -8,5 +8,9 @@
 
 import UIKit
 
-class FitnessViewController: RootSideMenuViewController {
+class FitnessViewController: BaseViewController {
+
+    override var isNavigationBarHidden: Bool {
+        return true
+    }
 }

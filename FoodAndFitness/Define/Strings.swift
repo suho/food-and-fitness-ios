@@ -31,6 +31,7 @@ class Strings {
     static let kilocalories = "kcal"
     static let backNavi = "Back"
     static let next = "Next"
+    static let nutritionAndFitness = "Nutrition And Fitness"
     static let nutrition = "Nutrition"
     static let fitness = "Fitness"
     static let history = "History"

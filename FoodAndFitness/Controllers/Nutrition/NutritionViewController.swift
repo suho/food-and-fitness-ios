@@ -8,5 +8,8 @@
 
 import UIKit
 
-class NutritionViewController: RootSideMenuViewController {
+class NutritionViewController: BaseViewController {
+    override var isNavigationBarHidden: Bool {
+        return true
+    }
 }

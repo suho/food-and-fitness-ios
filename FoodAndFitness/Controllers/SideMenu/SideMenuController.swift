@@ -14,7 +14,7 @@ class SideMenuController: LGSideMenuController {
 
     static let shared = SideMenuController()
     private var leftSideViewController = LeftSideViewController()
-    fileprivate(set) var currentSideMenu: LeftSideViewController.SideMenu = .nutrition
+    fileprivate(set) var currentSideMenu: LeftSideViewController.SideMenu = .home
 
     override func leftViewWillLayoutSubviews(with size: CGSize) {
         super.leftViewWillLayoutSubviews(with: size)
@@ -37,12 +37,9 @@ extension SideMenuController: LeftSideViewControllerDelegate {
         }
         switch action {
         case .profile: return
-        case .nutrition:
-            let nutritionController = UINavigationController(rootViewController: NutritionViewController())
-            self.rootViewController = nutritionController
-        case .fitness:
-            let fitnessController = UINavigationController(rootViewController: FitnessViewController())
-            self.rootViewController = fitnessController
+        case .home:
+            let homeController = UINavigationController(rootViewController: HomeViewController())
+            self.rootViewController = homeController
         case .history:
             let historyController = UINavigationController(rootViewController: HistoryViewController())
             self.rootViewController = historyController

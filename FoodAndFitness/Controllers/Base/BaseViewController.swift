@@ -13,6 +13,10 @@ class BaseViewController: ViewController {
 
     var isVisible = false
 
+    var isNavigationBarHidden: Bool {
+        return false
+    }
+
     override required init(nibName: String?, bundle: Bundle?) {
         super.init(nibName: nibName, bundle: bundle)
     }
@@ -27,6 +31,7 @@ class BaseViewController: ViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = isNavigationBarHidden
         navigationController?.navigationBar.isTranslucent = false
         navigationItem.backBarButtonItem = UIBarButtonItem(title: Strings.backNavi, style: .plain, target: self, action: nil)
         setupData()

@@ -36,10 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func gotoHome() {
-        let nutritionController = UINavigationController(rootViewController: NutritionViewController())
+        let homeController = UINavigationController(rootViewController: HomeViewController())
         let sideMenuController = SideMenuController()
-        sideMenuController.rootViewController = nutritionController
-        sideMenuController.setup(.slideAbove)
+        sideMenuController.rootViewController = homeController
+        sideMenuController.setup(.slideBelow)
         window?.rootViewController = sideMenuController
     }
 }

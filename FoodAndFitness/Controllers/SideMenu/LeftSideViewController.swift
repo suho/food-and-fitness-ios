@@ -17,8 +17,7 @@ class LeftSideViewController: UITableViewController {
 
     enum SideMenu: Int {
         case profile
-        case nutrition
-        case fitness
+        case home
         case history
         case analysis
         case information
@@ -31,10 +30,8 @@ class LeftSideViewController: UITableViewController {
             switch self {
             case .profile:
                 return Strings.empty
-            case .nutrition:
-                return Strings.nutrition
-            case .fitness:
-                return Strings.fitness
+            case .home:
+                return Strings.nutritionAndFitness
             case .history:
                 return Strings.history
             case .analysis:
@@ -57,10 +54,8 @@ class LeftSideViewController: UITableViewController {
             switch self {
             case .profile:
                 fatalError("Don't Need Image")
-            case .nutrition:
-                return #imageLiteral(resourceName: "ic_nutrition")
-            case .fitness:
-                return #imageLiteral(resourceName: "ic_fitness")
+            case .home:
+                return #imageLiteral(resourceName: "ic_home")
             case .history:
                 return #imageLiteral(resourceName: "ic_history")
             case .analysis:
@@ -105,6 +100,7 @@ extension LeftSideViewController {
             let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
             cell.textLabel?.text = sideMenu.title
             cell.imageView?.image = sideMenu.deselectedImage
+            cell.selectionStyle = .none
             return cell
         }
     }
