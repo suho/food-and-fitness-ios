@@ -3,6 +3,7 @@ PODS:
   - Charts (3.0.1):
     - Charts/Core (= 3.0.1)
   - Charts/Core (3.0.1)
+  - CVCalendar (1.5.0)
   - IQKeyboardManagerSwift (4.0.8)
   - LGSideMenuController (2.0.5)
   - MWFeedParser/NSString+HTML (1.0.1)
@@ -28,6 +29,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.3.0)
   - Charts (~> 3.0.1)
+  - CVCalendar (~> 1.5.0)
   - IQKeyboardManagerSwift (~> 4.0.8)
   - LGSideMenuController (~> 2.0.5)
   - MWFeedParser/NSString+HTML (~> 1.0.1)
@@ -45,6 +47,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
+  CVCalendar: 5d51a7bda1b9439b612de69d86a91a73befa1936
   IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
   LGSideMenuController: 3cc82025a53b672926d3ffb3f428f4f3e15e3349
   MWFeedParser: 2cf646014c1baf6ad1b08c480b40a08180079247
@@ -62,6 +65,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   UICircularProgressRing: 853758575ad09229a41f20da137faaeae8b2f1b9
 
-PODFILE CHECKSUM: c0e1b1b0ecc560e180720963998784ea40013777
+PODFILE CHECKSUM: 1a2c53f69874e3a91fc5c8bd6e0098914c56715c
 
 COCOAPODS: 1.2.0

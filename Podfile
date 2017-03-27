@@ -18,6 +18,7 @@ def app_pods
     pod 'LGSideMenuController', '~> 2.0.5'
     pod 'Charts', '~> 3.0.1'
     pod 'UICircularProgressRing', '~> 1.4.2'
+    pod 'CVCalendar', '~> 1.5.0'
 
     # Security
     pod 'SAMKeychain', '~> 1.5.1'
