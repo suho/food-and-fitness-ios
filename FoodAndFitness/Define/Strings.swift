@@ -31,7 +31,14 @@ class Strings {
     static let kilocalories = "kcal"
     static let backNavi = "Back"
     static let next = "Next"
-    
+    static let nutritionAndFitness = "Nutrition And Fitness"
+    static let nutrition = "Nutrition"
+    static let fitness = "Fitness"
+    static let history = "History"
+    static let analysis = "Analysis"
+    static let information = "Information"
+    static let empty = ""
+
     struct Errors {
         // MARK: - Error messages
         static let inputNotValidate = "Input not validate."
