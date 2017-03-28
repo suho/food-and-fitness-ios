@@ -53,6 +53,7 @@ class HomeViewController: RootSideMenuViewController {
             pageController.setViewControllers([fitnessController], direction: .forward, animated: true, completion: nil)
         }
     }
+
     @IBAction fileprivate func showAddMenu(_ sender: Any) {
         let addMenuController = AddMenuViewController()
         addMenuController.delegate = self
