@@ -12,7 +12,7 @@ import SwiftDate
 
 class HistoryViewController: RootSideMenuViewController {
     @IBOutlet fileprivate weak var calendar: FSCalendar!
-    var currentDate: DateInRegion?
+    var currentCell: FSCalendarCell?
 
     override func setupUI() {
         super.setupUI()
@@ -25,21 +25,28 @@ class HistoryViewController: RootSideMenuViewController {
         calendar.delegate = self
         calendar.dataSource = self
     }
+
+    @IBAction func test(_ sender: Any) {
+        if let numberOfEvents = currentCell?.numberOfEvents, numberOfEvents > 0 {
+            print("go go go")
+        }
+    }
 }
 
 // MARK: - FSCalendarDataSource
 extension HistoryViewController: FSCalendarDataSource {
-    func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {
-        if (DateInRegion() + 1.day).ffDate() == date.ffDate() {
-            return "😍"
+
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        if date.ffDate().day % 4 == 0 {
+            return 1
         }
-        return nil
+        return 0
     }
 }
 
 // MARK: - FSCalendarDelegate
 extension HistoryViewController: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        currentDate = date.ffDate()
+        currentCell = calendar.cell(for: date, at: .current)
     }
 }
