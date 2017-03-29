@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftUtils
 
 @IBDesignable
 class View: UIView {

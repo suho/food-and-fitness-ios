@@ -17,7 +17,6 @@ def app_pods
     pod 'IQKeyboardManagerSwift',       '~> 4.0.8'
     pod 'LGSideMenuController',         '~> 2.0.5'
     pod 'Charts',                       '~> 3.0.1'
-    pod 'UICircularProgressRing',       '~> 1.4.2'
     pod 'FSCalendar',                   '~> 2.7.4'
 
     # Security
