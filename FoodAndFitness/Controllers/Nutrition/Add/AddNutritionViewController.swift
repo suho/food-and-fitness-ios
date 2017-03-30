@@ -8,5 +8,5 @@
 
 import UIKit
 
-class AddNutritionViewController: BaseViewController {
+final class AddNutritionViewController: BaseViewController {
 }

@@ -12,7 +12,7 @@ protocol AddMenuViewControllerDelegate: NSObjectProtocol {
     func viewController(_ viewController: AddMenuViewController, needsPerformAction action: AddMenuViewController.Action)
 }
 
-class AddMenuViewController: PopupViewController {
+final class AddMenuViewController: PopupViewController {
 
     weak var delegate: AddMenuViewControllerDelegate?
 

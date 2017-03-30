@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NutritionHistoryController: BaseViewController {
+final class NutritionHistoryController: BaseViewController {
     override var isNavigationBarHidden: Bool {
         return true
     }

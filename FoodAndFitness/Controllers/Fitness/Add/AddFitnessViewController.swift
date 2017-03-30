@@ -8,5 +8,5 @@
 
 import UIKit
 
-class AddFitnessViewController: BaseViewController {
+final class AddFitnessViewController: BaseViewController {
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NutritionProgressView: UIView {
+final class NutritionProgressView: UIView {
     @IBOutlet fileprivate(set) weak var progressView: CircleProgressView!
 
     func setup(_ value: CGFloat, duration: CFTimeInterval) {

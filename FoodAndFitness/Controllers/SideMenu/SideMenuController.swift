@@ -10,7 +10,7 @@ import Foundation
 import LGSideMenuController
 import SwiftUtils
 
-class SideMenuController: LGSideMenuController {
+final class SideMenuController: LGSideMenuController {
 
     static let shared = SideMenuController()
     private var leftSideViewController = LeftSideViewController()

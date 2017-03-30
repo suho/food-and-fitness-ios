@@ -10,7 +10,7 @@ import UIKit
 import FSCalendar
 import SwiftDate
 
-class HistoryViewController: RootSideMenuViewController {
+final class HistoryViewController: RootSideMenuViewController {
     @IBOutlet fileprivate weak var calendar: FSCalendar!
     var currentCell: FSCalendarCell?
 

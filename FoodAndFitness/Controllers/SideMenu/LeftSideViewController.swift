@@ -13,7 +13,7 @@ protocol LeftSideViewControllerDelegate: NSObjectProtocol {
     func viewController(_ viewController: LeftSideViewController, needsPerformAction action: LeftSideViewController.SideMenu)
 }
 
-class LeftSideViewController: UITableViewController {
+final class LeftSideViewController: UITableViewController {
 
     enum SideMenu: Int {
         case profile

@@ -9,7 +9,7 @@
 import UIKit
 import SwiftUtils
 
-class NutritionViewController: BaseViewController {
+final class NutritionViewController: BaseViewController {
     @IBOutlet fileprivate weak var tableView: UITableView!
     // MARK: - Cycle Life
     override var isNavigationBarHidden: Bool {

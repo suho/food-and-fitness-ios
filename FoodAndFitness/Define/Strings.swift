@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Strings {
+final class Strings {
 
     // MARK: - Keyboard
     static let height = "Height"

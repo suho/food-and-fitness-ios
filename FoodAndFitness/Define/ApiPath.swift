@@ -14,7 +14,7 @@ private protocol URLStringConvertible {
     var URLString: String { get }
 }
 
-class ApiPath {
+final class ApiPath {
 
     static var baseURL = "https://apis-ssl.unit-hosting.com/FoodAndFitness/develop/api/v1"
     static var googleMapURL = "https://maps.googleapis.com/maps/api/"

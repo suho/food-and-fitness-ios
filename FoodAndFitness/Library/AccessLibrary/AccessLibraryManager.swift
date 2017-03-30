@@ -19,7 +19,7 @@ protocol AccessLibraryManagerDelegate: NSObjectProtocol {
 
 private var manager: AccessLibraryManager! = nil
 
-class AccessLibraryManager: NSObject {
+final class AccessLibraryManager: NSObject {
 
     weak var delegate: AccessLibraryManagerDelegate?
     fileprivate var type: AccessLibraryType = .camera

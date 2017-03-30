@@ -9,7 +9,7 @@
 import UIKit
 import PureLayout
 
-class HomeViewController: RootSideMenuViewController {
+final class HomeViewController: RootSideMenuViewController {
     @IBOutlet fileprivate weak var contentView: UIView!
     @IBOutlet fileprivate weak var nutritionButton: UIButton!
     @IBOutlet fileprivate weak var fitnessButton: UIButton!

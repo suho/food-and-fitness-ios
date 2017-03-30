@@ -16,7 +16,7 @@ final class App {
     static let code = "FF"
 }
 
-class Key {
+final class Key {
     static let appVersion = "AppVersion"
     static let appBuild = "AppBuild"
     static let apiPathBaseURL = "ApiPathBaseURL"
@@ -28,7 +28,7 @@ class Key {
     static let client = "client"
 }
 
-class Google {
+final class Google {
     static let apiKey = "AIzaSyBOOPbUYQMHXrSbgmSeeJBdm-pr7nGrEpc"
 }
 

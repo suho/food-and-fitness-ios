@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FitnessAnalysisController: BaseViewController {
+final class FitnessAnalysisController: BaseViewController {
     override var isNavigationBarHidden: Bool {
         return true
     }
