@@ -14,30 +14,31 @@ import RealmS
 
 typealias JSObject = [String: Any]
 typealias JSArray = [JSObject]
-typealias Completion = (Result<Any>) -> Void
+typealias Completion = (Result<JSObject>) -> Void
 
 let api: ApiManager = ApiManager()
 
-class ApiManager {
+final class ApiManager {
     let session = Session()
 
     var defaultHTTPHeaders: [String: String] {
         var headers: [String: String] = [:]
-        if let headerToken = session.headerToken {
-            headers["access-token"] = headerToken.accessToken
-            headers["client"] = headerToken.clientId
-            headers["uid"] = headerToken.uid
+        if let token = session.token {
+            headers.updateValues(token.values)
         }
-
         return headers
     }
-    
-    /// Invalidate Realm and delete all objects.
+
     private func cleanDatabase() {
         let realm = RealmS()
         realm.write {
             realm.deleteAll()
         }
         logger.info("Database cleaned!")
+    }
+
+    func logout() {
+        cleanDatabase()
+        session.reset()
     }
 }

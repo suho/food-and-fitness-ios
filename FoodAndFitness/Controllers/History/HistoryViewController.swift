@@ -18,18 +18,11 @@ class HistoryViewController: RootSideMenuViewController {
         super.setupUI()
         title = Strings.history
         configureCalendar()
-        print(DateInRegion().toString(format: .date))
     }
 
     private func configureCalendar() {
         calendar.delegate = self
         calendar.dataSource = self
-    }
-
-    @IBAction func test(_ sender: Any) {
-        if let numberOfEvents = currentCell?.numberOfEvents, numberOfEvents > 0 {
-            print("go go go")
-        }
     }
 }
 

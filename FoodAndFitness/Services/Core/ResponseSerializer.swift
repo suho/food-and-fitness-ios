@@ -15,12 +15,12 @@ import SwiftyJSON
 
 extension Request {
     static func responseJSONSerializer(
-                                       log: Bool = true,
-                                       response: HTTPURLResponse?,
-                                       data: Data?,
-                                       error: Error?) -> Result<Any> {
+        log: Bool = true,
+        response: HTTPURLResponse?,
+        data: Data?,
+        error: Error?) -> Result<JSObject> {
         guard let response = response else {
-            return .failure(NSError(status: .noResponse))
+            return .failure(NSError(status: .requestTimeout))
         }
 
         logger.info("\n response -> \(response)") // URL response
@@ -37,10 +37,8 @@ extension Request {
 
         guard 200...299 ~= statusCode else {
             var err: NSError!
-            if let json = data?.toJSON() as? JSObject, let message = json["message"] as? String {
-                err = NSError(domain: ApiPath.baseURL.host,
-                              code: statusCode,
-                              message: message)
+            if let json = data?.toJSON() as? JSObject, let errors = json["errors"] as? JSArray, !errors.isEmpty, let message = errors[0]["value"] as? String {
+                err = NSError(message: message)
             } else if let status = HTTPStatus(code: statusCode) {
                 err = NSError(domain: ApiPath.baseURL.host, status: status)
             } else {
@@ -57,11 +55,8 @@ extension Request {
         }
 
         logger.info("\n data -> \(json)")
-
-        let allHeaderFields = JSON(response.allHeaderFields)
-        if let accessToken = allHeaderFields["access-token"].string, let client = allHeaderFields["client"].string, let uid = allHeaderFields["uid"].string {
-            // save header token
-            api.session.headerToken = Session.HeaderToken(accessToken: accessToken, clientId: client, uid: uid)
+        if let token = Session.Token(headers: response.allHeaderFields) {
+            api.session.token = token
         }
 
         return .success(json)
@@ -69,13 +64,13 @@ extension Request {
 }
 
 extension DataRequest {
-    static func responseSerializer() -> DataResponseSerializer<Any> {
+    static func responseSerializer() -> DataResponseSerializer<JSObject> {
         return DataResponseSerializer { _, response, data, error in
             return Request.responseJSONSerializer(log: true, response: response, data: data, error: error)
         }
     }
 
-    func responseJSON(queue: DispatchQueue? = nil, completion: @escaping (DataResponse<Any>) -> Void) -> Self {
+    func responseJSON(queue: DispatchQueue? = nil, completion: @escaping (DataResponse<JSObject>) -> Void) -> Self {
         return response(responseSerializer: DataRequest.responseSerializer(), completionHandler: completion)
     }
 }
@@ -85,61 +80,72 @@ enum DataType: Int {
     case array
 }
 
-extension Mapper where N: Object {
-
-    func map(jsonData: Any, type: DataType, inKey: String, refresh: Bool = false, completion: Completion) {
-        switch type {
-        case .object:
-            if let jsonObject = (jsonData as AnyObject)[inKey] as? JSObject {
-                map(jsonData: jsonObject, type: type, refresh: refresh, completion: completion)
-                return
-            }
-        case .array:
-            if let jsonArray = (jsonData as AnyObject)[inKey] as? JSArray {
-                map(jsonData: jsonArray, type: type, refresh: refresh, completion: completion)
-                return
-            }
+extension Sequence where Iterator.Element == (key: String, value: Any) {
+    func add(with key: String, value: Any) -> JSObject {
+        guard var json = self as? JSObject else {
+            return JSObject()
         }
-
-        completion(.failure(FFError.JSON))
+        json[key] = value
+        return json
     }
+}
 
-    func map(jsonData: Any, type: DataType, refresh: Bool = false, completion: Completion) {
-        if refresh {
-            // clean objects in database
-            let realm = RealmS()
-            realm.write {
-                realm.delete(realm.objects(N.self))
+extension Array {
+    func add(with key: String, value: Any) -> JSArray {
+        var result = JSArray()
+        for item in self {
+            guard let obj = item as? JSObject else {
+                return JSArray()
             }
+            result.append(obj.add(with: key, value: value))
         }
+        return result
+    }
+}
 
-        var result: Result<Any> = .failure(FFError.JSON)
-        switch type {
-        case .object:
-            if let jsonObject = (jsonData as? JSObject), jsonObject.keys.isNotEmpty {
-                let realm = RealmS()
-                realm.write {
-                    if let obj: N = Mapper<N>().map(JSON: jsonObject) {
-                        realm.add(obj)
-                        result = .success(obj)
+// generic type workaround
+@discardableResult
+private func rsmap<T: Object>(realm: RealmS, type: T.Type, json: JSObject) -> T? where T: Mappable {
+    return realm.map(T.self, json: json)
+}
+
+// generic type workaround
+@discardableResult
+private func rsmap<T: Object>(realm: RealmS, type: T.Type, json: JSArray) -> [T] where T: Mappable {
+    return realm.map(T.self, json: json)
+}
+
+extension Mapper where N: Object, N: Mappable {
+    func map(result: Result<JSObject>, type: DataType, refresh: Bool = false, completion: Completion) {
+        switch result {
+        case .success(let json):
+            guard let data = json["data"] else {
+                completion(.failure(FFError.JSON))
+                return
+            }
+            var result: Result<JSObject> = .failure(FFError.JSON)
+            switch type {
+            case .object:
+                if let js = data as? JSObject, js.keys.isNotEmpty {
+                    let realm: RealmS = RealmS()
+                    realm.write {
+                        rsmap(realm: realm, type: N.self, json: js)
                     }
+                    result = .success(json)
+                }
+            case .array:
+                if let js = data as? JSArray {
+                    let realm = RealmS()
+                    realm.write {
+                        rsmap(realm: realm, type: N.self, json: js)
+                    }
+                    result = .success(json)
                 }
             }
-        case .array:
-            if let jsonArray = (jsonData as? JSArray) {
-                let realm = RealmS()
-                realm.write {
-                    if let array: [N] = Mapper<N>().mapArray(JSONArray: jsonArray) {
-                        for item in array {
-                            realm.add(item)
-                        }
-                        result = .success(array)
-                    }
-                }
-            }
+            completion(result)
+        case .failure(_):
+            completion(result)
         }
-
-        completion(result)
     }
 }
 
@@ -184,28 +190,18 @@ extension Result {
 }
 
 // MARK: Data Transform
-class DataTransform {
-    static let date = TransformOf<Date, String>(
-                                                fromJSON: { (string: String?) -> Date in
-        if let result = string?.toDate(format: .full).absoluteDate {
-            return result
-        }
-        return Foundation.Date.null
+final class DataTransform {
+    static let date = TransformOf<Date, String>(fromJSON: { (string: String?) -> Date? in
+        return string?.toDate(format: .full).absoluteDate
     }, toJSON: { (date: Date?) -> String? in
         return date?.ffDate(format: .date).toString(format: .date)
-    }
-    )
+    })
 
-    static let dateTime = TransformOf<Date, String>(
-                                                    fromJSON: { (string: String?) -> Date? in
-        if let result = string?.toDate(format: .dateTime).absoluteDate {
-            return result
-        }
-        return Foundation.Date.null
+    static let dateTime = TransformOf<Date, String>(fromJSON: { (string: String?) -> Date? in
+        return string?.toDate(format: .dateTime).absoluteDate
     }, toJSON: { (date: Date?) -> String? in
         return date?.ffDate(format: .dateTime).toString(format: .dateTime)
-    }
-    )
+    })
 }
 
 func <- ( left: inout String, right: Map) {

@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NutritionViewController" customModule="FoodAndFitness" customModuleProvider="target">
             <connections>
-                <outlet property="progressView" destination="8Wl-di-fqD" id="sb7-6W-pgM"/>
                 <outlet property="tableView" destination="SqR-vr-RHG" id="LLQ-Mb-Scu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="bDg-sh-jDY"/>
             </connections>
@@ -25,41 +23,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Wl-di-fqD" customClass="CircleProgressView" customModule="FoodAndFitness" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="146" width="375" height="375"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="8Wl-di-fqD" secondAttribute="height" multiplier="1:1" id="Amq-Gm-sXK"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="lineBackgroundColor">
-                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                            <real key="value" value="30"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="value">
-                            <real key="value" value="50"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
-                            <real key="value" value="1000"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="startDegree">
-                            <real key="value" value="-90"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="endDegree">
-                            <real key="value" value="270"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isAnimation" value="YES"/>
-                    </userDefinedRuntimeAttributes>
-                </view>
             </subviews>
             <constraints>
-                <constraint firstItem="8Wl-di-fqD" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="4SM-Ln-dqG"/>
                 <constraint firstAttribute="trailing" secondItem="SqR-vr-RHG" secondAttribute="trailing" id="LfG-CX-eES"/>
                 <constraint firstItem="SqR-vr-RHG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="csA-eL-nrl"/>
-                <constraint firstItem="8Wl-di-fqD" firstAttribute="centerY" secondItem="SqR-vr-RHG" secondAttribute="centerY" id="iOS-eX-J8h"/>
-                <constraint firstItem="8Wl-di-fqD" firstAttribute="centerX" secondItem="SqR-vr-RHG" secondAttribute="centerX" id="pOY-hT-CVI"/>
                 <constraint firstItem="SqR-vr-RHG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="voy-20-25O"/>
                 <constraint firstAttribute="bottom" secondItem="SqR-vr-RHG" secondAttribute="bottom" id="whK-Nu-BLe"/>
             </constraints>

@@ -103,11 +103,3 @@ extension NSDateComponents {
         second = comps[2].intValue
     }
 }
-
-// MARK: NSDate
-extension Date {
-    static var null: Date {
-        let date: Date! = DateComponents(year: 0, month: 0, day: 0).date
-        return date
-    }
-}

@@ -64,7 +64,7 @@ extension Bundle {
 extension Double {
     // to radiant
     var degree: Double {
-        return M_PI * self / 180.0
+        return .pi * self / 180.0
     }
 
     func percent(max: Double) -> Double {

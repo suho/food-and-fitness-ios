@@ -11,8 +11,6 @@ import SwiftUtils
 
 class NutritionViewController: BaseViewController {
     @IBOutlet fileprivate weak var tableView: UITableView!
-    @IBOutlet fileprivate weak var progressView: CircleProgressView!
-    
     // MARK: - Cycle Life
     override var isNavigationBarHidden: Bool {
         return true
@@ -25,7 +23,6 @@ class NutritionViewController: BaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        progressView.setValue(740, duration: 5)
     }
 
     private func configureTableView() {
@@ -50,6 +47,7 @@ extension NutritionViewController: UITableViewDataSource {
 extension NutritionViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView: NutritionProgressView = NutritionProgressView.loadNib()
+        headerView.setup(65, duration: 1)
         return headerView
     }
 

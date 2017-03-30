@@ -8,8 +8,45 @@
 
 import Foundation
 import SAMKeychain
+import SwiftyJSON
 
-class Session {
+final class Session {
+    struct Token {
+        let values: [String:String]
+
+        init(values: [String:String]) {
+            for key in Token.allKeys {
+                guard let _ = values[key] else {
+                    fatalError("Invalid token value for key: `\(key)`")
+                }
+            }
+            self.values = values
+        }
+
+        init?(pref: UserDefaults) {
+            let pref = UserDefaults.standard
+            var values: [String:String] = [:]
+            for key in Token.allKeys {
+                guard let value = pref.string(forKey: key) else { return nil }
+                values[key] = value
+            }
+            self.init(values: values)
+        }
+
+        init?(headers: [AnyHashable:Any]) {
+            let fields = JSON(headers)
+            var values: [String:String] = [:]
+            for key in Session.Token.allKeys {
+                guard let value = fields[key].string else { return nil }
+                values[key] = value
+            }
+            self.init(values: values)
+        }
+
+        static var allKeys: [String] {
+            return ["uid", "access-token", "client"]
+        }
+    }
 
     struct Credential {
         fileprivate(set) var username: String
@@ -26,23 +63,17 @@ class Session {
         }
     }
 
-    struct HeaderToken {
-        let accessToken: String
-        let clientId: String
-        let uid: String
-    }
-
-    var headerToken: HeaderToken? {
+    var token: Token? {
         didSet {
-            guard let token = headerToken else {
-                clearHeaderToken()
+            guard let token = token else {
+                clearToken()
                 return
             }
-            saveHeaderToken(token)
+            saveToken(token)
         }
     }
 
-    var userID: Int? = UserDefaults.standard.integer(forKey: Key.userId) {
+    var userID: Int? = UserDefaults.standard.object(forKey: Key.userId) as? Int {
         didSet {
             let userDefaults = UserDefaults.standard
             userDefaults.set(userID, forKey: Key.userId)
@@ -51,7 +82,7 @@ class Session {
     }
 
     var isAuthenticated: Bool {
-        return headerToken != nil
+        return token != nil
     }
 
     init() { }
@@ -73,30 +104,6 @@ class Session {
         SAMKeychain.setPassword(credential.password, forService: host, account: credential.username)
     }
 
-    private func saveHeaderToken(_ headerToken: HeaderToken) {
-        let userDefaults = UserDefaults.standard
-        userDefaults.set(headerToken.accessToken, forKey: Key.accessToken)
-        userDefaults.set(headerToken.uid, forKey: Key.uId)
-        userDefaults.set(headerToken.clientId, forKey: Key.client)
-        userDefaults.synchronize()
-    }
-
-    func loadAccessToken() {
-        let userDefaults = UserDefaults.standard
-
-        if let token = userDefaults.string(forKey: Key.accessToken), let uid = userDefaults.string(forKey: Key.uId), let client = userDefaults.string(forKey: Key.client) {
-            headerToken = HeaderToken(accessToken: token, clientId: client, uid: uid)
-        }
-    }
-
-    private func clearHeaderToken() {
-        let userDefaults = UserDefaults.standard
-        userDefaults.removeObject(forKey: Key.accessToken)
-        userDefaults.removeObject(forKey: Key.uId)
-        userDefaults.removeObject(forKey: Key.client)
-        userDefaults.synchronize()
-    }
-
     func clearCredential() {
         credential.username = ""
         credential.password = ""
@@ -109,8 +116,28 @@ class Session {
         }
     }
 
+    func loadToken() {
+        token = Token(pref: UserDefaults.standard)
+    }
+
+    private func saveToken(_ headerToken: Token) {
+        let pref = UserDefaults.standard
+        for (key, value) in headerToken.values {
+            pref.set(value, forKey: key)
+        }
+        pref.synchronize()
+    }
+
+    private func clearToken() {
+        let pref = UserDefaults.standard
+        for key in Token.allKeys {
+            pref.removeObject(forKey: key)
+        }
+        pref.synchronize()
+    }
+    
     func reset() {
-        headerToken = nil
+        token = nil
         clearCredential()
     }
 }
