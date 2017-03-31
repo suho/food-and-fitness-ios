@@ -7,39 +7,75 @@
 //
 
 import UIKit
-import FSCalendar
-import SwiftDate
 
-final class HistoryViewController: RootSideMenuViewController {
-    @IBOutlet fileprivate weak var calendar: FSCalendar!
-    var currentCell: FSCalendarCell?
+final class HistoryViewController: BaseViewController {
+    @IBOutlet fileprivate weak var contentView: UIView!
+    @IBOutlet fileprivate weak var nutritionButton: UIButton!
+    @IBOutlet fileprivate weak var fitnessButton: UIButton!
+    fileprivate var pageController: UIPageViewController!
+    lazy var nutritionController: UINavigationController = UINavigationController(rootViewController: NutritionHistoryController())
+    lazy var fitnessController: UINavigationController = UINavigationController(rootViewController: FitnessHistoryController())
 
     override func setupUI() {
         super.setupUI()
-        title = Strings.history
-        configureCalendar()
+        configurePageController()
     }
 
-    private func configureCalendar() {
-        calendar.delegate = self
-        calendar.dataSource = self
+    private func configurePageController() {
+        pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+        pageController.removeFromParentViewController()
+        addChildViewController(pageController)
+        contentView.removeAllSubviews()
+        contentView.addSubview(pageController.view)
+        pageController.dataSource = self
+        pageController.delegate = self
+        pageController.view.translatesAutoresizingMaskIntoConstraints = false
+        pageController.view.autoPinEdgesToSuperviewEdges()
+        pageController.setViewControllers([nutritionController], direction: .forward, animated: false, completion: nil)
     }
-}
 
-// MARK: - FSCalendarDataSource
-extension HistoryViewController: FSCalendarDataSource {
+    fileprivate func changeStatusButton() {
+        nutritionButton.isSelected = !nutritionButton.isSelected
+        fitnessButton.isSelected = !fitnessButton.isSelected
+    }
 
-    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-        if date.ffDate().day % 4 == 0 {
-            return 1
+    @IBAction fileprivate func nutritionTabClicked(_ sender: Any) {
+        if !nutritionButton.isSelected {
+            changeStatusButton()
+            pageController.setViewControllers([nutritionController], direction: .reverse, animated: true, completion: nil)
         }
-        return 0
+    }
+
+    @IBAction fileprivate func fitnessTabClicked(_ sender: Any) {
+        if !fitnessButton.isSelected {
+            changeStatusButton()
+            pageController.setViewControllers([fitnessController], direction: .forward, animated: true, completion: nil)
+        }
     }
 }
 
-// MARK: - FSCalendarDelegate
-extension HistoryViewController: FSCalendarDelegate {
-    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        currentCell = calendar.cell(for: date, at: .current)
+// MARK: - UIPageViewControllerDataSource
+extension HistoryViewController: UIPageViewControllerDataSource {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        if let navi = viewController as? UINavigationController, let _ = navi.visibleViewController as? FitnessHistoryController {
+            return nutritionController
+        }
+        return nil
+    }
+
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        if let navi = viewController as? UINavigationController, let _ = navi.visibleViewController as? NutritionHistoryController {
+            return fitnessController
+        }
+        return nil
+    }
+}
+
+// MARK: - UIPageViewControllerDelegate
+extension HistoryViewController: UIPageViewControllerDelegate {
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if completed {
+            changeStatusButton()
+        }
     }
 }

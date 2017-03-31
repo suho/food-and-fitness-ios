@@ -36,12 +36,14 @@ extension SideMenuController: LeftSideViewControllerDelegate {
             return
         }
         switch action {
-        case .profile: return
+        case .profile:
+            let profileControler = UINavigationController(rootViewController: ProfileViewController())
+            self.rootViewController = profileControler
         case .home:
             let homeController = UINavigationController(rootViewController: HomeViewController())
             self.rootViewController = homeController
         case .history:
-            let historyController = UINavigationController(rootViewController: HistoryViewController())
+            let historyController = UINavigationController(rootViewController: CalendarController())
             self.rootViewController = historyController
         case .analysis:
             let analysisController = UINavigationController(rootViewController: AnalysisViewController())

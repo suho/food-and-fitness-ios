@@ -46,5 +46,6 @@ final class Strings {
         static let notNetwork = "Network is not Reachable."
         static let json = "The operation couldn’t be completed."
         static let directionNotFound = "Error To Get Direction Info"
+        static let noHistory = "That Date Don't Have Any History"
     }
 }

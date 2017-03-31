@@ -95,6 +95,7 @@ extension LeftSideViewController {
         switch sideMenu {
         case .profile:
             let cell = tableView.dequeue(UserProfileCell.self)
+            cell.delegate = self
             return cell
         default:
             let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
@@ -119,6 +120,17 @@ extension LeftSideViewController {
         guard let sideMenu = SideMenu(rawValue: indexPath.row) else {
             fatalError("Wrong Index Of Enum")
         }
+        if sideMenu == .profile { return }
         delegate?.viewController(self, needsPerformAction: sideMenu)
+    }
+}
+
+// MARK: - UserProfileCellDelegate
+extension LeftSideViewController: UserProfileCellDelegate {
+    func cell(_ cell: UserProfileCell, needsPerformAction action: UserProfileCell.Action) {
+        switch action {
+        case .settings:
+            delegate?.viewController(self, needsPerformAction: .profile)
+        }
     }
 }

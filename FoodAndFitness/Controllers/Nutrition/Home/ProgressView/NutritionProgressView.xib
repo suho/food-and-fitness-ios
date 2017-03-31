@@ -39,7 +39,7 @@
                             <real key="value" value="405"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                            <color key="value" red="0.33636357651437787" green="0.94985860586166382" blue="0.13710666897444193" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="value" red="1" green="0.59999999999999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
@@ -55,7 +55,7 @@
             <connections>
                 <outlet property="progressView" destination="ezE-uf-b3b" id="krm-cI-8PU"/>
             </connections>
-            <point key="canvasLocation" x="-367" y="-390"/>
+            <point key="canvasLocation" x="-256.5" y="-401"/>
         </view>
     </objects>
 </document>

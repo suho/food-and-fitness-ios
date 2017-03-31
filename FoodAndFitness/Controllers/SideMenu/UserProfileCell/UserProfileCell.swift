@@ -8,4 +8,18 @@
 
 import UIKit
 
-final class UserProfileCell: BaseTableViewCell {}
+protocol UserProfileCellDelegate: NSObjectProtocol {
+    func cell(_ cell: UserProfileCell, needsPerformAction action: UserProfileCell.Action)
+}
+
+final class UserProfileCell: BaseTableViewCell {
+    weak var delegate: UserProfileCellDelegate?
+
+    enum Action {
+        case settings
+    }
+    
+    @IBAction func settings(_ sender: Any) {
+        delegate?.cell(self, needsPerformAction: .settings)
+    }
+}
