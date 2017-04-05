@@ -104,9 +104,9 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DP5-Qn-41w">
-                        <rect key="frame" x="250" y="81.5" width="54" height="30"/>
-                        <state key="normal" title="Camera"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DP5-Qn-41w">
+                        <rect key="frame" x="274" y="81.5" width="30" height="30"/>
+                        <state key="normal" image="ic_camera"/>
                         <connections>
                             <action selector="showActionSheet:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NL5-LQ-DTh"/>
                         </connections>
@@ -127,10 +127,11 @@
                 <outlet property="avatarImageView" destination="Hu0-qw-jqO" id="dtX-6C-qgp"/>
                 <outlet property="titleLabel" destination="qVw-IF-tJF" id="KMP-bT-Wrc"/>
             </connections>
-            <point key="canvasLocation" x="38" y="1"/>
+            <point key="canvasLocation" x="-138" y="-22"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="avatar_default" width="400" height="400"/>
+        <image name="avatar_default" width="100" height="100"/>
+        <image name="ic_camera" width="30" height="30"/>
     </resources>
 </document>

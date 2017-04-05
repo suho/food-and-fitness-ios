@@ -16,9 +16,9 @@ class BaseTableViewCell: UITableViewCell {
         setupUI()
     }
 
-    func setupUI() {}
-
-    func setupData() {
+    func setupUI() {
         selectionStyle = .none
     }
+
+    func setupData() {}
 }

@@ -13,10 +13,9 @@ class SignUpController: BaseViewController {
     @IBOutlet fileprivate weak var tableView: UITableView!
 
     enum SignUpRow: Int {
-        case title
         case avatar
         case fullName
-        case userName
+        case email
         case password
         case confirmPassword
         case informationTitle
@@ -32,14 +31,12 @@ class SignUpController: BaseViewController {
 
         var title: String {
             switch self {
-            case .title:
-                return Strings.signUpTitle
             case .avatar:
                 return Strings.avatar
             case .fullName:
                 return Strings.fullName
-            case .userName:
-                return Strings.userName
+            case .email:
+                return Strings.email
             case .password:
                 return Strings.password
             case .confirmPassword:
@@ -61,23 +58,20 @@ class SignUpController: BaseViewController {
 
         var heightForRow: CGFloat {
             switch self {
-            case .title, .informationTitle, .button:
-                return 80
             case .avatar:
                 return 100
-            default:
+            case .informationTitle:
                 return 60
+            default:
+                return 55
 
             }
         }
     }
 
-    override var isNavigationBarHidden: Bool {
-        return true
-    }
-
     override func setupUI() {
         super.setupUI()
+        title = Strings.signUpTitle
         configureTableView()
     }
 
@@ -85,6 +79,7 @@ class SignUpController: BaseViewController {
         tableView.register(TitleCell.self)
         tableView.register(AvatarCell.self)
         tableView.register(InputCell.self)
+        tableView.register(RadioCell.self)
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -100,10 +95,6 @@ extension SignUpController: UITableViewDataSource {
         guard let row = SignUpRow(rawValue: indexPath.row) else { fatalError(Strings.Errors.enumError) }
 
         switch row {
-        case .title:
-            let cell = tableView.dequeue(TitleCell.self)
-            cell.data = TitleCell.Data(title: Strings.signUpTitle)
-            return cell
         case .avatar:
             let cell = tableView.dequeue(AvatarCell.self)
             cell.data = AvatarCell.Data(title: Strings.avatar)
@@ -114,9 +105,9 @@ extension SignUpController: UITableViewDataSource {
             cell.data = InputCell.Data(title: Strings.fullName, placeHolder: Strings.fullName)
             cell.cellType = row
             return cell
-        case .userName:
+        case .email:
             let cell = tableView.dequeue(InputCell.self)
-            cell.data = InputCell.Data(title: Strings.userName, placeHolder: Strings.userName)
+            cell.data = InputCell.Data(title: Strings.email, placeHolder: Strings.email)
             cell.cellType = row
             return cell
         case .password:
@@ -139,7 +130,9 @@ extension SignUpController: UITableViewDataSource {
             cell.cellType = row
             return cell
         case .gender:
-            break
+            let cell = tableView.dequeue(RadioCell.self)
+            cell.data = RadioCell.Data(title: Strings.gender)
+            return cell
         case .height:
             let cell = tableView.dequeue(InputCell.self)
             cell.data = InputCell.Data(title: Strings.height, placeHolder: Strings.height)
@@ -172,7 +165,7 @@ extension SignUpController: AvatarCellDelegate {
         accessLibrary.delegate = self
         switch action {
         case .showActionSheet:
-            let alert = AlertController(title: App.name, message: Strings.empty, preferredStyle: .actionSheet)
+            let alert = AlertController(title: App.name, message: Strings.choosePhotoAction, preferredStyle: .actionSheet)
             alert.addAction(Strings.openGallery, handler: {
 
                 accessLibrary.openPhoto(sender: nil)

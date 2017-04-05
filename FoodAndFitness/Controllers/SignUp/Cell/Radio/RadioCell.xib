@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="RadioCell" customModule="FoodAndFitness" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="54.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wO4-8I-EDE">
+                        <rect key="frame" x="16" y="17" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ea3-c8-T8u">
+                        <rect key="frame" x="215" y="13" width="89" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="zXw-vD-FUb"/>
+                        </constraints>
+                        <state key="normal" title="Female" image="ic_unchecked">
+                            <color key="titleColor" red="0.2470588235" green="0.65098039220000004" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <state key="selected" title="Female" image="ic_checked"/>
+                        <connections>
+                            <action selector="femaleClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Dfe-ZL-msC"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Klb-qN-wcA">
+                        <rect key="frame" x="138" y="12.5" width="69" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="jl1-PO-y0O"/>
+                        </constraints>
+                        <state key="normal" title="Male" image="ic_unchecked">
+                            <color key="titleColor" red="0.2470588235" green="0.65098039220000004" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <state key="selected" title="Male" image="ic_checked">
+                            <color key="titleColor" red="0.2470588235" green="0.65098039220000004" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="maleClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5dI-Zc-Bpr"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ea3-c8-T8u" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="AGz-b0-utm"/>
+                    <constraint firstAttribute="trailing" secondItem="ea3-c8-T8u" secondAttribute="trailing" constant="16" id="Eoo-Bj-rlP"/>
+                    <constraint firstItem="Klb-qN-wcA" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Occ-Ia-29T"/>
+                    <constraint firstItem="wO4-8I-EDE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dfC-Ak-2Dq"/>
+                    <constraint firstItem="wO4-8I-EDE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="jKB-vq-3Q3"/>
+                    <constraint firstItem="ea3-c8-T8u" firstAttribute="leading" secondItem="Klb-qN-wcA" secondAttribute="trailing" constant="8" id="p85-Do-TCc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="femaleButton" destination="ea3-c8-T8u" id="6T3-X4-fny"/>
+                <outlet property="maleButton" destination="Klb-qN-wcA" id="Dil-k0-J4k"/>
+                <outlet property="titleLabel" destination="wO4-8I-EDE" id="pIo-Rz-hbY"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_checked" width="30" height="30"/>
+        <image name="ic_unchecked" width="30" height="30"/>
+    </resources>
+</document>
