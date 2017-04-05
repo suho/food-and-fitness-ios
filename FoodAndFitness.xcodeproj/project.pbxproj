@@ -55,6 +55,8 @@
 		999C40411E9497000059E870 /* TitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 999C403F1E9497000059E870 /* TitleCell.xib */; };
 		999C40451E9497160059E870 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C40431E9497160059E870 /* AvatarCell.swift */; };
 		999C40461E9497160059E870 /* AvatarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 999C40441E9497160059E870 /* AvatarCell.xib */; };
+		999C404C1E94AD1C0059E870 /* InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C404A1E94AD1C0059E870 /* InputCell.swift */; };
+		999C404D1E94AD1C0059E870 /* InputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 999C404B1E94AD1C0059E870 /* InputCell.xib */; };
 		99AEA17A1E87A9B2000DA06F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AEA1791E87A9B2000DA06F /* UIView.swift */; };
 		99AEA17F1E87B240000DA06F /* AddMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AEA17D1E87B240000DA06F /* AddMenuViewController.swift */; };
 		99AEA1801E87B240000DA06F /* AddMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AEA17E1E87B240000DA06F /* AddMenuViewController.xib */; };
@@ -133,6 +135,8 @@
 		999C403F1E9497000059E870 /* TitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleCell.xib; sourceTree = "<group>"; };
 		999C40431E9497160059E870 /* AvatarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
 		999C40441E9497160059E870 /* AvatarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvatarCell.xib; sourceTree = "<group>"; };
+		999C404A1E94AD1C0059E870 /* InputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
+		999C404B1E94AD1C0059E870 /* InputCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputCell.xib; sourceTree = "<group>"; };
 		99AEA1791E87A9B2000DA06F /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		99AEA17D1E87B240000DA06F /* AddMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMenuViewController.swift; sourceTree = "<group>"; };
 		99AEA17E1E87B240000DA06F /* AddMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddMenuViewController.xib; sourceTree = "<group>"; };
@@ -439,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				999C40421E94970B0059E870 /* Avatar */,
+				999C40491E94AD0D0059E870 /* Input */,
 				999C403D1E9496EA0059E870 /* Title */,
 			);
 			path = Cell;
@@ -460,6 +465,15 @@
 				999C40441E9497160059E870 /* AvatarCell.xib */,
 			);
 			path = Avatar;
+			sourceTree = "<group>";
+		};
+		999C40491E94AD0D0059E870 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				999C404A1E94AD1C0059E870 /* InputCell.swift */,
+				999C404B1E94AD1C0059E870 /* InputCell.xib */,
+			);
+			path = Input;
 			sourceTree = "<group>";
 		};
 		99AEA17B1E87B216000DA06F /* Popup */ = {
@@ -808,6 +822,7 @@
 				99BF6F851E77F67D00FD743F /* HomeViewController.xib in Resources */,
 				993404FE1E83C45D009A445F /* InformationViewController.xib in Resources */,
 				992DA8E21E8A1F58002A194C /* NutritionHistoryController.xib in Resources */,
+				999C404D1E94AD1C0059E870 /* InputCell.xib in Resources */,
 				99BF6F951E77F67D00FD743F /* Assets.xcassets in Resources */,
 				993405021E83C46D009A445F /* ProfileViewController.xib in Resources */,
 				999C40341E9489A60059E870 /* SignUpController.xib in Resources */,
@@ -913,6 +928,7 @@
 				992DA8AF1E8A0EF9002A194C /* BaseViewController.swift in Sources */,
 				992DA8D91E8A1F1D002A194C /* FitnessHistoryController.swift in Sources */,
 				999C40451E9497160059E870 /* AvatarCell.swift in Sources */,
+				999C404C1E94AD1C0059E870 /* InputCell.swift in Sources */,
 				99BF6F891E77F67D00FD743F /* Colors.swift in Sources */,
 				99BF6F981E77F67D00FD743F /* RequestSerializer.swift in Sources */,
 				99993E8C1E80B7430052372A /* SideMenuController.swift in Sources */,

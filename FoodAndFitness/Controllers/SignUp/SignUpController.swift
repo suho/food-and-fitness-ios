@@ -84,6 +84,7 @@ class SignUpController: BaseViewController {
     private func configureTableView() {
         tableView.register(TitleCell.self)
         tableView.register(AvatarCell.self)
+        tableView.register(InputCell.self)
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -109,25 +110,46 @@ extension SignUpController: UITableViewDataSource {
             cell.delegate = self
             return cell
         case .fullName:
-            break
+            let cell = tableView.dequeue(InputCell.self)
+            cell.data = InputCell.Data(title: Strings.fullName, placeHolder: Strings.fullName)
+            cell.cellType = row
+            return cell
         case .userName:
-            break
+            let cell = tableView.dequeue(InputCell.self)
+            cell.data = InputCell.Data(title: Strings.userName, placeHolder: Strings.userName)
+            cell.cellType = row
+            return cell
         case .password:
-            break
+            let cell = tableView.dequeue(InputCell.self)
+            cell.data = InputCell.Data(title: Strings.password, placeHolder: Strings.password)
+            cell.cellType = row
+            return cell
         case .confirmPassword:
-            break
+            let cell = tableView.dequeue(InputCell.self)
+            cell.data = InputCell.Data(title: Strings.confirmPassword, placeHolder: Strings.confirmPassword)
+            cell.cellType = row
+            return cell
         case .informationTitle:
             let cell = tableView.dequeue(TitleCell.self)
             cell.data = TitleCell.Data(title: Strings.informationTitle)
             return cell
         case .birthday:
-            break
+            let cell = tableView.dequeue(InputCell.self)
+            cell.data = InputCell.Data(title: Strings.birthday, placeHolder: Strings.birthday)
+            cell.cellType = row
+            return cell
         case .gender:
             break
         case .height:
-            break
+            let cell = tableView.dequeue(InputCell.self)
+            cell.data = InputCell.Data(title: Strings.height, placeHolder: Strings.height)
+            cell.cellType = row
+            return cell
         case .weight:
-            break
+            let cell = tableView.dequeue(InputCell.self)
+            cell.data = InputCell.Data(title: Strings.weight, placeHolder: Strings.weight)
+            cell.cellType = row
+            return cell
         case .button:
             break
         }
