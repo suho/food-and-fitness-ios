@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Strings {
+final class Strings {
 
     // MARK: - Keyboard
     static let height = "Height"
@@ -39,6 +39,19 @@ class Strings {
     static let information = "Information"
     static let empty = ""
 
+    static let signUpTitle = "Sign Up"
+    static let avatar = "Avatar"
+    static let fullName = "Full Name"
+    static let userName = "Username"
+    static let password = "Password"
+    static let confirmPassword = "Confirm Password"
+    static let informationTitle = "Information"
+    static let birthday = "Birthday"
+    static let gender = "Gender"
+    static let weight = "Weight"
+    static let openGallery = "Open Gallery"
+    static let openCamera = "Open Camera"
+
     struct Errors {
         // MARK: - Error messages
         static let inputNotValidate = "Input not validate."
@@ -46,5 +59,7 @@ class Strings {
         static let notNetwork = "Network is not Reachable."
         static let json = "The operation couldn’t be completed."
         static let directionNotFound = "Error To Get Direction Info"
+        static let noHistory = "That Date Don't Have Any History"
+        static let enumError = "Enum Error"
     }
 }

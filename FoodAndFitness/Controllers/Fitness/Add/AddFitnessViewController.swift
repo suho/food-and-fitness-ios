@@ -1,5 +1,5 @@
 //
-//  AddNutritionViewController.swift
+//  AddFitnessViewController.swift
 //  FoodAndFitness
 //
 //  Created by Mylo Ho on 3/26/17.
@@ -8,6 +8,5 @@
 
 import UIKit
 
-class AddNutritionViewController: BaseViewController {
-
+final class AddFitnessViewController: BaseViewController {
 }

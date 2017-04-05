@@ -9,7 +9,7 @@
 import UIKit
 import PureLayout
 
-class HomeViewController: RootSideMenuViewController {
+final class HomeViewController: RootSideMenuViewController {
     @IBOutlet fileprivate weak var contentView: UIView!
     @IBOutlet fileprivate weak var nutritionButton: UIButton!
     @IBOutlet fileprivate weak var fitnessButton: UIButton!
@@ -53,6 +53,7 @@ class HomeViewController: RootSideMenuViewController {
             pageController.setViewControllers([fitnessController], direction: .forward, animated: true, completion: nil)
         }
     }
+
     @IBAction fileprivate func showAddMenu(_ sender: Any) {
         let addMenuController = AddMenuViewController()
         addMenuController.delegate = self

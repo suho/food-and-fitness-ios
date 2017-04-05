@@ -1,15 +1,14 @@
 //
-//  FitnessViewController.swift
+//  FitnessHistoryController.swift
 //  FoodAndFitness
 //
-//  Created by Mylo Ho on 3/23/17.
+//  Created by Mylo Ho on 3/28/17.
 //  Copyright © 2017 SuHoVan. All rights reserved.
 //
 
 import UIKit
 
-class FitnessViewController: BaseViewController {
-
+final class FitnessHistoryController: BaseViewController {
     override var isNavigationBarHidden: Bool {
         return true
     }

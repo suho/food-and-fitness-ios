@@ -14,10 +14,9 @@ import SwiftDate
 final class App {
     static let name = "FoodAndFitness"
     static let code = "FF"
-    static let region = Region(tz: TimeZoneName.asiaBangkok, cal: CalendarName.gregorian, loc: LocaleName.vietnamese)
 }
 
-class Key {
+final class Key {
     static let appVersion = "AppVersion"
     static let appBuild = "AppBuild"
     static let apiPathBaseURL = "ApiPathBaseURL"
@@ -29,7 +28,7 @@ class Key {
     static let client = "client"
 }
 
-class Google {
+final class Google {
     static let apiKey = "AIzaSyBOOPbUYQMHXrSbgmSeeJBdm-pr7nGrEpc"
 }
 

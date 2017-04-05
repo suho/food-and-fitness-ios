@@ -13,7 +13,7 @@ protocol LeftSideViewControllerDelegate: NSObjectProtocol {
     func viewController(_ viewController: LeftSideViewController, needsPerformAction action: LeftSideViewController.SideMenu)
 }
 
-class LeftSideViewController: UITableViewController {
+final class LeftSideViewController: UITableViewController {
 
     enum SideMenu: Int {
         case profile
@@ -90,11 +90,12 @@ extension LeftSideViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let sideMenu = SideMenu(rawValue: indexPath.row) else {
-            fatalError("Wrong Index Of Enum")
+            fatalError(Strings.Errors.enumError)
         }
         switch sideMenu {
         case .profile:
             let cell = tableView.dequeue(UserProfileCell.self)
+            cell.delegate = self
             return cell
         default:
             let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
@@ -110,15 +111,26 @@ extension LeftSideViewController {
 extension LeftSideViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard let sideMenu = SideMenu(rawValue: indexPath.row) else {
-            fatalError("Wrong Index Of Enum")
+            fatalError(Strings.Errors.enumError)
         }
         return sideMenu.heightForRow
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let sideMenu = SideMenu(rawValue: indexPath.row) else {
-            fatalError("Wrong Index Of Enum")
+            fatalError(Strings.Errors.enumError)
         }
+        if sideMenu == .profile { return }
         delegate?.viewController(self, needsPerformAction: sideMenu)
+    }
+}
+
+// MARK: - UserProfileCellDelegate
+extension LeftSideViewController: UserProfileCellDelegate {
+    func cell(_ cell: UserProfileCell, needsPerformAction action: UserProfileCell.Action) {
+        switch action {
+        case .settings:
+            delegate?.viewController(self, needsPerformAction: .profile)
+        }
     }
 }
