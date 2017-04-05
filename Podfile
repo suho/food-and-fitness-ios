@@ -25,7 +25,7 @@ def app_pods
     # Utils
     pod 'SwiftUtils',                   '~> 2.1.1'
     pod 'SwiftDate',                    '~> 4.0'
-    pod 'SwiftyBeaver',                 '~> 1.1.3'
+    pod 'XCGLogger',                    '~> 4.0'
     pod 'SwiftyJSON',                   '~> 3.1.4'
     
     # HTML

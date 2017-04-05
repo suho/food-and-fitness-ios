@@ -46,6 +46,15 @@
 		9959E8791E8D6CEA005A8347 /* CalendarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9959E8771E8D6CEA005A8347 /* CalendarController.xib */; };
 		99993E8C1E80B7430052372A /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99993E8B1E80B7430052372A /* SideMenuController.swift */; };
 		99993E8E1E80B7840052372A /* LeftSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99993E8D1E80B7840052372A /* LeftSideViewController.swift */; };
+		999C402F1E94897C0059E870 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C402D1E94897C0059E870 /* SignInController.swift */; };
+		999C40301E94897C0059E870 /* SignInController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 999C402E1E94897C0059E870 /* SignInController.xib */; };
+		999C40331E9489A60059E870 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C40311E9489A60059E870 /* SignUpController.swift */; };
+		999C40341E9489A60059E870 /* SignUpController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 999C40321E9489A60059E870 /* SignUpController.xib */; };
+		999C40371E948CEE0059E870 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C40361E948CEE0059E870 /* Mapper.swift */; };
+		999C40401E9497000059E870 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C403E1E9497000059E870 /* TitleCell.swift */; };
+		999C40411E9497000059E870 /* TitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 999C403F1E9497000059E870 /* TitleCell.xib */; };
+		999C40451E9497160059E870 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C40431E9497160059E870 /* AvatarCell.swift */; };
+		999C40461E9497160059E870 /* AvatarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 999C40441E9497160059E870 /* AvatarCell.xib */; };
 		99AEA17A1E87A9B2000DA06F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AEA1791E87A9B2000DA06F /* UIView.swift */; };
 		99AEA17F1E87B240000DA06F /* AddMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AEA17D1E87B240000DA06F /* AddMenuViewController.swift */; };
 		99AEA1801E87B240000DA06F /* AddMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AEA17E1E87B240000DA06F /* AddMenuViewController.xib */; };
@@ -115,6 +124,15 @@
 		9959E8771E8D6CEA005A8347 /* CalendarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarController.xib; sourceTree = "<group>"; };
 		99993E8B1E80B7430052372A /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 		99993E8D1E80B7840052372A /* LeftSideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSideViewController.swift; sourceTree = "<group>"; };
+		999C402D1E94897C0059E870 /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		999C402E1E94897C0059E870 /* SignInController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInController.xib; sourceTree = "<group>"; };
+		999C40311E9489A60059E870 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		999C40321E9489A60059E870 /* SignUpController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpController.xib; sourceTree = "<group>"; };
+		999C40361E948CEE0059E870 /* Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		999C403E1E9497000059E870 /* TitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
+		999C403F1E9497000059E870 /* TitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleCell.xib; sourceTree = "<group>"; };
+		999C40431E9497160059E870 /* AvatarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
+		999C40441E9497160059E870 /* AvatarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvatarCell.xib; sourceTree = "<group>"; };
 		99AEA1791E87A9B2000DA06F /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		99AEA17D1E87B240000DA06F /* AddMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMenuViewController.swift; sourceTree = "<group>"; };
 		99AEA17E1E87B240000DA06F /* AddMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddMenuViewController.xib; sourceTree = "<group>"; };
@@ -390,6 +408,60 @@
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
+		999C402B1E9489640059E870 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				999C402D1E94897C0059E870 /* SignInController.swift */,
+				999C402E1E94897C0059E870 /* SignInController.xib */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		999C402C1E9489640059E870 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				999C40381E9492890059E870 /* Cell */,
+				999C40311E9489A60059E870 /* SignUpController.swift */,
+				999C40321E9489A60059E870 /* SignUpController.xib */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		999C40351E948CDF0059E870 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				999C40361E948CEE0059E870 /* Mapper.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		999C40381E9492890059E870 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				999C40421E94970B0059E870 /* Avatar */,
+				999C403D1E9496EA0059E870 /* Title */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		999C403D1E9496EA0059E870 /* Title */ = {
+			isa = PBXGroup;
+			children = (
+				999C403E1E9497000059E870 /* TitleCell.swift */,
+				999C403F1E9497000059E870 /* TitleCell.xib */,
+			);
+			path = Title;
+			sourceTree = "<group>";
+		};
+		999C40421E94970B0059E870 /* Avatar */ = {
+			isa = PBXGroup;
+			children = (
+				999C40431E9497160059E870 /* AvatarCell.swift */,
+				999C40441E9497160059E870 /* AvatarCell.xib */,
+			);
+			path = Avatar;
+			sourceTree = "<group>";
+		};
 		99AEA17B1E87B216000DA06F /* Popup */ = {
 			isa = PBXGroup;
 			children = (
@@ -464,6 +536,8 @@
 				99AEA17B1E87B216000DA06F /* Popup */,
 				993404EA1E83C3C8009A445F /* Profile */,
 				99993E8A1E80B7430052372A /* SideMenu */,
+				999C402B1E9489640059E870 /* SignIn */,
+				999C402C1E9489640059E870 /* SignUp */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -589,6 +663,7 @@
 			isa = PBXGroup;
 			children = (
 				99BF6F701E77F67D00FD743F /* 1.0 */,
+				999C40351E948CDF0059E870 /* Core */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -721,6 +796,7 @@
 			files = (
 				992DA8D01E8A1DFD002A194C /* AddNutritionViewController.xib in Resources */,
 				993404F21E83C41B009A445F /* AnalysisViewController.xib in Resources */,
+				999C40461E9497160059E870 /* AvatarCell.xib in Resources */,
 				992DA8CA1E8A1DB0002A194C /* AddFitnessViewController.xib in Resources */,
 				992DA8DA1E8A1F1D002A194C /* FitnessHistoryController.xib in Resources */,
 				992DA8EC1E8A4040002A194C /* NutritionProgressView.xib in Resources */,
@@ -728,13 +804,16 @@
 				992DA8CC1E8A1DB0002A194C /* FitnessViewController.xib in Resources */,
 				993404DF1E838306009A445F /* UserProfileCell.xib in Resources */,
 				993404FA1E83C44E009A445F /* HistoryViewController.xib in Resources */,
+				999C40301E94897C0059E870 /* SignInController.xib in Resources */,
 				99BF6F851E77F67D00FD743F /* HomeViewController.xib in Resources */,
 				993404FE1E83C45D009A445F /* InformationViewController.xib in Resources */,
 				992DA8E21E8A1F58002A194C /* NutritionHistoryController.xib in Resources */,
 				99BF6F951E77F67D00FD743F /* Assets.xcassets in Resources */,
 				993405021E83C46D009A445F /* ProfileViewController.xib in Resources */,
+				999C40341E9489A60059E870 /* SignUpController.xib in Resources */,
 				992DA8D61E8A1EB2002A194C /* FitnessAnalysisController.xib in Resources */,
 				99AEA1801E87B240000DA06F /* AddMenuViewController.xib in Resources */,
+				999C40411E9497000059E870 /* TitleCell.xib in Resources */,
 				9959E8791E8D6CEA005A8347 /* CalendarController.xib in Resources */,
 				992DA8C11E8A1DA6002A194C /* NutritionViewController.xib in Resources */,
 				99BF6F8F1E77F67D00FD743F /* LaunchScreen.storyboard in Resources */,
@@ -827,15 +906,19 @@
 				992DA8DD1E8A1F3B002A194C /* NutritionAnalysisController.swift in Sources */,
 				993404F91E83C44E009A445F /* HistoryViewController.swift in Sources */,
 				99993E8E1E80B7840052372A /* LeftSideViewController.swift in Sources */,
+				999C402F1E94897C0059E870 /* SignInController.swift in Sources */,
 				99BF6F8E1E77F67D00FD743F /* UIViewController.swift in Sources */,
 				99AEA17F1E87B240000DA06F /* AddMenuViewController.swift in Sources */,
 				99BF6F841E77F67D00FD743F /* HomeViewController.swift in Sources */,
 				992DA8AF1E8A0EF9002A194C /* BaseViewController.swift in Sources */,
 				992DA8D91E8A1F1D002A194C /* FitnessHistoryController.swift in Sources */,
+				999C40451E9497160059E870 /* AvatarCell.swift in Sources */,
 				99BF6F891E77F67D00FD743F /* Colors.swift in Sources */,
 				99BF6F981E77F67D00FD743F /* RequestSerializer.swift in Sources */,
 				99993E8C1E80B7430052372A /* SideMenuController.swift in Sources */,
+				999C40401E9497000059E870 /* TitleCell.swift in Sources */,
 				99BF6F861E77F67D00FD743F /* PaddingTextField.swift in Sources */,
+				999C40371E948CEE0059E870 /* Mapper.swift in Sources */,
 				99BF6F801E77F67D00FD743F /* AppDelegate.swift in Sources */,
 				99501FFA1E8AC5010051227F /* CircleProgressView.swift in Sources */,
 				99BF6F901E77F67D00FD743F /* AccessLibraryManager.swift in Sources */,
@@ -858,6 +941,7 @@
 				99BF6F921E77F67D00FD743F /* SwiftDate.swift in Sources */,
 				992DA8CB1E8A1DB0002A194C /* FitnessViewController.swift in Sources */,
 				99BF6F9A1E77F67D00FD743F /* Session.swift in Sources */,
+				999C40331E9489A60059E870 /* SignUpController.swift in Sources */,
 				992DA8EA1E8A402C002A194C /* NutritionProgressView.swift in Sources */,
 				99BF6F8C1E77F67D00FD743F /* Strings.swift in Sources */,
 				992DA8D51E8A1EB2002A194C /* FitnessAnalysisController.swift in Sources */,

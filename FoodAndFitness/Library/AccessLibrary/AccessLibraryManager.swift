@@ -29,7 +29,7 @@ final class AccessLibraryManager: NSObject {
     }
 
     // MARK: - Public
-    func openPhoto(sender: AnyObject?) {
+    func openPhoto(sender: Any?) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
@@ -42,7 +42,7 @@ final class AccessLibraryManager: NSObject {
         }
     }
 
-    func openCamera(sender: AnyObject?) {
+    func openCamera(sender: Any?) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
@@ -74,8 +74,7 @@ final class AccessLibraryManager: NSObject {
 
 // MARK: - ImagePicker, NavigationController Delegate
 extension AccessLibraryManager: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    private func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
-
+    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if picker.sourceType == .camera {
             guard let originImage = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
             UIImageWriteToSavedPhotosAlbum(originImage, nil, nil, nil)

@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import SwiftyBeaver
+import XCGLogger
 import SVProgressHUD
 
 typealias ProgressHUD = SVProgressHUD
-let logger = SwiftyBeaver.self
+let logger = XCGLogger.default
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,9 +26,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        setup()
         window = UIWindow(frame: UIScreen.main.bounds)
-        gotoHome()
         if let window = window {
+            api.session.loadToken()
+            if api.session.isAuthenticated {
+                gotoHome()
+            } else {
+                gotoLogin()
+            }
             window.backgroundColor = .white
             window.makeKeyAndVisible()
         }
@@ -41,5 +47,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sideMenuController.rootViewController = homeController
         sideMenuController.setup(.slideBelow)
         window?.rootViewController = sideMenuController
+    }
+
+    func gotoLogin() {
+        let signInNaviController = UINavigationController(rootViewController: SignInController())
+        window?.rootViewController = signInNaviController
+    }
+
+    private func setup() {
+        configureLogger()
+    }
+
+    private func configureLogger() {
+        logger.setup(level: .verbose,
+                     showLogIdentifier: false,
+                     showFunctionName: false,
+                     showThreadName: false,
+                     showLevel: true,
+                     showFileNames: false,
+                     showLineNumbers: false,
+                     showDate: false,
+                     writeToFile: nil,
+                     fileLevel: nil)
     }
 }

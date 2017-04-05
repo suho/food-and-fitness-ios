@@ -90,7 +90,7 @@ extension LeftSideViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let sideMenu = SideMenu(rawValue: indexPath.row) else {
-            fatalError("Wrong Index Of Enum")
+            fatalError(Strings.Errors.enumError)
         }
         switch sideMenu {
         case .profile:
@@ -111,14 +111,14 @@ extension LeftSideViewController {
 extension LeftSideViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard let sideMenu = SideMenu(rawValue: indexPath.row) else {
-            fatalError("Wrong Index Of Enum")
+            fatalError(Strings.Errors.enumError)
         }
         return sideMenu.heightForRow
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let sideMenu = SideMenu(rawValue: indexPath.row) else {
-            fatalError("Wrong Index Of Enum")
+            fatalError(Strings.Errors.enumError)
         }
         if sideMenu == .profile { return }
         delegate?.viewController(self, needsPerformAction: sideMenu)

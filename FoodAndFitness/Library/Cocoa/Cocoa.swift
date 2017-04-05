@@ -28,6 +28,18 @@ extension NSObject {
     }
 }
 
+// JSON Patch
+extension Array where Element == [String:Any] {
+    func add(with key: String, value: Any) -> [[String:Any]] {
+        var result: [[String:Any]] = []
+        for var item in self {
+            item[key] = value
+            result.append(item)
+        }
+        return result
+    }
+}
+
 // MARK: - CollectionType
 extension Collection {
     var isNotEmpty: Bool {
