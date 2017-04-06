@@ -30,10 +30,12 @@ class RadioCell: BaseTableViewCell {
     }
 
     @IBAction fileprivate func maleClicked(_ sender: Any) {
+        if maleButton.isSelected { return }
         changeButtonStatus()
     }
 
     @IBAction fileprivate func femaleClicked(_ sender: Any) {
+        if femaleButton.isSelected { return }
         changeButtonStatus()
     }
 }

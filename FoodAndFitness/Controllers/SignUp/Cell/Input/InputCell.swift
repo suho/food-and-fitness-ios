@@ -24,6 +24,8 @@ class InputCell: BaseTableViewCell {
             case .password, .confirmPassword:
                 textField.isSecureTextEntry = true
             case .birthday:
+                let picker = datePicker()
+                textField.inputView = picker
                 textField.text = DateInRegion(timeIntervalSince1970: 0).toString(format: .date)
             case .height:
                 textField.keyboardType = .numberPad
@@ -48,11 +50,26 @@ class InputCell: BaseTableViewCell {
         super.setupUI()
         textField.delegate = self
     }
+
+    private func datePicker() -> UIDatePicker {
+        let datePicker = UIDatePicker()
+        datePicker.setDate(Date(timeIntervalSince1970: 0), animated: true)
+        datePicker.minimumDate = Date(timeIntervalSince1970: 0)
+        datePicker.maximumDate = Date()
+        datePicker.datePickerMode = .date
+        datePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
+        return datePicker
+    }
+
+    @objc fileprivate func datePickerChanged(_ sender: Any) {
+        guard let picker = textField.inputView as? UIDatePicker else { return }
+        let date = DateInRegion(absoluteDate: picker.date).toString(format: .date)
+        textField.text = date
+    }
 }
 
 // MARK: - UITextFieldDelegate
 extension InputCell: UITextFieldDelegate {
-
     func textFieldDidBeginEditing(_ textField: UITextField) {
         switch cellType {
         case .height, .weight:
@@ -63,12 +80,31 @@ extension InputCell: UITextFieldDelegate {
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let text = textField.text else { return true }
-        guard let number = Int(text) else { return true }
-        if number > 250, string != Strings.empty {
-            textField.text = String(describing: textField.text?.characters.dropLast())
-            return false
+        switch cellType {
+        case .height, .weight:
+            guard let text = textField.text else { return true }
+            guard let number = Int(text + string) else { return false }
+            if number > 250, string != Strings.empty {
+                return false
+            }
+        default:
+            break
         }
         return true
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        switch cellType {
+        case .height, .weight:
+            guard let text = textField.text else {
+                textField.text = "0"
+                return
+            }
+            if text.characters.isEmpty {
+                textField.text = "0"
+            }
+        default:
+            break
+        }
     }
 }

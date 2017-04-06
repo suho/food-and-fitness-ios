@@ -46,6 +46,7 @@ class BaseViewController: ViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = isNavigationBarHidden
         isVisible = true
     }
 

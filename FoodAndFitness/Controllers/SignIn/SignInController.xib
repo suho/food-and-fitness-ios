@@ -19,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BJ4-pJ-Hef">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BJ4-pJ-Hef">
                     <rect key="frame" x="62.5" y="139.5" width="250" height="30"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -73,7 +73,7 @@
                 <constraint firstItem="Oao-oW-V8H" firstAttribute="centerX" secondItem="ptv-wr-Bx0" secondAttribute="centerX" id="ocz-k1-mIV"/>
                 <constraint firstItem="XmA-kY-bqG" firstAttribute="top" secondItem="BJ4-pJ-Hef" secondAttribute="bottom" constant="20" id="yne-nu-3vM"/>
             </constraints>
-            <point key="canvasLocation" x="-208" y="-134"/>
+            <point key="canvasLocation" x="-408" y="-212"/>
         </view>
     </objects>
 </document>
