@@ -39,6 +39,7 @@ final class Strings {
     static let information = "Information"
     static let empty = ""
     static let choosePhotoAction = "Please Choose Options"
+    static let home = "Home"
 
     static let signUpTitle = "Sign Up"
     static let avatar = "Avatar"

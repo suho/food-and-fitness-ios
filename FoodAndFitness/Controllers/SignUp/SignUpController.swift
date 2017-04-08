@@ -80,6 +80,7 @@ class SignUpController: BaseViewController {
         tableView.register(AvatarCell.self)
         tableView.register(InputCell.self)
         tableView.register(RadioCell.self)
+        tableView.register(NextButtonCell.self)
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -93,7 +94,6 @@ extension SignUpController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let row = SignUpRow(rawValue: indexPath.row) else { fatalError(Strings.Errors.enumError) }
-
         switch row {
         case .avatar:
             let cell = tableView.dequeue(AvatarCell.self)
@@ -144,9 +144,9 @@ extension SignUpController: UITableViewDataSource {
             cell.cellType = row
             return cell
         case .button:
-            break
+            let cell = tableView.dequeue(NextButtonCell.self)
+            return cell
         }
-        return UITableViewCell()
     }
 }
 

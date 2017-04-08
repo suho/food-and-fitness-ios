@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		82DD737526B668AC2735D9DF /* Pods_FoodAndFitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC2C5A9C9A5C9BBFE5E0265 /* Pods_FoodAndFitness.framework */; };
+		991C34D31E9600D800FABEDE /* ProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991C34D11E9600D800FABEDE /* ProgressCell.swift */; };
+		991C34D41E9600D800FABEDE /* ProgressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 991C34D21E9600D800FABEDE /* ProgressCell.xib */; };
+		991C34D81E9646C400FABEDE /* NextButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991C34D61E9646C400FABEDE /* NextButtonCell.swift */; };
+		991C34D91E9646C400FABEDE /* NextButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 991C34D71E9646C400FABEDE /* NextButtonCell.xib */; };
 		992DA8AE1E8A0EF9002A194C /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992DA8A71E8A0EF8002A194C /* BaseTableViewCell.swift */; };
 		992DA8AF1E8A0EF9002A194C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992DA8A91E8A0EF8002A194C /* BaseViewController.swift */; };
 		992DA8B01E8A0EF9002A194C /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992DA8AB1E8A0EF9002A194C /* PopupViewController.swift */; };
@@ -28,8 +32,6 @@
 		992DA8DE1E8A1F3B002A194C /* NutritionAnalysisController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 992DA8DC1E8A1F3B002A194C /* NutritionAnalysisController.xib */; };
 		992DA8E11E8A1F58002A194C /* NutritionHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992DA8DF1E8A1F58002A194C /* NutritionHistoryController.swift */; };
 		992DA8E21E8A1F58002A194C /* NutritionHistoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 992DA8E01E8A1F58002A194C /* NutritionHistoryController.xib */; };
-		992DA8EA1E8A402C002A194C /* NutritionProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992DA8E91E8A402C002A194C /* NutritionProgressView.swift */; };
-		992DA8EC1E8A4040002A194C /* NutritionProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 992DA8EB1E8A4040002A194C /* NutritionProgressView.xib */; };
 		993404DE1E838306009A445F /* UserProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993404DC1E838306009A445F /* UserProfileCell.swift */; };
 		993404DF1E838306009A445F /* UserProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 993404DD1E838306009A445F /* UserProfileCell.xib */; };
 		993404E41E83849D009A445F /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993404E31E83849D009A445F /* View.swift */; };
@@ -92,6 +94,10 @@
 		2CC2C5A9C9A5C9BBFE5E0265 /* Pods_FoodAndFitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodAndFitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		414B90741E59EF7A2149478D /* Pods-FoodAndFitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodAndFitness.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodAndFitness/Pods-FoodAndFitness.release.xcconfig"; sourceTree = "<group>"; };
 		55C6C2C4F08C322327521329 /* Pods-FoodAndFitness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodAndFitness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodAndFitness/Pods-FoodAndFitness.debug.xcconfig"; sourceTree = "<group>"; };
+		991C34D11E9600D800FABEDE /* ProgressCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressCell.swift; sourceTree = "<group>"; };
+		991C34D21E9600D800FABEDE /* ProgressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressCell.xib; sourceTree = "<group>"; };
+		991C34D61E9646C400FABEDE /* NextButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextButtonCell.swift; sourceTree = "<group>"; };
+		991C34D71E9646C400FABEDE /* NextButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NextButtonCell.xib; sourceTree = "<group>"; };
 		992DA8A71E8A0EF8002A194C /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		992DA8A91E8A0EF8002A194C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		992DA8AB1E8A0EF9002A194C /* PopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
@@ -112,8 +118,6 @@
 		992DA8DC1E8A1F3B002A194C /* NutritionAnalysisController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutritionAnalysisController.xib; sourceTree = "<group>"; };
 		992DA8DF1E8A1F58002A194C /* NutritionHistoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionHistoryController.swift; sourceTree = "<group>"; };
 		992DA8E01E8A1F58002A194C /* NutritionHistoryController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutritionHistoryController.xib; sourceTree = "<group>"; };
-		992DA8E91E8A402C002A194C /* NutritionProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NutritionProgressView.swift; sourceTree = "<group>"; };
-		992DA8EB1E8A4040002A194C /* NutritionProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutritionProgressView.xib; sourceTree = "<group>"; };
 		993404DC1E838306009A445F /* UserProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileCell.swift; sourceTree = "<group>"; };
 		993404DD1E838306009A445F /* UserProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserProfileCell.xib; sourceTree = "<group>"; };
 		993404E31E83849D009A445F /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -203,6 +207,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		991C34D01E96006300FABEDE /* ProgressCell */ = {
+			isa = PBXGroup;
+			children = (
+				991C34D11E9600D800FABEDE /* ProgressCell.swift */,
+				991C34D21E9600D800FABEDE /* ProgressCell.xib */,
+			);
+			path = ProgressCell;
+			sourceTree = "<group>";
+		};
+		991C34D51E9646B300FABEDE /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				991C34D61E9646C400FABEDE /* NextButtonCell.swift */,
+				991C34D71E9646C400FABEDE /* NextButtonCell.xib */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		992DA8A61E8A0EF8002A194C /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,7 +278,7 @@
 		992DA8BB1E8A1DA6002A194C /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				992DA8E81E8A3FFF002A194C /* ProgressView */,
+				991C34D01E96006300FABEDE /* ProgressCell */,
 				992DA8BC1E8A1DA6002A194C /* NutritionViewController.swift */,
 				992DA8BD1E8A1DA6002A194C /* NutritionViewController.xib */,
 			);
@@ -306,15 +328,6 @@
 				992DA8DC1E8A1F3B002A194C /* NutritionAnalysisController.xib */,
 			);
 			path = Analysis;
-			sourceTree = "<group>";
-		};
-		992DA8E81E8A3FFF002A194C /* ProgressView */ = {
-			isa = PBXGroup;
-			children = (
-				992DA8E91E8A402C002A194C /* NutritionProgressView.swift */,
-				992DA8EB1E8A4040002A194C /* NutritionProgressView.xib */,
-			);
-			path = ProgressView;
 			sourceTree = "<group>";
 		};
 		992DA8ED1E8A78B9002A194C /* CricleProgress */ = {
@@ -451,6 +464,7 @@
 			isa = PBXGroup;
 			children = (
 				999C40421E94970B0059E870 /* Avatar */,
+				991C34D51E9646B300FABEDE /* Button */,
 				999C40491E94AD0D0059E870 /* Input */,
 				999C404E1E94D7110059E870 /* Radio */,
 				999C403D1E9496EA0059E870 /* Title */,
@@ -834,8 +848,8 @@
 				999C40461E9497160059E870 /* AvatarCell.xib in Resources */,
 				992DA8CA1E8A1DB0002A194C /* AddFitnessViewController.xib in Resources */,
 				992DA8DA1E8A1F1D002A194C /* FitnessHistoryController.xib in Resources */,
-				992DA8EC1E8A4040002A194C /* NutritionProgressView.xib in Resources */,
 				992DA8DE1E8A1F3B002A194C /* NutritionAnalysisController.xib in Resources */,
+				991C34D41E9600D800FABEDE /* ProgressCell.xib in Resources */,
 				992DA8CC1E8A1DB0002A194C /* FitnessViewController.xib in Resources */,
 				993404DF1E838306009A445F /* UserProfileCell.xib in Resources */,
 				993404FA1E83C44E009A445F /* HistoryViewController.xib in Resources */,
@@ -846,6 +860,7 @@
 				999C404D1E94AD1C0059E870 /* InputCell.xib in Resources */,
 				99BF6F951E77F67D00FD743F /* Assets.xcassets in Resources */,
 				993405021E83C46D009A445F /* ProfileViewController.xib in Resources */,
+				991C34D91E9646C400FABEDE /* NextButtonCell.xib in Resources */,
 				999C40341E9489A60059E870 /* SignUpController.xib in Resources */,
 				992DA8D61E8A1EB2002A194C /* FitnessAnalysisController.xib in Resources */,
 				99AEA1801E87B240000DA06F /* AddMenuViewController.xib in Resources */,
@@ -955,11 +970,13 @@
 				99993E8C1E80B7430052372A /* SideMenuController.swift in Sources */,
 				999C40541E94E3400059E870 /* UILabel.swift in Sources */,
 				999C40401E9497000059E870 /* TitleCell.swift in Sources */,
+				991C34D31E9600D800FABEDE /* ProgressCell.swift in Sources */,
 				99BF6F861E77F67D00FD743F /* PaddingTextField.swift in Sources */,
 				999C40371E948CEE0059E870 /* Mapper.swift in Sources */,
 				99BF6F801E77F67D00FD743F /* AppDelegate.swift in Sources */,
 				99501FFA1E8AC5010051227F /* CircleProgressView.swift in Sources */,
 				99BF6F901E77F67D00FD743F /* AccessLibraryManager.swift in Sources */,
+				991C34D81E9646C400FABEDE /* NextButtonCell.swift in Sources */,
 				992DA8AE1E8A0EF9002A194C /* BaseTableViewCell.swift in Sources */,
 				999C40561E94E8AD0059E870 /* UITextField.swift in Sources */,
 				993405011E83C46D009A445F /* ProfileViewController.swift in Sources */,
@@ -982,7 +999,6 @@
 				992DA8CB1E8A1DB0002A194C /* FitnessViewController.swift in Sources */,
 				99BF6F9A1E77F67D00FD743F /* Session.swift in Sources */,
 				999C40331E9489A60059E870 /* SignUpController.swift in Sources */,
-				992DA8EA1E8A402C002A194C /* NutritionProgressView.swift in Sources */,
 				99BF6F8C1E77F67D00FD743F /* Strings.swift in Sources */,
 				992DA8D51E8A1EB2002A194C /* FitnessAnalysisController.swift in Sources */,
 				99BF6F971E77F67D00FD743F /* Error.swift in Sources */,
