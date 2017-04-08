@@ -55,6 +55,11 @@ enum FFDateFormat {
 
 // MARK: - DateInRegion
 extension DateInRegion {
+
+    convenience init(timeIntervalSince1970: TimeInterval) {
+        self.init(absoluteDate: Date(timeIntervalSince1970: timeIntervalSince1970))
+    }
+
     func toString(format: FFDateFormat) -> String {
         return string(format: format.dateFormat)
     }

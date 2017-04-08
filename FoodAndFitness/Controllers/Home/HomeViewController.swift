@@ -19,7 +19,12 @@ final class HomeViewController: RootSideMenuViewController {
 
     override func setupUI() {
         super.setupUI()
+        configureNavigationBar()
         configurePageController()
+    }
+
+    private func configureNavigationBar() {
+        title = Strings.home
     }
 
     private func configurePageController() {

@@ -13,7 +13,7 @@ env:
     - SDK="iphonesimulator10.3"
     - SCHEME='FoodAndFitness'
     - WORKSPACE='FoodAndFitness.xcworkspace'
-    - DESTINATION="platform=iOS Simulator,OS=10.2,id=22FA2149-1241-469C-BF6D-462D3837DB72"
+    - DESTINATION="OS=10.3,name=iPhone 7"
     - CONFIGURATION='Debug'
 install:
   - set -o pipefail

@@ -31,6 +31,7 @@ final class NutritionAnalysisController: BaseViewController {
         barChartView.pinchZoomEnabled = false
         barChartView.drawBarShadowEnabled = false
         barChartView.drawGridBackgroundEnabled = false
+        barChartView.doubleTapToZoomEnabled = false
 
         let xAxis = barChartView.xAxis
         xAxis.labelPosition = .bottom

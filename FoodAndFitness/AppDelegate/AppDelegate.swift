@@ -9,6 +9,7 @@
 import UIKit
 import XCGLogger
 import SVProgressHUD
+import IQKeyboardManagerSwift
 
 typealias ProgressHUD = SVProgressHUD
 let logger = XCGLogger.default
@@ -56,6 +57,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func setup() {
         configureLogger()
+        configureIQKeyboard()
+    }
+
+    private func configureIQKeyboard() {
+        IQKeyboardManager.sharedManager().enable = true
     }
 
     private func configureLogger() {
