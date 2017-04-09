@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RadioCell: BaseTableViewCell {
+final class RadioCell: BaseTableViewCell {
     @IBOutlet fileprivate weak var titleLabel: UILabel!
     @IBOutlet fileprivate weak var maleButton: UIButton!
     @IBOutlet fileprivate weak var femaleButton: UIButton!

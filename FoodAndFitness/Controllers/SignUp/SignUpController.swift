@@ -71,7 +71,7 @@ class SignUpController: BaseViewController {
 
     override func setupUI() {
         super.setupUI()
-        title = Strings.signUpTitle
+        title = Strings.signUp
         configureTableView()
     }
 

@@ -8,9 +8,11 @@
 
 import UIKit
 
-class SignInController: BaseViewController {
-    override var isNavigationBarHidden: Bool {
-        return true
+final class SignInController: BaseViewController {
+
+    override func setupUI() {
+        super.setupUI()
+        title = Strings.signIn
     }
 
     @IBAction fileprivate func signIn(_ sender: Any) {

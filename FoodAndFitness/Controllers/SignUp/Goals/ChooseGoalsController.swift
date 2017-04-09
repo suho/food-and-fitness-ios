@@ -8,12 +8,16 @@
 
 import UIKit
 
-class ChooseGoalsController: BaseViewController {
+final class ChooseGoalsController: BaseViewController {
 
     enum Goals {
         case beHealthier
         case loseWeight
         case gainWeight
+    }
+
+    override var isNavigationBarHidden: Bool {
+        return true
     }
 
     fileprivate func choose(goal: ChooseGoalsController.Goals) {
@@ -33,6 +37,7 @@ class ChooseGoalsController: BaseViewController {
     }
 
     @IBAction fileprivate func signIn(_ sender: Any) {
-        
+        let signInController = SignInController()
+        navigationController?.pushViewController(signInController, animated: true)
     }
 }

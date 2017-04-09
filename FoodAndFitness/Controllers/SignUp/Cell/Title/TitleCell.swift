@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TitleCell: BaseTableViewCell {
+final class TitleCell: BaseTableViewCell {
     @IBOutlet fileprivate weak var titleLabel: UILabel!
 
     struct Data {
