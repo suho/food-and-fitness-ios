@@ -12,7 +12,7 @@ protocol AvatarCellDelegate: NSObjectProtocol {
     func cell(_ cell: AvatarCell, needsPerformAction action: AvatarCell.Action)
 }
 
-class AvatarCell: BaseTableViewCell {
+final class AvatarCell: BaseTableViewCell {
 
     @IBOutlet fileprivate weak var titleLabel: UILabel!
     @IBOutlet fileprivate weak var avatarImageView: UIImageView!

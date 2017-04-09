@@ -48,13 +48,6 @@
                         <action selector="signIn:" destination="-1" eventType="touchUpInside" id="WhF-NB-6Um"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oao-oW-V8H">
-                    <rect key="frame" x="160" y="290.5" width="55" height="30"/>
-                    <state key="normal" title="Sign Up"/>
-                    <connections>
-                        <action selector="signUp:" destination="-1" eventType="touchUpInside" id="Ltt-Bw-rMQ"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -63,14 +56,12 @@
                 <constraint firstItem="ptv-wr-Bx0" firstAttribute="top" secondItem="XmA-kY-bqG" secondAttribute="bottom" constant="20" id="JsD-g1-Fhb"/>
                 <constraint firstItem="XmA-kY-bqG" firstAttribute="centerX" secondItem="BJ4-pJ-Hef" secondAttribute="centerX" id="OT0-Ne-OTn"/>
                 <constraint firstItem="XmA-kY-bqG" firstAttribute="width" secondItem="BJ4-pJ-Hef" secondAttribute="width" id="PRF-IL-CLW"/>
-                <constraint firstItem="Oao-oW-V8H" firstAttribute="top" secondItem="ptv-wr-Bx0" secondAttribute="bottom" constant="15" id="TiA-w2-WDE"/>
                 <constraint firstItem="BJ4-pJ-Hef" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="V8s-cA-VXF"/>
                 <constraint firstItem="ptv-wr-Bx0" firstAttribute="centerX" secondItem="XmA-kY-bqG" secondAttribute="centerX" id="Whf-70-cL7"/>
                 <constraint firstItem="ptv-wr-Bx0" firstAttribute="width" secondItem="XmA-kY-bqG" secondAttribute="width" id="XZl-eH-wx1"/>
                 <constraint firstItem="59d-R0-uCa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="nDV-kf-cy5"/>
                 <constraint firstItem="59d-R0-uCa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="o15-fT-bgj"/>
                 <constraint firstItem="BJ4-pJ-Hef" firstAttribute="top" secondItem="59d-R0-uCa" secondAttribute="bottom" constant="50" id="obR-HX-0Bh"/>
-                <constraint firstItem="Oao-oW-V8H" firstAttribute="centerX" secondItem="ptv-wr-Bx0" secondAttribute="centerX" id="ocz-k1-mIV"/>
                 <constraint firstItem="XmA-kY-bqG" firstAttribute="top" secondItem="BJ4-pJ-Hef" secondAttribute="bottom" constant="20" id="yne-nu-3vM"/>
             </constraints>
             <point key="canvasLocation" x="-408" y="-212"/>

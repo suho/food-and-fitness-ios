@@ -8,5 +8,5 @@
 
 import UIKit
 
-class NextButtonCell: BaseTableViewCell {
+final class NextButtonCell: BaseTableViewCell {
 }

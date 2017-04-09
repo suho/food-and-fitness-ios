@@ -9,7 +9,7 @@
 import UIKit
 import SwiftDate
 
-class InputCell: BaseTableViewCell {
+final class InputCell: BaseTableViewCell {
     @IBOutlet fileprivate weak var titleLabel: UILabel!
     @IBOutlet fileprivate weak var textField: UITextField!
 

@@ -41,7 +41,8 @@ final class Strings {
     static let choosePhotoAction = "Please Choose Options"
     static let home = "Home"
 
-    static let signUpTitle = "Sign Up"
+    static let signUp = "Sign Up"
+    static let signIn = "Sign In"
     static let avatar = "Avatar"
     static let fullName = "Full Name"
     static let email = "Email"

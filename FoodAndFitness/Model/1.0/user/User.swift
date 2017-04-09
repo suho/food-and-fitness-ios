@@ -13,11 +13,15 @@ import RealmS
 final class User: Object, Mappable {
 
     private(set) dynamic var id = 0
-    dynamic var name: String?
-    private(set) dynamic var email: String?
-    private(set) dynamic var standardUrl: String?
-    private(set) dynamic var thumbUrl: String?
-    private(set) dynamic var userCode: String?
+    private(set) dynamic var name: String = ""
+    private(set) dynamic var email: String = ""
+    private(set) dynamic var avatarUrl: String = ""
+    private(set) dynamic var birthday: Date = Date(timeIntervalSince1970: 0)
+    private(set) dynamic var gender: Int = 0
+    private(set) dynamic var height: Int = 0
+    private(set) dynamic var weight: Int = 0
+    private(set) dynamic var goal: Goal?
+    private(set) dynamic var active: Active?
 
     override class func primaryKey() -> String? {
         return "id"
@@ -26,13 +30,11 @@ final class User: Object, Mappable {
     convenience required init?(map: Map) {
         self.init()
         id <- map["id"]
-        assert(id > 0, "`id` must be greater than 0")
+        assert(id > 0, "User `id` must be greater than 0")
     }
 
     func mapping(map: Map) {
-        name <- map["name"]
-        email <- map["email"]
-        userCode <- map["user_code"]
+
     }
 }
 

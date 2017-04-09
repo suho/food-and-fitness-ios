@@ -6,7 +6,7 @@ install! 'cocoapods', :deterministic_uuids => false
 
 def shared_pods
     pod 'Alamofire',                    '~> 4.3.0'
-    pod 'RealmS',                       '~> 2.1.0'
+    pod 'RealmS',                       '~> 2.2.0'
     pod 'SwiftLint',                    '~> 0.16.1'
 end
 
