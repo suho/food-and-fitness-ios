@@ -87,6 +87,8 @@
 		99BF6F981E77F67D00FD743F /* RequestSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F7B1E77F67D00FD743F /* RequestSerializer.swift */; };
 		99BF6F991E77F67D00FD743F /* ResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F7C1E77F67D00FD743F /* ResponseSerializer.swift */; };
 		99BF6F9A1E77F67D00FD743F /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F7D1E77F67D00FD743F /* Session.swift */; };
+		99D925221E99E1DB008150EE /* ChooseGoalsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D925201E99E1DB008150EE /* ChooseGoalsController.swift */; };
+		99D925231E99E1DB008150EE /* ChooseGoalsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99D925211E99E1DB008150EE /* ChooseGoalsController.xib */; };
 		99E80FF61E88FC3C0093F0BF /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E80FF51E88FC3C0093F0BF /* Date.swift */; };
 /* End PBXBuildFile section */
 
@@ -175,6 +177,8 @@
 		99BF6F7C1E77F67D00FD743F /* ResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerializer.swift; sourceTree = "<group>"; };
 		99BF6F7D1E77F67D00FD743F /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		99BF6F7F1E77F67D00FD743F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99D925201E99E1DB008150EE /* ChooseGoalsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseGoalsController.swift; sourceTree = "<group>"; };
+		99D925211E99E1DB008150EE /* ChooseGoalsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseGoalsController.xib; sourceTree = "<group>"; };
 		99E80FF51E88FC3C0093F0BF /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -446,6 +450,7 @@
 			isa = PBXGroup;
 			children = (
 				999C40381E9492890059E870 /* Cell */,
+				99D9251F1E99E1C5008150EE /* Goals */,
 				999C40311E9489A60059E870 /* SignUpController.swift */,
 				999C40321E9489A60059E870 /* SignUpController.xib */,
 			);
@@ -777,6 +782,15 @@
 			path = Supports;
 			sourceTree = "<group>";
 		};
+		99D9251F1E99E1C5008150EE /* Goals */ = {
+			isa = PBXGroup;
+			children = (
+				99D925201E99E1DB008150EE /* ChooseGoalsController.swift */,
+				99D925211E99E1DB008150EE /* ChooseGoalsController.xib */,
+			);
+			path = Goals;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -868,6 +882,7 @@
 				9959E8791E8D6CEA005A8347 /* CalendarController.xib in Resources */,
 				992DA8C11E8A1DA6002A194C /* NutritionViewController.xib in Resources */,
 				99BF6F8F1E77F67D00FD743F /* LaunchScreen.storyboard in Resources */,
+				99D925231E99E1DB008150EE /* ChooseGoalsController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -964,6 +979,7 @@
 				992DA8AF1E8A0EF9002A194C /* BaseViewController.swift in Sources */,
 				992DA8D91E8A1F1D002A194C /* FitnessHistoryController.swift in Sources */,
 				999C40451E9497160059E870 /* AvatarCell.swift in Sources */,
+				99D925221E99E1DB008150EE /* ChooseGoalsController.swift in Sources */,
 				999C404C1E94AD1C0059E870 /* InputCell.swift in Sources */,
 				99BF6F891E77F67D00FD743F /* Colors.swift in Sources */,
 				99BF6F981E77F67D00FD743F /* RequestSerializer.swift in Sources */,

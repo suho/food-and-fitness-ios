@@ -16,9 +16,4 @@ class SignInController: BaseViewController {
     @IBAction fileprivate func signIn(_ sender: Any) {
         AppDelegate.shared.gotoHome()
     }
-
-    @IBAction fileprivate func signUp(_ sender: Any) {
-        let signUpController = SignUpController()
-        navigationController?.pushViewController(signUpController, animated: true)
-    }
 }
