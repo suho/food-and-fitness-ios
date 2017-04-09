@@ -1,5 +1,5 @@
 //
-//  Goal.swift
+//  Food.swift
 //  FoodAndFitness
 //
 //  Created by Mylo Ho on 4/9/17.
@@ -10,11 +10,15 @@ import RealmSwift
 import ObjectMapper
 import RealmS
 
-final class Goal: Object, Mappable {
+final class Food: Object, Mappable {
 
     private(set) dynamic var id = 0
     private(set) dynamic var name: String = ""
-    private(set) dynamic var detail: String = ""
+    private(set) dynamic var weight: Int = 0
+    private(set) dynamic var calories: Int = 0
+    private(set) dynamic var protein: Int = 0
+    private(set) dynamic var carbs: Int = 0
+    private(set) dynamic var fat: Int = 0
 
     override class func primaryKey() -> String? {
         return "id"
@@ -23,7 +27,7 @@ final class Goal: Object, Mappable {
     convenience required init?(map: Map) {
         self.init()
         id <- map["id"]
-        assert(id > 0, "Goal `id` must be greater than 0")
+        assert(id > 0, "Food `id` must be greater than 0")
     }
 
     func mapping(map: Map) {
