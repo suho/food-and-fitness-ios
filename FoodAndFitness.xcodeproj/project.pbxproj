@@ -87,6 +87,11 @@
 		99BF6F981E77F67D00FD743F /* RequestSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F7B1E77F67D00FD743F /* RequestSerializer.swift */; };
 		99BF6F991E77F67D00FD743F /* ResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F7C1E77F67D00FD743F /* ResponseSerializer.swift */; };
 		99BF6F9A1E77F67D00FD743F /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F7D1E77F67D00FD743F /* Session.swift */; };
+		99CC4CFD1E9AAA6F000EE59E /* ChooseActivesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC4CFB1E9AAA6F000EE59E /* ChooseActivesController.swift */; };
+		99CC4CFE1E9AAA6F000EE59E /* ChooseActivesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99CC4CFC1E9AAA6F000EE59E /* ChooseActivesController.xib */; };
+		99CC4D001E9AAD92000EE59E /* ChooseActivesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC4CFF1E9AAD92000EE59E /* ChooseActivesViewModel.swift */; };
+		99CC4D021E9AAFAE000EE59E /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC4D011E9AAFAE000EE59E /* SignUpViewModel.swift */; };
+		99CC4D041E9AB05D000EE59E /* ChooseGoalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC4D031E9AB05D000EE59E /* ChooseGoalsViewModel.swift */; };
 		99D925221E99E1DB008150EE /* ChooseGoalsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D925201E99E1DB008150EE /* ChooseGoalsController.swift */; };
 		99D925231E99E1DB008150EE /* ChooseGoalsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99D925211E99E1DB008150EE /* ChooseGoalsController.xib */; };
 		99D925271E99ED6A008150EE /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D925261E99ED6A008150EE /* Goal.swift */; };
@@ -185,6 +190,11 @@
 		99BF6F7C1E77F67D00FD743F /* ResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerializer.swift; sourceTree = "<group>"; };
 		99BF6F7D1E77F67D00FD743F /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		99BF6F7F1E77F67D00FD743F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99CC4CFB1E9AAA6F000EE59E /* ChooseActivesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseActivesController.swift; sourceTree = "<group>"; };
+		99CC4CFC1E9AAA6F000EE59E /* ChooseActivesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseActivesController.xib; sourceTree = "<group>"; };
+		99CC4CFF1E9AAD92000EE59E /* ChooseActivesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseActivesViewModel.swift; sourceTree = "<group>"; };
+		99CC4D011E9AAFAE000EE59E /* SignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		99CC4D031E9AB05D000EE59E /* ChooseGoalsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseGoalsViewModel.swift; sourceTree = "<group>"; };
 		99D925201E99E1DB008150EE /* ChooseGoalsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseGoalsController.swift; sourceTree = "<group>"; };
 		99D925211E99E1DB008150EE /* ChooseGoalsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseGoalsController.xib; sourceTree = "<group>"; };
 		99D925261E99ED6A008150EE /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
@@ -465,10 +475,12 @@
 		999C402C1E9489640059E870 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				99D9253E1E9A087F008150EE /* Actives */,
 				999C40381E9492890059E870 /* Cell */,
 				99D9251F1E99E1C5008150EE /* Goals */,
 				999C40311E9489A60059E870 /* SignUpController.swift */,
 				999C40321E9489A60059E870 /* SignUpController.xib */,
+				99CC4D011E9AAFAE000EE59E /* SignUpViewModel.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -811,6 +823,7 @@
 			children = (
 				99D925201E99E1DB008150EE /* ChooseGoalsController.swift */,
 				99D925211E99E1DB008150EE /* ChooseGoalsController.xib */,
+				99CC4D031E9AB05D000EE59E /* ChooseGoalsViewModel.swift */,
 			);
 			path = Goals;
 			sourceTree = "<group>";
@@ -877,6 +890,16 @@
 				99D9253C1E9A0504008150EE /* UserFood.swift */,
 			);
 			path = userFood;
+			sourceTree = "<group>";
+		};
+		99D9253E1E9A087F008150EE /* Actives */ = {
+			isa = PBXGroup;
+			children = (
+				99CC4CFB1E9AAA6F000EE59E /* ChooseActivesController.swift */,
+				99CC4CFC1E9AAA6F000EE59E /* ChooseActivesController.xib */,
+				99CC4CFF1E9AAD92000EE59E /* ChooseActivesViewModel.swift */,
+			);
+			path = Actives;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -968,6 +991,7 @@
 				99AEA1801E87B240000DA06F /* AddMenuViewController.xib in Resources */,
 				999C40411E9497000059E870 /* TitleCell.xib in Resources */,
 				9959E8791E8D6CEA005A8347 /* CalendarController.xib in Resources */,
+				99CC4CFE1E9AAA6F000EE59E /* ChooseActivesController.xib in Resources */,
 				992DA8C11E8A1DA6002A194C /* NutritionViewController.xib in Resources */,
 				99BF6F8F1E77F67D00FD743F /* LaunchScreen.storyboard in Resources */,
 				99D925231E99E1DB008150EE /* ChooseGoalsController.xib in Resources */,
@@ -1069,6 +1093,7 @@
 				992DA8AF1E8A0EF9002A194C /* BaseViewController.swift in Sources */,
 				992DA8D91E8A1F1D002A194C /* FitnessHistoryController.swift in Sources */,
 				999C40451E9497160059E870 /* AvatarCell.swift in Sources */,
+				99CC4CFD1E9AAA6F000EE59E /* ChooseActivesController.swift in Sources */,
 				99D925221E99E1DB008150EE /* ChooseGoalsController.swift in Sources */,
 				999C404C1E94AD1C0059E870 /* InputCell.swift in Sources */,
 				99BF6F891E77F67D00FD743F /* Colors.swift in Sources */,
@@ -1109,16 +1134,19 @@
 				999C40511E94D72F0059E870 /* RadioCell.swift in Sources */,
 				992DA8CB1E8A1DB0002A194C /* FitnessViewController.swift in Sources */,
 				99BF6F9A1E77F67D00FD743F /* Session.swift in Sources */,
+				99CC4D041E9AB05D000EE59E /* ChooseGoalsViewModel.swift in Sources */,
 				999C40331E9489A60059E870 /* SignUpController.swift in Sources */,
 				99BF6F8C1E77F67D00FD743F /* Strings.swift in Sources */,
 				992DA8D51E8A1EB2002A194C /* FitnessAnalysisController.swift in Sources */,
 				99D925271E99ED6A008150EE /* Goal.swift in Sources */,
+				99CC4D001E9AAD92000EE59E /* ChooseActivesViewModel.swift in Sources */,
 				99BF6F971E77F67D00FD743F /* Error.swift in Sources */,
 				993404E41E83849D009A445F /* View.swift in Sources */,
 				99E80FF61E88FC3C0093F0BF /* Date.swift in Sources */,
 				99BF6F881E77F67D00FD743F /* ApiPath.swift in Sources */,
 				993404DE1E838306009A445F /* UserProfileCell.swift in Sources */,
 				993404FD1E83C45D009A445F /* InformationViewController.swift in Sources */,
+				99CC4D021E9AAFAE000EE59E /* SignUpViewModel.swift in Sources */,
 				992DA8B11E8A0EF9002A194C /* RootSideMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

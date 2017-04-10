@@ -12,9 +12,9 @@ import RealmS
 
 final class Active: Object, Mappable {
 
-    private(set) dynamic var id = 0
-    private(set) dynamic var name: String = ""
-    private(set) dynamic var detail: String = ""
+    dynamic var id = 0
+    dynamic var name: String = ""
+    dynamic var detail: String = ""
 
     override class func primaryKey() -> String? {
         return "id"

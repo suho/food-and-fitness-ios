@@ -11,6 +11,7 @@ import SwiftUtils
 
 class SignUpController: BaseViewController {
     @IBOutlet fileprivate weak var tableView: UITableView!
+    var viewModel: SignUpViewModel!
 
     enum SignUpRow: Int {
         case avatar
@@ -145,6 +146,7 @@ extension SignUpController: UITableViewDataSource {
             return cell
         case .button:
             let cell = tableView.dequeue(NextButtonCell.self)
+            cell.delegate = self
             return cell
         }
     }
@@ -167,7 +169,6 @@ extension SignUpController: AvatarCellDelegate {
         case .showActionSheet:
             let alert = AlertController(title: App.name, message: Strings.choosePhotoAction, preferredStyle: .actionSheet)
             alert.addAction(Strings.openGallery, handler: {
-
                 accessLibrary.openPhoto(sender: nil)
             })
             alert.addAction(Strings.openCamera, handler: { 
@@ -182,6 +183,13 @@ extension SignUpController: AvatarCellDelegate {
 // MARK: - AccessLibraryManager
 extension SignUpController: AccessLibraryManagerDelegate {
     func accessLibraryManager(manager: AccessLibraryManager, didFinishPickingWithImage image: UIImage, type: AccessLibraryType) {
+        
+    }
+}
+
+// MARK: - NextButtonCellDelegate
+extension SignUpController: NextButtonCellDelegate {
+    func cell(_ cell: NextButtonCell, needsPerformAction action: NextButtonCell.Action) {
 
     }
 }

@@ -10,30 +10,33 @@ import UIKit
 
 final class ChooseGoalsController: BaseViewController {
 
-    enum Goals {
-        case beHealthier
-        case loseWeight
-        case gainWeight
-    }
-
     override var isNavigationBarHidden: Bool {
         return true
     }
 
-    fileprivate func choose(goal: ChooseGoalsController.Goals) {
-        
+    fileprivate func choose(goal: Goal) {
+        let chooseActivesController = ChooseActivesController()
+        let signUpParams = SignUpParams(goal: goal, active: nil)
+        chooseActivesController.viewModel = ChooseActivesViewModel(params: signUpParams)
+        navigationController?.pushViewController(chooseActivesController, animated: true)
     }
 
     @IBAction fileprivate func beHealthier(_ sender: Any) {
-        choose(goal: .beHealthier)
+        let goal = Goal()
+        goal.id = 1
+        choose(goal: goal)
     }
 
     @IBAction fileprivate func loseWeight(_ sender: Any) {
-        choose(goal: .loseWeight)
+        let goal = Goal()
+        goal.id = 2
+        choose(goal: goal)
     }
 
     @IBAction fileprivate func gainWeight(_ sender: Any) {
-        choose(goal: .loseWeight)
+        let goal = Goal()
+        goal.id = 3
+        choose(goal: goal)
     }
 
     @IBAction fileprivate func signIn(_ sender: Any) {

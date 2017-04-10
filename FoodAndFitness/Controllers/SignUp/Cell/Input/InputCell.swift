@@ -12,6 +12,7 @@ import SwiftDate
 final class InputCell: BaseTableViewCell {
     @IBOutlet fileprivate weak var titleLabel: UILabel!
     @IBOutlet fileprivate weak var textField: UITextField!
+    static let maxValue: Double = 250
 
     struct Data {
         var title: String
@@ -84,7 +85,7 @@ extension InputCell: UITextFieldDelegate {
         case .height, .weight:
             guard let text = textField.text else { return true }
             guard let number = Int(text + string) else { return false }
-            if number > 250, string != Strings.empty {
+            if number > InputCell.maxValue, string != Strings.empty {
                 return false
             }
         default:
