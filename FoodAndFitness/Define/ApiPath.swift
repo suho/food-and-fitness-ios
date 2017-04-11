@@ -16,7 +16,7 @@ private protocol URLStringConvertible {
 
 final class ApiPath {
 
-    static var baseURL = "https://apis-ssl.unit-hosting.com/FoodAndFitness/develop/api/v1"
+    static var baseURL = "http://localhost:3000"
     static var googleMapURL = "https://maps.googleapis.com/maps/api/"
 
     // MARK: - Roots
@@ -26,6 +26,10 @@ final class ApiPath {
     struct Auth {
         static var login: String {
             return ApiPath.auth / "sign_in"
+        }
+
+        static var signup: String {
+            return ApiPath.auth
         }
     }
 

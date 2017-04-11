@@ -23,10 +23,10 @@ extension Network {
 }
 
 class FFError {
-    static let Network = NSError(domain: ApiPath.baseURL.host, status: HTTPStatus.requestTimeout, message: Strings.Errors.notNetwork)
-    static let Authentication = NSError(domain: ApiPath.baseURL.host, status: HTTPStatus.unauthorized)
-    static let JSON = NSError(domain: NSCocoaErrorDomain, code: 3840, message: Strings.Errors.json)
-    static let ApiKey = NSError(domain: ApiPath.baseURL.host, code: 120, message: "")
+    static let network = NSError(domain: ApiPath.baseURL.host, status: HTTPStatus.requestTimeout, message: Strings.Errors.notNetwork)
+    static let authentication = NSError(domain: ApiPath.baseURL.host, status: HTTPStatus.unauthorized)
+    static let json = NSError(domain: NSCocoaErrorDomain, code: 3840, message: Strings.Errors.json)
+    static let apiKey = NSError(domain: ApiPath.baseURL.host, code: 120, message: "")
 }
 
 extension Error {
@@ -38,21 +38,8 @@ extension Error {
 
 extension NSError {
     func show(level: AlertLevel = .normal) {
-        // check errors global
-        if let status = HTTPStatus(code: code) {
-            switch status {
-            case .serviceUnavailable:
-                break
-            case .noResponse:
-                let alert = AlertController.alertWithError(self, level: level)
-                alert.present()
-            default: break
-            }
-        } else {
-            // erros normal
-            let alert = AlertController.alertWithError(self, level: level)
-            alert.present()
-        }
+        let alert = AlertController.alertWithError(self, level: level)
+        alert.present()
     }
 }
 

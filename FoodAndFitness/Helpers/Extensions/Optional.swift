@@ -9,12 +9,21 @@
 import Foundation
 
 extension Optional {
-    func toString() -> String? {
+    func toOptionalString() -> String? {
         switch self {
         case .some(let value):
             return "\(value)"
         case .none:
             return nil
+        }
+    }
+
+    func toString() -> String {
+        switch self {
+        case .some(let value):
+            return "\(value)"
+        case .none:
+            return ""
         }
     }
 }

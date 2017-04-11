@@ -34,10 +34,10 @@ extension Mapper where N: Object, N: Mappable {
         switch result {
         case .success(let json):
             guard let data = json["data"] else {
-                completion(.failure(FFError.JSON))
+                completion(.failure(FFError.json))
                 return
             }
-            var result: Result<JSObject> = .failure(FFError.JSON)
+            var result: Result<JSObject> = .failure(FFError.json)
             switch type {
             case .object:
                 if let js = data as? JSObject, js.keys.isNotEmpty {

@@ -51,7 +51,7 @@ extension Request {
         }
 
         guard let data = data, let json = data.toJSON() as? JSObject else {
-            return Result.failure(FFError.JSON)
+            return Result.failure(FFError.json)
         }
 
         logger.info("\n data -> \(json)")
