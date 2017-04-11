@@ -17,11 +17,11 @@ extension NSObject {
         return copy() as? T
     }
 
-    func dictionaryWithValuesForKeyPaths(keyPaths: [String]) -> [String: AnyObject] {
-        var info: [String: AnyObject] = [:]
+    func dictionaryWithValuesForKeyPaths(keyPaths: [String]) -> [String: Any] {
+        var info: [String: Any] = [:]
         for keyPath in keyPaths {
             if let value = value(forKeyPath: keyPath) {
-                info[keyPath] = value as AnyObject?
+                info[keyPath] = value
             }
         }
         return info
@@ -224,7 +224,7 @@ extension UIButton {
 
 // MARK: - UIView
 extension UIView {
-    func addTapGesture(target: AnyObject?, action: Selector) {
+    func addTapGesture(target: Any?, action: Selector) {
         let tap = UITapGestureRecognizer(target: target, action: action)
         addGestureRecognizer(tap)
     }

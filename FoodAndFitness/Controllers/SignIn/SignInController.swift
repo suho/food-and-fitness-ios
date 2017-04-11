@@ -8,17 +8,14 @@
 
 import UIKit
 
-class SignInController: BaseViewController {
-    override var isNavigationBarHidden: Bool {
-        return true
+final class SignInController: BaseViewController {
+
+    override func setupUI() {
+        super.setupUI()
+        title = Strings.signIn
     }
 
     @IBAction fileprivate func signIn(_ sender: Any) {
         AppDelegate.shared.gotoHome()
-    }
-
-    @IBAction fileprivate func signUp(_ sender: Any) {
-        let signUpController = SignUpController()
-        navigationController?.pushViewController(signUpController, animated: true)
     }
 }

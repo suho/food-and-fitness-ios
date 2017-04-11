@@ -21,9 +21,12 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVT-Qa-Pfa">
                         <rect key="frame" x="53.5" y="6" width="213" height="33"/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <state key="normal" title="Next">
+                        <state key="normal" title="Sign Up">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="signUp:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xhn-a5-H7Z"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

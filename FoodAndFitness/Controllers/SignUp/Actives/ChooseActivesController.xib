@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChooseActivesController" customModule="FoodAndFitness" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRb-TX-46W">
+                    <rect key="frame" x="16" y="20" width="34" height="30"/>
+                    <state key="normal" title="Back">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="back:" destination="-1" eventType="touchUpInside" id="dUm-Mi-7yT"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How active are you?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5n-Vp-x0Y">
+                    <rect key="frame" x="111" y="323.5" width="153.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gVv-uC-tUc">
+                    <rect key="frame" x="31.5" y="360" width="312.5" height="291"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wwq-x9-ofw" customClass="View" customModule="FoodAndFitness" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="312.5" height="69"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FA4-8l-I34" customClass="View" customModule="FoodAndFitness" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="8" width="296.5" height="53"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hch-4e-G8D">
+                                            <rect key="frame" x="0.0" y="0.0" width="296.5" height="53"/>
+                                            <state key="normal" title="Sedentary"/>
+                                            <connections>
+                                                <action selector="sedentary:" destination="-1" eventType="touchUpInside" id="aiJ-yq-oEb"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="hch-4e-G8D" firstAttribute="leading" secondItem="FA4-8l-I34" secondAttribute="leading" id="6fd-SM-Ueh"/>
+                                        <constraint firstAttribute="bottom" secondItem="hch-4e-G8D" secondAttribute="bottom" id="8lU-aU-NMK"/>
+                                        <constraint firstItem="hch-4e-G8D" firstAttribute="top" secondItem="FA4-8l-I34" secondAttribute="top" id="cLP-yB-GBj"/>
+                                        <constraint firstAttribute="trailing" secondItem="hch-4e-G8D" secondAttribute="trailing" id="suS-YA-0rK"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="-1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="NO"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" red="0.67382705480000005" green="0.88408380870000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="FA4-8l-I34" secondAttribute="trailing" constant="8" id="0tC-3I-xVb"/>
+                                <constraint firstItem="FA4-8l-I34" firstAttribute="top" secondItem="Wwq-x9-ofw" secondAttribute="top" constant="8" id="CjN-SH-24s"/>
+                                <constraint firstAttribute="bottom" secondItem="FA4-8l-I34" secondAttribute="bottom" constant="8" id="zGj-No-r2I"/>
+                                <constraint firstItem="FA4-8l-I34" firstAttribute="leading" secondItem="Wwq-x9-ofw" secondAttribute="leading" constant="8" id="zQl-gW-A4v"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="-1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="insetDx">
+                                    <real key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="insetDy">
+                                    <real key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
+                                    <real key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rzV-e6-t1j" customClass="View" customModule="FoodAndFitness" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="74" width="312.5" height="69"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zbq-Uk-KaE" customClass="View" customModule="FoodAndFitness" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="8" width="296.5" height="53"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DeW-q0-hun">
+                                            <rect key="frame" x="0.0" y="0.0" width="296.5" height="53"/>
+                                            <state key="normal" title="Lightly Active"/>
+                                            <connections>
+                                                <action selector="lightlyActive:" destination="-1" eventType="touchUpInside" id="dcy-Jk-XPm"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="DeW-q0-hun" secondAttribute="bottom" id="IQs-vT-yaI"/>
+                                        <constraint firstItem="DeW-q0-hun" firstAttribute="top" secondItem="zbq-Uk-KaE" secondAttribute="top" id="IwZ-Ce-zfh"/>
+                                        <constraint firstAttribute="trailing" secondItem="DeW-q0-hun" secondAttribute="trailing" id="aDZ-Uf-6XE"/>
+                                        <constraint firstItem="DeW-q0-hun" firstAttribute="leading" secondItem="zbq-Uk-KaE" secondAttribute="leading" id="okF-60-gmn"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="-1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="NO"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" red="0.67382705480000005" green="0.88408380870000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="zbq-Uk-KaE" firstAttribute="top" secondItem="rzV-e6-t1j" secondAttribute="top" constant="8" id="7Be-GA-7vt"/>
+                                <constraint firstAttribute="trailing" secondItem="zbq-Uk-KaE" secondAttribute="trailing" constant="8" id="A5y-qo-CJd"/>
+                                <constraint firstItem="zbq-Uk-KaE" firstAttribute="leading" secondItem="rzV-e6-t1j" secondAttribute="leading" constant="8" id="tzQ-Rw-CUN"/>
+                                <constraint firstAttribute="bottom" secondItem="zbq-Uk-KaE" secondAttribute="bottom" constant="8" id="y2e-8O-83e"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="-1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="insetDx">
+                                    <real key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="insetDy">
+                                    <real key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
+                                    <real key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AiZ-E6-7aY" customClass="View" customModule="FoodAndFitness" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="148" width="312.5" height="69"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23B-BV-ESU" customClass="View" customModule="FoodAndFitness" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="8" width="296.5" height="53"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYn-yE-ACM">
+                                            <rect key="frame" x="0.0" y="0.0" width="296.5" height="53"/>
+                                            <state key="normal" title="Moderately Active"/>
+                                            <connections>
+                                                <action selector="moderatelyActive:" destination="-1" eventType="touchUpInside" id="g9Z-CX-OeG"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="pYn-yE-ACM" firstAttribute="leading" secondItem="23B-BV-ESU" secondAttribute="leading" id="D3A-pj-82v"/>
+                                        <constraint firstItem="pYn-yE-ACM" firstAttribute="top" secondItem="23B-BV-ESU" secondAttribute="top" id="F1V-9l-zu5"/>
+                                        <constraint firstAttribute="bottom" secondItem="pYn-yE-ACM" secondAttribute="bottom" id="b2O-BX-PCY"/>
+                                        <constraint firstAttribute="trailing" secondItem="pYn-yE-ACM" secondAttribute="trailing" id="zKB-lK-voM"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="-1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="NO"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" red="0.67382705480000005" green="0.88408380870000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="23B-BV-ESU" firstAttribute="leading" secondItem="AiZ-E6-7aY" secondAttribute="leading" constant="8" id="07Q-mo-n2K"/>
+                                <constraint firstAttribute="bottom" secondItem="23B-BV-ESU" secondAttribute="bottom" constant="8" id="V5Y-ml-xFf"/>
+                                <constraint firstAttribute="trailing" secondItem="23B-BV-ESU" secondAttribute="trailing" constant="8" id="nxO-nY-AnG"/>
+                                <constraint firstItem="23B-BV-ESU" firstAttribute="top" secondItem="AiZ-E6-7aY" secondAttribute="top" constant="8" id="zLb-EC-0pN"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="-1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="insetDx">
+                                    <real key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="insetDy">
+                                    <real key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
+                                    <real key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L6d-RF-Zq8" customClass="View" customModule="FoodAndFitness" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="222" width="312.5" height="69"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gB8-CC-Bsq" customClass="View" customModule="FoodAndFitness" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="8" width="296.5" height="53"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Elm-BR-jpX">
+                                            <rect key="frame" x="0.0" y="0.0" width="296.5" height="53"/>
+                                            <state key="normal" title="Very Active"/>
+                                            <connections>
+                                                <action selector="veryActive:" destination="-1" eventType="touchUpInside" id="m5g-Xj-heR"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="Elm-BR-jpX" firstAttribute="top" secondItem="gB8-CC-Bsq" secondAttribute="top" id="Ncx-WU-ceD"/>
+                                        <constraint firstItem="Elm-BR-jpX" firstAttribute="leading" secondItem="gB8-CC-Bsq" secondAttribute="leading" id="SBR-g6-Lbi"/>
+                                        <constraint firstAttribute="trailing" secondItem="Elm-BR-jpX" secondAttribute="trailing" id="c1z-kl-3w0"/>
+                                        <constraint firstAttribute="bottom" secondItem="Elm-BR-jpX" secondAttribute="bottom" id="ngi-vb-RSg"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="-1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="NO"/>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" red="0.67382705480000005" green="0.88408380870000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="gB8-CC-Bsq" secondAttribute="bottom" constant="8" id="AGC-wb-oZa"/>
+                                <constraint firstAttribute="trailing" secondItem="gB8-CC-Bsq" secondAttribute="trailing" constant="8" id="IMi-uH-sOk"/>
+                                <constraint firstItem="gB8-CC-Bsq" firstAttribute="top" secondItem="L6d-RF-Zq8" secondAttribute="top" constant="8" id="Vmh-D8-4gF"/>
+                                <constraint firstItem="gB8-CC-Bsq" firstAttribute="leading" secondItem="L6d-RF-Zq8" secondAttribute="leading" constant="8" id="pZK-3z-44G"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="-1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="insetDx">
+                                    <real key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="insetDy">
+                                    <real key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
+                                    <real key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="0.67382705480000005" green="0.88408380870000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="k5n-Vp-x0Y" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="34d-H4-2I6"/>
+                <constraint firstItem="gVv-uC-tUc" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="5/6" id="8yE-Fh-VaA"/>
+                <constraint firstItem="VRb-TX-46W" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="CfE-aX-LBk"/>
+                <constraint firstItem="k5n-Vp-x0Y" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="WdG-r0-3bp"/>
+                <constraint firstAttribute="bottom" secondItem="gVv-uC-tUc" secondAttribute="bottom" constant="16" id="dNN-KQ-2Ed"/>
+                <constraint firstItem="gVv-uC-tUc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="iyK-nr-Hmy"/>
+                <constraint firstItem="gVv-uC-tUc" firstAttribute="top" secondItem="k5n-Vp-x0Y" secondAttribute="bottom" constant="16" id="n6F-Ke-wyz"/>
+                <constraint firstItem="VRb-TX-46W" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="px2-6U-661"/>
+            </constraints>
+            <point key="canvasLocation" x="17" y="-232"/>
+        </view>
+    </objects>
+</document>

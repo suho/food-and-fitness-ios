@@ -66,7 +66,7 @@ extension Mapper where N: Object, N: Mappable {
 // MARK: Data Transform
 final class DataTransform {
     static let date = TransformOf<Date, String>(fromJSON: { (string: String?) -> Date? in
-        return string?.toDate(format: .full).absoluteDate
+        return string?.toDate(format: .date).absoluteDate
     }, toJSON: { (date: Date?) -> String? in
         return date?.ffDate(format: .date).toString(format: .date)
     })

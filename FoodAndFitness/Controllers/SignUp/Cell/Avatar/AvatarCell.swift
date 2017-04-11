@@ -12,7 +12,7 @@ protocol AvatarCellDelegate: NSObjectProtocol {
     func cell(_ cell: AvatarCell, needsPerformAction action: AvatarCell.Action)
 }
 
-class AvatarCell: BaseTableViewCell {
+final class AvatarCell: BaseTableViewCell {
 
     @IBOutlet fileprivate weak var titleLabel: UILabel!
     @IBOutlet fileprivate weak var avatarImageView: UIImageView!
@@ -24,12 +24,18 @@ class AvatarCell: BaseTableViewCell {
 
     struct Data {
         var title: String
+        var image: UIImage?
     }
 
     var data: Data? {
         didSet {
             guard let data = data else { return }
             titleLabel.text = data.title
+            if let image = data.image {
+                avatarImageView.image = image
+            } else {
+                avatarImageView.image = #imageLiteral(resourceName: "avatar_default")
+            }
         }
     }
 

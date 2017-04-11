@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if api.session.isAuthenticated {
                 gotoHome()
             } else {
-                gotoLogin()
+                gotoSignUp()
             }
             window.backgroundColor = .white
             window.makeKeyAndVisible()
@@ -48,6 +48,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sideMenuController.rootViewController = homeController
         sideMenuController.setup(.slideBelow)
         window?.rootViewController = sideMenuController
+    }
+
+    func gotoSignUp() {
+        let chooseGoalsController = UINavigationController(rootViewController: ChooseGoalsController())
+        window?.rootViewController = chooseGoalsController
     }
 
     func gotoLogin() {
