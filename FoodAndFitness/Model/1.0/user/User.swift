@@ -48,7 +48,15 @@ final class User: Object, Mappable {
     }
 
     func mapping(map: Map) {
-
+        name <- map["name"]
+        email <- map["email"]
+        avatarUrl <- map["image.url"]
+        birthday <- (map["birthday"], DataTransform.date)
+        genderRaw <- map["gender"]
+        height <- map["height"]
+        weight <- map["weight"]
+        goal <- map["goal"]
+        active <- map["active"]
     }
 }
 

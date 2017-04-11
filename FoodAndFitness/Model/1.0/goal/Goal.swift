@@ -27,5 +27,7 @@ final class Goal: Object, Mappable {
     }
 
     func mapping(map: Map) {
+        name <- map["name"]
+        detail <- map["detail"]
     }
 }

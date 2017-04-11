@@ -9,14 +9,20 @@
 import UIKit
 import SwiftDate
 
+protocol InputCellDelegate: NSObjectProtocol {
+    func cell(_ cell: InputCell, withInputString string: String)
+}
+
 final class InputCell: BaseTableViewCell {
     @IBOutlet fileprivate weak var titleLabel: UILabel!
     @IBOutlet fileprivate weak var textField: UITextField!
-    static let maxValue: Double = 250
+    weak var delegate: InputCellDelegate?
+    static let maxValue: Int = 250
 
     struct Data {
         var title: String
         var placeHolder: String
+        var detailText: String?
     }
 
     var cellType: SignUpController.SignUpRow = .fullName {
@@ -44,6 +50,7 @@ final class InputCell: BaseTableViewCell {
             guard let data = data else { return }
             titleLabel.text = data.title
             textField.placeholder = data.placeHolder
+            textField.text = data.detailText
         }
     }
 
@@ -106,6 +113,9 @@ extension InputCell: UITextFieldDelegate {
             }
         default:
             break
+        }
+        if let string = textField.text {
+            delegate?.cell(self, withInputString: string)
         }
     }
 }

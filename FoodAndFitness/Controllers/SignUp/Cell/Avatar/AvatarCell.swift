@@ -24,12 +24,18 @@ final class AvatarCell: BaseTableViewCell {
 
     struct Data {
         var title: String
+        var image: UIImage?
     }
 
     var data: Data? {
         didSet {
             guard let data = data else { return }
             titleLabel.text = data.title
+            if let image = data.image {
+                avatarImageView.image = image
+            } else {
+                avatarImageView.image = #imageLiteral(resourceName: "avatar_default")
+            }
         }
     }
 

@@ -87,6 +87,7 @@
 		99BF6F981E77F67D00FD743F /* RequestSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F7B1E77F67D00FD743F /* RequestSerializer.swift */; };
 		99BF6F991E77F67D00FD743F /* ResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F7C1E77F67D00FD743F /* ResponseSerializer.swift */; };
 		99BF6F9A1E77F67D00FD743F /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F7D1E77F67D00FD743F /* Session.swift */; };
+		99CAFE7D1E9C767D00026CCE /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CAFE7C1E9C767D00026CCE /* Optional.swift */; };
 		99CC4CFD1E9AAA6F000EE59E /* ChooseActivesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC4CFB1E9AAA6F000EE59E /* ChooseActivesController.swift */; };
 		99CC4CFE1E9AAA6F000EE59E /* ChooseActivesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99CC4CFC1E9AAA6F000EE59E /* ChooseActivesController.xib */; };
 		99CC4D001E9AAD92000EE59E /* ChooseActivesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC4CFF1E9AAD92000EE59E /* ChooseActivesViewModel.swift */; };
@@ -190,6 +191,7 @@
 		99BF6F7C1E77F67D00FD743F /* ResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerializer.swift; sourceTree = "<group>"; };
 		99BF6F7D1E77F67D00FD743F /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		99BF6F7F1E77F67D00FD743F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99CAFE7C1E9C767D00026CCE /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		99CC4CFB1E9AAA6F000EE59E /* ChooseActivesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseActivesController.swift; sourceTree = "<group>"; };
 		99CC4CFC1E9AAA6F000EE59E /* ChooseActivesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseActivesController.xib; sourceTree = "<group>"; };
 		99CC4CFF1E9AAD92000EE59E /* ChooseActivesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseActivesViewModel.swift; sourceTree = "<group>"; };
@@ -692,6 +694,7 @@
 				99E80FF51E88FC3C0093F0BF /* Date.swift */,
 				999C40531E94E3400059E870 /* UILabel.swift */,
 				999C40551E94E8AD0059E870 /* UITextField.swift */,
+				99CAFE7C1E9C767D00026CCE /* Optional.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1088,6 +1091,7 @@
 				99BF6F8E1E77F67D00FD743F /* UIViewController.swift in Sources */,
 				99D925291E99F10E008150EE /* Active.swift in Sources */,
 				99AEA17F1E87B240000DA06F /* AddMenuViewController.swift in Sources */,
+				99CAFE7D1E9C767D00026CCE /* Optional.swift in Sources */,
 				99D925301E99F8F5008150EE /* Exercise.swift in Sources */,
 				99BF6F841E77F67D00FD743F /* HomeViewController.swift in Sources */,
 				992DA8AF1E8A0EF9002A194C /* BaseViewController.swift in Sources */,

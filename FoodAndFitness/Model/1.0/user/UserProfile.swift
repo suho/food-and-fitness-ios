@@ -11,9 +11,9 @@ import ObjectMapper
 import RealmS
 
 enum Gender: Int, CustomStringConvertible {
+    case female = 0
     case male = 1
-    case female = 2
-    case others = 3
+    case others = 2
 
     var description: String {
         switch self {

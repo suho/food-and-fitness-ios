@@ -16,7 +16,8 @@ final class ChooseGoalsController: BaseViewController {
 
     fileprivate func choose(goal: Goal) {
         let chooseActivesController = ChooseActivesController()
-        let signUpParams = SignUpParams(goal: goal, active: nil)
+        var signUpParams = SignUpParams()
+        signUpParams.goal = goal
         chooseActivesController.viewModel = ChooseActivesViewModel(params: signUpParams)
         navigationController?.pushViewController(chooseActivesController, animated: true)
     }

@@ -8,10 +8,20 @@
 
 import UIKit
 
+protocol RadioCellDelegate: NSObjectProtocol {
+    func cell(_ cell: RadioCell, didSelectGender gender: Gender)
+}
+
 final class RadioCell: BaseTableViewCell {
     @IBOutlet fileprivate weak var titleLabel: UILabel!
     @IBOutlet fileprivate weak var maleButton: UIButton!
     @IBOutlet fileprivate weak var femaleButton: UIButton!
+    weak var delegate: RadioCellDelegate?
+
+    enum Action {
+        case male
+        case female
+    }
 
     struct Data {
         var title: String
@@ -30,11 +40,13 @@ final class RadioCell: BaseTableViewCell {
     }
 
     @IBAction fileprivate func maleClicked(_ sender: Any) {
+        delegate?.cell(self, didSelectGender: .male)
         if maleButton.isSelected { return }
         changeButtonStatus()
     }
 
     @IBAction fileprivate func femaleClicked(_ sender: Any) {
+        delegate?.cell(self, didSelectGender: .female)
         if femaleButton.isSelected { return }
         changeButtonStatus()
     }
