@@ -72,8 +72,18 @@ extension Bundle {
     }
 }
 
+extension Int {
+    func format(f: String) -> String {
+        return String(format: "%\(f)d", self)
+    }
+}
+
 // MARK: - Double
 extension Double {
+    
+    func format(f: String) -> String {
+        return String(format: "%\(f)f", self)
+    }
     // to radiant
     var degree: Double {
         return .pi * self / 180.0

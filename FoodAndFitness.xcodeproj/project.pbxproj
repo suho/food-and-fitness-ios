@@ -34,7 +34,6 @@
 		992DA8E21E8A1F58002A194C /* NutritionHistoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 992DA8E01E8A1F58002A194C /* NutritionHistoryController.xib */; };
 		993404DE1E838306009A445F /* UserProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993404DC1E838306009A445F /* UserProfileCell.swift */; };
 		993404DF1E838306009A445F /* UserProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 993404DD1E838306009A445F /* UserProfileCell.xib */; };
-		993404E41E83849D009A445F /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993404E31E83849D009A445F /* View.swift */; };
 		993404F11E83C41B009A445F /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993404EF1E83C41B009A445F /* AnalysisViewController.swift */; };
 		993404F21E83C41B009A445F /* AnalysisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 993404F01E83C41B009A445F /* AnalysisViewController.xib */; };
 		993404F91E83C44E009A445F /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993404F71E83C44E009A445F /* HistoryViewController.swift */; };
@@ -47,6 +46,9 @@
 		9959E8781E8D6CEA005A8347 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9959E8761E8D6CEA005A8347 /* CalendarController.swift */; };
 		9959E8791E8D6CEA005A8347 /* CalendarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9959E8771E8D6CEA005A8347 /* CalendarController.xib */; };
 		99603EF01E9D2BF6001D1E5C /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99603EEF1E9D2BF6001D1E5C /* UserServices.swift */; };
+		997970FD1E9E401F005E1E7C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997970FC1E9E401F005E1E7C /* View.swift */; };
+		997971001E9E4095005E1E7C /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997970FF1E9E4095005E1E7C /* Formula.swift */; };
+		997EAE7C1E9EA18D0071D5BC /* LeftSideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997EAE7B1E9EA18D0071D5BC /* LeftSideViewModel.swift */; };
 		99993E8C1E80B7430052372A /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99993E8B1E80B7430052372A /* SideMenuController.swift */; };
 		99993E8E1E80B7840052372A /* LeftSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99993E8D1E80B7840052372A /* LeftSideViewController.swift */; };
 		999C402F1E94897C0059E870 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C402D1E94897C0059E870 /* SignInController.swift */; };
@@ -138,7 +140,6 @@
 		992DA8E01E8A1F58002A194C /* NutritionHistoryController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NutritionHistoryController.xib; sourceTree = "<group>"; };
 		993404DC1E838306009A445F /* UserProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileCell.swift; sourceTree = "<group>"; };
 		993404DD1E838306009A445F /* UserProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserProfileCell.xib; sourceTree = "<group>"; };
-		993404E31E83849D009A445F /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		993404EF1E83C41B009A445F /* AnalysisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
 		993404F01E83C41B009A445F /* AnalysisViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalysisViewController.xib; sourceTree = "<group>"; };
 		993404F71E83C44E009A445F /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +152,9 @@
 		9959E8761E8D6CEA005A8347 /* CalendarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
 		9959E8771E8D6CEA005A8347 /* CalendarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarController.xib; sourceTree = "<group>"; };
 		99603EEF1E9D2BF6001D1E5C /* UserServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
+		997970FC1E9E401F005E1E7C /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		997970FF1E9E4095005E1E7C /* Formula.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
+		997EAE7B1E9EA18D0071D5BC /* LeftSideViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSideViewModel.swift; sourceTree = "<group>"; };
 		99993E8B1E80B7430052372A /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 		99993E8D1E80B7840052372A /* LeftSideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSideViewController.swift; sourceTree = "<group>"; };
 		999C402D1E94897C0059E870 /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
@@ -383,14 +387,6 @@
 			path = UserProfileCell;
 			sourceTree = "<group>";
 		};
-		993404E21E838481009A445F /* View */ = {
-			isa = PBXGroup;
-			children = (
-				993404E31E83849D009A445F /* View.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		993404E51E83C3A5009A445F /* Analysis */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,12 +463,38 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		997970FA1E9E4016005E1E7C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				997970FE1E9E4060005E1E7C /* Formula */,
+				997970FB1E9E401F005E1E7C /* View */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		997970FB1E9E401F005E1E7C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				997970FC1E9E401F005E1E7C /* View.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		997970FE1E9E4060005E1E7C /* Formula */ = {
+			isa = PBXGroup;
+			children = (
+				997970FF1E9E4095005E1E7C /* Formula.swift */,
+			);
+			path = Formula;
+			sourceTree = "<group>";
+		};
 		99993E8A1E80B7430052372A /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
 				993404DB1E8382F0009A445F /* UserProfileCell */,
 				99993E8B1E80B7430052372A /* SideMenuController.swift */,
 				99993E8D1E80B7840052372A /* LeftSideViewController.swift */,
+				997EAE7B1E9EA18D0071D5BC /* LeftSideViewModel.swift */,
 			);
 			path = SideMenu;
 			sourceTree = "<group>";
@@ -686,17 +708,9 @@
 		99BF6F621E77F67D00FD743F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				99BF6F631E77F67D00FD743F /* Common */,
 				99BF6F641E77F67D00FD743F /* Extensions */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		99BF6F631E77F67D00FD743F /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
 			sourceTree = "<group>";
 		};
 		99BF6F641E77F67D00FD743F /* Extensions */ = {
@@ -727,7 +741,7 @@
 				99BF6F6B1E77F67D00FD743F /* Cocoa */,
 				992DA8ED1E8A78B9002A194C /* CricleProgress */,
 				99BF6F6D1E77F67D00FD743F /* SwiftDate */,
-				993404E21E838481009A445F /* View */,
+				997970FA1E9E4016005E1E7C /* Utils */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -1100,6 +1114,7 @@
 			files = (
 				992DA8DD1E8A1F3B002A194C /* NutritionAnalysisController.swift in Sources */,
 				993404F91E83C44E009A445F /* HistoryViewController.swift in Sources */,
+				997971001E9E4095005E1E7C /* Formula.swift in Sources */,
 				99993E8E1E80B7840052372A /* LeftSideViewController.swift in Sources */,
 				999C402F1E94897C0059E870 /* SignInController.swift in Sources */,
 				99BF6F8E1E77F67D00FD743F /* UIViewController.swift in Sources */,
@@ -1133,6 +1148,7 @@
 				999C40561E94E8AD0059E870 /* UITextField.swift in Sources */,
 				993405011E83C46D009A445F /* ProfileViewController.swift in Sources */,
 				99D925321E99F980008150EE /* Activity.swift in Sources */,
+				997970FD1E9E401F005E1E7C /* View.swift in Sources */,
 				99AEA17A1E87A9B2000DA06F /* UIView.swift in Sources */,
 				99D9253D1E9A0504008150EE /* UserFood.swift in Sources */,
 				99BF6F8A1E77F67D00FD743F /* Config.swift in Sources */,
@@ -1142,6 +1158,7 @@
 				99BF6F991E77F67D00FD743F /* ResponseSerializer.swift in Sources */,
 				99D9253B1E99FE12008150EE /* UserExercise.swift in Sources */,
 				993404F11E83C41B009A445F /* AnalysisViewController.swift in Sources */,
+				997EAE7C1E9EA18D0071D5BC /* LeftSideViewModel.swift in Sources */,
 				992DA8CF1E8A1DFD002A194C /* AddNutritionViewController.swift in Sources */,
 				99BF6F941E77F67D00FD743F /* UserProfile.swift in Sources */,
 				99BF6F961E77F67D00FD743F /* ApiMananger.swift in Sources */,
@@ -1161,7 +1178,6 @@
 				99D925271E99ED6A008150EE /* Goal.swift in Sources */,
 				99CC4D001E9AAD92000EE59E /* ChooseActivesViewModel.swift in Sources */,
 				99BF6F971E77F67D00FD743F /* Error.swift in Sources */,
-				993404E41E83849D009A445F /* View.swift in Sources */,
 				99E80FF61E88FC3C0093F0BF /* Date.swift in Sources */,
 				99BF6F881E77F67D00FD743F /* ApiPath.swift in Sources */,
 				993404DE1E838306009A445F /* UserProfileCell.swift in Sources */,

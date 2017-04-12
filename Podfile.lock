@@ -18,6 +18,9 @@ PODS:
   - RealmSwift (2.5.0):
     - Realm (= 2.5.0)
   - SAMKeychain (1.5.2)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
   - SVProgressHUD (2.1.2)
   - SwiftDate (4.0.13)
   - SwiftLint (0.16.1)
@@ -37,6 +40,7 @@ DEPENDENCIES:
   - PureLayout (~> 3.0.2)
   - RealmS (~> 2.2.0)
   - SAMKeychain (~> 1.5.1)
+  - SDWebImage (~> 3.8)
   - SVProgressHUD (~> 2.1.2)
   - SwiftDate (~> 4.0)
   - SwiftLint (~> 0.16.1)
@@ -57,6 +61,7 @@ SPEC CHECKSUMS:
   RealmS: 1fd1ca73d7680c48fee4fe2a53e6cd725192633c
   RealmSwift: 9f1a8f624f2f153410115c2cb7d486be9976565d
   SAMKeychain: 1865333198217411f35327e8da61b43de79b635b
+  SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftDate: 8ec416bb1b5129d1f35e8efaed720421f41d42df
   SwiftLint: b8b683208cc09640898f16318a7a452274e91f61
@@ -64,6 +69,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 27f0f564e933d6e1dd1994309a9ddba46827248c
+PODFILE CHECKSUM: 9706f1ac6dd7c311818590a385c46af63e208b95
 
 COCOAPODS: 1.2.0

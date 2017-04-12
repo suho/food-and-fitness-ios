@@ -37,6 +37,10 @@ final class User: Object, Mappable {
         }
     }
 
+    var bmiValue: Double {
+        return bmi(weight: weight, height: height)
+    }
+
     override class func primaryKey() -> String? {
         return "id"
     }

@@ -85,6 +85,11 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="avatarImageView" destination="3bk-Uf-7ao" id="1fj-5o-6xh"/>
+                <outlet property="bmiLabel" destination="bX5-P4-fUH" id="Usp-53-krw"/>
+                <outlet property="userNameLabel" destination="7lg-Pa-AjB" id="Vw5-eO-1ap"/>
+            </connections>
             <point key="canvasLocation" x="-774" y="-426"/>
         </tableViewCell>
     </objects>
