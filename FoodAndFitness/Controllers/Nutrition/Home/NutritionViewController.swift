@@ -14,27 +14,27 @@ final class NutritionViewController: BaseViewController {
 
     enum Section: Int {
         case progress
-        case foods
+        case meals
 
         static var count: Int {
-            return self.foods.hashValue + 1
+            return self.meals.hashValue + 1
         }
 
         var numberOfRows: Int {
             switch self {
             case .progress:
                 return 1
-            default:
-                return 0
+            case .meals:
+                return 3
             }
         }
 
         var heightForRows: CGFloat {
             switch self {
             case .progress:
-                return 120
+                return 200
             default:
-                return 80
+                return 100
             }
         }
     }
@@ -55,7 +55,7 @@ final class NutritionViewController: BaseViewController {
 
     private func configureTableView() {
         tableView.register(ProgressCell.self)
-        tableView.register(TitleCell.self)
+        tableView.register(MealCell.self)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
@@ -71,12 +71,7 @@ extension NutritionViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let nutritionSection = Section(rawValue: section) else { fatalError(Strings.Errors.enumError) }
-        switch nutritionSection {
-        case .progress:
-            return nutritionSection.numberOfRows
-        case .foods:
-            return 20
-        }
+        return nutritionSection.numberOfRows
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -86,9 +81,8 @@ extension NutritionViewController: UITableViewDataSource {
             let cell = tableView.dequeue(ProgressCell.self)
             cell.setup(45, duration: 2)
             return cell
-        case .foods:
-            let cell = tableView.dequeue(TitleCell.self)
-            cell.data = TitleCell.Data(title: "Foods For You Today")
+        case .meals:
+            let cell = tableView.dequeue(MealCell.self)
             return cell
         }
     }
