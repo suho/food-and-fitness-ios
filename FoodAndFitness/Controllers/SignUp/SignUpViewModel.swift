@@ -68,6 +68,6 @@ class SignUpViewModel {
             completion(.failure(error))
             return
         }
-        
+        UserServices.upload(image: avatar, completion: completion)
     }
 }

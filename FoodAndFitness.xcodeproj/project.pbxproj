@@ -46,6 +46,7 @@
 		99501FFA1E8AC5010051227F /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99501FF91E8AC5010051227F /* CircleProgressView.swift */; };
 		9959E8781E8D6CEA005A8347 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9959E8761E8D6CEA005A8347 /* CalendarController.swift */; };
 		9959E8791E8D6CEA005A8347 /* CalendarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9959E8771E8D6CEA005A8347 /* CalendarController.xib */; };
+		99603EF01E9D2BF6001D1E5C /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99603EEF1E9D2BF6001D1E5C /* UserServices.swift */; };
 		99993E8C1E80B7430052372A /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99993E8B1E80B7430052372A /* SideMenuController.swift */; };
 		99993E8E1E80B7840052372A /* LeftSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99993E8D1E80B7840052372A /* LeftSideViewController.swift */; };
 		999C402F1E94897C0059E870 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C402D1E94897C0059E870 /* SignInController.swift */; };
@@ -89,7 +90,6 @@
 		99BF6F9A1E77F67D00FD743F /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F7D1E77F67D00FD743F /* Session.swift */; };
 		99CAFE7D1E9C767D00026CCE /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CAFE7C1E9C767D00026CCE /* Optional.swift */; };
 		99CAFE7F1E9C7CAD00026CCE /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CAFE7E1E9C7CAD00026CCE /* Validation.swift */; };
-		99CAFE831E9C975300026CCE /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CAFE821E9C975300026CCE /* UserServices.swift */; };
 		99CC4CFD1E9AAA6F000EE59E /* ChooseActivesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC4CFB1E9AAA6F000EE59E /* ChooseActivesController.swift */; };
 		99CC4CFE1E9AAA6F000EE59E /* ChooseActivesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99CC4CFC1E9AAA6F000EE59E /* ChooseActivesController.xib */; };
 		99CC4D001E9AAD92000EE59E /* ChooseActivesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CC4CFF1E9AAD92000EE59E /* ChooseActivesViewModel.swift */; };
@@ -150,6 +150,7 @@
 		99501FF91E8AC5010051227F /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		9959E8761E8D6CEA005A8347 /* CalendarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
 		9959E8771E8D6CEA005A8347 /* CalendarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarController.xib; sourceTree = "<group>"; };
+		99603EEF1E9D2BF6001D1E5C /* UserServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
 		99993E8B1E80B7430052372A /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 		99993E8D1E80B7840052372A /* LeftSideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSideViewController.swift; sourceTree = "<group>"; };
 		999C402D1E94897C0059E870 /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
@@ -195,7 +196,6 @@
 		99BF6F7F1E77F67D00FD743F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99CAFE7C1E9C767D00026CCE /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		99CAFE7E1E9C7CAD00026CCE /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
-		99CAFE821E9C975300026CCE /* UserServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
 		99CC4CFB1E9AAA6F000EE59E /* ChooseActivesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseActivesController.swift; sourceTree = "<group>"; };
 		99CC4CFC1E9AAA6F000EE59E /* ChooseActivesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseActivesController.xib; sourceTree = "<group>"; };
 		99CC4CFF1E9AAD92000EE59E /* ChooseActivesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseActivesViewModel.swift; sourceTree = "<group>"; };
@@ -457,6 +457,14 @@
 				9959E8771E8D6CEA005A8347 /* CalendarController.xib */,
 			);
 			path = CalendarController;
+			sourceTree = "<group>";
+		};
+		99603EEE1E9D2BF6001D1E5C /* User */ = {
+			isa = PBXGroup;
+			children = (
+				99603EEF1E9D2BF6001D1E5C /* UserServices.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		99993E8A1E80B7430052372A /* SideMenu */ = {
@@ -802,7 +810,7 @@
 			isa = PBXGroup;
 			children = (
 				99BF6F781E77F67D00FD743F /* Core */,
-				99CAFE811E9C973E00026CCE /* SignUp */,
+				99603EEE1E9D2BF6001D1E5C /* User */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -825,14 +833,6 @@
 				99BF6F7F1E77F67D00FD743F /* Info.plist */,
 			);
 			path = Supports;
-			sourceTree = "<group>";
-		};
-		99CAFE811E9C973E00026CCE /* SignUp */ = {
-			isa = PBXGroup;
-			children = (
-				99CAFE821E9C975300026CCE /* UserServices.swift */,
-			);
-			path = SignUp;
 			sourceTree = "<group>";
 		};
 		99D9251F1E99E1C5008150EE /* Goals */ = {
@@ -1100,13 +1100,13 @@
 			files = (
 				992DA8DD1E8A1F3B002A194C /* NutritionAnalysisController.swift in Sources */,
 				993404F91E83C44E009A445F /* HistoryViewController.swift in Sources */,
-				99CAFE831E9C975300026CCE /* UserServices.swift in Sources */,
 				99993E8E1E80B7840052372A /* LeftSideViewController.swift in Sources */,
 				999C402F1E94897C0059E870 /* SignInController.swift in Sources */,
 				99BF6F8E1E77F67D00FD743F /* UIViewController.swift in Sources */,
 				99D925291E99F10E008150EE /* Active.swift in Sources */,
 				99AEA17F1E87B240000DA06F /* AddMenuViewController.swift in Sources */,
 				99CAFE7D1E9C767D00026CCE /* Optional.swift in Sources */,
+				99603EF01E9D2BF6001D1E5C /* UserServices.swift in Sources */,
 				99D925301E99F8F5008150EE /* Exercise.swift in Sources */,
 				99BF6F841E77F67D00FD743F /* HomeViewController.swift in Sources */,
 				992DA8AF1E8A0EF9002A194C /* BaseViewController.swift in Sources */,

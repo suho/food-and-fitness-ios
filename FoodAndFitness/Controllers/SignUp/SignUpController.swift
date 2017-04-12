@@ -87,10 +87,13 @@ class SignUpController: BaseViewController {
     }
 
     fileprivate func signUp() {
+        HUD.show()
         viewModel.signUp { [weak self] (result) in
-            guard self != nil else { return }
+            HUD.dismiss()
+            guard let this = self else { return }
             switch result {
             case .success(_):
+                this.viewModel.uploadPhoto(completion: { (_) in })
                 AppDelegate.shared.gotoHome()
             case .failure(let error):
                 error.show()
@@ -226,8 +229,7 @@ extension SignUpController: AccessLibraryManagerDelegate {
 extension SignUpController: NextButtonCellDelegate {
     func cell(_ cell: NextButtonCell, needsPerformAction action: NextButtonCell.Action) {
         switch action {
-        case .signUp:
-            signUp()
+        case .signUp: signUp()
         }
     }
 }

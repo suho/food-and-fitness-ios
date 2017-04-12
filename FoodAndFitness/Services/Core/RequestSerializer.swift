@@ -36,3 +36,38 @@ extension ApiManager {
         return request
     }
 }
+
+// MARK: NSMutableData
+extension NSMutableData {
+    func append(string: String) {
+        if let data = string.data(using: .utf8, allowLossyConversion: true) {
+            append(data)
+        }
+    }
+}
+
+// MARK: NSMutableURLRequest
+extension NSMutableURLRequest {
+    func httpBody(key: String, value: Data, boundary: String) {
+        let mutableData = NSMutableData()
+        mutableData.append(string: "--\(boundary)\r\n")
+        mutableData.append(string: "Content-Disposition: form-data; name=\"\(key)\"; filename=\"user-profile.jpg\"\r\n")
+        mutableData.append(string: "Content-Type: image/jpg\r\n\r\n")
+        mutableData.append(value)
+        mutableData.append(string: "\r\n")
+        mutableData.append(string: "--\(boundary)--\r\n")
+        httpBody = mutableData as Data
+    }
+
+    func addHeaders(boundary: String) {
+        guard let token = api.session.token else {
+            return
+        }
+        for key in Session.Token.allKeys {
+            if let value = token.values[key] {
+                addValue(value, forHTTPHeaderField: key)
+            }
+        }
+        addValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+    }
+}

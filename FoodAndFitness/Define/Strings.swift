@@ -70,5 +70,7 @@ final class Strings {
         static let heightError = "Height Not Validate"
         static let weightError = "Weight Not Validate"
         static let emptyImage = "Empty Image"
+        static let urlError = "URL Not Found"
+        static let tokenError = "Token Session Not Found"
     }
 }

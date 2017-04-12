@@ -17,6 +17,7 @@ private protocol URLStringConvertible {
 final class ApiPath {
 
     static var baseURL = "http://localhost:3000"
+
     static var googleMapURL = "https://maps.googleapis.com/maps/api/"
 
     // MARK: - Roots
@@ -43,6 +44,8 @@ final class ApiPath {
         var URLString: String {
             return ApiPath.users / userID
         }
+
+        static var upload: String { return ApiPath.baseURL / "avatars" / "upload" }
 
         static var me: String { return ApiPath.users / "me" }
 

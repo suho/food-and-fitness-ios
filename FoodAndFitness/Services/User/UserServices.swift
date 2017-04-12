@@ -15,9 +15,45 @@ import SwiftyJSON
 
 final class UserServices {
 
-    @discardableResult
-    class func uplpad() -> Request? {
-        return nil
+    class func upload(image: UIImage, completion: @escaping Completion) {
+        let path = ApiPath.User.upload
+        guard let url = URL(string: path) else {
+            let error = NSError(message: Strings.Errors.urlError)
+            completion(.failure(error))
+            return
+        }
+        guard let data = UIImageJPEGRepresentation(image, 1) else {
+            let error = NSError(message: Strings.Errors.emptyImage)
+            completion(.failure(error))
+            return
+        }
+        let request = NSMutableURLRequest(url: url)
+        request.httpMethod = "PUT"
+        let boundary = "Boundary-\(NSUUID().uuidString)"
+        request.addHeaders(boundary: boundary)
+        request.httpBody(key: "file", value: data, boundary: boundary)
+        let queue = DispatchQueue(label: "uploadImage", qos: .background, attributes: .concurrent)
+        queue.async {
+            let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data, _, error) -> Void in
+                if let error = error {
+                    DispatchQueue.main.async {
+                        completion(.failure(error))
+                    }
+                    return
+                }
+                guard let data = data else { return }
+                guard let json = data.toJSON() as? JSObject else {
+                    DispatchQueue.main.async {
+                        completion(.failure(FFError.json))
+                    }
+                    return
+                }
+                DispatchQueue.main.async {
+                    Mapper<User>().map(result: .success(json), type: .object, completion: completion)
+                }
+            })
+            task.resume()
+        }
     }
 
     @discardableResult
