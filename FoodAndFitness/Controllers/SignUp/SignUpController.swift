@@ -113,40 +113,40 @@ extension SignUpController: UITableViewDataSource {
         switch row {
         case .avatar:
             let cell = tableView.dequeue(AvatarCell.self)
-            cell.data = AvatarCell.Data(title: Strings.avatar, image: viewModel.signUpParams.avatar)
             cell.delegate = self
+            cell.data = AvatarCell.Data(title: Strings.avatar, image: viewModel.signUpParams.avatar)
             return cell
         case .fullName:
             let cell = tableView.dequeue(InputCell.self)
+            cell.delegate = self
+            cell.cellType = row
             cell.data = InputCell.Data(title: Strings.fullName,
                                        placeHolder: Strings.fullName,
                                        detailText: viewModel.signUpParams.fullName)
-            cell.delegate = self
-            cell.cellType = row
             return cell
         case .email:
             let cell = tableView.dequeue(InputCell.self)
+            cell.delegate = self
+            cell.cellType = row
             cell.data = InputCell.Data(title: Strings.email,
                                        placeHolder: Strings.email,
                                        detailText: viewModel.signUpParams.email)
-            cell.delegate = self
-            cell.cellType = row
             return cell
         case .password:
             let cell = tableView.dequeue(InputCell.self)
+            cell.delegate = self
+            cell.cellType = row
             cell.data = InputCell.Data(title: Strings.password,
                                        placeHolder: Strings.password,
                                        detailText: viewModel.signUpParams.password)
-            cell.delegate = self
-            cell.cellType = row
             return cell
         case .confirmPassword:
             let cell = tableView.dequeue(InputCell.self)
+            cell.delegate = self
+            cell.cellType = row
             cell.data = InputCell.Data(title: Strings.confirmPassword,
                                        placeHolder: Strings.confirmPassword,
                                        detailText: viewModel.signUpParams.confirmPassword)
-            cell.delegate = self
-            cell.cellType = row
             return cell
         case .informationTitle:
             let cell = tableView.dequeue(TitleCell.self)
@@ -154,32 +154,32 @@ extension SignUpController: UITableViewDataSource {
             return cell
         case .birthday:
             let cell = tableView.dequeue(InputCell.self)
+            cell.delegate = self
+            cell.cellType = row
             cell.data = InputCell.Data(title: Strings.birthday,
                                        placeHolder: Strings.birthday,
                                        detailText: viewModel.signUpParams.birthday)
-            cell.delegate = self
-            cell.cellType = row
             return cell
         case .gender:
             let cell = tableView.dequeue(RadioCell.self)
-            cell.data = RadioCell.Data(title: Strings.gender)
             cell.delegate = self
+            cell.data = RadioCell.Data(title: Strings.gender)
             return cell
         case .height:
             let cell = tableView.dequeue(InputCell.self)
+            cell.delegate = self
+            cell.cellType = row
             cell.data = InputCell.Data(title: Strings.height,
                                        placeHolder: Strings.height,
                                        detailText: viewModel.signUpParams.height.toOptionalString())
-            cell.delegate = self
-            cell.cellType = row
             return cell
         case .weight:
             let cell = tableView.dequeue(InputCell.self)
+            cell.delegate = self
+            cell.cellType = row
             cell.data = InputCell.Data(title: Strings.weight,
                                        placeHolder: Strings.weight,
                                        detailText: viewModel.signUpParams.weight.toOptionalString())
-            cell.delegate = self
-            cell.cellType = row
             return cell
         case .button:
             let cell = tableView.dequeue(NextButtonCell.self)

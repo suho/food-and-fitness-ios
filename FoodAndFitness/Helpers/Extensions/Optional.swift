@@ -9,6 +9,7 @@
 import Foundation
 
 extension Optional {
+
     func toOptionalString() -> String? {
         switch self {
         case .some(let value):
