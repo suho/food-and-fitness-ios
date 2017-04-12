@@ -11,7 +11,7 @@ import SwiftUtils
 import SAMKeychain
 import MWFeedParser
 
-// MAKK: NSObject
+// MARK: NSObject
 extension NSObject {
     func copy<T>() -> T! {
         return copy() as? T

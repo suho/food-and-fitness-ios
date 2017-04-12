@@ -64,5 +64,13 @@ final class Strings {
         static let directionNotFound = "Error To Get Direction Info"
         static let noHistory = "That Date Don't Have Any History"
         static let enumError = "Enum Error"
+        static let fullNameError = "FullName Not Validate"
+        static let emailError = "Email Not Validate"
+        static let passwordError = "Password Not Validate"
+        static let heightError = "Height Not Validate"
+        static let weightError = "Weight Not Validate"
+        static let emptyImage = "Empty Image"
+        static let urlError = "URL Not Found"
+        static let tokenError = "Token Session Not Found"
     }
 }

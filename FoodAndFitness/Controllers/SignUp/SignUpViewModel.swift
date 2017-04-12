@@ -27,11 +27,6 @@ struct SignUpParams {
 
 class SignUpViewModel {
 
-    enum Validation {
-        case success
-        case failure(message: String)
-    }
-
     var signUpParams: SignUpParams
 
     init(params: SignUpParams) {
@@ -39,11 +34,40 @@ class SignUpViewModel {
     }
 
     private func validate() -> Validation {
-
+        if let fullName = signUpParams.fullName, fullName.characters.count > Validation.maxInput {
+            return .failure(Strings.Errors.fullNameError)
+        }
+        guard let email = signUpParams.email, email.validate(RegularExpressionPattern.RFCStandarEmail.rawValue) else {
+            return .failure(Strings.Errors.emailError)
+        }
+        guard let password = signUpParams.password, let confirmPassword = signUpParams.confirmPassword, password == confirmPassword else {
+            return .failure(Strings.Errors.passwordError)
+        }
+        guard let height = signUpParams.height, height > Validation.minHeightInput else {
+            return .failure(Strings.Errors.heightError)
+        }
+        guard let weight = signUpParams.weight, weight > Validation.minWeightInput else {
+            return .failure(Strings.Errors.weightError)
+        }
         return .success
     }
 
     func signUp(completion: @escaping Completion) {
+        let status = validate()
+        switch status {
+        case .success:
+            _ = UserServices.signUp(params: signUpParams, completion: completion)
+        case .failure(let message):
+            completion(.failure(NSError(message: message)))
+        }
+    }
 
+    func uploadPhoto(completion: @escaping Completion) {
+        guard let avatar = signUpParams.avatar else {
+            let error = NSError(message: Strings.Errors.emptyImage)
+            completion(.failure(error))
+            return
+        }
+        UserServices.upload(image: avatar, completion: completion)
     }
 }

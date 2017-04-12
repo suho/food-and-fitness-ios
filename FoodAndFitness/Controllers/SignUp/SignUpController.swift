@@ -85,6 +85,21 @@ class SignUpController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
+
+    fileprivate func signUp() {
+        HUD.show()
+        viewModel.signUp { [weak self] (result) in
+            HUD.dismiss()
+            guard let this = self else { return }
+            switch result {
+            case .success(_):
+                this.viewModel.uploadPhoto(completion: { (_) in })
+                AppDelegate.shared.gotoHome()
+            case .failure(let error):
+                error.show()
+            }
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -154,7 +169,7 @@ extension SignUpController: UITableViewDataSource {
             let cell = tableView.dequeue(InputCell.self)
             cell.data = InputCell.Data(title: Strings.height,
                                        placeHolder: Strings.height,
-                                       detailText: viewModel.signUpParams.height.toString())
+                                       detailText: viewModel.signUpParams.height.toOptionalString())
             cell.delegate = self
             cell.cellType = row
             return cell
@@ -162,7 +177,7 @@ extension SignUpController: UITableViewDataSource {
             let cell = tableView.dequeue(InputCell.self)
             cell.data = InputCell.Data(title: Strings.weight,
                                        placeHolder: Strings.weight,
-                                       detailText: viewModel.signUpParams.weight.toString())
+                                       detailText: viewModel.signUpParams.weight.toOptionalString())
             cell.delegate = self
             cell.cellType = row
             return cell
@@ -213,7 +228,9 @@ extension SignUpController: AccessLibraryManagerDelegate {
 // MARK: - NextButtonCellDelegate
 extension SignUpController: NextButtonCellDelegate {
     func cell(_ cell: NextButtonCell, needsPerformAction action: NextButtonCell.Action) {
-        
+        switch action {
+        case .signUp: signUp()
+        }
     }
 }
 

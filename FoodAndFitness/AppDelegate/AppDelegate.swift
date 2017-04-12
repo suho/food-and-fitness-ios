@@ -11,7 +11,7 @@ import XCGLogger
 import SVProgressHUD
 import IQKeyboardManagerSwift
 
-typealias ProgressHUD = SVProgressHUD
+typealias HUD = SVProgressHUD
 let logger = XCGLogger.default
 
 @UIApplicationMain
