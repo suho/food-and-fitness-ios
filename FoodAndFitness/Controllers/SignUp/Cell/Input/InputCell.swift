@@ -14,8 +14,8 @@ protocol InputCellDelegate: NSObjectProtocol {
 }
 
 final class InputCell: BaseTableViewCell {
-    @IBOutlet fileprivate weak var titleLabel: UILabel!
-    @IBOutlet fileprivate weak var textField: UITextField!
+    @IBOutlet fileprivate(set) weak var titleLabel: UILabel!
+    @IBOutlet fileprivate(set) weak var textField: UITextField!
     weak var delegate: InputCellDelegate?
     static let maxValue: Int = 250
 

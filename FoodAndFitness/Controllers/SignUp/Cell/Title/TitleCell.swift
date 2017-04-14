@@ -9,7 +9,7 @@
 import UIKit
 
 final class TitleCell: BaseTableViewCell {
-    @IBOutlet fileprivate weak var titleLabel: UILabel!
+    @IBOutlet fileprivate(set) weak var titleLabel: UILabel!
 
     struct Data {
         var title: String

@@ -10,9 +10,9 @@ import UIKit
 import SwiftUtils
 
 final class NutritionViewController: BaseViewController {
-    @IBOutlet fileprivate weak var tableView: UITableView!
+    @IBOutlet fileprivate(set) weak var tableView: UITableView!
 
-    enum Section: Int {
+    enum Sections: Int {
         case progress
         case meals
 
@@ -37,6 +37,12 @@ final class NutritionViewController: BaseViewController {
                 return 100
             }
         }
+    }
+
+    enum Meals: Int {
+        case breakfast
+        case lunch
+        case dinner
     }
 
     // MARK: - Cycle Life
@@ -66,22 +72,23 @@ final class NutritionViewController: BaseViewController {
 extension NutritionViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return Section.count
+        return Sections.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let nutritionSection = Section(rawValue: section) else { fatalError(Strings.Errors.enumError) }
+        guard let nutritionSection = Sections(rawValue: section) else { fatalError(Strings.Errors.enumError) }
         return nutritionSection.numberOfRows
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let nutritionSection = Section(rawValue: indexPath.section) else { fatalError(Strings.Errors.enumError) }
+        guard let nutritionSection = Sections(rawValue: indexPath.section) else { fatalError(Strings.Errors.enumError) }
         switch nutritionSection {
         case .progress:
             let cell = tableView.dequeue(ProgressCell.self)
             cell.setup(45, duration: 2)
             return cell
         case .meals:
+            guard let meal = Meals(rawValue: indexPath.row) else { fatalError(Strings.Errors.enumError) }
             let cell = tableView.dequeue(MealCell.self)
             return cell
         }
@@ -90,7 +97,7 @@ extension NutritionViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension NutritionViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard let nutritionSection = Section(rawValue: indexPath.section) else { fatalError(Strings.Errors.enumError) }
+        guard let nutritionSection = Sections(rawValue: indexPath.section) else { fatalError(Strings.Errors.enumError) }
         return nutritionSection.heightForRows
     }
 }

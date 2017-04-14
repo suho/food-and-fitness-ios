@@ -16,7 +16,7 @@ enum Activities {
 
 // MARK: - BMI Calculator
 func bmi(weight: Int, height: Int) -> Double {
-    let result = Double(weight) / Double(height * height)
+    let result = Double(weight) * 10_000 / Double(height * height)
     return result
 }
 

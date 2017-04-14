@@ -10,7 +10,7 @@ import UIKit
 import SwiftUtils
 
 class SignUpController: BaseViewController {
-    @IBOutlet fileprivate weak var tableView: UITableView!
+    @IBOutlet fileprivate(set) weak var tableView: UITableView!
     var viewModel: SignUpViewModel!
 
     enum SignUpRow: Int {
@@ -86,6 +86,10 @@ class SignUpController: BaseViewController {
         tableView.dataSource = self
     }
 
+    private func upload() {
+        viewModel.uploadPhoto(completion: { (_) in })
+    }
+
     fileprivate func signUp() {
         HUD.show()
         viewModel.signUp { [weak self] (result) in
@@ -93,7 +97,7 @@ class SignUpController: BaseViewController {
             guard let this = self else { return }
             switch result {
             case .success(_):
-                this.viewModel.uploadPhoto(completion: { (_) in })
+                this.upload()
                 AppDelegate.shared.gotoHome()
             case .failure(let error):
                 error.show()

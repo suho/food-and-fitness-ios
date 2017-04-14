@@ -14,9 +14,9 @@ protocol UserProfileCellDelegate: NSObjectProtocol {
 }
 
 final class UserProfileCell: BaseTableViewCell {
-    @IBOutlet fileprivate weak var avatarImageView: UIImageView!
-    @IBOutlet fileprivate weak var userNameLabel: UILabel!
-    @IBOutlet fileprivate weak var bmiLabel: UILabel!
+    @IBOutlet fileprivate(set) weak var avatarImageView: UIImageView!
+    @IBOutlet fileprivate(set) weak var userNameLabel: UILabel!
+    @IBOutlet fileprivate(set) weak var bmiLabel: UILabel!
     
     weak var delegate: UserProfileCellDelegate?
 

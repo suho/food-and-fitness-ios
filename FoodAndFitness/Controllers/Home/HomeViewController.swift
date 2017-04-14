@@ -10,9 +10,9 @@ import UIKit
 import PureLayout
 
 final class HomeViewController: RootSideMenuViewController {
-    @IBOutlet fileprivate weak var contentView: UIView!
-    @IBOutlet fileprivate weak var nutritionButton: UIButton!
-    @IBOutlet fileprivate weak var fitnessButton: UIButton!
+    @IBOutlet fileprivate(set) weak var contentView: UIView!
+    @IBOutlet fileprivate(set) weak var nutritionButton: UIButton!
+    @IBOutlet fileprivate(set) weak var fitnessButton: UIButton!
     fileprivate var pageController: UIPageViewController!
     lazy var nutritionController: UINavigationController = UINavigationController(rootViewController: NutritionViewController())
     lazy var fitnessController: UINavigationController = UINavigationController(rootViewController: FitnessViewController())
