@@ -21,6 +21,19 @@ final class SignInController: BaseViewController {
     }
 
     @IBAction fileprivate func signIn(_ sender: Any) {
-        AppDelegate.shared.gotoHome()
+        viewModel.mail = mailField.string
+        viewModel.password = passField.string
+        HUD.show()
+        viewModel.signIn { [weak self] (result) in
+            HUD.dismiss()
+            guard let this = self else { return }
+            switch result {
+            case .success(_):
+                _ = this.viewModel
+                AppDelegate.shared.gotoHome()
+            case .failure(let error):
+                error.show()
+            }
+        }
     }
 }

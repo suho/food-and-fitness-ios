@@ -34,19 +34,27 @@ class SignUpViewModel {
     }
 
     private func validate() -> Validation {
-        if let fullName = signUpParams.fullName, fullName.characters.count > Validation.maxInput {
+        if let fullName = signUpParams.fullName,
+            fullName.characters.count > Validation.maxInput {
             return .failure(Strings.Errors.fullNameError)
         }
-        guard let email = signUpParams.email, email.validate(RegularExpressionPattern.RFCStandarEmail.rawValue) else {
+        guard let email = signUpParams.email,
+            email.validate(RegularExpressionPattern.RFCStandarEmail.rawValue) else {
             return .failure(Strings.Errors.emailError)
         }
-        guard let password = signUpParams.password, let confirmPassword = signUpParams.confirmPassword, password == confirmPassword else {
+        guard let password = signUpParams.password,
+            password.characters.count >= Validation.minPasswordInput,
+            password.characters.count <= Validation.maxPasswordInput,
+            let confirmPassword = signUpParams.confirmPassword,
+            password == confirmPassword else {
             return .failure(Strings.Errors.passwordError)
         }
-        guard let height = signUpParams.height, height > Validation.minHeightInput else {
+        guard let height = signUpParams.height,
+            height > Validation.minHeightInput else {
             return .failure(Strings.Errors.heightError)
         }
-        guard let weight = signUpParams.weight, weight > Validation.minWeightInput else {
+        guard let weight = signUpParams.weight,
+            weight > Validation.minWeightInput else {
             return .failure(Strings.Errors.weightError)
         }
         return .success

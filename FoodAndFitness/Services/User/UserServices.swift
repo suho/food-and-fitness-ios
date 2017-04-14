@@ -16,13 +16,37 @@ import SwiftyJSON
 final class UserServices {
 
     @discardableResult
-    class func signIn() -> Request? {
+    class func signIn(params: SignInParams, completion: @escaping Completion) -> Request? {
         let path = ApiPath.Auth.signin
-//        var parameter: JSObject = [
-//            "email": params.email.toString(),
-//            "password": params.password.toString(),
-//        ]
-        return nil
+        let parameters: JSObject = [
+            "email": params.email,
+            "password": params.password,
+        ]
+        return ApiManager.request(method: .post, urlString: path, parameters: parameters, completion: { (result) in
+            switch result {
+            case .success(let json):
+                guard let json = json["data"] as? JSObject else {
+                    completion(.failure(FFError.json))
+                    return
+                }
+                api.logout()
+                let realm = RealmS()
+                var userId: Int?
+                realm.write {
+                    if let user = realm.map(User.self, json: json) {
+                        userId = user.id
+                    }
+                }
+                guard let id = userId else {
+                    completion(.failure(FFError.json))
+                    return
+                }
+                api.session.userID = id
+                api.session.credential = Session.Credential(username: params.email, password: params.password)
+            case .failure(_): break
+            }
+            completion(result)
+        })
     }
 
     @discardableResult
