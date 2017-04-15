@@ -29,7 +29,6 @@ final class UserServices {
                     completion(.failure(FFError.json))
                     return
                 }
-                api.logout()
                 let realm = RealmS()
                 var userId: Int?
                 realm.write {

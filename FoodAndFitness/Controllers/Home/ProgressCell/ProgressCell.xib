@@ -19,6 +19,45 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="199.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ynD-Xn-wcA">
+                        <rect key="frame" x="0.0" y="48.5" width="100" height="39.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2A-fj-dje">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="39.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="1869">
+                                        <attributes>
+                                            <font key="NSFont" size="13" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="EATEN">
+                                        <attributes>
+                                            <font key="NSFont" size="8" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="P2A-fj-dje" secondAttribute="trailing" id="RH9-J5-K2p"/>
+                            <constraint firstItem="P2A-fj-dje" firstAttribute="leading" secondItem="ynD-Xn-wcA" secondAttribute="leading" id="S5t-B2-B1y"/>
+                            <constraint firstAttribute="bottom" secondItem="P2A-fj-dje" secondAttribute="bottom" id="hjI-Hh-Bsq"/>
+                            <constraint firstItem="P2A-fj-dje" firstAttribute="top" secondItem="ynD-Xn-wcA" secondAttribute="top" id="p1I-57-gOr"/>
+                        </constraints>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJa-iE-9IS" customClass="CircleProgressView" customModule="FoodAndFitness" customModuleProvider="target">
                         <rect key="frame" x="100" y="8" width="120" height="120"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,10 +87,17 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ezs-J4-1Ie">
-                        <rect key="frame" x="134" y="53.5" width="53.5" height="30"/>
+                        <rect key="frame" x="134" y="49" width="53.5" height="39.5"/>
                         <attributedString key="attributedText">
+                            <fragment content="1869">
+                                <attributes>
+                                    <font key="NSFont" size="23" name=".AppleSystemUIFont"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
                             <fragment>
-                                <string key="content">1869
+                                <string key="content" base64-UTF8="YES">
+Cg
 </string>
                                 <attributes>
                                     <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
@@ -67,51 +113,53 @@
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2aN-5p-667">
+                        <rect key="frame" x="220" y="49" width="100" height="39.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgD-EO-eGX">
+                                <rect key="frame" x="0.0" y="-0.5" width="100" height="39.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="1869">
+                                        <attributes>
+                                            <font key="NSFont" size="13" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="BURN">
+                                        <attributes>
+                                            <font key="NSFont" size="8" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="jgD-EO-eGX" firstAttribute="top" secondItem="2aN-5p-667" secondAttribute="top" id="5rf-0r-AmX"/>
+                            <constraint firstItem="jgD-EO-eGX" firstAttribute="leading" secondItem="2aN-5p-667" secondAttribute="leading" id="RYv-WW-5MA"/>
+                            <constraint firstAttribute="trailing" secondItem="jgD-EO-eGX" secondAttribute="trailing" id="Y5a-wp-56h"/>
+                            <constraint firstAttribute="bottom" secondItem="jgD-EO-eGX" secondAttribute="bottom" id="vZz-3p-G8y"/>
+                        </constraints>
+                    </view>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XUR-gz-dSh">
                         <rect key="frame" x="32" y="120" width="256" height="71.5"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8g7-0S-WgK">
-                                <rect key="frame" x="0.0" y="0.0" width="64" height="71.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60j-m5-5cv">
-                                        <rect key="frame" x="19" y="23" width="26.5" height="25.5"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="120">
-                                                <attributes>
-                                                    <font key="NSFont" size="13" name=".AppleSystemUIFont"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment>
-                                                <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                                                <attributes>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="EATEN">
-                                                <attributes>
-                                                    <font key="NSFont" size="8" name=".AppleSystemUIFont"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="60j-m5-5cv" firstAttribute="centerY" secondItem="8g7-0S-WgK" secondAttribute="centerY" id="AVk-bj-4zI"/>
-                                    <constraint firstItem="60j-m5-5cv" firstAttribute="centerX" secondItem="8g7-0S-WgK" secondAttribute="centerX" id="IV9-Si-t7C"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CoC-ZU-hbK">
-                                <rect key="frame" x="64" y="0.0" width="64" height="71.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="85.5" height="71.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEb-4W-rMh">
-                                        <rect key="frame" x="10.5" y="23" width="43" height="25.5"/>
+                                        <rect key="frame" x="21" y="23" width="43" height="25.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="CARBS">
                                                 <attributes>
@@ -145,10 +193,10 @@ Cg
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="web-ln-icK">
-                                <rect key="frame" x="128" y="0.0" width="64" height="71.5"/>
+                                <rect key="frame" x="85.5" y="0.0" width="85" height="71.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1i-3z-bhM">
-                                        <rect key="frame" x="4.5" y="23" width="55" height="25.5"/>
+                                        <rect key="frame" x="15" y="23" width="55" height="25.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="PROTEIN">
                                                 <attributes>
@@ -182,10 +230,10 @@ Cg
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O1T-dB-On5">
-                                <rect key="frame" x="192" y="0.0" width="64" height="71.5"/>
+                                <rect key="frame" x="170.5" y="0.0" width="85.5" height="71.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdd-hb-apm">
-                                        <rect key="frame" x="14" y="23" width="37" height="25.5"/>
+                                        <rect key="frame" x="25" y="23" width="37" height="25.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="FAT">
                                                 <attributes>
@@ -222,12 +270,20 @@ Cg
                     </stackView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="TJa-iE-9IS" firstAttribute="leading" secondItem="ynD-Xn-wcA" secondAttribute="trailing" id="4rK-dL-GP0"/>
                     <constraint firstAttribute="trailing" secondItem="XUR-gz-dSh" secondAttribute="trailing" constant="32" id="9K7-9k-1Oq"/>
+                    <constraint firstItem="ynD-Xn-wcA" firstAttribute="height" secondItem="Ezs-J4-1Ie" secondAttribute="height" id="EDS-6E-duR"/>
                     <constraint firstItem="XUR-gz-dSh" firstAttribute="top" secondItem="TJa-iE-9IS" secondAttribute="bottom" constant="-8" id="LJR-sw-alT"/>
                     <constraint firstItem="XUR-gz-dSh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="QTp-v2-2W5"/>
+                    <constraint firstItem="ynD-Xn-wcA" firstAttribute="centerY" secondItem="TJa-iE-9IS" secondAttribute="centerY" id="SmC-aX-kmG"/>
+                    <constraint firstItem="2aN-5p-667" firstAttribute="height" secondItem="ynD-Xn-wcA" secondAttribute="height" id="YI6-zO-QmT"/>
                     <constraint firstItem="Ezs-J4-1Ie" firstAttribute="centerY" secondItem="TJa-iE-9IS" secondAttribute="centerY" id="iyh-Lp-vvT"/>
+                    <constraint firstItem="ynD-Xn-wcA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="j98-ye-aLd"/>
+                    <constraint firstItem="2aN-5p-667" firstAttribute="centerY" secondItem="Ezs-J4-1Ie" secondAttribute="centerY" id="oBI-07-EF6"/>
                     <constraint firstAttribute="bottom" secondItem="XUR-gz-dSh" secondAttribute="bottom" constant="8" id="oem-pu-s23"/>
                     <constraint firstItem="TJa-iE-9IS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="rW8-xX-fk5"/>
+                    <constraint firstItem="2aN-5p-667" firstAttribute="leading" secondItem="TJa-iE-9IS" secondAttribute="trailing" id="rsE-AR-xdx"/>
+                    <constraint firstAttribute="trailing" secondItem="2aN-5p-667" secondAttribute="trailing" id="t82-I7-GQk"/>
                     <constraint firstItem="Ezs-J4-1Ie" firstAttribute="centerX" secondItem="TJa-iE-9IS" secondAttribute="centerX" id="uFj-ck-Hd3"/>
                 </constraints>
             </tableViewCellContentView>

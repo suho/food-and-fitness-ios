@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PureLayout
 
 final class HistoryViewController: BaseViewController {
     @IBOutlet fileprivate(set) weak var contentView: UIView!
