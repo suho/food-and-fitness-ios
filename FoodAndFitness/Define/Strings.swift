@@ -55,6 +55,7 @@ final class Strings {
     static let openGallery = "Open Gallery"
     static let openCamera = "Open Camera"
 
+    static let addNutrition = "Add Nutrition"
     struct Errors {
         // MARK: - Error messages
         static let inputNotValidate = "Input not validate."
