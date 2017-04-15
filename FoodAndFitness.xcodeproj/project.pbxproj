@@ -109,6 +109,9 @@
 		99D925351E99FA26008150EE /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D925341E99FA26008150EE /* Location.swift */; };
 		99D9253B1E99FE12008150EE /* UserExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D9253A1E99FE12008150EE /* UserExercise.swift */; };
 		99D9253D1E9A0504008150EE /* UserFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D9253C1E9A0504008150EE /* UserFood.swift */; };
+		99FF786C1EA20F800014EF72 /* AddNutritionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FF786B1EA20F800014EF72 /* AddNutritionViewModel.swift */; };
+		99FF78711EA214910014EF72 /* FoodResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FF786F1EA214910014EF72 /* FoodResultCell.swift */; };
+		99FF78721EA214910014EF72 /* FoodResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99FF78701EA214910014EF72 /* FoodResultCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -218,6 +221,9 @@
 		99D925341E99FA26008150EE /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		99D9253A1E99FE12008150EE /* UserExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExercise.swift; sourceTree = "<group>"; };
 		99D9253C1E9A0504008150EE /* UserFood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFood.swift; sourceTree = "<group>"; };
+		99FF786B1EA20F800014EF72 /* AddNutritionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNutritionViewModel.swift; sourceTree = "<group>"; };
+		99FF786F1EA214910014EF72 /* FoodResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodResultCell.swift; sourceTree = "<group>"; };
+		99FF78701EA214910014EF72 /* FoodResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoodResultCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,8 +299,10 @@
 		992DA8B71E8A1DA6002A194C /* Add */ = {
 			isa = PBXGroup;
 			children = (
+				99FF786E1EA214850014EF72 /* FoodResultCell */,
 				992DA8CD1E8A1DFD002A194C /* AddNutritionViewController.swift */,
 				992DA8CE1E8A1DFD002A194C /* AddNutritionViewController.xib */,
+				99FF786B1EA20F800014EF72 /* AddNutritionViewModel.swift */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -928,6 +936,15 @@
 			path = Actives;
 			sourceTree = "<group>";
 		};
+		99FF786E1EA214850014EF72 /* FoodResultCell */ = {
+			isa = PBXGroup;
+			children = (
+				99FF786F1EA214910014EF72 /* FoodResultCell.swift */,
+				99FF78701EA214910014EF72 /* FoodResultCell.xib */,
+			);
+			path = FoodResultCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -994,6 +1011,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				992DA8D01E8A1DFD002A194C /* AddNutritionViewController.xib in Resources */,
+				99FF78721EA214910014EF72 /* FoodResultCell.xib in Resources */,
 				993404F21E83C41B009A445F /* AnalysisViewController.xib in Resources */,
 				999C40521E94D72F0059E870 /* RadioCell.xib in Resources */,
 				999C40461E9497160059E870 /* AvatarCell.xib in Resources */,
@@ -1121,9 +1139,11 @@
 				99536AAE1EA049CE00FF0BF2 /* Optional.swift in Sources */,
 				99D925301E99F8F5008150EE /* Exercise.swift in Sources */,
 				993496EE1EA2012000F9B108 /* ProgressCell.swift in Sources */,
+				99FF78711EA214910014EF72 /* FoodResultCell.swift in Sources */,
 				99BF6F841E77F67D00FD743F /* HomeViewController.swift in Sources */,
 				992DA8AF1E8A0EF9002A194C /* BaseViewController.swift in Sources */,
 				992DA8D91E8A1F1D002A194C /* FitnessHistoryController.swift in Sources */,
+				99FF786C1EA20F800014EF72 /* AddNutritionViewModel.swift in Sources */,
 				999C40451E9497160059E870 /* AvatarCell.swift in Sources */,
 				99CC4CFD1E9AAA6F000EE59E /* ChooseActivesController.swift in Sources */,
 				99D925221E99E1DB008150EE /* ChooseGoalsController.swift in Sources */,

@@ -22,7 +22,7 @@ extension Network {
     }()
 }
 
-class FFError {
+final class FFError {
     static let network = NSError(domain: ApiPath.baseURL.host, status: HTTPStatus.requestTimeout, message: Strings.Errors.notNetwork)
     static let authentication = NSError(domain: ApiPath.baseURL.host, status: HTTPStatus.unauthorized)
     static let json = NSError(domain: NSCocoaErrorDomain, code: 3840, message: Strings.Errors.json)

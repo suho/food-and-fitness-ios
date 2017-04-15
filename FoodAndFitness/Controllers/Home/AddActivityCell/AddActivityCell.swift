@@ -8,5 +8,5 @@
 
 import UIKit
 
-class AddActivityCell: BaseTableViewCell {
+final class AddActivityCell: BaseTableViewCell {
 }

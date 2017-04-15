@@ -46,6 +46,21 @@ final class HomeViewController: RootSideMenuViewController {
         case exercise
         case tracking
 //        case water
+
+        var string: String {
+            switch self {
+            case .breakfast:
+                return Strings.breakfast
+            case .lunch:
+                return Strings.lunch
+            case .dinner:
+                return Strings.dinner
+            case .exercise:
+                return Strings.exercise
+            case .tracking:
+                return Strings.tracking
+            }
+        }
     }
 
     // MARK: - Cycle Life
@@ -54,8 +69,8 @@ final class HomeViewController: RootSideMenuViewController {
         configureTableView()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    private func configureNavigationBar() {
+        title = Strings.nutritionAndFitness
     }
 
     private func configureTableView() {
@@ -98,5 +113,24 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard let nutritionSection = Sections(rawValue: indexPath.section) else { fatalError(Strings.Errors.enumError) }
         return nutritionSection.heightForRows
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let nutritionSection = Sections(rawValue: indexPath.section) else { fatalError(Strings.Errors.enumError) }
+        switch nutritionSection {
+        case .progress: break
+        case .meals:
+            guard let activity = AddActivity(rawValue: indexPath.row) else { fatalError(Strings.Errors.enumError) }
+            switch activity {
+            case .breakfast, .lunch, .dinner:
+                let addNutritionController = AddNutritionViewController()
+                addNutritionController.viewModel = AddNutritionViewModel(meal: activity)
+                navigationController?.pushViewController(addNutritionController, animated: true)
+            case .exercise:
+                let addFitnessController = AddFitnessViewController()
+                navigationController?.pushViewController(addFitnessController, animated: true)
+            case .tracking: break
+            }
+        }
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 import RealmS
 import RealmSwift
 
-class LeftSideViewModel {
+final class LeftSideViewModel {
     let user: User?
     private let notificationToken: NotificationToken?
 

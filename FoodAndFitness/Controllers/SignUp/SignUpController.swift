@@ -9,7 +9,7 @@
 import UIKit
 import SwiftUtils
 
-class SignUpController: BaseViewController {
+final class SignUpController: BaseViewController {
     @IBOutlet fileprivate(set) weak var tableView: UITableView!
     var viewModel: SignUpViewModel!
 

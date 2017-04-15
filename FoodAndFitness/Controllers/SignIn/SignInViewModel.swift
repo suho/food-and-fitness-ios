@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignInViewModel {
+final class SignInViewModel {
 
     var mail: String = ""
     var password: String = ""

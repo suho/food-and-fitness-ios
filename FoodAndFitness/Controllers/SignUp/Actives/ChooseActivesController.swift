@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChooseActivesController: BaseViewController {
+final class ChooseActivesController: BaseViewController {
 
     var viewModel: ChooseActivesViewModel!
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProgressCell: BaseTableViewCell {
+final class ProgressCell: BaseTableViewCell {
     @IBOutlet fileprivate(set) weak var progressView: CircleProgressView!
     
     func setup(_ value: CGFloat, duration: CFTimeInterval) {

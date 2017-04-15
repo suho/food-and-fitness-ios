@@ -25,7 +25,7 @@ struct SignUpParams {
     init() {}
 }
 
-class SignUpViewModel {
+final class SignUpViewModel {
 
     var signUpParams: SignUpParams
 
