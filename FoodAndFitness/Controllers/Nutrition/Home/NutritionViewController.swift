@@ -89,6 +89,7 @@ extension NutritionViewController: UITableViewDataSource {
             return cell
         case .meals:
             guard let meal = Meals(rawValue: indexPath.row) else { fatalError(Strings.Errors.enumError) }
+            _ = meal
             let cell = tableView.dequeue(MealCell.self)
             return cell
         }

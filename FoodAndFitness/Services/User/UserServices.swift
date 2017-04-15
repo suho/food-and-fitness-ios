@@ -20,7 +20,7 @@ final class UserServices {
         let path = ApiPath.Auth.signin
         let parameters: JSObject = [
             "email": params.email,
-            "password": params.password,
+            "password": params.password
         ]
         return ApiManager.request(method: .post, urlString: path, parameters: parameters, completion: { (result) in
             switch result {
