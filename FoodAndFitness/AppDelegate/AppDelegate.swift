@@ -15,6 +15,7 @@ import RealmSwift
 
 typealias HUD = SVProgressHUD
 let logger = XCGLogger.default
+let prefs = UserDefaults.standard
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -101,13 +102,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func downloadDataIfNeeds(completion: @escaping () -> Void) {
-        let prefs = UserDefaults.standard
         let timeInterval: Int = Int(Date().timeIntervalSince1970)
         if let timeIntervalUD = prefs.value(forKey: Key.timeInterval) as? Int {
             let secondsOfWeek = 604_800
             if timeInterval - timeIntervalUD > secondsOfWeek {
-                getDatabase(completion: completion)
                 prefs.set(timeInterval, forKey: Key.timeInterval)
+                getDatabase(completion: completion)
             } else {
                 completion()
             }
@@ -122,7 +122,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         group.enter()
         ConfigServices.getFoods { (result) in
             if result.isFailure {
-                let prefs = UserDefaults.standard
+                prefs.removeObject(forKey: Key.timeInterval)
+                prefs.synchronize()
+            }
+            group.leave()
+        }
+        group.enter()
+        ConfigServices.getExercises { (result) in
+            if result.isFailure {
                 prefs.removeObject(forKey: Key.timeInterval)
                 prefs.synchronize()
             }

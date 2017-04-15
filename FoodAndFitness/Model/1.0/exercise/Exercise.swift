@@ -28,5 +28,8 @@ final class Exercise: Object, Mappable {
     }
 
     func mapping(map: Map) {
+        name <- map["name"]
+        calories <- map["calories"]
+        duration <- map["duration"]
     }
 }

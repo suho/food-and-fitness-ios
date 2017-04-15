@@ -54,6 +54,19 @@ final class AddActivityViewModel {
         return activity.title
     }
 
+    func numberOfRows() -> Int {
+        switch activity {
+        case .breakfast, .lunch, .dinner:
+            guard let foods = foods else { return 0 }
+            return foods.count
+        case .exercise:
+            guard let exercises = exercises else { return 0 }
+            return exercises.count
+        case .tracking:
+            return 0
+        }
+    }
+
     func dataForCell(at index: Int) -> ResultCell.Data? {
         switch activity {
         case .breakfast, .lunch, .dinner:

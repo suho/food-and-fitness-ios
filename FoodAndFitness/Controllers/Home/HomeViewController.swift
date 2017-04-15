@@ -108,6 +108,7 @@ extension HomeViewController: UITableViewDataSource {
         }
     }
 }
+
 // MARK: - UITableViewDelegate
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -122,13 +123,10 @@ extension HomeViewController: UITableViewDelegate {
         case .meals:
             guard let activity = AddActivity(rawValue: indexPath.row) else { fatalError(Strings.Errors.enumError) }
             switch activity {
-            case .breakfast, .lunch, .dinner:
+            case .breakfast, .lunch, .dinner, .exercise:
                 let addActivityController = AddActivityController()
                 addActivityController.viewModel = AddActivityViewModel(activity: activity)
                 navigationController?.pushViewController(addActivityController, animated: true)
-            case .exercise:
-                let addFitnessController = AddFitnessViewController()
-                navigationController?.pushViewController(addFitnessController, animated: true)
             case .tracking: break
             }
         }

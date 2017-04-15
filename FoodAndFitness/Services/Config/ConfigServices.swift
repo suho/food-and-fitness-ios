@@ -22,4 +22,12 @@ final class ConfigServices {
             Mapper<Food>().map(result: result, type: .array, completion: completion)
         })
     }
+
+    @discardableResult
+    class func getExercises(completion: @escaping Completion) -> Request? {
+        let path = ApiPath.exercises
+        return ApiManager.request(method: .get, urlString: path, completion: { (result) in
+            Mapper<Exercise>().map(result: result, type: .array, completion: completion)
+        })
+    }
 }

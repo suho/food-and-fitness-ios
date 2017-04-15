@@ -66,10 +66,8 @@ extension AddActivityController: UISearchBarDelegate {
 // MARK: - UITableViewDataSource
 extension AddActivityController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let foods = viewModel.foods else {
-            return 0
-        }
-        return foods.count
+        let numberOfRows = viewModel.numberOfRows()
+        return numberOfRows
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
