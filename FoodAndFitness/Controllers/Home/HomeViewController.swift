@@ -47,7 +47,7 @@ final class HomeViewController: RootSideMenuViewController {
         case tracking
 //        case water
 
-        var string: String {
+        var title: String {
             switch self {
             case .breakfast:
                 return Strings.breakfast
@@ -123,9 +123,9 @@ extension HomeViewController: UITableViewDelegate {
             guard let activity = AddActivity(rawValue: indexPath.row) else { fatalError(Strings.Errors.enumError) }
             switch activity {
             case .breakfast, .lunch, .dinner:
-                let addNutritionController = AddNutritionViewController()
-                addNutritionController.viewModel = AddNutritionViewModel(meal: activity)
-                navigationController?.pushViewController(addNutritionController, animated: true)
+                let addActivityController = AddActivityController()
+                addActivityController.viewModel = AddActivityViewModel(activity: activity)
+                navigationController?.pushViewController(addActivityController, animated: true)
             case .exercise:
                 let addFitnessController = AddFitnessViewController()
                 navigationController?.pushViewController(addFitnessController, animated: true)

@@ -10,6 +10,8 @@ import UIKit
 import XCGLogger
 import SVProgressHUD
 import IQKeyboardManagerSwift
+import RealmS
+import RealmSwift
 
 typealias HUD = SVProgressHUD
 let logger = XCGLogger.default
@@ -29,13 +31,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         setup()
         window = UIWindow(frame: UIScreen.main.bounds)
-        if let window = window {
+
+        let group = DispatchGroup()
+        group.enter()
+        downloadDataIfNeeds { 
+            group.leave()
+        }
+        group.notify(queue: .main) { 
             api.session.loadToken()
             if api.session.isAuthenticated {
-                gotoHome()
+                self.gotoHome()
             } else {
-                gotoSignUp()
+                self.gotoSignUp()
             }
+        }
+
+        if let window = window {
+            window.rootViewController = SplashScreenController()
             window.backgroundColor = .white
             window.makeKeyAndVisible()
         }
@@ -63,10 +75,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setup() {
         configureLogger()
         configureIQKeyboard()
+        configureRealm()
     }
 
     private func configureIQKeyboard() {
         IQKeyboardManager.sharedManager().enable = true
+    }
+
+    private func configureRealm() {
+        let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
+        Realm.Configuration.defaultConfiguration = config
     }
 
     private func configureLogger() {
@@ -80,5 +98,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      showDate: false,
                      writeToFile: nil,
                      fileLevel: nil)
+    }
+
+    private func downloadDataIfNeeds(completion: @escaping () -> Void) {
+        let prefs = UserDefaults.standard
+        let timeInterval: Int = Int(Date().timeIntervalSince1970)
+        if let timeIntervalUD = prefs.value(forKey: Key.timeInterval) as? Int {
+            let secondsOfWeek = 604_800
+            if timeInterval - timeIntervalUD > secondsOfWeek {
+                getDatabase(completion: completion)
+                prefs.set(timeInterval, forKey: Key.timeInterval)
+            } else {
+                completion()
+            }
+        } else {
+            prefs.set(timeInterval, forKey: Key.timeInterval)
+            getDatabase(completion: completion)
+        }
+    }
+
+    private func getDatabase(completion: @escaping () -> Void) {
+        let group = DispatchGroup()
+        group.enter()
+        ConfigServices.getFoods { (result) in
+            if result.isFailure {
+                let prefs = UserDefaults.standard
+                prefs.removeObject(forKey: Key.timeInterval)
+                prefs.synchronize()
+            }
+            group.leave()
+        }
+        group.notify(queue: .global(), execute: completion)
     }
 }

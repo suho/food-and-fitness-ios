@@ -31,5 +31,11 @@ final class Food: Object, Mappable {
     }
 
     func mapping(map: Map) {
+        name <- map["name"]
+        weight <- map["weight"]
+        calories <- map["calories"]
+        protein <- map["protein"]
+        carbs <- map["carbs"]
+        fat <- map["fat"]
     }
 }

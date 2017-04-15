@@ -1,5 +1,5 @@
 //
-//  Activity.swift
+//  Tracking.swift
 //  FoodAndFitness
 //
 //  Created by Mylo Ho on 4/9/17.
@@ -10,7 +10,7 @@ import RealmSwift
 import ObjectMapper
 import RealmS
 
-final class Activity: Object, Mappable {
+final class Tracking: Object, Mappable {
 
     private(set) dynamic var id = 0
     private(set) dynamic var name: String = ""

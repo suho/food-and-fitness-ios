@@ -65,8 +65,6 @@ final class Strings {
     static let exercise = "Exercise"
     static let tracking = "Tracking"
 
-
-
     struct Errors {
         // MARK: - Error messages
         static let inputNotValidate = "Input not validate."

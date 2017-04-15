@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class FoodResultCell: BaseTableViewCell {
+final class ResultCell: BaseTableViewCell {
     @IBOutlet fileprivate(set) weak var titleLabel: UILabel!
     @IBOutlet fileprivate(set) weak var detailLabel: UILabel!
 
