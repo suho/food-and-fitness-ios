@@ -123,10 +123,13 @@ extension HomeViewController: UITableViewDelegate {
         case .meals:
             guard let activity = AddActivity(rawValue: indexPath.row) else { fatalError(Strings.Errors.enumError) }
             switch activity {
-            case .breakfast, .lunch, .dinner, .exercise:
+            case .breakfast:
                 let addActivityController = AddActivityController()
                 addActivityController.viewModel = AddActivityViewModel(activity: activity)
                 navigationController?.pushViewController(addActivityController, animated: true)
+            case .lunch: break
+            case .dinner: break
+            case .exercise: break
             case .tracking: break
             }
         }

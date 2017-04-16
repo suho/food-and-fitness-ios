@@ -16,14 +16,14 @@ final class UserExercise: Object, Mappable {
     private(set) dynamic var exercise: Exercise?
     private(set) dynamic var createdAt: Date = Date()
 
-//    override class func primaryKey() -> String? {
-//        return "id"
-//    }
+    override class func primaryKey() -> String? {
+        return "id"
+    }
 
     convenience required init?(map: Map) {
         self.init()
-//        id <- map["id"]
-//        assert(id > 0, "UserExercise `id` must be greater than 0")
+        id <- map["id"]
+        assert(id > 0, "UserExercise `id` must be greater than 0")
     }
 
     func mapping(map: Map) {

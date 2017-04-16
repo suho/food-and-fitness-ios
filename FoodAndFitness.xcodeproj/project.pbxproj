@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		82DD737526B668AC2735D9DF /* Pods_FoodAndFitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC2C5A9C9A5C9BBFE5E0265 /* Pods_FoodAndFitness.framework */; };
+		99195FD71EA359CD00BB10CA /* MealHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99195FD61EA359CD00BB10CA /* MealHeaderView.swift */; };
+		99195FD91EA359DA00BB10CA /* MealHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99195FD81EA359DA00BB10CA /* MealHeaderView.xib */; };
+		99195FDB1EA35E3200BB10CA /* UserFoodDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99195FDA1EA35E3200BB10CA /* UserFoodDetailViewModel.swift */; };
+		99195FDD1EA36FC100BB10CA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99195FDC1EA36FC100BB10CA /* HomeViewModel.swift */; };
 		991C34D81E9646C400FABEDE /* NextButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991C34D61E9646C400FABEDE /* NextButtonCell.swift */; };
 		991C34D91E9646C400FABEDE /* NextButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 991C34D71E9646C400FABEDE /* NextButtonCell.xib */; };
 		992DA8AE1E8A0EF9002A194C /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992DA8A71E8A0EF8002A194C /* BaseTableViewCell.swift */; };
@@ -47,6 +51,8 @@
 		9959E8781E8D6CEA005A8347 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9959E8761E8D6CEA005A8347 /* CalendarController.swift */; };
 		9959E8791E8D6CEA005A8347 /* CalendarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9959E8771E8D6CEA005A8347 /* CalendarController.xib */; };
 		99603EF01E9D2BF6001D1E5C /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99603EEF1E9D2BF6001D1E5C /* UserServices.swift */; };
+		996F58921EA357500092A723 /* UserFoodDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996F58901EA357500092A723 /* UserFoodDetailController.swift */; };
+		996F58931EA357500092A723 /* UserFoodDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 996F58911EA357500092A723 /* UserFoodDetailController.xib */; };
 		997971001E9E4095005E1E7C /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997970FF1E9E4095005E1E7C /* Formula.swift */; };
 		997EAE7C1E9EA18D0071D5BC /* LeftSideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997EAE7B1E9EA18D0071D5BC /* LeftSideViewModel.swift */; };
 		997EAE7F1E9EA8580071D5BC /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997EAE7E1E9EA8580071D5BC /* View.swift */; };
@@ -120,6 +126,10 @@
 		2CC2C5A9C9A5C9BBFE5E0265 /* Pods_FoodAndFitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodAndFitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		414B90741E59EF7A2149478D /* Pods-FoodAndFitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodAndFitness.release.xcconfig"; path = "Pods/Target Support Files/Pods-FoodAndFitness/Pods-FoodAndFitness.release.xcconfig"; sourceTree = "<group>"; };
 		55C6C2C4F08C322327521329 /* Pods-FoodAndFitness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodAndFitness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FoodAndFitness/Pods-FoodAndFitness.debug.xcconfig"; sourceTree = "<group>"; };
+		99195FD61EA359CD00BB10CA /* MealHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealHeaderView.swift; sourceTree = "<group>"; };
+		99195FD81EA359DA00BB10CA /* MealHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MealHeaderView.xib; sourceTree = "<group>"; };
+		99195FDA1EA35E3200BB10CA /* UserFoodDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFoodDetailViewModel.swift; sourceTree = "<group>"; };
+		99195FDC1EA36FC100BB10CA /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		991C34D61E9646C400FABEDE /* NextButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextButtonCell.swift; sourceTree = "<group>"; };
 		991C34D71E9646C400FABEDE /* NextButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NextButtonCell.xib; sourceTree = "<group>"; };
 		992DA8A71E8A0EF8002A194C /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -159,6 +169,8 @@
 		9959E8761E8D6CEA005A8347 /* CalendarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
 		9959E8771E8D6CEA005A8347 /* CalendarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarController.xib; sourceTree = "<group>"; };
 		99603EEF1E9D2BF6001D1E5C /* UserServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
+		996F58901EA357500092A723 /* UserFoodDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFoodDetailController.swift; sourceTree = "<group>"; };
+		996F58911EA357500092A723 /* UserFoodDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserFoodDetailController.xib; sourceTree = "<group>"; };
 		997970FF1E9E4095005E1E7C /* Formula.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
 		997EAE7B1E9EA18D0071D5BC /* LeftSideViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSideViewModel.swift; sourceTree = "<group>"; };
 		997EAE7E1E9EA8580071D5BC /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -257,6 +269,15 @@
 				414B90741E59EF7A2149478D /* Pods-FoodAndFitness.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		99195FD51EA3598A00BB10CA /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				99195FD61EA359CD00BB10CA /* MealHeaderView.swift */,
+				99195FD81EA359DA00BB10CA /* MealHeaderView.xib */,
+			);
+			path = HeaderView;
 			sourceTree = "<group>";
 		};
 		991C34D51E9646B300FABEDE /* Button */ = {
@@ -456,6 +477,17 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		996F588F1EA356950092A723 /* UserFoodDetail */ = {
+			isa = PBXGroup;
+			children = (
+				99195FD51EA3598A00BB10CA /* HeaderView */,
+				996F58901EA357500092A723 /* UserFoodDetailController.swift */,
+				996F58911EA357500092A723 /* UserFoodDetailController.xib */,
+				99195FDA1EA35E3200BB10CA /* UserFoodDetailViewModel.swift */,
+			);
+			path = UserFoodDetail;
+			sourceTree = "<group>";
+		};
 		997970FA1E9E4016005E1E7C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -648,6 +680,7 @@
 				99993E8A1E80B7430052372A /* SideMenu */,
 				999C402B1E9489640059E870 /* SignIn */,
 				999C402C1E9489640059E870 /* SignUp */,
+				996F588F1EA356950092A723 /* UserFoodDetail */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -671,6 +704,7 @@
 				993496E91EA2012000F9B108 /* ProgressCell */,
 				99BF6F551E77F67D00FD743F /* HomeViewController.swift */,
 				99BF6F561E77F67D00FD743F /* HomeViewController.xib */,
+				99195FDC1EA36FC100BB10CA /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1035,6 +1069,7 @@
 				993496F91EA2084400F9B108 /* AddActivityCell.xib in Resources */,
 				999C40301E94897C0059E870 /* SignInController.xib in Resources */,
 				99BF6F851E77F67D00FD743F /* HomeViewController.xib in Resources */,
+				996F58931EA357500092A723 /* UserFoodDetailController.xib in Resources */,
 				993404FE1E83C45D009A445F /* InformationViewController.xib in Resources */,
 				993496EF1EA2012000F9B108 /* ProgressCell.xib in Resources */,
 				992DA8E21E8A1F58002A194C /* NutritionHistoryController.xib in Resources */,
@@ -1047,6 +1082,7 @@
 				99AEA1801E87B240000DA06F /* AddMenuViewController.xib in Resources */,
 				999C40411E9497000059E870 /* TitleCell.xib in Resources */,
 				9959E8791E8D6CEA005A8347 /* CalendarController.xib in Resources */,
+				99195FD91EA359DA00BB10CA /* MealHeaderView.xib in Resources */,
 				99CC4CFE1E9AAA6F000EE59E /* ChooseActivesController.xib in Resources */,
 				99FF789B1EA22F5F0014EF72 /* ResultCell.xib in Resources */,
 				99BF6F8F1E77F67D00FD743F /* LaunchScreen.storyboard in Resources */,
@@ -1140,6 +1176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				992DA8DD1E8A1F3B002A194C /* NutritionAnalysisController.swift in Sources */,
+				996F58921EA357500092A723 /* UserFoodDetailController.swift in Sources */,
 				993404F91E83C44E009A445F /* HistoryViewController.swift in Sources */,
 				997971001E9E4095005E1E7C /* Formula.swift in Sources */,
 				99993E8E1E80B7840052372A /* LeftSideViewController.swift in Sources */,
@@ -1147,10 +1184,12 @@
 				99D925291E99F10E008150EE /* Active.swift in Sources */,
 				99AEA17F1E87B240000DA06F /* AddMenuViewController.swift in Sources */,
 				99603EF01E9D2BF6001D1E5C /* UserServices.swift in Sources */,
+				99195FD71EA359CD00BB10CA /* MealHeaderView.swift in Sources */,
 				99536AB21EA049CE00FF0BF2 /* UIViewController.swift in Sources */,
 				993496F81EA2084400F9B108 /* AddActivityCell.swift in Sources */,
 				99536AB41EA0A36400FF0BF2 /* SignInViewModel.swift in Sources */,
 				99536AAE1EA049CE00FF0BF2 /* Optional.swift in Sources */,
+				99195FDB1EA35E3200BB10CA /* UserFoodDetailViewModel.swift in Sources */,
 				99D925301E99F8F5008150EE /* Exercise.swift in Sources */,
 				993496EE1EA2012000F9B108 /* ProgressCell.swift in Sources */,
 				99BF6F841E77F67D00FD743F /* HomeViewController.swift in Sources */,
@@ -1173,6 +1212,7 @@
 				999C40371E948CEE0059E870 /* Mapper.swift in Sources */,
 				99BF6F801E77F67D00FD743F /* AppDelegate.swift in Sources */,
 				99501FFA1E8AC5010051227F /* CircleProgressView.swift in Sources */,
+				99195FDD1EA36FC100BB10CA /* HomeViewModel.swift in Sources */,
 				99536AAD1EA049CE00FF0BF2 /* Date.swift in Sources */,
 				99BF6F901E77F67D00FD743F /* AccessLibraryManager.swift in Sources */,
 				99FF78851EA21EF00014EF72 /* ConfigServices.swift in Sources */,
