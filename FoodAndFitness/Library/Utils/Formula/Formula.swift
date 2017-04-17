@@ -20,6 +20,32 @@ func bmi(weight: Int, height: Int) -> Double {
     return result
 }
 
+func status(bmi: Double, age: Int) -> String {
+    switch age {
+    default:
+        switch bmi {
+        case 0..<16:
+            return Strings.severeThinness
+        case 16..<17:
+            return Strings.moderateThinness
+        case 17..<18.5:
+            return Strings.mildThinness
+        case 18.5..<25:
+            return Strings.normal
+        case 25..<30:
+            return Strings.overweight
+        case 30..<35:
+            return Strings.obeseClassI
+        case 35..<40:
+            return Strings.obeseClassII
+        case 40..<200:
+            return Strings.obeseClassIII
+        default:
+            return Strings.empty
+        }
+    }
+}
+
 // MARK: - BMR Calculator
 func bmr(weight: Int, height: Int, age: Int, gender: Gender) -> Double {
     let value = 10 * Double(weight) + 6.25 * Double(height) - 5 * Double(age)

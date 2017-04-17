@@ -33,6 +33,6 @@ final class LeftSideViewModel {
             url = ApiPath.baseURL + user.avatarUrl
         }
         let bmi = "BMI: " + user.bmiValue.format(f: ".2")
-        return UserProfileCell.Data(avatarUrl: url, userName: user.name, bmi: bmi)
+        return UserProfileCell.Data(avatarUrl: url, userName: user.name, bmi: bmi, status: user.statusBmi)
     }
 }

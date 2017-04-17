@@ -14,6 +14,7 @@ final class UserExercise: Object, Mappable {
     private(set) dynamic var id = 0
     private(set) dynamic var user: User?
     private(set) dynamic var exercise: Exercise?
+    private(set) dynamic var duration: Int = 0
     private(set) dynamic var createdAt: Date = Date()
 
     override class func primaryKey() -> String? {

@@ -22,40 +22,13 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nq5-eS-GwG" customClass="View" customModule="FoodAndFitness" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h4V-bZ-bUo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h4V-bZ-bUo">
                                 <rect key="frame" x="8" y="8" width="82.5" height="82.5"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="h4V-bZ-bUo" secondAttribute="height" multiplier="1:1" id="Jxj-4t-Tgg"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51a-zc-2mn">
-                                <rect key="frame" x="98.5" y="33.5" width="143" height="31.5"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Breakfast">
-                                        <attributes>
-                                            <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                                        <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Recommended: 600-700 kcal">
-                                        <attributes>
-                                            <font key="NSFont" size="10" name=".AppleSystemUIFont"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pYC-wx-l4K">
                                 <rect key="frame" x="284.5" y="40" width="19.5" height="20"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -63,15 +36,42 @@ Cg
                                     <constraint firstAttribute="width" secondItem="pYC-wx-l4K" secondAttribute="height" multiplier="1:1" id="fDO-PF-GjM"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p3j-o9-HTK">
+                                <rect key="frame" x="98.5" y="29" width="178" height="41.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fh6-pd-NPp">
+                                        <rect key="frame" x="0.0" y="0.0" width="178" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARq-Rv-CKg">
+                                        <rect key="frame" x="0.0" y="24.5" width="178" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ARq-Rv-CKg" secondAttribute="trailing" id="5NI-E4-wRJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="fh6-pd-NPp" secondAttribute="trailing" id="5bh-Hm-S59"/>
+                                    <constraint firstItem="fh6-pd-NPp" firstAttribute="leading" secondItem="p3j-o9-HTK" secondAttribute="leading" id="C1E-yC-mpd"/>
+                                    <constraint firstAttribute="bottom" secondItem="ARq-Rv-CKg" secondAttribute="bottom" id="CkV-Bi-b9q"/>
+                                    <constraint firstItem="ARq-Rv-CKg" firstAttribute="top" secondItem="fh6-pd-NPp" secondAttribute="bottom" constant="4" id="HKt-Y0-OCk"/>
+                                    <constraint firstItem="ARq-Rv-CKg" firstAttribute="leading" secondItem="p3j-o9-HTK" secondAttribute="leading" id="Qke-Y4-HvG"/>
+                                    <constraint firstItem="fh6-pd-NPp" firstAttribute="top" secondItem="p3j-o9-HTK" secondAttribute="top" id="rD0-Bg-jUy"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="51a-zc-2mn" firstAttribute="centerY" secondItem="h4V-bZ-bUo" secondAttribute="centerY" id="8rj-Yx-ppL"/>
                             <constraint firstAttribute="trailing" secondItem="pYC-wx-l4K" secondAttribute="trailing" constant="16" id="H3S-8u-9fn"/>
                             <constraint firstItem="h4V-bZ-bUo" firstAttribute="leading" secondItem="Nq5-eS-GwG" secondAttribute="leading" constant="8" id="Q1p-oO-5zi"/>
-                            <constraint firstItem="51a-zc-2mn" firstAttribute="leading" secondItem="h4V-bZ-bUo" secondAttribute="trailing" constant="8" id="dDH-w0-b0i"/>
                             <constraint firstItem="h4V-bZ-bUo" firstAttribute="top" secondItem="Nq5-eS-GwG" secondAttribute="top" constant="8" id="hrf-e7-Zqb"/>
+                            <constraint firstItem="p3j-o9-HTK" firstAttribute="leading" secondItem="h4V-bZ-bUo" secondAttribute="trailing" constant="8" id="pLk-uu-HVF"/>
                             <constraint firstAttribute="bottom" secondItem="h4V-bZ-bUo" secondAttribute="bottom" constant="8" id="rBr-va-2X4"/>
+                            <constraint firstItem="pYC-wx-l4K" firstAttribute="leading" secondItem="p3j-o9-HTK" secondAttribute="trailing" constant="8" id="zim-Uu-y0B"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
@@ -110,8 +110,15 @@ Cg
             <constraints>
                 <constraint firstItem="pYC-wx-l4K" firstAttribute="height" secondItem="KGk-i7-Jjw" secondAttribute="height" multiplier="1/5" id="6ex-SB-gJO"/>
                 <constraint firstItem="pYC-wx-l4K" firstAttribute="centerY" secondItem="KGk-i7-Jjw" secondAttribute="centerY" id="cvh-Jb-lfC"/>
+                <constraint firstItem="p3j-o9-HTK" firstAttribute="centerY" secondItem="KGk-i7-Jjw" secondAttribute="centerY" id="hE8-r4-388"/>
             </constraints>
-            <point key="canvasLocation" x="138" y="-7"/>
+            <connections>
+                <outlet property="addImageView" destination="pYC-wx-l4K" id="A3u-SM-Kq1"/>
+                <outlet property="detailLabel" destination="ARq-Rv-CKg" id="GoA-Yw-rPw"/>
+                <outlet property="thumbnailImageView" destination="h4V-bZ-bUo" id="HJR-2y-30c"/>
+                <outlet property="titleLabel" destination="fh6-pd-NPp" id="y0C-wO-Jty"/>
+            </connections>
+            <point key="canvasLocation" x="-411" y="-395.5"/>
         </tableViewCell>
     </objects>
 </document>

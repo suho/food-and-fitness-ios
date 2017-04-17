@@ -44,7 +44,7 @@ final class LeftSideViewController: UITableViewController {
         var heightForRow: CGFloat {
             switch self {
             case .profile:
-                return 160
+                return 190
             default:
                 return 50
             }

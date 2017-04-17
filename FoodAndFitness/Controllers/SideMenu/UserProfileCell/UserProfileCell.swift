@@ -28,6 +28,7 @@ final class UserProfileCell: BaseTableViewCell {
         var avatarUrl: String?
         var userName: String
         var bmi: String
+        var status: String
     }
 
     var data: Data? {
@@ -39,8 +40,21 @@ final class UserProfileCell: BaseTableViewCell {
                 avatarImageView.image = #imageLiteral(resourceName: "avatar_default")
             }
             userNameLabel.text = data.userName
-            bmiLabel.text = data.bmi
+            bmiLabel.attributedText = attributeText(bmi: data.bmi, status: data.status)
         }
+    }
+
+    private func attributeText(bmi: String, status: String) -> NSMutableAttributedString {
+        let mutableAttributed: NSMutableAttributedString!
+        let bmiAttributed = NSAttributedString(string: bmi, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 16)])
+        mutableAttributed = NSMutableAttributedString(attributedString: bmiAttributed)
+
+        let breakLine = NSAttributedString(string: "\n")
+        mutableAttributed.append(breakLine)
+
+        let statusAttributed = NSAttributedString(string: status, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 12)])
+        mutableAttributed.append(statusAttributed)
+        return mutableAttributed
     }
     
     @IBAction func settings(_ sender: Any) {

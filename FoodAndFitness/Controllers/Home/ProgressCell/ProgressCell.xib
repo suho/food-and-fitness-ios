@@ -292,9 +292,15 @@ Cg
                 <constraint firstItem="TJa-iE-9IS" firstAttribute="height" secondItem="KGk-i7-Jjw" secondAttribute="height" multiplier="3/5" id="HK8-UX-c60"/>
             </constraints>
             <connections>
+                <outlet property="burnLabel" destination="jgD-EO-eGX" id="1dy-jN-wKP"/>
+                <outlet property="caloriesLabel" destination="Ezs-J4-1Ie" id="mui-IZ-Q23"/>
+                <outlet property="carbsLabel" destination="WEb-4W-rMh" id="eS4-hf-lfo"/>
+                <outlet property="eatenLabel" destination="P2A-fj-dje" id="7Lv-3k-Kma"/>
+                <outlet property="fatLabel" destination="Cdd-hb-apm" id="EbF-B5-BLo"/>
                 <outlet property="progressView" destination="TJa-iE-9IS" id="l7o-Xm-n4K"/>
+                <outlet property="proteinLabel" destination="d1i-3z-bhM" id="jcr-j5-xsW"/>
             </connections>
-            <point key="canvasLocation" x="25" y="66"/>
+            <point key="canvasLocation" x="-608" y="3"/>
         </tableViewCell>
     </objects>
 </document>

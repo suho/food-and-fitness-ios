@@ -11,6 +11,7 @@ import SwiftUtils
 
 final class HomeViewController: RootSideMenuViewController {
     @IBOutlet fileprivate(set) weak var tableView: UITableView!
+    var viewModel: HomeViewModel = HomeViewModel()
 
     enum Sections: Int {
         case progress
@@ -45,7 +46,6 @@ final class HomeViewController: RootSideMenuViewController {
         case dinner
         case exercise
         case tracking
-//        case water
 
         var title: String {
             switch self {
@@ -59,6 +59,21 @@ final class HomeViewController: RootSideMenuViewController {
                 return Strings.exercise
             case .tracking:
                 return Strings.tracking
+            }
+        }
+
+        var image: UIImage {
+            switch self {
+            case .breakfast:
+                return #imageLiteral(resourceName: "breakfast")
+            case .lunch:
+                return #imageLiteral(resourceName: "breakfast")
+            case .dinner:
+                return #imageLiteral(resourceName: "breakfast")
+            case .exercise:
+                return #imageLiteral(resourceName: "breakfast")
+            case .tracking:
+                return #imageLiteral(resourceName: "breakfast")
             }
         }
     }
@@ -98,12 +113,12 @@ extension HomeViewController: UITableViewDataSource {
         switch nutritionSection {
         case .progress:
             let cell = tableView.dequeue(ProgressCell.self)
-            cell.setup(45, duration: 2)
+            cell.data = viewModel.dataForProgressCell()
             return cell
         case .meals:
             guard let activity = AddActivity(rawValue: indexPath.row) else { fatalError(Strings.Errors.enumError) }
-            _ = activity
             let cell = tableView.dequeue(AddActivityCell.self)
+            cell.data = viewModel.dataForAddActivityCell(activity: activity)
             return cell
         }
     }

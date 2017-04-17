@@ -9,6 +9,7 @@
 import RealmSwift
 import ObjectMapper
 import RealmS
+import SwiftDate
 
 final class User: Object, Mappable {
 
@@ -35,10 +36,6 @@ final class User: Object, Mappable {
                 return .others
             }
         }
-    }
-
-    var bmiValue: Double {
-        return bmi(weight: weight, height: height)
     }
 
     override class func primaryKey() -> String? {
@@ -73,5 +70,58 @@ extension User {
     
     static var isLogin: Bool {
         return me != nil
+    }
+}
+
+enum Goals: Int {
+    case beHealthier
+    case loseWeight
+    case gainWeight
+}
+
+enum Actives: Int {
+    case sedentary
+    case lightlyActive
+    case modertelyActive
+    case veryActive
+}
+
+// MARK: - For Nutrition
+extension User {
+    var age: Int {
+        let now = DateInRegion(absoluteDate: Date()).year
+        let birthdayYear = DateInRegion(absoluteDate: birthday).year
+        return now - birthdayYear
+    }
+
+    var bmiValue: Double {
+        return bmi(weight: weight, height: height)
+    }
+
+    var statusBmi: String {
+        return status(bmi: bmiValue, age: age)
+    }
+
+    var caloriesToday: Double {
+        guard let goal = goal, let active = active, let goals = Goals(rawValue: goal.id), let actives = Actives(rawValue: active.id) else { return 0 }
+        var bmrValue = bmr(weight: weight, height: height, age: age, gender: gender)
+        switch goals {
+        case .beHealthier: break
+        case .loseWeight:
+            bmrValue -= 500
+        case .gainWeight:
+            bmrValue += 500
+        }
+        switch actives {
+        case .sedentary:
+            bmrValue *= 1.2
+        case .lightlyActive:
+            bmrValue *= 1.4
+        case .modertelyActive:
+            bmrValue *= 1.6
+        case .veryActive:
+            bmrValue *= 1.8
+        }
+        return bmrValue
     }
 }
