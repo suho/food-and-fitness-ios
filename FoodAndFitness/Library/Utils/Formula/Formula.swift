@@ -58,20 +58,21 @@ func bmr(weight: Int, height: Int, age: Int, gender: Gender) -> Double {
     }
 }
 
-// MARK: - Carbohydrates Calculator
+// MARK: - Carbohydrates Calculator with 50%
 func carbs(calories: Double) -> Int {
-    let grams = calories / 4
+    let grams = calories / 8
     return Int(grams)
 }
 
-// MARK: - Protein Calculator
+// MARK: - Protein Calculator with 20%
 func protein(calories: Double) -> Int {
-    return carbs(calories: calories)
+    let grams = calories / 20
+    return Int(grams)
 }
 
-// MARK: - Fat Calculator
+// MARK: - Fat Calculator with 30%
 func fat(calories: Double) -> Int {
-    let grams = calories / 9
+    let grams = calories / 27
     return Int(grams)
 }
 

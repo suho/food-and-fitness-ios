@@ -73,13 +73,7 @@ final class Strings {
     static let obeseClassI = "Obese Class I"
     static let obeseClassII = "Obese Class II"
     static let obeseClassIII = "Obese Class III"
-
-    static let caloriesLeft = "KCAL LEFT"
-    static let eaten = "EATEN"
-    static let burn = "BURN"
-    static let carbs = "CARBS"
-    static let protein = "PROTEIN"
-    static let fat = "FAT"
+    
     static let gLeft = "g LEFT"
 
     struct Errors {

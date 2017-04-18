@@ -67,13 +67,13 @@ final class HomeViewController: RootSideMenuViewController {
             case .breakfast:
                 return #imageLiteral(resourceName: "breakfast")
             case .lunch:
-                return #imageLiteral(resourceName: "breakfast")
+                return #imageLiteral(resourceName: "lunch")
             case .dinner:
-                return #imageLiteral(resourceName: "breakfast")
+                return #imageLiteral(resourceName: "dinner")
             case .exercise:
-                return #imageLiteral(resourceName: "breakfast")
+                return #imageLiteral(resourceName: "exercise")
             case .tracking:
-                return #imageLiteral(resourceName: "breakfast")
+                return #imageLiteral(resourceName: "tracking")
             }
         }
     }

@@ -31,12 +31,12 @@ final class ProgressCell: BaseTableViewCell {
             guard let data = data else { return }
             progressView.maxValue = CGFloat(data.calories)
             progressView.setValue(CGFloat(data.eaten))
-            caloriesLabel.attributedText = attributeText(isNumberTop: true, value: "\(data.calories - data.eaten)", numberSize: 23, status: Strings.caloriesLeft, statusSize: 10)
-            eatenLabel.attributedText = attributeText(isNumberTop: true, value: "\(data.eaten)", numberSize: 13, status: Strings.eaten, statusSize: 8)
-            burnLabel.attributedText = attributeText(isNumberTop: true, value: "\(data.burn)", numberSize: 13, status: Strings.burn, statusSize: 8)
-            carbsLabel.attributedText = attributeText(value: data.carbs, status: Strings.carbs)
-            proteinLabel.attributedText = attributeText(value: data.protein, status: Strings.protein)
-            fatLabel.attributedText = attributeText(value: data.fat, status: Strings.fat)
+            caloriesLabel.text = "\(data.calories - data.eaten)"
+            eatenLabel.text = "\(data.eaten)"
+            burnLabel.text = "\(data.burn)"
+            carbsLabel.text =  data.carbs
+            proteinLabel.text = data.protein
+            fatLabel.text = data.fat
         }
     }
 
