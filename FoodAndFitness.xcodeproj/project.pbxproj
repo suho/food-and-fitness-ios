@@ -75,6 +75,8 @@
 		999C40521E94D72F0059E870 /* RadioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 999C40501E94D72F0059E870 /* RadioCell.xib */; };
 		99AEA17F1E87B240000DA06F /* AddMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AEA17D1E87B240000DA06F /* AddMenuViewController.swift */; };
 		99AEA1801E87B240000DA06F /* AddMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AEA17E1E87B240000DA06F /* AddMenuViewController.xib */; };
+		99B7CEA41EA7D7EC00BE370A /* AddUserFoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B7CEA21EA7D7EC00BE370A /* AddUserFoodCell.swift */; };
+		99B7CEA51EA7D7EC00BE370A /* AddUserFoodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99B7CEA31EA7D7EC00BE370A /* AddUserFoodCell.xib */; };
 		99BF6F801E77F67D00FD743F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F4E1E77F67D00FD743F /* AppDelegate.swift */; };
 		99BF6F841E77F67D00FD743F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BF6F551E77F67D00FD743F /* HomeViewController.swift */; };
 		99BF6F851E77F67D00FD743F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99BF6F561E77F67D00FD743F /* HomeViewController.xib */; };
@@ -195,6 +197,8 @@
 		999C40501E94D72F0059E870 /* RadioCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioCell.xib; sourceTree = "<group>"; };
 		99AEA17D1E87B240000DA06F /* AddMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMenuViewController.swift; sourceTree = "<group>"; };
 		99AEA17E1E87B240000DA06F /* AddMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddMenuViewController.xib; sourceTree = "<group>"; };
+		99B7CEA21EA7D7EC00BE370A /* AddUserFoodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUserFoodCell.swift; sourceTree = "<group>"; };
+		99B7CEA31EA7D7EC00BE370A /* AddUserFoodCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddUserFoodCell.xib; sourceTree = "<group>"; };
 		99BF6F381E77F41500FD743F /* FoodAndFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodAndFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99BF6F4E1E77F67D00FD743F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99BF6F551E77F67D00FD743F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -445,6 +449,7 @@
 		993F22D91EA60FB90078D51D /* UserFoodsDetail */ = {
 			isa = PBXGroup;
 			children = (
+				99B7CEA11EA7D7DC00BE370A /* AddUserFoodCell */,
 				993F22DA1EA60FB90078D51D /* HeaderView */,
 				993F22DD1EA60FB90078D51D /* UserFoodsDetailController.swift */,
 				993F22DE1EA60FB90078D51D /* UserFoodsDetailController.xib */,
@@ -631,6 +636,15 @@
 				99AEA17E1E87B240000DA06F /* AddMenuViewController.xib */,
 			);
 			path = AddMenu;
+			sourceTree = "<group>";
+		};
+		99B7CEA11EA7D7DC00BE370A /* AddUserFoodCell */ = {
+			isa = PBXGroup;
+			children = (
+				99B7CEA21EA7D7EC00BE370A /* AddUserFoodCell.swift */,
+				99B7CEA31EA7D7EC00BE370A /* AddUserFoodCell.xib */,
+			);
+			path = AddUserFoodCell;
 			sourceTree = "<group>";
 		};
 		99BF6F2F1E77F41500FD743F = {
@@ -1096,6 +1110,7 @@
 				999C40411E9497000059E870 /* TitleCell.xib in Resources */,
 				9959E8791E8D6CEA005A8347 /* CalendarController.xib in Resources */,
 				99CC4CFE1E9AAA6F000EE59E /* ChooseActivesController.xib in Resources */,
+				99B7CEA51EA7D7EC00BE370A /* AddUserFoodCell.xib in Resources */,
 				99FF789B1EA22F5F0014EF72 /* ResultCell.xib in Resources */,
 				993F22E91EA621E30078D51D /* UserExercisesDetailController.xib in Resources */,
 				993F22E31EA60FB90078D51D /* UserFoodsDetailController.xib in Resources */,
@@ -1232,6 +1247,7 @@
 				99FF78851EA21EF00014EF72 /* ConfigServices.swift in Sources */,
 				993F22E41EA60FB90078D51D /* UserFoodsDetailViewModel.swift in Sources */,
 				991C34D81E9646C400FABEDE /* NextButtonCell.swift in Sources */,
+				99B7CEA41EA7D7EC00BE370A /* AddUserFoodCell.swift in Sources */,
 				992DA8AE1E8A0EF9002A194C /* BaseTableViewCell.swift in Sources */,
 				993405011E83C46D009A445F /* ProfileViewController.swift in Sources */,
 				99D9253D1E9A0504008150EE /* UserFood.swift in Sources */,

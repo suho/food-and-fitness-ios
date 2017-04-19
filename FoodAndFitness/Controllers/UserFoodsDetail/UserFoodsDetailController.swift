@@ -9,7 +9,7 @@
 import UIKit
 import SwiftUtils
 
-class UserFoodDetailController: BaseViewController {
+class UserFoodsDetailController: BaseViewController {
     @IBOutlet fileprivate(set) weak var tableView: TableView!
     var viewModel: UserFoodsDetailViewModel!
 
@@ -29,6 +29,7 @@ class UserFoodDetailController: BaseViewController {
     }
 
     private func configureTableView() {
+        tableView.register(AddUserFoodCell.self)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
@@ -36,7 +37,7 @@ class UserFoodDetailController: BaseViewController {
 }
 
 // MARK: - UITableViewDataSource
-extension UserFoodDetailController: UITableViewDataSource {
+extension UserFoodsDetailController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return Sections.count
@@ -48,7 +49,7 @@ extension UserFoodDetailController: UITableViewDataSource {
         }
         switch sections {
         case .userFoods:
-            return viewModel.userFoods.count
+            return viewModel.userFoods.count + 1
         case .information:
             return 4
         case .suggestion:
@@ -57,12 +58,30 @@ extension UserFoodDetailController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let sections = Sections(rawValue: indexPath.section) else {
+            fatalError(Strings.Errors.enumError)
+        }
+        switch sections {
+        case .userFoods:
+            switch indexPath.row {
+            case 0:
+                let cell = tableView.dequeue(AddUserFoodCell.self)
+                cell.delegate = self
+                return cell
+            default: break
+
+            }
+        case .information: break
+
+        case .suggestion: break
+
+        }
         return UITableViewCell()
     }
 }
 
 // MARK: - UITableViewDelegate
-extension UserFoodDetailController: UITableViewDelegate {
+extension UserFoodsDetailController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         guard let sections = Sections(rawValue: section) else {
             fatalError(Strings.Errors.enumError)
@@ -86,6 +105,19 @@ extension UserFoodDetailController: UITableViewDelegate {
         default:
             let headerView: TitleCell = TitleCell.loadNib()
             return headerView
+        }
+    }
+}
+
+// MARK: - AddUserFoodCellDelegate
+extension UserFoodsDetailController: AddUserFoodCellDelegate {
+    func cell(_ cell: AddUserFoodCell, needsPerformAction action: AddUserFoodCell.Action) {
+        switch action {
+        case .add:
+            let addActivityController = AddActivityController()
+            addActivityController.viewModel = AddActivityViewModel(activity: viewModel.activity)
+            navigationController?.pushViewController(addActivityController, animated: true)
+
         }
     }
 }
