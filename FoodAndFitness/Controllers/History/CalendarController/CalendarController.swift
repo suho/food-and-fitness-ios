@@ -11,7 +11,7 @@ import FSCalendar
 import SwiftDate
 
 final class CalendarController: RootSideMenuViewController {
-    @IBOutlet fileprivate weak var calendar: FSCalendar!
+    @IBOutlet fileprivate(set) weak var calendar: FSCalendar!
     var currentCell: FSCalendarCell?
 
     override func setupUI() {

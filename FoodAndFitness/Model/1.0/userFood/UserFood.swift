@@ -15,18 +15,19 @@ final class UserFood: Object, Mappable {
     private(set) dynamic var id = 0
     private(set) dynamic var user: User?
     private(set) dynamic var food: Food?
+    private(set) dynamic var weight: Int = 0
     private(set) dynamic var createdAt: Date = Date()
 
-    //    override class func primaryKey() -> String? {
-    //        return "id"
-    //    }
+    override class func primaryKey() -> String? {
+        return "id"
+    }
 
     convenience required init?(map: Map) {
         self.init()
-        //        id <- map["id"]
-        //        assert(id > 0, "UserExercise `id` must be greater than 0")
+        id <- map["id"]
+        assert(id > 0, "UserExercise `id` must be greater than 0")
     }
-    
+
     func mapping(map: Map) {
     }
 }

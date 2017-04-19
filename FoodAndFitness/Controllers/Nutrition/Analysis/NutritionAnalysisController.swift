@@ -62,8 +62,7 @@ final class NutritionAnalysisController: BaseViewController {
 
 extension NutritionAnalysisController: ChartViewDelegate { }
 
-class DayAxisValueFormatter: NSObject, IAxisValueFormatter {
-
+final class DayAxisValueFormatter: NSObject, IAxisValueFormatter {
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         let day = (DateInRegion() - (7 - Int(value)).days).ffDate().weekdayName
         let index = day.index(day.startIndex, offsetBy: 3)

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddActivityController" customModule="FoodAndFitness" customModuleProvider="target">
+            <connections>
+                <outlet property="searchBar" destination="uT1-49-PlS" id="s4u-Pw-pGy"/>
+                <outlet property="tableView" destination="PsK-dl-fyD" id="M92-eg-Uu5"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="uT1-49-PlS">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PsK-dl-fyD">
+                    <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="uT1-49-PlS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8fS-ve-RQ1"/>
+                <constraint firstItem="PsK-dl-fyD" firstAttribute="top" secondItem="uT1-49-PlS" secondAttribute="bottom" id="CXK-Bj-EEP"/>
+                <constraint firstItem="uT1-49-PlS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MIV-G3-Mdu"/>
+                <constraint firstItem="PsK-dl-fyD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="NmX-Ch-WDo"/>
+                <constraint firstAttribute="bottom" secondItem="PsK-dl-fyD" secondAttribute="bottom" id="OYd-OB-0Ps"/>
+                <constraint firstAttribute="trailing" secondItem="PsK-dl-fyD" secondAttribute="trailing" id="dIh-Qo-GuO"/>
+                <constraint firstAttribute="trailing" secondItem="uT1-49-PlS" secondAttribute="trailing" id="imS-vA-GSy"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

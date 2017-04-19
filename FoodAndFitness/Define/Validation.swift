@@ -15,4 +15,6 @@ enum Validation {
     static let maxInput = 250
     static let minHeightInput = 50
     static let minWeightInput = 10
+    static let minPasswordInput = 8
+    static let maxPasswordInput = 32
 }

@@ -13,9 +13,9 @@ protocol RadioCellDelegate: NSObjectProtocol {
 }
 
 final class RadioCell: BaseTableViewCell {
-    @IBOutlet fileprivate weak var titleLabel: UILabel!
-    @IBOutlet fileprivate weak var maleButton: UIButton!
-    @IBOutlet fileprivate weak var femaleButton: UIButton!
+    @IBOutlet fileprivate(set) weak var titleLabel: UILabel!
+    @IBOutlet fileprivate(set) weak var maleButton: UIButton!
+    @IBOutlet fileprivate(set) weak var femaleButton: UIButton!
     weak var delegate: RadioCellDelegate?
 
     enum Action {

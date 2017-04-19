@@ -23,9 +23,11 @@ final class ApiPath {
     // MARK: - Roots
     private static var auth: String { return baseURL / "auth" }
     static var users: String { return baseURL / "users" }
+    static var foods: String { return baseURL / "foods" }
+    static var exercises: String { return baseURL / "exercises" }
 
     struct Auth {
-        static var login: String {
+        static var signin: String {
             return ApiPath.auth / "sign_in"
         }
 
@@ -34,40 +36,22 @@ final class ApiPath {
         }
     }
 
-    struct User: URLStringConvertible {
+    struct Food {
+        var foodId: Int
+
+        init(foodId: Int) {
+            self.foodId = foodId
+        }
+    }
+
+    struct User {
         var userID: Int
 
         init(userID: Int) {
             self.userID = userID
         }
 
-        var URLString: String {
-            return ApiPath.users / userID
-        }
-
         static var upload: String { return ApiPath.baseURL / "avatars" / "upload" }
-
-        static var me: String { return ApiPath.users / "me" }
-
-        static var notifications: String { return ApiPath.users / "me" / "push-settings" }
-    }
-
-    struct Google: URLStringConvertible {
-        var URLString: String {
-            return ApiPath.googleMapURL
-        }
-
-        static var placeAutoComplete: String {
-            return ApiPath.googleMapURL / "place" / "autocomplete" / "json"
-        }
-
-        static var directions: String {
-            return ApiPath.googleMapURL / "directions" / "json"
-        }
-
-        static var componentsCountry: String {
-            return "country:jp"
-        }
     }
 }
 

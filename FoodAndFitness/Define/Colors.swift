@@ -13,4 +13,5 @@ final class Color {
     static let white = UIColor.white
     static let lightBeige = UIColor.RGB(243, 237, 216)
     static let blue63 = UIColor.RGB(63, 166, 232)
+    static let gray245 = UIColor.RGB(245, 245, 245)
 }

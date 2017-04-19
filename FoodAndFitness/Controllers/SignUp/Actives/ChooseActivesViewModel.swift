@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChooseActivesViewModel {
+final class ChooseActivesViewModel {
 
     var signUpParams: SignUpParams
 

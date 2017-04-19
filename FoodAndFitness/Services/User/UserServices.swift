@@ -15,45 +15,37 @@ import SwiftyJSON
 
 final class UserServices {
 
-    class func upload(image: UIImage, completion: @escaping Completion) {
-        let path = ApiPath.User.upload
-        guard let url = URL(string: path) else {
-            let error = NSError(message: Strings.Errors.urlError)
-            completion(.failure(error))
-            return
-        }
-        guard let data = UIImageJPEGRepresentation(image, 1) else {
-            let error = NSError(message: Strings.Errors.emptyImage)
-            completion(.failure(error))
-            return
-        }
-        let request = NSMutableURLRequest(url: url)
-        request.httpMethod = "PUT"
-        let boundary = "Boundary-\(NSUUID().uuidString)"
-        request.addHeaders(boundary: boundary)
-        request.httpBody(key: "file", value: data, boundary: boundary)
-        let queue = DispatchQueue(label: "uploadImage", qos: .background, attributes: .concurrent)
-        queue.async {
-            let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data, _, error) -> Void in
-                if let error = error {
-                    DispatchQueue.main.async {
-                        completion(.failure(error))
-                    }
+    @discardableResult
+    class func signIn(params: SignInParams, completion: @escaping Completion) -> Request? {
+        let path = ApiPath.Auth.signin
+        let parameters: JSObject = [
+            "email": params.email,
+            "password": params.password
+        ]
+        return ApiManager.request(method: .post, urlString: path, parameters: parameters, completion: { (result) in
+            switch result {
+            case .success(let json):
+                guard let json = json["data"] as? JSObject else {
+                    completion(.failure(FFError.json))
                     return
                 }
-                guard let data = data else { return }
-                guard let json = data.toJSON() as? JSObject else {
-                    DispatchQueue.main.async {
-                        completion(.failure(FFError.json))
+                let realm = RealmS()
+                var userId: Int?
+                realm.write {
+                    if let user = realm.map(User.self, json: json) {
+                        userId = user.id
                     }
+                }
+                guard let id = userId else {
+                    completion(.failure(FFError.json))
                     return
                 }
-                DispatchQueue.main.async {
-                    Mapper<User>().map(result: .success(json), type: .object, completion: completion)
-                }
-            })
-            task.resume()
-        }
+                api.session.userID = id
+                api.session.credential = Session.Credential(username: params.email, password: params.password)
+            case .failure(_): break
+            }
+            completion(result)
+        })
     }
 
     @discardableResult
@@ -98,5 +90,46 @@ final class UserServices {
             }
             completion(result)
         })
+    }
+
+    class func upload(image: UIImage, completion: @escaping Completion) {
+        let path = ApiPath.User.upload
+        guard let url = URL(string: path) else {
+            let error = NSError(message: Strings.Errors.urlError)
+            completion(.failure(error))
+            return
+        }
+        guard let data = UIImageJPEGRepresentation(image, 1) else {
+            let error = NSError(message: Strings.Errors.emptyImage)
+            completion(.failure(error))
+            return
+        }
+        let request = NSMutableURLRequest(url: url)
+        request.httpMethod = "PUT"
+        let boundary = "Boundary-\(NSUUID().uuidString)"
+        request.addHeaders(boundary: boundary)
+        request.httpBody(key: "file", value: data, boundary: boundary)
+        let queue = DispatchQueue(label: "uploadImage", qos: .background, attributes: .concurrent)
+        queue.async {
+            let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data, _, error) -> Void in
+                if let error = error {
+                    DispatchQueue.main.async {
+                        completion(.failure(error))
+                    }
+                    return
+                }
+                guard let data = data else { return }
+                guard let json = data.toJSON() as? JSObject else {
+                    DispatchQueue.main.async {
+                        completion(.failure(FFError.json))
+                    }
+                    return
+                }
+                DispatchQueue.main.async {
+                    Mapper<User>().map(result: .success(json), type: .object, completion: completion)
+                }
+            })
+            task.resume()
+        }
     }
 }

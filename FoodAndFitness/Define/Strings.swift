@@ -55,6 +55,27 @@ final class Strings {
     static let openGallery = "Open Gallery"
     static let openCamera = "Open Camera"
 
+    static let addBreakfast = "Add Breakfast"
+    static let breakfast = "Breakfast"
+    static let addLunch = "Add Lunch"
+    static let lunch = "Lunch"
+    static let addDinner = "Add Dinner"
+    static let dinner = "Dinner"
+
+    static let exercise = "Exercise"
+    static let tracking = "Tracking"
+    
+    static let severeThinness = "Severe Thinness"
+    static let moderateThinness = "Moderate Thinness"
+    static let mildThinness = "Mild Thinness"
+    static let normal = "Normal"
+    static let overweight = "Overweight"
+    static let obeseClassI = "Obese Class I"
+    static let obeseClassII = "Obese Class II"
+    static let obeseClassIII = "Obese Class III"
+    
+    static let gLeft = "g LEFT"
+
     struct Errors {
         // MARK: - Error messages
         static let inputNotValidate = "Input not validate."

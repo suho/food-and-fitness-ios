@@ -44,7 +44,7 @@ final class LeftSideViewController: UITableViewController {
         var heightForRow: CGFloat {
             switch self {
             case .profile:
-                return 160
+                return 190
             default:
                 return 50
             }
@@ -67,6 +67,7 @@ final class LeftSideViewController: UITableViewController {
     }
 
     weak var delegate: LeftSideViewControllerDelegate?
+    var viewModel: LeftSideViewModel = LeftSideViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,6 +96,7 @@ extension LeftSideViewController {
         switch sideMenu {
         case .profile:
             let cell = tableView.dequeue(UserProfileCell.self)
+            cell.data = viewModel.dataForUserProfile()
             cell.delegate = self
             return cell
         default:

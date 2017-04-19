@@ -14,8 +14,8 @@ protocol AvatarCellDelegate: NSObjectProtocol {
 
 final class AvatarCell: BaseTableViewCell {
 
-    @IBOutlet fileprivate weak var titleLabel: UILabel!
-    @IBOutlet fileprivate weak var avatarImageView: UIImageView!
+    @IBOutlet fileprivate(set) weak var titleLabel: UILabel!
+    @IBOutlet fileprivate(set) weak var avatarImageView: UIImageView!
     weak var delegate: AvatarCellDelegate?
 
     enum Action {

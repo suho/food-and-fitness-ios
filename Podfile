@@ -18,6 +18,7 @@ def app_pods
     pod 'LGSideMenuController',         '~> 2.0.5'
     pod 'Charts',                       '~> 3.0.1'
     pod 'FSCalendar',                   '~> 2.7.4'
+    pod 'SDWebImage',                   '~> 3.8'
 
     # Security
     pod 'SAMKeychain',                  '~> 1.5.1'
