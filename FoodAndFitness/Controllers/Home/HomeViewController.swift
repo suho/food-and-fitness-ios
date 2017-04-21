@@ -145,7 +145,9 @@ extension HomeViewController: UITableViewDelegate {
             case .lunch: break
             case .dinner: break
             case .exercise: break
-            case .tracking: break
+            case .tracking:
+                let trackingController = TrackingController()
+                navigationController?.pushViewController(trackingController, animated: true)
             }
         }
     }

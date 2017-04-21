@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import RealmS
 
-class FoodDetailViewModel {
+final class FoodDetailViewModel {
     var food: Food
 
     init(food: Food) {

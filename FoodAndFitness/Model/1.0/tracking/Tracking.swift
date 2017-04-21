@@ -18,10 +18,9 @@ final class Tracking: Object, Mappable {
     private(set) dynamic var duration: Int = 0
     private(set) dynamic var distance: Int = 0
     private(set) dynamic var calories: Int = 0
-    private(set) dynamic var startLocation: Location?
-    private(set) dynamic var endLocation: Location?
     private(set) dynamic var user: User?
     private(set) dynamic var createdAt: Date = Date()
+    let locations = List<Location>()
 
     override class func primaryKey() -> String? {
         return "id"
@@ -30,7 +29,7 @@ final class Tracking: Object, Mappable {
     convenience required init?(map: Map) {
         self.init()
         id <- map["id"]
-        assert(id > 0, "Activity `id` must be greater than 0")
+        assert(id > 0, "Tracking `id` must be greater than 0")
     }
 
     func mapping(map: Map) {

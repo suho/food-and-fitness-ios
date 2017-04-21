@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SplashScreenController: BaseViewController {
+final class SplashScreenController: BaseViewController {
     override var isNavigationBarHidden: Bool {
         return true
     }
