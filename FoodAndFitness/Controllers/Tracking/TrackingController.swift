@@ -11,8 +11,16 @@ import MapKit
 import CoreLocation
 import HealthKit
 
-class TrackingController: BaseViewController {
+final class TrackingController: BaseViewController {
     @IBOutlet fileprivate(set) weak var mapView: MKMapView!
+    @IBOutlet fileprivate(set) weak var activeLabel: UILabel!
+
+    enum Action {
+        case starting
+        case stopping
+    }
+
+    fileprivate var action: Action = .stopping
 
     lazy fileprivate var locationManager: CLLocationManager = {
         var manager = CLLocationManager()
@@ -22,6 +30,7 @@ class TrackingController: BaseViewController {
         manager.distanceFilter = 10
         return manager
     }()
+
     lazy fileprivate var locations: [CLLocation] = [CLLocation]()
     fileprivate var seconds: Double = 0.0
     fileprivate var distance: Double = 0.0
@@ -75,10 +84,44 @@ class TrackingController: BaseViewController {
         locationManager.startUpdatingLocation()
     }
 
+    private func stopUpdatingLocation() {
+        locationManager.stopUpdatingLocation()
+    }
+
     // MARK: - Action Functions
-    @IBAction func start(_ sender: Any) {
-        configureTimer()
-        startUpdatingLocation()
+    @IBAction func startOrStop(_ sender: Any) {
+        switch action {
+        case .starting:
+            stopUpdatingLocation()
+            timer?.invalidate()
+            print("Distance: \(distance)")
+            print("Duration: \(seconds)")
+            action = .stopping
+        case .stopping:
+            configureTimer()
+            startUpdatingLocation()
+            action = .starting
+        }
+    }
+
+    @IBAction func chooseActive(_ sender: Any) {
+        let chooseActiveTrackingController = ChooseActiveTrackingController()
+        chooseActiveTrackingController.delegate = self
+        present(chooseActiveTrackingController, animated: true) {
+            UIView.animate(withDuration: 0.2) {
+                chooseActiveTrackingController.view.backgroundColor = Color.blackAlpha20
+            }
+        }
+    }
+}
+
+// MARK: - ChooseActiveTrackingControllerDelegate
+extension TrackingController: ChooseActiveTrackingControllerDelegate {
+    func viewController(_ viewController: ChooseActiveTrackingController, needsPerformAction action: ChooseActiveTrackingController.Action) {
+        switch action {
+        case .dismiss(let active):
+            activeLabel.text = active.title
+        }
     }
 }
 

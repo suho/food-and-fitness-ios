@@ -9,7 +9,7 @@
 import UIKit
 import SwiftUtils
 
-class UserFoodDetailController: BaseViewController {
+final class UserFoodDetailController: BaseViewController {
     @IBOutlet fileprivate(set) weak var tableView: TableView!
     var viewModel: UserFoodsDetailViewModel!
 

@@ -9,12 +9,13 @@
 import RealmSwift
 import ObjectMapper
 import RealmS
+import CoreLocation
 
 final class Location: Object, Mappable {
 
     private(set) dynamic var id = 0
     private(set) dynamic var latitude: Double = 0.0
-    private(set) dynamic var longtitude: Double = 0.0
+    private(set) dynamic var longitude: Double = 0.0
 
 //    override class func primaryKey() -> String? {
 //        return "id"
@@ -27,5 +28,12 @@ final class Location: Object, Mappable {
     }
 
     func mapping(map: Map) {
+    }
+}
+
+// MARK: - Utils
+extension Location {
+    var toCLLocation: CLLocation {
+        return CLLocation(latitude: latitude, longitude: longitude)
     }
 }

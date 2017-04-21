@@ -9,7 +9,7 @@
 import UIKit
 import SwiftUtils
 
-class UserExercisesDetailController: BaseViewController {
+final class UserExercisesDetailController: BaseViewController {
     @IBOutlet fileprivate(set) weak var tableView: TableView!
 
     override func setupUI() {

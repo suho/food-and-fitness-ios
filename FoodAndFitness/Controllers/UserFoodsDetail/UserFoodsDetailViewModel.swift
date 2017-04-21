@@ -10,7 +10,7 @@ import UIKit
 import RealmS
 import RealmSwift
 
-class UserFoodsDetailViewModel {
+final class UserFoodsDetailViewModel {
 
     var activity: HomeViewController.AddActivity
     let userFoods: [UserFood]
