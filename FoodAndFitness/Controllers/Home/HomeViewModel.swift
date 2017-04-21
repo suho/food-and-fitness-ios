@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import RealmS
 
-class HomeViewModel {
+final class HomeViewModel {
 
     var userFoods: Results<UserFood>
     var userExercises: Results<UserExercise>

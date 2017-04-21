@@ -76,6 +76,10 @@ final class Strings {
     
     static let gLeft = "g LEFT"
 
+    static let running = "Running"
+    static let cycling = "Cycling"
+    static let walking = "Walking"
+
     struct Errors {
         // MARK: - Error messages
         static let inputNotValidate = "Input not validate."

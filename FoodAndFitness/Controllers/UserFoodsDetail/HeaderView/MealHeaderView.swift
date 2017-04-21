@@ -8,5 +8,5 @@
 
 import UIKit
 
-class MealHeaderView: UIView {
+final class MealHeaderView: UIView {
 }

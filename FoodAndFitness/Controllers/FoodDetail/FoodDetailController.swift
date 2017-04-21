@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FoodDetailController: BaseViewController {
+final class FoodDetailController: BaseViewController {
     @IBOutlet fileprivate(set) weak var tableView: UITableView!
     var viewModel: FoodDetailViewModel!
 

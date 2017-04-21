@@ -15,6 +15,6 @@ class PopupViewController: BaseViewController {
         providesPresentationContextTransitionStyle = true
         definesPresentationContext = true
         modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        modalTransitionStyle = UIModalTransitionStyle.coverVertical
     }
 }
