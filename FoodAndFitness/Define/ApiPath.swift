@@ -25,6 +25,7 @@ final class ApiPath {
     static var users: String { return baseURL / "users" }
     static var foods: String { return baseURL / "foods" }
     static var exercises: String { return baseURL / "exercises" }
+    static var userFoods: String { return baseURL / "user_foods" }
 
     struct Auth {
         static var signin: String {

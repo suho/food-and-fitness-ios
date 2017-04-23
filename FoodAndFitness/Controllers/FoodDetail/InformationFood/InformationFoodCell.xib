@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="135" id="KGk-i7-Jjw" customClass="InformationFoodCell" customModule="FoodAndFitness" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="139.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="bkC-8L-d8g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="139.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="myB-hA-bux">
+                                <rect key="frame" x="0.0" y="0.0" width="104" height="139.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yFW-dc-O4H" customClass="CircleProgressView" customModule="FoodAndFitness" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="8" width="88" height="88"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="yFW-dc-O4H" secondAttribute="height" id="0EQ-so-vi4"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                <real key="value" value="100"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                <real key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lineBackgroundColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="startDegree">
+                                                <real key="value" value="-90"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="endDegree">
+                                                <real key="value" value="270"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CARBS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUC-HJ-bSL">
+                                        <rect key="frame" x="28.5" y="104" width="48" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neM-oq-kuS">
+                                        <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="yUC-HJ-bSL" firstAttribute="centerX" secondItem="yFW-dc-O4H" secondAttribute="centerX" id="9Be-Em-F7k"/>
+                                    <constraint firstItem="yUC-HJ-bSL" firstAttribute="top" secondItem="neM-oq-kuS" secondAttribute="bottom" id="IlU-pu-3Jt"/>
+                                    <constraint firstItem="neM-oq-kuS" firstAttribute="leading" secondItem="myB-hA-bux" secondAttribute="leading" id="Lci-0I-BOU"/>
+                                    <constraint firstItem="neM-oq-kuS" firstAttribute="top" secondItem="myB-hA-bux" secondAttribute="top" id="Nub-x0-1Ze"/>
+                                    <constraint firstAttribute="trailing" secondItem="neM-oq-kuS" secondAttribute="trailing" id="adg-On-EKv"/>
+                                    <constraint firstItem="yFW-dc-O4H" firstAttribute="leading" secondItem="myB-hA-bux" secondAttribute="leading" constant="8" id="eLG-Pg-wcL"/>
+                                    <constraint firstItem="yFW-dc-O4H" firstAttribute="top" secondItem="myB-hA-bux" secondAttribute="top" constant="8" id="fit-eF-qh5"/>
+                                    <constraint firstItem="yUC-HJ-bSL" firstAttribute="top" secondItem="yFW-dc-O4H" secondAttribute="bottom" constant="8" id="lUW-ej-dqa"/>
+                                    <constraint firstAttribute="trailing" secondItem="yFW-dc-O4H" secondAttribute="trailing" constant="8" id="uDC-iJ-M3F"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFq-RP-OQf">
+                                <rect key="frame" x="108" y="0.0" width="104" height="139.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QYZ-GO-6CR" customClass="CircleProgressView" customModule="FoodAndFitness" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="8" width="88" height="88"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="QYZ-GO-6CR" secondAttribute="height" id="Y5D-RP-h8Z"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                <real key="value" value="100"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lineBackgroundColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="startDegree">
+                                                <real key="value" value="-90"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="endDegree">
+                                                <real key="value" value="270"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85o-5Q-PDU">
+                                        <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROTEIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9n2-YS-ZlN">
+                                        <rect key="frame" x="22" y="104" width="61.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="9n2-YS-ZlN" firstAttribute="centerX" secondItem="QYZ-GO-6CR" secondAttribute="centerX" id="CZC-Bl-WmI"/>
+                                    <constraint firstItem="QYZ-GO-6CR" firstAttribute="top" secondItem="hFq-RP-OQf" secondAttribute="top" constant="8" id="DEe-2m-zTG"/>
+                                    <constraint firstItem="9n2-YS-ZlN" firstAttribute="top" secondItem="QYZ-GO-6CR" secondAttribute="bottom" constant="8" id="Fcc-3o-yhY"/>
+                                    <constraint firstItem="9n2-YS-ZlN" firstAttribute="top" secondItem="85o-5Q-PDU" secondAttribute="bottom" id="cmq-QM-1Or"/>
+                                    <constraint firstAttribute="trailing" secondItem="QYZ-GO-6CR" secondAttribute="trailing" constant="8" id="dVP-eU-Dca"/>
+                                    <constraint firstItem="85o-5Q-PDU" firstAttribute="top" secondItem="hFq-RP-OQf" secondAttribute="top" id="lgN-Ng-djO"/>
+                                    <constraint firstItem="QYZ-GO-6CR" firstAttribute="leading" secondItem="hFq-RP-OQf" secondAttribute="leading" constant="8" id="n2i-0d-UyQ"/>
+                                    <constraint firstItem="85o-5Q-PDU" firstAttribute="leading" secondItem="hFq-RP-OQf" secondAttribute="leading" id="q9r-B0-jna"/>
+                                    <constraint firstAttribute="trailing" secondItem="85o-5Q-PDU" secondAttribute="trailing" id="tJV-Ii-VdA"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6nm-bL-Gbf">
+                                <rect key="frame" x="216" y="0.0" width="104" height="139.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TUw-0x-wAx" customClass="CircleProgressView" customModule="FoodAndFitness" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="8" width="88" height="88"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="TUw-0x-wAx" secondAttribute="height" id="Gma-w0-d8f"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                <real key="value" value="100"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lineBackgroundColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isAnimation" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="startDegree">
+                                                <real key="value" value="-90"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="endDegree">
+                                                <real key="value" value="270"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdn-Th-tdg">
+                                        <rect key="frame" x="40" y="104" width="25.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R08-KT-cAj">
+                                        <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="TUw-0x-wAx" secondAttribute="trailing" constant="8" id="CJW-ai-JH7"/>
+                                    <constraint firstItem="TUw-0x-wAx" firstAttribute="top" secondItem="6nm-bL-Gbf" secondAttribute="top" constant="8" id="CPh-ei-ZoD"/>
+                                    <constraint firstItem="R08-KT-cAj" firstAttribute="leading" secondItem="6nm-bL-Gbf" secondAttribute="leading" id="Omv-7A-0tx"/>
+                                    <constraint firstItem="R08-KT-cAj" firstAttribute="top" secondItem="6nm-bL-Gbf" secondAttribute="top" id="Pua-hW-S3D"/>
+                                    <constraint firstItem="cdn-Th-tdg" firstAttribute="top" secondItem="R08-KT-cAj" secondAttribute="bottom" id="Ump-We-LlU"/>
+                                    <constraint firstAttribute="trailing" secondItem="R08-KT-cAj" secondAttribute="trailing" id="Xau-Jv-6uO"/>
+                                    <constraint firstItem="TUw-0x-wAx" firstAttribute="leading" secondItem="6nm-bL-Gbf" secondAttribute="leading" constant="8" id="Xwj-ci-2XW"/>
+                                    <constraint firstItem="cdn-Th-tdg" firstAttribute="centerX" secondItem="TUw-0x-wAx" secondAttribute="centerX" id="aMr-bB-zJd"/>
+                                    <constraint firstItem="cdn-Th-tdg" firstAttribute="top" secondItem="TUw-0x-wAx" secondAttribute="bottom" constant="8" id="b0a-Jm-4LT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="bkC-8L-d8g" secondAttribute="trailing" id="ICy-u2-jEI"/>
+                    <constraint firstItem="bkC-8L-d8g" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Y4V-nz-Q69"/>
+                    <constraint firstItem="bkC-8L-d8g" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="lHW-mw-Xcm"/>
+                    <constraint firstAttribute="bottom" secondItem="bkC-8L-d8g" secondAttribute="bottom" id="nkW-Sg-uhS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="carbsPercentLabel" destination="neM-oq-kuS" id="OVR-Bh-yO4"/>
+                <outlet property="carbsProgressView" destination="yFW-dc-O4H" id="Jyc-ay-4Ig"/>
+                <outlet property="fatPercentLabel" destination="R08-KT-cAj" id="NZv-Ba-Hs5"/>
+                <outlet property="fatProgressView" destination="TUw-0x-wAx" id="Ohd-kd-2DG"/>
+                <outlet property="proteinPercentLabel" destination="85o-5Q-PDU" id="IfM-q5-gDi"/>
+                <outlet property="proteinProgressView" destination="QYZ-GO-6CR" id="5uE-qM-ZH7"/>
+            </connections>
+            <point key="canvasLocation" x="-90" y="-49"/>
+        </tableViewCell>
+    </objects>
+</document>

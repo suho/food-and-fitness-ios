@@ -54,6 +54,27 @@ final class AddActivityViewModel {
         return activity.title
     }
 
+    func updateData(completion: @escaping () -> Void) {
+        let group = DispatchGroup()
+        group.enter()
+        ConfigServices.getFoods { (result) in
+            if result.isFailure {
+                prefs.removeObject(forKey: Key.timeInterval)
+                prefs.synchronize()
+            }
+            group.leave()
+        }
+        group.enter()
+        ConfigServices.getExercises { (result) in
+            if result.isFailure {
+                prefs.removeObject(forKey: Key.timeInterval)
+                prefs.synchronize()
+            }
+            group.leave()
+        }
+        group.notify(queue: .global(), execute: completion)
+    }
+
     func numberOfRows() -> Int {
         switch activity {
         case .breakfast, .lunch, .dinner:

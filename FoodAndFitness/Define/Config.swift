@@ -28,6 +28,17 @@ final class Key {
     static let client = "client"
 }
 
+enum NotificationName: String {
+    case uploadPhoto = "UploadPhoto"
+
+    var toNotiName: NSNotification.Name {
+        switch self {
+        case .uploadPhoto:
+            return NSNotification.Name(self.rawValue)
+        }
+    }
+}
+
 final class Google {
     static let apiKey = "AIzaSyBOOPbUYQMHXrSbgmSeeJBdm-pr7nGrEpc"
 }

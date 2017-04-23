@@ -94,6 +94,10 @@ extension Double {
         return 100 * self / max
     }
 
+    func percent(value: Double) -> Double {
+        return value * self / 100
+    }
+
     // to meter
     var kilometer: Double {
         return self * 1000

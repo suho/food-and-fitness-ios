@@ -74,13 +74,13 @@ extension User {
 }
 
 enum Goals: Int {
-    case beHealthier
+    case beHealthier = 1
     case loseWeight
     case gainWeight
 }
 
 enum Actives: Int {
-    case sedentary
+    case sedentary = 1
     case lightlyActive
     case modertelyActive
     case veryActive
@@ -103,7 +103,11 @@ extension User {
     }
 
     var caloriesToday: Double {
-        guard let goal = goal, let active = active, let goals = Goals(rawValue: goal.id), let actives = Actives(rawValue: active.id) else { return 0 }
+        guard let goal = goal, let active = active,
+            let goals = Goals(rawValue: goal.id),
+            let actives = Actives(rawValue: active.id) else {
+                return 0
+        }
         var bmrValue = bmr(weight: weight, height: height, age: age, gender: gender)
         switch goals {
         case .beHealthier: break

@@ -80,6 +80,16 @@ final class Strings {
     static let cycling = "Cycling"
     static let walking = "Walking"
 
+    static let informationNutrion = "🥙🍟Information Nutrion🍔🌭"
+    static let suggestionNutrion = "🥝🥑Food for you🍣🥗"
+
+    static let calories = "Calories"
+    static let protein = "Protein"
+    static let carbs = "Carbs"
+    static let fat = "Fat"
+
+    static let update = "Update"
+
     struct Errors {
         // MARK: - Error messages
         static let inputNotValidate = "Input not validate."
