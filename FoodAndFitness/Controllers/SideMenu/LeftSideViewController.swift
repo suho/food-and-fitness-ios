@@ -72,6 +72,15 @@ final class LeftSideViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        configureNotification()
+    }
+
+    private func configureNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(uploadPhoto), name: NotificationName.uploadPhoto.toNotiName, object: nil)
+    }
+
+    @objc private func uploadPhoto() {
+        tableView.reloadData()
     }
 
     private func configureTableView() {

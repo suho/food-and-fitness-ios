@@ -21,18 +21,79 @@ final class UserFoodsDetailController: BaseViewController {
         static var count: Int {
             return self.suggestion.hashValue + 1
         }
+
+        var title: String {
+            switch self {
+            case .userFoods:
+                return Strings.empty
+            case .information:
+                return Strings.informationNutrion
+            case .suggestion:
+                return Strings.suggestionNutrion
+            }
+        }
+
+        var heightForHeader: CGFloat {
+            switch self {
+            case .userFoods:
+                return 140
+            default:
+                return 70
+            }
+        }
+    }
+
+    enum InformationRows: Int {
+        case calories
+        case protein
+        case carbs
+        case fat
+
+        static var count: Int {
+            return self.fat.rawValue + 1
+        }
+
+        var title: String {
+            switch self {
+            case .calories:
+                return Strings.calories
+            case .protein:
+                return Strings.protein
+            case .carbs:
+                return Strings.carbs
+            case .fat:
+                return Strings.fat
+            }
+        }
     }
 
     override func setupUI() {
         super.setupUI()
         configureTableView()
+        configureViewModel()
     }
 
     private func configureTableView() {
         tableView.register(AddUserFoodCell.self)
+        tableView.register(UserFoodCell.self)
+        tableView.register(InfomationNutritionCell.self)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
+    }
+
+    private func configureViewModel() {
+        viewModel.delegate = self
+    }
+}
+
+// MARK: - UserFoodsDetailViewModelDelegate
+extension UserFoodsDetailController: UserFoodsDetailViewModelDelegate {
+    func viewModel(_ viewModel: UserFoodsDetailViewModel, needsPerformAction action: UserFoodsDetailViewModel.Action) {
+        switch action {
+        case .userFoodChanged:
+            tableView.reloadData()
+        }
     }
 }
 
@@ -51,7 +112,7 @@ extension UserFoodsDetailController: UITableViewDataSource {
         case .userFoods:
             return viewModel.userFoods.count + 1
         case .information:
-            return 4
+            return InformationRows.count
         case .suggestion:
             return viewModel.suggestFoods.count
         }
@@ -68,13 +129,19 @@ extension UserFoodsDetailController: UITableViewDataSource {
                 let cell = tableView.dequeue(AddUserFoodCell.self)
                 cell.delegate = self
                 return cell
-            default: break
-
+            default:
+                let cell = tableView.dequeue(UserFoodCell.self)
+                cell.data = viewModel.dataForUserFood(at: indexPath.row - 1)
+                return cell
             }
-        case .information: break
-
+        case .information:
+            guard let rows = InformationRows(rawValue: indexPath.row) else {
+                fatalError(Strings.Errors.enumError)
+            }
+            let cell = tableView.dequeue(InfomationNutritionCell.self)
+            cell.data = viewModel.dataForInformationNutrition(at: rows)
+            return cell
         case .suggestion: break
-
         }
         return UITableViewCell()
     }
@@ -86,11 +153,25 @@ extension UserFoodsDetailController: UITableViewDelegate {
         guard let sections = Sections(rawValue: section) else {
             fatalError(Strings.Errors.enumError)
         }
-        switch sections {
-        case .userFoods:
-            return 140
-        default:
-            return 70
+        return sections.heightForHeader
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let sections = Sections(rawValue: indexPath.section) else {
+            fatalError(Strings.Errors.enumError)
+        }
+        if sections == .userFoods && indexPath.row == 0 { return 60 }
+        return 50
+    }
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        guard let sections = Sections(rawValue: section) else {
+            fatalError(Strings.Errors.enumError)
+        }
+        if sections == .userFoods && viewModel.userFoods.isEmpty {
+            return .leastNormalMagnitude
+        } else {
+            return 10
         }
     }
 
@@ -101,9 +182,11 @@ extension UserFoodsDetailController: UITableViewDelegate {
         switch sections {
         case .userFoods:
             let headerView: MealHeaderView = MealHeaderView.loadNib()
+            headerView.data = viewModel.dataForHeaderView()
             return headerView
         default:
             let headerView: TitleCell = TitleCell.loadNib()
+            headerView.data = TitleCell.Data(title: sections.title)
             return headerView
         }
     }
@@ -117,7 +200,6 @@ extension UserFoodsDetailController: AddUserFoodCellDelegate {
             let addActivityController = AddActivityController()
             addActivityController.viewModel = AddActivityViewModel(activity: viewModel.activity)
             navigationController?.pushViewController(addActivityController, animated: true)
-
         }
     }
 }

@@ -87,7 +87,9 @@ final class SignUpController: BaseViewController {
     }
 
     private func upload() {
-        viewModel.uploadPhoto(completion: { (_) in })
+        viewModel.uploadPhoto { (_) in
+            NotificationCenter.default.post(name: NotificationName.uploadPhoto.toNotiName, object: nil)
+        }
     }
 
     fileprivate func signUp() {

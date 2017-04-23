@@ -1,23 +1,20 @@
 //
-//  MealHeaderView.swift
+//  InfomationNutritionCell.swift
 //  FoodAndFitness
 //
-//  Created by Mylo Ho on 4/16/17.
+//  Created by Mylo Ho on 4/23/17.
 //  Copyright © 2017 SuHoVan. All rights reserved.
 //
 
 import UIKit
 
-final class MealHeaderView: UIView {
+class InfomationNutritionCell: BaseTableViewCell {
     @IBOutlet fileprivate(set) weak var titleLabel: UILabel!
     @IBOutlet fileprivate(set) weak var detailLabel: UILabel!
-    @IBOutlet fileprivate(set) weak var imageView: UIImageView!
-    @IBOutlet fileprivate(set) weak var blurView: UIView!
 
     struct Data {
         var title: String
-        var detail: String?
-        var image: UIImage?
+        var detail: String
     }
 
     var data: Data? {
@@ -25,7 +22,6 @@ final class MealHeaderView: UIView {
             guard let data = data else { return }
             titleLabel.text = data.title
             detailLabel.text = data.detail
-            imageView.image = data.image
         }
     }
 }

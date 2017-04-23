@@ -16,6 +16,10 @@ final class AddActivityController: BaseViewController {
     fileprivate var searchTimer: Timer?
     var viewModel: AddActivityViewModel!
 
+    enum Action {
+        case didAddActivity
+    }
+
     override var isNavigationBarHidden: Bool {
         return false
     }
@@ -39,6 +43,14 @@ final class AddActivityController: BaseViewController {
 
     private func configureNavigationBar() {
         title = viewModel.title()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: Strings.update, style: .plain, target: self, action: #selector(updateData))
+    }
+
+    @objc private func updateData() {
+        HUD.show()
+        viewModel.updateData {
+            HUD.dismiss()
+        }
     }
 
     private func configureSearchBar() {
@@ -89,7 +101,7 @@ extension AddActivityController: UITableViewDelegate {
         case .breakfast, .lunch, .dinner:
             guard let foods = viewModel.foods else { break }
             let foodDetailController = FoodDetailController()
-            foodDetailController.viewModel = FoodDetailViewModel(food: foods[indexPath.row])
+            foodDetailController.viewModel = FoodDetailViewModel(food: foods[indexPath.row], activity: viewModel.activity)
             navigationController?.pushViewController(foodDetailController, animated: true)
         case .exercise:
 //            guard let exercises = viewModel.exercises else { return }

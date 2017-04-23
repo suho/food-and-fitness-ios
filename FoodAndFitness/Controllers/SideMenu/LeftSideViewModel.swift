@@ -12,18 +12,9 @@ import RealmSwift
 
 final class LeftSideViewModel {
     let user: User?
-    private let notificationToken: NotificationToken?
 
     init() {
         user = User.me
-        notificationToken = user?.addNotificationBlock({ (change) in
-            switch change {
-            case .change(let properties):
-                print(properties)
-            case .deleted: break
-            case .error(_): break
-            }
-        })
     }
 
     func dataForUserProfile() -> UserProfileCell.Data? {

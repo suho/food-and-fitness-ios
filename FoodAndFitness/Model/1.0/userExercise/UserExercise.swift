@@ -30,3 +30,17 @@ final class UserExercise: Object, Mappable {
     func mapping(map: Map) {
     }
 }
+
+// MARK: - Utils
+extension UserExercise {
+    fileprivate var ratio: Double {
+        guard let exercise = exercise else { return 1 }
+        return Double(duration) / Double(exercise.duration)
+    }
+
+    var calories: Int {
+        guard let exercise = exercise else { return 0 }
+        let calories = ratio * Double(exercise.calories)
+        return Int(calories)
+    }
+}

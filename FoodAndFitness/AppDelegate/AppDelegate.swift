@@ -77,6 +77,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configureLogger()
         configureIQKeyboard()
         configureRealm()
+        configureProgressHUD()
+    }
+
+    private func configureProgressHUD() {
+        HUD.setDefaultMaskType(.clear)
     }
 
     private func configureIQKeyboard() {

@@ -26,6 +26,8 @@ final class AddActivityCell: BaseTableViewCell {
             guard let data = data else { return }
             thumbnailImageView.image = data.thumbnail
             titleLabel.text = data.title
+            detailLabel.text = data.recommend
+            addImageView.image = data.addImage
         }
     }
 }
