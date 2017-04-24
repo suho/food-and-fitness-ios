@@ -36,7 +36,7 @@ final class UserExercisesDetailController: BaseViewController {
         var heightForHeader: CGFloat {
             switch self {
             case .userExercises:
-                return 140
+                return 160
             default:
                 return 70
             }
@@ -126,6 +126,7 @@ extension UserExercisesDetailController: UITableViewDataSource {
                 return cell
             default:
                 let cell = tableView.dequeue(UserFoodCell.self)
+                cell.accessoryType = .none
                 cell.data = viewModel.dataForUserExercise(at: indexPath.row - 1)
                 return cell
             }
@@ -136,14 +137,61 @@ extension UserExercisesDetailController: UITableViewDataSource {
             let cell = tableView.dequeue(InfomationNutritionCell.self)
             cell.data = viewModel.dataForInformationExercise(at: rows)
             return cell
-        case .suggestion: break
+        case .suggestion:
+            let cell = tableView.dequeue(UserFoodCell.self)
+            cell.accessoryType = .disclosureIndicator
+            cell.data = viewModel.dataForSuggestExercise(at: indexPath.row)
+            return cell
         }
-        return UITableViewCell()
     }
 }
 
 // MARK: - UITableViewDelegate
 extension UserExercisesDetailController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let sections = Sections(rawValue: indexPath.section) else {
+            fatalError(Strings.Errors.enumError)
+        }
+        switch sections {
+        case .userExercises: break
+        case .information: break
+        case .suggestion:
+            let exercises = viewModel.suggestExercises
+            guard indexPath.row >= 0, indexPath.row < exercises.count else { break }
+            let exerciseDetailController = ExerciseDetailController()
+            exerciseDetailController.viewModel = ExerciseDetailViewModel(exercise: exercises[indexPath.row], activity: viewModel.activity)
+            navigationController?.pushViewController(exerciseDetailController, animated: true)
+        }
+    }
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        guard let sections = Sections(rawValue: indexPath.section) else {
+            fatalError(Strings.Errors.enumError)
+        }
+        switch sections {
+        case .userExercises:
+            return true
+        case .information, .suggestion:
+            return false
+        }
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            viewModel.delete(at: indexPath.row - 1, completion: { (result) in
+                switch result {
+                case .success(_):
+                    tableView.deleteRows(at: [indexPath], with: .automatic)
+                case .failure(let error):
+                    error.show()
+                }
+            })
+        default: break
+        }
+    }
+
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         guard let sections = Sections(rawValue: section) else {
             fatalError(Strings.Errors.enumError)
@@ -182,7 +230,7 @@ extension UserExercisesDetailController: UITableViewDelegate {
         default:
             let headerView: TitleCell = TitleCell.loadNib()
             headerView.data = TitleCell.Data(title: sections.title)
-            return headerView
+            return headerView.contentView
         }
     }
 }

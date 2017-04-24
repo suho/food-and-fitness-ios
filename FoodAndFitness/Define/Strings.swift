@@ -114,5 +114,6 @@ final class Strings {
         static let emptyImage = "Empty Image"
         static let urlError = "URL Not Found"
         static let tokenError = "Token Session Not Found"
+        static let indexNotValidate = "Index Not Validate"
     }
 }

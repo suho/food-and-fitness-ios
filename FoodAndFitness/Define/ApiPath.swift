@@ -46,6 +46,31 @@ final class ApiPath {
         }
     }
 
+    struct UserFood {
+        var id: Int
+
+        init(id: Int) {
+            self.id = id
+        }
+
+        var delete: String {
+            return ApiPath.userFoods / id
+        }
+
+    }
+
+    struct UserExercise {
+        var id: Int
+
+        init(id: Int) {
+            self.id = id
+        }
+
+        var delete: String {
+            return ApiPath.userExercises / id
+        }
+    }
+
     struct User {
         var userID: Int
 
