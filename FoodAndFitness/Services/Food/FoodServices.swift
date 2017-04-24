@@ -20,7 +20,6 @@ final class FoodServices {
         let path = ApiPath.userFoods
         let parameters: JSObject = [
             "food_id": params.foodId,
-            "user_id": params.userId,
             "weight": params.weight,
             "meal": params.meal
         ]

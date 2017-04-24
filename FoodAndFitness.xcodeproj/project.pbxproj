@@ -53,6 +53,12 @@
 		993DA6601EACFD8F001ACF17 /* InformationFoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993DA65E1EACFD8F001ACF17 /* InformationFoodCell.swift */; };
 		993DA6611EACFD8F001ACF17 /* InformationFoodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 993DA65F1EACFD8F001ACF17 /* InformationFoodCell.xib */; };
 		993DA6941EADDC8A001ACF17 /* UserExercisesDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993DA6931EADDC8A001ACF17 /* UserExercisesDetailViewModel.swift */; };
+		993DA6981EADE34E001ACF17 /* ExerciseDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993DA6961EADE34E001ACF17 /* ExerciseDetailController.swift */; };
+		993DA6991EADE34E001ACF17 /* ExerciseDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 993DA6971EADE34E001ACF17 /* ExerciseDetailController.xib */; };
+		993DA69B1EADE397001ACF17 /* ExerciseDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993DA69A1EADE397001ACF17 /* ExerciseDetailViewModel.swift */; };
+		993DA6A01EADE7B2001ACF17 /* AddUserExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993DA69E1EADE7B2001ACF17 /* AddUserExerciseCell.swift */; };
+		993DA6A11EADE7B2001ACF17 /* AddUserExerciseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 993DA69F1EADE7B2001ACF17 /* AddUserExerciseCell.xib */; };
+		993DA6A31EADEA28001ACF17 /* AddUserExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993DA6A21EADEA28001ACF17 /* AddUserExerciseViewModel.swift */; };
 		993F22E01EA60FB90078D51D /* MealHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993F22DB1EA60FB90078D51D /* MealHeaderView.swift */; };
 		993F22E11EA60FB90078D51D /* MealHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 993F22DC1EA60FB90078D51D /* MealHeaderView.xib */; };
 		993F22E21EA60FB90078D51D /* UserFoodsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993F22DD1EA60FB90078D51D /* UserFoodsDetailController.swift */; };
@@ -128,6 +134,7 @@
 		99D925351E99FA26008150EE /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D925341E99FA26008150EE /* Location.swift */; };
 		99D9253B1E99FE12008150EE /* UserExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D9253A1E99FE12008150EE /* UserExercise.swift */; };
 		99D9253D1E9A0504008150EE /* UserFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D9253C1E9A0504008150EE /* UserFood.swift */; };
+		99F2F3941EADEE200034C85C /* ExerciseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F2F3931EADEE200034C85C /* ExerciseServices.swift */; };
 		99FF78801EA21E1B0014EF72 /* SplashScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FF787E1EA21E1B0014EF72 /* SplashScreenController.swift */; };
 		99FF78811EA21E1B0014EF72 /* SplashScreenController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99FF787F1EA21E1B0014EF72 /* SplashScreenController.xib */; };
 		99FF78851EA21EF00014EF72 /* ConfigServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FF78841EA21EF00014EF72 /* ConfigServices.swift */; };
@@ -192,6 +199,12 @@
 		993DA65E1EACFD8F001ACF17 /* InformationFoodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationFoodCell.swift; sourceTree = "<group>"; };
 		993DA65F1EACFD8F001ACF17 /* InformationFoodCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InformationFoodCell.xib; sourceTree = "<group>"; };
 		993DA6931EADDC8A001ACF17 /* UserExercisesDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExercisesDetailViewModel.swift; sourceTree = "<group>"; };
+		993DA6961EADE34E001ACF17 /* ExerciseDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseDetailController.swift; sourceTree = "<group>"; };
+		993DA6971EADE34E001ACF17 /* ExerciseDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExerciseDetailController.xib; sourceTree = "<group>"; };
+		993DA69A1EADE397001ACF17 /* ExerciseDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseDetailViewModel.swift; sourceTree = "<group>"; };
+		993DA69E1EADE7B2001ACF17 /* AddUserExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUserExerciseCell.swift; sourceTree = "<group>"; };
+		993DA69F1EADE7B2001ACF17 /* AddUserExerciseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddUserExerciseCell.xib; sourceTree = "<group>"; };
+		993DA6A21EADEA28001ACF17 /* AddUserExerciseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUserExerciseViewModel.swift; sourceTree = "<group>"; };
 		993F22DB1EA60FB90078D51D /* MealHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealHeaderView.swift; sourceTree = "<group>"; };
 		993F22DC1EA60FB90078D51D /* MealHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MealHeaderView.xib; sourceTree = "<group>"; };
 		993F22DD1EA60FB90078D51D /* UserFoodsDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFoodsDetailController.swift; sourceTree = "<group>"; };
@@ -269,6 +282,7 @@
 		99D925341E99FA26008150EE /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		99D9253A1E99FE12008150EE /* UserExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExercise.swift; sourceTree = "<group>"; };
 		99D9253C1E9A0504008150EE /* UserFood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFood.swift; sourceTree = "<group>"; };
+		99F2F3931EADEE200034C85C /* ExerciseServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseServices.swift; sourceTree = "<group>"; };
 		99FF787E1EA21E1B0014EF72 /* SplashScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenController.swift; sourceTree = "<group>"; };
 		99FF787F1EA21E1B0014EF72 /* SplashScreenController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashScreenController.xib; sourceTree = "<group>"; };
 		99FF78841EA21EF00014EF72 /* ConfigServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigServices.swift; sourceTree = "<group>"; };
@@ -544,6 +558,27 @@
 			path = InformationFood;
 			sourceTree = "<group>";
 		};
+		993DA6951EADE33C001ACF17 /* ExerciseDetail */ = {
+			isa = PBXGroup;
+			children = (
+				993DA69C1EADE76B001ACF17 /* AddUserExercise */,
+				993DA6961EADE34E001ACF17 /* ExerciseDetailController.swift */,
+				993DA6971EADE34E001ACF17 /* ExerciseDetailController.xib */,
+				993DA69A1EADE397001ACF17 /* ExerciseDetailViewModel.swift */,
+			);
+			path = ExerciseDetail;
+			sourceTree = "<group>";
+		};
+		993DA69C1EADE76B001ACF17 /* AddUserExercise */ = {
+			isa = PBXGroup;
+			children = (
+				993DA69E1EADE7B2001ACF17 /* AddUserExerciseCell.swift */,
+				993DA69F1EADE7B2001ACF17 /* AddUserExerciseCell.xib */,
+				993DA6A21EADEA28001ACF17 /* AddUserExerciseViewModel.swift */,
+			);
+			path = AddUserExercise;
+			sourceTree = "<group>";
+		};
 		993F22D91EA60FB90078D51D /* UserFoodsDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -799,6 +834,7 @@
 				99FF78901EA22F5F0014EF72 /* AddActivity */,
 				993404E51E83C3A5009A445F /* Analysis */,
 				99BF6F501E77F67D00FD743F /* Base */,
+				993DA6951EADE33C001ACF17 /* ExerciseDetail */,
 				993404E61E83C3AB009A445F /* Fitness */,
 				99FF78861EA22BB60014EF72 /* FoodDetail */,
 				993404E71E83C3B1009A445F /* History */,
@@ -969,6 +1005,7 @@
 			children = (
 				99BF6F781E77F67D00FD743F /* Core */,
 				99FF78831EA21EE10014EF72 /* Config */,
+				99F2F3921EADEE100034C85C /* Exercise */,
 				991DF8211EAC88410023D099 /* Food */,
 				99603EEE1E9D2BF6001D1E5C /* User */,
 			);
@@ -1069,6 +1106,14 @@
 				99CC4CFF1E9AAD92000EE59E /* ChooseActivesViewModel.swift */,
 			);
 			path = Actives;
+			sourceTree = "<group>";
+		};
+		99F2F3921EADEE100034C85C /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				99F2F3931EADEE200034C85C /* ExerciseServices.swift */,
+			);
+			path = Exercise;
 			sourceTree = "<group>";
 		};
 		99FF787D1EA21E1B0014EF72 /* Splash */ = {
@@ -1206,6 +1251,7 @@
 				99FF78981EA22F5F0014EF72 /* AddActivityController.xib in Resources */,
 				999C40461E9497160059E870 /* AvatarCell.xib in Resources */,
 				992DA8DA1E8A1F1D002A194C /* FitnessHistoryController.xib in Resources */,
+				993DA6A11EADE7B2001ACF17 /* AddUserExerciseCell.xib in Resources */,
 				992DA8DE1E8A1F3B002A194C /* NutritionAnalysisController.xib in Resources */,
 				993404DF1E838306009A445F /* UserProfileCell.xib in Resources */,
 				993404FA1E83C44E009A445F /* HistoryViewController.xib in Resources */,
@@ -1229,6 +1275,7 @@
 				99AEA1801E87B240000DA06F /* AddMenuViewController.xib in Resources */,
 				999C40411E9497000059E870 /* TitleCell.xib in Resources */,
 				9959E8791E8D6CEA005A8347 /* CalendarController.xib in Resources */,
+				993DA6991EADE34E001ACF17 /* ExerciseDetailController.xib in Resources */,
 				99CC4CFE1E9AAA6F000EE59E /* ChooseActivesController.xib in Resources */,
 				99B7CEA51EA7D7EC00BE370A /* AddUserFoodCell.xib in Resources */,
 				99FF789B1EA22F5F0014EF72 /* ResultCell.xib in Resources */,
@@ -1327,10 +1374,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				992DA8DD1E8A1F3B002A194C /* NutritionAnalysisController.swift in Sources */,
+				99F2F3941EADEE200034C85C /* ExerciseServices.swift in Sources */,
 				993404F91E83C44E009A445F /* HistoryViewController.swift in Sources */,
 				997971001E9E4095005E1E7C /* Formula.swift in Sources */,
 				99993E8E1E80B7840052372A /* LeftSideViewController.swift in Sources */,
 				999C402F1E94897C0059E870 /* SignInController.swift in Sources */,
+				993DA6A31EADEA28001ACF17 /* AddUserExerciseViewModel.swift in Sources */,
 				99D925291E99F10E008150EE /* Active.swift in Sources */,
 				993DA6941EADDC8A001ACF17 /* UserExercisesDetailViewModel.swift in Sources */,
 				99AEA17F1E87B240000DA06F /* AddMenuViewController.swift in Sources */,
@@ -1349,6 +1398,7 @@
 				992DA8D91E8A1F1D002A194C /* FitnessHistoryController.swift in Sources */,
 				999C40451E9497160059E870 /* AvatarCell.swift in Sources */,
 				99CC4CFD1E9AAA6F000EE59E /* ChooseActivesController.swift in Sources */,
+				993DA69B1EADE397001ACF17 /* ExerciseDetailViewModel.swift in Sources */,
 				99D925221E99E1DB008150EE /* ChooseGoalsController.swift in Sources */,
 				993F22E81EA621E30078D51D /* UserExercisesDetailController.swift in Sources */,
 				999C404C1E94AD1C0059E870 /* InputCell.swift in Sources */,
@@ -1367,6 +1417,7 @@
 				999C40371E948CEE0059E870 /* Mapper.swift in Sources */,
 				99BF6F801E77F67D00FD743F /* AppDelegate.swift in Sources */,
 				99501FFA1E8AC5010051227F /* CircleProgressView.swift in Sources */,
+				993DA6981EADE34E001ACF17 /* ExerciseDetailController.swift in Sources */,
 				99195FDD1EA36FC100BB10CA /* HomeViewModel.swift in Sources */,
 				99536AAD1EA049CE00FF0BF2 /* Date.swift in Sources */,
 				99BF6F901E77F67D00FD743F /* AccessLibraryManager.swift in Sources */,
@@ -1392,6 +1443,7 @@
 				9906C7D41EA856FE0033D76B /* TrackingController.swift in Sources */,
 				991DF82C1EAC91700023D099 /* UserFoodCell.swift in Sources */,
 				99BF6F941E77F67D00FD743F /* UserProfile.swift in Sources */,
+				993DA6A01EADE7B2001ACF17 /* AddUserExerciseCell.swift in Sources */,
 				99BF6F961E77F67D00FD743F /* ApiMananger.swift in Sources */,
 				992DA8B01E8A0EF9002A194C /* PopupViewController.swift in Sources */,
 				9959E8781E8D6CEA005A8347 /* CalendarController.swift in Sources */,

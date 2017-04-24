@@ -100,15 +100,16 @@ extension AddActivityController: UITableViewDelegate {
         switch viewModel.activity {
         case .breakfast, .lunch, .dinner:
             guard let foods = viewModel.foods else { break }
+            guard indexPath.row >= 0, indexPath.row < foods.count else { break }
             let foodDetailController = FoodDetailController()
             foodDetailController.viewModel = FoodDetailViewModel(food: foods[indexPath.row], activity: viewModel.activity)
             navigationController?.pushViewController(foodDetailController, animated: true)
         case .exercise:
-//            guard let exercises = viewModel.exercises else { return }
-//            let foodDetailController = FoodDetailController()
-//            foodDetailController.viewModel = FoodDetailViewModel(food: foods[indexPath.row])
-//            navigationController?.pushViewController(foodDetailController, animated: true)
-            break
+            guard let exercises = viewModel.exercises else { return }
+            guard indexPath.row >= 0, indexPath.row < exercises.count else { break }
+            let exerciseDetailController = ExerciseDetailController()
+            exerciseDetailController.viewModel = ExerciseDetailViewModel(exercise: exercises[indexPath.row], activity: viewModel.activity)
+            navigationController?.pushViewController(exerciseDetailController, animated: true)
         case .tracking: break
         }
     }
