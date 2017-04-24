@@ -108,9 +108,12 @@ final class HomeViewModel {
 
     func dataForProgressCell() -> ProgressCell.Data? {
         guard let user = User.me else { return nil }
-        let eaten = eatenToday()
+        var eaten = eatenToday()
         let burn = burnToday()
         let calories = user.caloriesToday + Double(burn)
+        if Int(calories) - eaten < 0 {
+            eaten = Int(calories)
+        }
         let carbsString = "\(carbsLeft(calories: calories))" + Strings.gLeft
         let proteinString = "\(proteinLeft(calories: calories))" + Strings.gLeft
         let fatString = "\(fatLeft(calories: calories))" + Strings.gLeft

@@ -31,6 +31,8 @@ final class ProgressCell: BaseTableViewCell {
             guard let data = data else { return }
             progressView.maxValue = CGFloat(data.calories)
             progressView.setValue(CGFloat(data.eaten))
+            progressView.setNeedsDisplay()
+            progressView.setNeedsLayout()
             caloriesLabel.text = "\(data.calories - data.eaten)"
             eatenLabel.text = "\(data.eaten)"
             burnLabel.text = "\(data.burn)"
@@ -38,22 +40,5 @@ final class ProgressCell: BaseTableViewCell {
             proteinLabel.text = data.protein
             fatLabel.text = data.fat
         }
-    }
-
-    private func attributeText(isNumberTop: Bool = false, value: String, numberSize: CGFloat = 8, status: String, statusSize: CGFloat = 13) -> NSMutableAttributedString {
-        let mutableAttributed: NSMutableAttributedString!
-        let statusAttributed = NSAttributedString(string: status, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: statusSize)])
-        let breakLine = NSAttributedString(string: "\n")
-        let valueAttributed = NSAttributedString(string: value, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: numberSize)])
-        if isNumberTop {
-            mutableAttributed = NSMutableAttributedString(attributedString: valueAttributed)
-            mutableAttributed.append(breakLine)
-            mutableAttributed.append(statusAttributed)
-        } else {
-            mutableAttributed = NSMutableAttributedString(attributedString: statusAttributed)
-            mutableAttributed.append(breakLine)
-            mutableAttributed.append(valueAttributed)
-        }
-        return mutableAttributed
     }
 }
