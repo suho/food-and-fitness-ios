@@ -52,6 +52,7 @@
 		993DA65C1EACF2E2001ACF17 /* SaveUserFoodCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993DA65B1EACF2E2001ACF17 /* SaveUserFoodCellViewModel.swift */; };
 		993DA6601EACFD8F001ACF17 /* InformationFoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993DA65E1EACFD8F001ACF17 /* InformationFoodCell.swift */; };
 		993DA6611EACFD8F001ACF17 /* InformationFoodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 993DA65F1EACFD8F001ACF17 /* InformationFoodCell.xib */; };
+		993DA68F1EAD988D001ACF17 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993DA68E1EAD988D001ACF17 /* CalendarViewModel.swift */; };
 		993F22E01EA60FB90078D51D /* MealHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993F22DB1EA60FB90078D51D /* MealHeaderView.swift */; };
 		993F22E11EA60FB90078D51D /* MealHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 993F22DC1EA60FB90078D51D /* MealHeaderView.xib */; };
 		993F22E21EA60FB90078D51D /* UserFoodsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993F22DD1EA60FB90078D51D /* UserFoodsDetailController.swift */; };
@@ -190,6 +191,7 @@
 		993DA65B1EACF2E2001ACF17 /* SaveUserFoodCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveUserFoodCellViewModel.swift; sourceTree = "<group>"; };
 		993DA65E1EACFD8F001ACF17 /* InformationFoodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationFoodCell.swift; sourceTree = "<group>"; };
 		993DA65F1EACFD8F001ACF17 /* InformationFoodCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InformationFoodCell.xib; sourceTree = "<group>"; };
+		993DA68E1EAD988D001ACF17 /* CalendarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		993F22DB1EA60FB90078D51D /* MealHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealHeaderView.swift; sourceTree = "<group>"; };
 		993F22DC1EA60FB90078D51D /* MealHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MealHeaderView.xib; sourceTree = "<group>"; };
 		993F22DD1EA60FB90078D51D /* UserFoodsDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFoodsDetailController.swift; sourceTree = "<group>"; };
@@ -592,6 +594,7 @@
 			children = (
 				9959E8761E8D6CEA005A8347 /* CalendarController.swift */,
 				9959E8771E8D6CEA005A8347 /* CalendarController.xib */,
+				993DA68E1EAD988D001ACF17 /* CalendarViewModel.swift */,
 			);
 			path = CalendarController;
 			sourceTree = "<group>";
@@ -1351,6 +1354,7 @@
 				99BF6F891E77F67D00FD743F /* Colors.swift in Sources */,
 				99BF6F981E77F67D00FD743F /* RequestSerializer.swift in Sources */,
 				99D925351E99FA26008150EE /* Location.swift in Sources */,
+				993DA68F1EAD988D001ACF17 /* CalendarViewModel.swift in Sources */,
 				99D9252E1E99F880008150EE /* Food.swift in Sources */,
 				99993E8C1E80B7430052372A /* SideMenuController.swift in Sources */,
 				99536AAF1EA049CE00FF0BF2 /* UILabel.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PureLayout
 
 final class AnalysisViewController: RootSideMenuViewController {
     @IBOutlet fileprivate(set) weak var contentView: UIView!
