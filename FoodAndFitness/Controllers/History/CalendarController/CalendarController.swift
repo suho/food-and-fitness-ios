@@ -13,6 +13,7 @@ import SwiftDate
 final class CalendarController: RootSideMenuViewController {
     @IBOutlet fileprivate(set) weak var calendar: FSCalendar!
     var currentCell: FSCalendarCell?
+    lazy var viewModel: CalendarViewModel = CalendarViewModel()
 
     override func setupUI() {
         super.setupUI()
@@ -53,10 +54,11 @@ final class CalendarController: RootSideMenuViewController {
 // MARK: - FSCalendarDataSource
 extension CalendarController: FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-        if date.ffDate().day % 4 == 0 && date.ffDate() < DateInRegion() {
+        if viewModel.didHaveEvents(forDate: date) {
             return 1
+        } else {
+            return 0
         }
-        return 0
     }
 }
 
