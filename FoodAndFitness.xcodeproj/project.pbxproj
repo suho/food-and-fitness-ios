@@ -52,6 +52,7 @@
 		993DA65C1EACF2E2001ACF17 /* SaveUserFoodCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993DA65B1EACF2E2001ACF17 /* SaveUserFoodCellViewModel.swift */; };
 		993DA6601EACFD8F001ACF17 /* InformationFoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993DA65E1EACFD8F001ACF17 /* InformationFoodCell.swift */; };
 		993DA6611EACFD8F001ACF17 /* InformationFoodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 993DA65F1EACFD8F001ACF17 /* InformationFoodCell.xib */; };
+		993DA6941EADDC8A001ACF17 /* UserExercisesDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993DA6931EADDC8A001ACF17 /* UserExercisesDetailViewModel.swift */; };
 		993F22E01EA60FB90078D51D /* MealHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993F22DB1EA60FB90078D51D /* MealHeaderView.swift */; };
 		993F22E11EA60FB90078D51D /* MealHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 993F22DC1EA60FB90078D51D /* MealHeaderView.xib */; };
 		993F22E21EA60FB90078D51D /* UserFoodsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993F22DD1EA60FB90078D51D /* UserFoodsDetailController.swift */; };
@@ -190,6 +191,7 @@
 		993DA65B1EACF2E2001ACF17 /* SaveUserFoodCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveUserFoodCellViewModel.swift; sourceTree = "<group>"; };
 		993DA65E1EACFD8F001ACF17 /* InformationFoodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationFoodCell.swift; sourceTree = "<group>"; };
 		993DA65F1EACFD8F001ACF17 /* InformationFoodCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InformationFoodCell.xib; sourceTree = "<group>"; };
+		993DA6931EADDC8A001ACF17 /* UserExercisesDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserExercisesDetailViewModel.swift; sourceTree = "<group>"; };
 		993F22DB1EA60FB90078D51D /* MealHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealHeaderView.swift; sourceTree = "<group>"; };
 		993F22DC1EA60FB90078D51D /* MealHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MealHeaderView.xib; sourceTree = "<group>"; };
 		993F22DD1EA60FB90078D51D /* UserFoodsDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFoodsDetailController.swift; sourceTree = "<group>"; };
@@ -570,6 +572,7 @@
 			children = (
 				993F22E61EA621E30078D51D /* UserExercisesDetailController.swift */,
 				993F22E71EA621E30078D51D /* UserExercisesDetailController.xib */,
+				993DA6931EADDC8A001ACF17 /* UserExercisesDetailViewModel.swift */,
 			);
 			path = UserExercisesDetail;
 			sourceTree = "<group>";
@@ -1329,6 +1332,7 @@
 				99993E8E1E80B7840052372A /* LeftSideViewController.swift in Sources */,
 				999C402F1E94897C0059E870 /* SignInController.swift in Sources */,
 				99D925291E99F10E008150EE /* Active.swift in Sources */,
+				993DA6941EADDC8A001ACF17 /* UserExercisesDetailViewModel.swift in Sources */,
 				99AEA17F1E87B240000DA06F /* AddMenuViewController.swift in Sources */,
 				99603EF01E9D2BF6001D1E5C /* UserServices.swift in Sources */,
 				99536AB21EA049CE00FF0BF2 /* UIViewController.swift in Sources */,

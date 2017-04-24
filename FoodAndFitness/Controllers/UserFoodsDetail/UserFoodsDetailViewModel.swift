@@ -68,6 +68,10 @@ final class UserFoodsDetailViewModel {
         return MealHeaderView.Data(title: title, detail: detail, image: activity.image)
     }
 
+    func dataForAddButton() -> AddUserFoodCell.Data? {
+        return AddUserFoodCell.Data(buttonTitle: Strings.addMoreFoods)
+    }
+
     func dataForInformationNutrition(at row: UserFoodsDetailController.InformationRows) -> InfomationNutritionCell.Data? {
         let title = row.title
         var detail = ""

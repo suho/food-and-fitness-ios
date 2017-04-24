@@ -78,6 +78,9 @@
                     <constraint firstAttribute="bottom" secondItem="jI7-ys-PQ3" secondAttribute="bottom" id="sKX-ZP-Qr9"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="button" destination="zmr-D0-ris" id="iaf-yM-sEn"/>
+            </connections>
             <point key="canvasLocation" x="47" y="44.5"/>
         </tableViewCell>
     </objects>

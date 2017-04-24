@@ -127,6 +127,7 @@ extension UserFoodsDetailController: UITableViewDataSource {
             switch indexPath.row {
             case 0:
                 let cell = tableView.dequeue(AddUserFoodCell.self)
+                cell.data = viewModel.dataForAddButton()
                 cell.delegate = self
                 return cell
             default:

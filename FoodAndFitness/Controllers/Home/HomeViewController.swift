@@ -154,7 +154,10 @@ extension HomeViewController: UITableViewDelegate {
                 let userFoodsController = UserFoodsDetailController()
                 userFoodsController.viewModel = UserFoodsDetailViewModel(activity: activity)
                 navigationController?.pushViewController(userFoodsController, animated: true)
-            case .exercise: break
+            case .exercise:
+                let userExercisesController = UserExercisesDetailController()
+                userExercisesController.viewModel = UserExercisesDetailViewModel(activity: activity)
+                navigationController?.pushViewController(userExercisesController, animated: true)
             case .tracking:
                 let trackingController = TrackingController()
                 navigationController?.pushViewController(trackingController, animated: true)
