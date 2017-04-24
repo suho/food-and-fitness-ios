@@ -28,6 +28,10 @@ final class UserExercise: Object, Mappable {
     }
 
     func mapping(map: Map) {
+        user <- map["user"]
+        exercise <- map["exercise"]
+        duration <- map["duration"]
+        createdAt <- map["created_at"]
     }
 }
 
