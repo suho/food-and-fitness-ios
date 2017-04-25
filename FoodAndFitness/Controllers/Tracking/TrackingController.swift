@@ -14,6 +14,7 @@ import HealthKit
 final class TrackingController: BaseViewController {
     @IBOutlet fileprivate(set) weak var mapView: MKMapView!
     @IBOutlet fileprivate(set) weak var activeLabel: UILabel!
+    var viewModel: TrackingViewModel = TrackingViewModel()
 
     enum Action {
         case starting
@@ -31,9 +32,6 @@ final class TrackingController: BaseViewController {
         return manager
     }()
 
-    lazy fileprivate var locations: [CLLocation] = [CLLocation]()
-    fileprivate var seconds: Double = 0.0
-    fileprivate var distance: Double = 0.0
     fileprivate var timer: Timer?
     fileprivate let healthKitStore: HKHealthStore = HKHealthStore()
 
@@ -70,13 +68,13 @@ final class TrackingController: BaseViewController {
     }
 
     @objc private func eachSecond() {
-        seconds += 1
-        let secondsQuantity = HKQuantity(unit: HKUnit.second(), doubleValue: seconds)
+        viewModel.seconds += 1
+        let secondsQuantity = HKQuantity(unit: HKUnit.second(), doubleValue: viewModel.seconds)
         print(secondsQuantity.description)
-        let distanceQuantity = HKQuantity(unit: HKUnit.meter(), doubleValue: distance)
+        let distanceQuantity = HKQuantity(unit: HKUnit.meter(), doubleValue: viewModel.distance)
         print(distanceQuantity.description)
         let paceUnit = HKUnit.second().unitDivided(by: HKUnit.meter())
-        let paceQuantity = HKQuantity(unit: paceUnit, doubleValue: seconds / distance)
+        let paceQuantity = HKQuantity(unit: paceUnit, doubleValue: viewModel.seconds / viewModel.distance)
         print(paceQuantity.description)
     }
 
@@ -94,8 +92,8 @@ final class TrackingController: BaseViewController {
         case .starting:
             stopUpdatingLocation()
             timer?.invalidate()
-            print("Distance: \(distance)")
-            print("Duration: \(seconds)")
+            print("Distance: \(viewModel.distance)")
+            print("Duration: \(viewModel.seconds)")
             action = .stopping
         case .stopping:
             configureTimer()
@@ -145,14 +143,14 @@ extension TrackingController: CLLocationManagerDelegate {
                     let region = MKCoordinateRegionMakeWithDistance(location.coordinate, 500, 500)
                     mapView.setRegion(region, animated: true)
                     var coords: [CLLocationCoordinate2D] = [CLLocationCoordinate2D]()
-                    if let lastLocation = self.locations.last {
+                    if let lastLocation = viewModel.locations.last {
                         coords.append(lastLocation.coordinate)
-                        distance += location.distance(from: lastLocation)
+                        viewModel.distance += location.distance(from: lastLocation)
                     }
                     coords.append(location.coordinate)
                     mapView.add(MKPolyline(coordinates: coords, count: coords.count))
                 }
-                self.locations.append(location)
+                viewModel.locations.append(location)
             }
         }
     }

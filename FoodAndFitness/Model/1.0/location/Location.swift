@@ -14,20 +14,22 @@ import CoreLocation
 final class Location: Object, Mappable {
 
     private(set) dynamic var id = 0
-    private(set) dynamic var latitude: Double = 0.0
-    private(set) dynamic var longitude: Double = 0.0
+    dynamic var latitude: Double = 0.0
+    dynamic var longitude: Double = 0.0
 
-//    override class func primaryKey() -> String? {
-//        return "id"
-//    }
+    override class func primaryKey() -> String? {
+        return "id"
+    }
 
     convenience required init?(map: Map) {
         self.init()
-//        id <- map["id"]
-//        assert(id > 0, "Location `id` must be greater than 0")
+        id <- map["id"]
+        assert(id > 0, "Location `id` must be greater than 0")
     }
 
     func mapping(map: Map) {
+        latitude <- map["latitude"]
+        longitude <- map["longitude"]
     }
 }
 
@@ -35,5 +37,26 @@ final class Location: Object, Mappable {
 extension Location {
     var toCLLocation: CLLocation {
         return CLLocation(latitude: latitude, longitude: longitude)
+    }
+}
+
+// MARK: - CLLocation
+extension CLLocation {
+    var toLocation: Location {
+        let location = Location()
+        location.latitude = self.coordinate.latitude
+        location.longitude = self.coordinate.longitude
+        return location
+    }
+}
+
+// MARK: - Array
+extension Array where Element: Location {
+    func toValue() -> [[Double]] {
+        var array: [[Double]] = []
+        for location in self {
+            array.append([location.latitude, location.longitude])
+        }
+        return array
     }
 }
