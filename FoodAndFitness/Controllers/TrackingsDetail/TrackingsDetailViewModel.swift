@@ -51,8 +51,8 @@ final class TrackingsDetailViewModel {
             completion(.failure(NSError(message: Strings.Errors.indexNotValidate)))
             return
         }
-        let _ = trackings[index]
-//        ExerciseServices(userExerciseId: userExercise.id).delete(completion: completion)
+        let tracking = trackings[index]
+        TrackingServices(trackingId: tracking.id).delete(completion: completion)
     }
 
     func dataForTracking(at index: Int) -> UserFoodCell.Data? {

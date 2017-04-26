@@ -72,6 +72,18 @@ final class ApiPath {
         }
     }
 
+    struct Tracking {
+        var id: Int
+
+        init(id: Int) {
+            self.id = id
+        }
+
+        var delete: String {
+            return ApiPath.trackings / id
+        }
+    }
+
     struct User {
         var userID: Int
 
