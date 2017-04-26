@@ -53,6 +53,15 @@ final class UserFoodsDetailViewModel {
         })
     }
 
+    func delete(at index: Int, completion: @escaping Completion) {
+        guard index >= 0, index < userFoods.count else {
+            completion(.failure(NSError(message: Strings.Errors.indexNotValidate)))
+            return
+        }
+        let userFood = userFoods[index]
+        FoodServices(userFoodId: userFood.id).delete(completion: completion)
+    }
+
     func dataForUserFood(at index: Int) -> UserFoodCell.Data? {
         guard index >= 0 && index <= userFoods.count - 1 else { return nil }
         let userFood = userFoods[index]
@@ -62,10 +71,23 @@ final class UserFoodsDetailViewModel {
         return UserFoodCell.Data(title: name, detail: "\(Int(calories)) kcal - \(userFood.weight) g")
     }
 
+    func dataForSuggestFood(at index: Int) -> UserFoodCell.Data? {
+        guard index >= 0 && index <= suggestFoods.count - 1 else { return nil }
+        let food = suggestFoods[index]
+        let name = food.name
+        let calories = food.calories
+        let weight = food.weight
+        return UserFoodCell.Data(title: name, detail: "\(calories) kcal - \(weight) g")
+    }
+
     func dataForHeaderView() -> MealHeaderView.Data? {
         let title = activity.title
         let detail = Date().string(format: FFDateFormat.date.dateFormat, in: Region.GMT())
         return MealHeaderView.Data(title: title, detail: detail, image: activity.image)
+    }
+
+    func dataForAddButton() -> AddUserFoodCell.Data? {
+        return AddUserFoodCell.Data(buttonTitle: Strings.addMoreFoods)
     }
 
     func dataForInformationNutrition(at row: UserFoodsDetailController.InformationRows) -> InfomationNutritionCell.Data? {

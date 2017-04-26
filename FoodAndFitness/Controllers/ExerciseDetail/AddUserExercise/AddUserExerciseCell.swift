@@ -1,23 +1,22 @@
 //
-//  SaveUserFoodCell.swift
+//  AddUserExerciseCell.swift
 //  FoodAndFitness
 //
-//  Created by Mylo Ho on 4/23/17.
+//  Created by Mylo Ho on 4/24/17.
 //  Copyright © 2017 SuHoVan. All rights reserved.
 //
 
 import UIKit
 
-protocol SaveUserFoodCellDelegate: class {
-    func cell(_ cell: SaveUserFoodCell, needsPerformAction action: SaveUserFoodCell.Action)
+protocol AddUserExerciseCellDelegate: class {
+    func cell(_ cell: AddUserExerciseCell, needsPerformAction action: AddUserExerciseCell.Action)
 }
 
-final class SaveUserFoodCell: BaseTableViewCell {
-
+final class AddUserExerciseCell: BaseTableViewCell {
     @IBOutlet fileprivate(set) weak var textField: UITextField!
     @IBOutlet fileprivate(set) weak var label: UILabel!
-    weak var delegate: SaveUserFoodCellDelegate?
-    var viewModel: SaveUserFoodCellViewModel!
+    weak var delegate: AddUserExerciseCellDelegate?
+    var viewModel: AddUserExerciseViewModel!
     static let maxValue = 5000
 
     enum Action {
@@ -42,22 +41,22 @@ final class SaveUserFoodCell: BaseTableViewCell {
         textField.delegate = self
     }
 
-    fileprivate func updateCalories(withWeight weight: Int) {
-        label.text = viewModel.calories(withWeight: weight)
+    fileprivate func updateCalories(withDuration duration: Int) {
+        label.text = viewModel.calories(withDuration: duration)
     }
 
     @IBAction func save(_ sender: Any?) {
-        guard let weight = Int(textField.string), weight > 0 else {
+        guard let duration = Int(textField.string), duration > 0 else {
             let error = NSError(message: Strings.Errors.inputNotValidate)
             error.show()
             return
         }
-        delegate?.cell(self, needsPerformAction: .save(weight))
+        delegate?.cell(self, needsPerformAction: .save(duration))
     }
 }
 
 // MARK: - UITextFieldDelegate
-extension SaveUserFoodCell: UITextFieldDelegate {
+extension AddUserExerciseCell: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = Strings.empty
     }
@@ -65,8 +64,8 @@ extension SaveUserFoodCell: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
         guard let number = Int(text + string) else { return false }
-        updateCalories(withWeight: number)
-        if number > SaveUserFoodCell.maxValue, string != Strings.empty {
+        updateCalories(withDuration: number)
+        if number > AddUserExerciseCell.maxValue, string != Strings.empty {
             return false
         }
         return true

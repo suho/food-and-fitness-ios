@@ -21,27 +21,6 @@ final class ChooseActiveTrackingController: PopupViewController {
         case dismiss(ActiveTracking)
     }
 
-    enum ActiveTracking: Int {
-        case running
-        case cycling
-        case walking
-
-        static var count: Int {
-            return self.walking.rawValue + 1
-        }
-
-        var title: String {
-            switch self {
-            case .running:
-                return Strings.running
-            case .cycling:
-                return Strings.cycling
-            case .walking:
-                return Strings.walking
-            }
-        }
-    }
-
     override func setupUI() {
         super.setupUI()
         configureTableView()

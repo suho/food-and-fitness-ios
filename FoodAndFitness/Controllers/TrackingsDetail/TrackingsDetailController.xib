@@ -8,9 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserExercisesDetailController" customModule="FoodAndFitness" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TrackingsDetailController" customModule="FoodAndFitness" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="ljp-hv-8gd" id="mZ2-LG-NPD"/>
+                <outlet property="tableView" destination="JGF-2r-MVi" id="pAx-6D-So9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,18 +19,20 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ljp-hv-8gd" customClass="TableView" customModule="SwiftUtils">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JGF-2r-MVi" customClass="TableView" customModule="SwiftUtils">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="ljp-hv-8gd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SxH-74-zND"/>
-                <constraint firstAttribute="trailing" secondItem="ljp-hv-8gd" secondAttribute="trailing" id="W0j-nT-P6N"/>
-                <constraint firstAttribute="bottom" secondItem="ljp-hv-8gd" secondAttribute="bottom" id="cQl-L1-Tw5"/>
-                <constraint firstItem="ljp-hv-8gd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sLp-iD-HBT"/>
+                <constraint firstAttribute="bottom" secondItem="JGF-2r-MVi" secondAttribute="bottom" id="3gt-Qq-lVb"/>
+                <constraint firstAttribute="trailing" secondItem="JGF-2r-MVi" secondAttribute="trailing" id="Vz1-S2-Pwz"/>
+                <constraint firstItem="JGF-2r-MVi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hkN-v2-seI"/>
+                <constraint firstItem="JGF-2r-MVi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="x2f-xq-pT3"/>
             </constraints>
+            <point key="canvasLocation" x="-50" y="39"/>
         </view>
     </objects>
 </document>

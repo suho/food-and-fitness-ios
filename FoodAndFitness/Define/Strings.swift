@@ -14,7 +14,8 @@ final class Strings {
     static let height = "Height"
     static let quantity = "Quantity"
     static let ration = "Ration"
-    static let minute = "Min"
+    static let minute = "min"
+    static let seconds = "s"
     static let time = "Time"
     static let unitHeartbeat = "dpm"
     static let percent = "%"
@@ -29,6 +30,7 @@ final class Strings {
     static let gam = "g"
     static let centimeter = "cm"
     static let kilocalories = "kcal"
+    static let metters = "m"
     static let backNavi = "Back"
     static let next = "Next"
     static let nutritionAndFitness = "Nutrition And Fitness"
@@ -81,7 +83,10 @@ final class Strings {
     static let walking = "Walking"
 
     static let informationNutrion = "🥙🍟Information Nutrion🍔🌭"
-    static let suggestionNutrion = "🥝🥑Food for you🍣🥗"
+    static let suggestionNutrion = "🥝🥑Foods for you🍣🥗"
+
+    static let informationExercise = "🎿⛹️‍♀️Information Exercises🏊‍♀️🚴‍♀️"
+    static let suggestionExercise = "🚵‍♀️🚣‍♀️Exercises for you🏌️‍♀️🤾‍♂️"
 
     static let calories = "Calories"
     static let protein = "Protein"
@@ -89,6 +94,14 @@ final class Strings {
     static let fat = "Fat"
 
     static let update = "Update"
+
+    static let duration = "Duration"
+    static let addMoreFoods = "Add More Foods"
+    static let addMoreExercises = "Add More Exercises"
+    static let addMoreTrackings = "Add More Trackings"
+
+    static let informationTracking = "🚴‍♀️🚴Information Trackings🚵‍♀️🚵"
+    static let distance = "Distance"
 
     struct Errors {
         // MARK: - Error messages
@@ -107,5 +120,6 @@ final class Strings {
         static let emptyImage = "Empty Image"
         static let urlError = "URL Not Found"
         static let tokenError = "Token Session Not Found"
+        static let indexNotValidate = "Index Not Validate"
     }
 }

@@ -26,6 +26,8 @@ final class ApiPath {
     static var foods: String { return baseURL / "foods" }
     static var exercises: String { return baseURL / "exercises" }
     static var userFoods: String { return baseURL / "user_foods" }
+    static var userExercises: String { return baseURL / "user_exercises" }
+    static var trackings: String { return baseURL / "trackings" }
 
     struct Auth {
         static var signin: String {
@@ -42,6 +44,43 @@ final class ApiPath {
 
         init(foodId: Int) {
             self.foodId = foodId
+        }
+    }
+
+    struct UserFood {
+        var id: Int
+
+        init(id: Int) {
+            self.id = id
+        }
+
+        var delete: String {
+            return ApiPath.userFoods / id
+        }
+
+    }
+
+    struct UserExercise {
+        var id: Int
+
+        init(id: Int) {
+            self.id = id
+        }
+
+        var delete: String {
+            return ApiPath.userExercises / id
+        }
+    }
+
+    struct Tracking {
+        var id: Int
+
+        init(id: Int) {
+            self.id = id
+        }
+
+        var delete: String {
+            return ApiPath.trackings / id
         }
     }
 
