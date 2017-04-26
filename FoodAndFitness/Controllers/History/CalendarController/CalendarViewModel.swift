@@ -10,17 +10,28 @@ import UIKit
 import RealmSwift
 import RealmS
 import SwiftDate
+import FSCalendar
 
 class CalendarViewModel {
+
+    var selectedCell: FSCalendarCell?
+    var selectedDate: Date?
+
     func didHaveEvents(forDate date: Date) -> Bool {
-        let userFoods: [UserFood] = RealmS().objects(UserFood.self).filter { (userFood) -> Bool in
-            guard let me = User.me, let user = userFood.user else { return false }
+        guard let me = User.me else { return false }
+        let realm = RealmS()
+        let userFoods: [UserFood] = realm.objects(UserFood.self).filter { (userFood) -> Bool in
+            guard let user = userFood.user else { return false }
             return me.id == user.id && userFood.createdAt.isInSameDayOf(date: date)
         }
-        let userExercises: [UserExercise] = RealmS().objects(UserExercise.self).filter({ (userExercise) -> Bool in
-            guard let me = User.me, let user = userExercise.user else { return false }
+        let userExercises: [UserExercise] = realm.objects(UserExercise.self).filter({ (userExercise) -> Bool in
+            guard let user = userExercise.user else { return false }
             return me.id == user.id && userExercise.createdAt.isInSameDayOf(date: date)
         })
-        return userFoods.isNotEmpty || userExercises.isNotEmpty
+        let trackings: [Tracking] = realm.objects(Tracking.self).filter { (tracking) -> Bool in
+            guard let user = tracking.user else { return false }
+            return me.id == user.id && tracking.createdAt.isInSameDayOf(date: date)
+        }
+        return userFoods.isNotEmpty || userExercises.isNotEmpty || trackings.isNotEmpty
     }
 }

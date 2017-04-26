@@ -85,6 +85,7 @@
 		99536AB41EA0A36400FF0BF2 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99536AB31EA0A36400FF0BF2 /* SignInViewModel.swift */; };
 		9959E8781E8D6CEA005A8347 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9959E8761E8D6CEA005A8347 /* CalendarController.swift */; };
 		9959E8791E8D6CEA005A8347 /* CalendarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9959E8771E8D6CEA005A8347 /* CalendarController.xib */; };
+		99670CD11EB0D0F700CA2CC2 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99670CD01EB0D0F700CA2CC2 /* HistoryViewModel.swift */; };
 		997971001E9E4095005E1E7C /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997970FF1E9E4095005E1E7C /* Formula.swift */; };
 		997EAE7C1E9EA18D0071D5BC /* LeftSideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997EAE7B1E9EA18D0071D5BC /* LeftSideViewModel.swift */; };
 		997EAE7F1E9EA8580071D5BC /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997EAE7E1E9EA8580071D5BC /* View.swift */; };
@@ -237,6 +238,7 @@
 		99536AB31EA0A36400FF0BF2 /* SignInViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		9959E8761E8D6CEA005A8347 /* CalendarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
 		9959E8771E8D6CEA005A8347 /* CalendarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarController.xib; sourceTree = "<group>"; };
+		99670CD01EB0D0F700CA2CC2 /* HistoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		997970FF1E9E4095005E1E7C /* Formula.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
 		997EAE7B1E9EA18D0071D5BC /* LeftSideViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSideViewModel.swift; sourceTree = "<group>"; };
 		997EAE7E1E9EA8580071D5BC /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -506,6 +508,7 @@
 				9959E8751E8D6A35005A8347 /* CalendarController */,
 				993404F71E83C44E009A445F /* HistoryViewController.swift */,
 				993404F81E83C44E009A445F /* HistoryViewController.xib */,
+				99670CD01EB0D0F700CA2CC2 /* HistoryViewModel.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -1410,6 +1413,7 @@
 				993DA65C1EACF2E2001ACF17 /* SaveUserFoodCellViewModel.swift in Sources */,
 				99FF78891EA22BD40014EF72 /* FoodDetailController.swift in Sources */,
 				99BF6F861E77F67D00FD743F /* PaddingTextField.swift in Sources */,
+				99670CD11EB0D0F700CA2CC2 /* HistoryViewModel.swift in Sources */,
 				99FF78971EA22F5F0014EF72 /* AddActivityController.swift in Sources */,
 				999C40371E948CEE0059E870 /* Mapper.swift in Sources */,
 				99BF6F801E77F67D00FD743F /* AppDelegate.swift in Sources */,
