@@ -18,6 +18,7 @@ final class HomeViewModel {
 
     private let _userFoods: Results<UserFood>
     private let _userExercises: Results<UserExercise>
+    private let _trackings: Results<Tracking>
     private var userFoods: [UserFood] {
         return _userFoods.filter({ (userFood) -> Bool in
             guard let me = User.me, let user = userFood.user else { return false }
@@ -31,18 +32,28 @@ final class HomeViewModel {
         })
     }
 
+    private var trackings: [Tracking] {
+        return _trackings.filter({ (tracking) -> Bool in
+            guard let me = User.me, let user = tracking.user else { return false }
+            return tracking.createdAt.isToday && me.id == user.id
+        })
+    }
+
     private var foodsToken: NotificationToken?
     private var exercisesToken: NotificationToken?
+    private var trackingToken: NotificationToken?
     weak var delegate: HomeViewModelDelegate?
 
     enum Action {
         case userFoodChanged
         case userExerciseChanged
+        case trackingsChanged
     }
 
     init() {
         _userFoods = RealmS().objects(UserFood.self)
         _userExercises = RealmS().objects(UserExercise.self)
+        _trackings = RealmS().objects(Tracking.self)
         foodsToken = _userFoods.addNotificationBlock({ [weak self](change) in
             guard let this = self else { return }
             switch change {
@@ -59,6 +70,15 @@ final class HomeViewModel {
             case .error(_): break
             case .update(_, deletions: _, insertions: _, modifications: _):
                 this.delegate?.viewModel(this, needsPerformAction: .userExerciseChanged)
+            }
+        })
+        trackingToken = _trackings.addNotificationBlock({ [weak self](change) in
+            guard let this = self else { return }
+            switch change {
+            case .initial(_): break
+            case .error(_): break
+            case .update(_, deletions: _, insertions: _, modifications: _):
+                this.delegate?.viewModel(this, needsPerformAction: .trackingsChanged)
             }
         })
     }
@@ -172,11 +192,16 @@ final class HomeViewModel {
     }
 
     func burnToday() -> Int {
-        let burn = userExercises.map { (userExercise) -> Int in
+        let exercisesBurn = userExercises.map { (userExercise) -> Int in
             return userExercise.calories
         }.reduce(0) { (result, calories) -> Int in
             return result + calories
         }
-        return burn
+        let trackingsBurn = trackings.map { (tracking) -> Int in
+            return tracking.caloriesBurn
+            }.reduce(0) { (result, calories) -> Int in
+                return result + calories
+        }
+        return exercisesBurn + trackingsBurn
     }
 }

@@ -95,6 +95,15 @@ final class TrackingController: BaseViewController {
             print("Distance: \(viewModel.distance)")
             print("Duration: \(viewModel.seconds)")
             action = .stopping
+            viewModel.save(completion: { [weak self](result) in
+                guard let this = self else { return }
+                switch result {
+                case .success(_):
+                    this.navigationController?.popViewController(animated: true)
+                case .failure(let error):
+                    error.show()
+                }
+            })
         case .stopping:
             configureTimer()
             startUpdatingLocation()

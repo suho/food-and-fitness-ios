@@ -38,6 +38,9 @@
 		99317B321EAEEB8A00AFE2CA /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99317B2F1EAEEB8A00AFE2CA /* UserServices.swift */; };
 		99317B341EAEEB9900AFE2CA /* TrackingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99317B331EAEEB9900AFE2CA /* TrackingServices.swift */; };
 		99317B361EAEFBC400AFE2CA /* TrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99317B351EAEFBC400AFE2CA /* TrackingViewModel.swift */; };
+		99317B3C1EAF43D800AFE2CA /* TrackingsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99317B3A1EAF43D800AFE2CA /* TrackingsDetailController.swift */; };
+		99317B3D1EAF43D800AFE2CA /* TrackingsDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99317B3B1EAF43D800AFE2CA /* TrackingsDetailController.xib */; };
+		99317B3F1EAF43FD00AFE2CA /* TrackingsDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99317B3E1EAF43FD00AFE2CA /* TrackingsDetailViewModel.swift */; };
 		993404DE1E838306009A445F /* UserProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993404DC1E838306009A445F /* UserProfileCell.swift */; };
 		993404DF1E838306009A445F /* UserProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 993404DD1E838306009A445F /* UserProfileCell.xib */; };
 		993404F11E83C41B009A445F /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993404EF1E83C41B009A445F /* AnalysisViewController.swift */; };
@@ -186,6 +189,9 @@
 		99317B2F1EAEEB8A00AFE2CA /* UserServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
 		99317B331EAEEB9900AFE2CA /* TrackingServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingServices.swift; sourceTree = "<group>"; };
 		99317B351EAEFBC400AFE2CA /* TrackingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingViewModel.swift; sourceTree = "<group>"; };
+		99317B3A1EAF43D800AFE2CA /* TrackingsDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingsDetailController.swift; sourceTree = "<group>"; };
+		99317B3B1EAF43D800AFE2CA /* TrackingsDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackingsDetailController.xib; sourceTree = "<group>"; };
+		99317B3E1EAF43FD00AFE2CA /* TrackingsDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingsDetailViewModel.swift; sourceTree = "<group>"; };
 		993404DC1E838306009A445F /* UserProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileCell.swift; sourceTree = "<group>"; };
 		993404DD1E838306009A445F /* UserProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserProfileCell.xib; sourceTree = "<group>"; };
 		993404EF1E83C41B009A445F /* AnalysisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
@@ -453,6 +459,16 @@
 				99501FF91E8AC5010051227F /* CircleProgressView.swift */,
 			);
 			path = CricleProgress;
+			sourceTree = "<group>";
+		};
+		99317B391EAF43BE00AFE2CA /* TrackingsDetail */ = {
+			isa = PBXGroup;
+			children = (
+				99317B3A1EAF43D800AFE2CA /* TrackingsDetailController.swift */,
+				99317B3B1EAF43D800AFE2CA /* TrackingsDetailController.xib */,
+				99317B3E1EAF43FD00AFE2CA /* TrackingsDetailViewModel.swift */,
+			);
+			path = TrackingsDetail;
 			sourceTree = "<group>";
 		};
 		993404DB1E8382F0009A445F /* UserProfileCell */ = {
@@ -836,6 +852,7 @@
 				999C402B1E9489640059E870 /* SignIn */,
 				999C402C1E9489640059E870 /* SignUp */,
 				9906C7D11EA856CA0033D76B /* Tracking */,
+				99317B391EAF43BE00AFE2CA /* TrackingsDetail */,
 				993F22E51EA60FC50078D51D /* UserExercisesDetail */,
 				993F22D91EA60FB90078D51D /* UserFoodsDetail */,
 			);
@@ -1227,6 +1244,7 @@
 				992DA8DA1E8A1F1D002A194C /* FitnessHistoryController.xib in Resources */,
 				993DA6A11EADE7B2001ACF17 /* AddUserExerciseCell.xib in Resources */,
 				992DA8DE1E8A1F3B002A194C /* NutritionAnalysisController.xib in Resources */,
+				99317B3D1EAF43D800AFE2CA /* TrackingsDetailController.xib in Resources */,
 				993404DF1E838306009A445F /* UserProfileCell.xib in Resources */,
 				993404FA1E83C44E009A445F /* HistoryViewController.xib in Resources */,
 				993496F91EA2084400F9B108 /* AddActivityCell.xib in Resources */,
@@ -1372,6 +1390,7 @@
 				992DA8D91E8A1F1D002A194C /* FitnessHistoryController.swift in Sources */,
 				999C40451E9497160059E870 /* AvatarCell.swift in Sources */,
 				99CC4CFD1E9AAA6F000EE59E /* ChooseActivesController.swift in Sources */,
+				99317B3F1EAF43FD00AFE2CA /* TrackingsDetailViewModel.swift in Sources */,
 				993DA69B1EADE397001ACF17 /* ExerciseDetailViewModel.swift in Sources */,
 				99D925221E99E1DB008150EE /* ChooseGoalsController.swift in Sources */,
 				993F22E81EA621E30078D51D /* UserExercisesDetailController.swift in Sources */,
@@ -1406,6 +1425,7 @@
 				99FF789A1EA22F5F0014EF72 /* ResultCell.swift in Sources */,
 				99BF6F911E77F67D00FD743F /* Cocoa.swift in Sources */,
 				997EAE7F1E9EA8580071D5BC /* View.swift in Sources */,
+				99317B3C1EAF43D800AFE2CA /* TrackingsDetailController.swift in Sources */,
 				992DA8E11E8A1F58002A194C /* NutritionHistoryController.swift in Sources */,
 				99BF6F991E77F67D00FD743F /* ResponseSerializer.swift in Sources */,
 				99317B361EAEFBC400AFE2CA /* TrackingViewModel.swift in Sources */,

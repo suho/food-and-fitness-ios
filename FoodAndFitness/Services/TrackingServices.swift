@@ -22,8 +22,7 @@ final class TrackingServices {
             "active": params.active,
             "duration": params.duration,
             "distance": params.distance,
-            "velocity": params.velocity,
-            "locations_attributes": params.locations.toValue()
+            "locations_attributes": params.locations.toJSObject()
         ]
         return ApiManager.request(method: .post, urlString: path, parameters: parameters, completion: { (result) in
             Mapper<Tracking>().map(result: result, type: .object, completion: completion)

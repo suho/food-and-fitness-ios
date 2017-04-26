@@ -8,10 +8,38 @@
 
 import Foundation
 
-enum Activities {
+enum ActiveTracking: Int {
     case walking
-    case jogging
+    case running
     case cycling
+
+    static var count: Int {
+        return self.cycling.rawValue + 1
+    }
+
+    var title: String {
+        switch self {
+        case .running:
+            return Strings.running
+        case .cycling:
+            return Strings.cycling
+        case .walking:
+            return Strings.walking
+        }
+    }
+
+    static func active(title: String) -> ActiveTracking {
+        switch title {
+        case self.walking.title:
+            return walking
+        case self.running.title:
+            return running
+        case self.cycling.title:
+            return cycling
+        default:
+            return walking
+        }
+    }
 }
 
 // MARK: - BMI Calculator
@@ -77,12 +105,12 @@ func fat(calories: Double) -> Int {
 }
 
 // MARK: - Met Calculator
-func met(velocity: Double, active: Activities) -> Double {
+fileprivate func met(velocity: Double, active: ActiveTracking) -> Double {
     switch active {
     case .walking:
         return metWalking(velocity: velocity)
-    case .jogging:
-        return metJogging(velocity: velocity)
+    case .running:
+        return metRunning(velocity: velocity)
     case .cycling:
         return metCycling(velocity: velocity)
     }
@@ -110,7 +138,7 @@ fileprivate func metWalking(velocity: Double) -> Double {
     }
 }
 
-fileprivate func metJogging(velocity: Double) -> Double {
+fileprivate func metRunning(velocity: Double) -> Double {
     switch velocity {
     case 0..<6.4:
         return 6
@@ -159,6 +187,6 @@ fileprivate func metCycling(velocity: Double) -> Double {
 }
 
 // MARK: - Calories Burn Calculator
-func caloriesBurned(bmr: Double, met: Double, duration: Double) -> Int {
-    return Int((bmr / 24) * met * duration)
+func caloriesBurned(bmr: Double, velocity: Double, active: ActiveTracking, duration: Double) -> Int {
+    return Int((bmr / 24) * met(velocity: velocity, active: active) * duration)
 }

@@ -52,10 +52,14 @@ extension CLLocation {
 
 // MARK: - Array
 extension Array where Element: Location {
-    func toValue() -> [[Double]] {
-        var array: [[Double]] = []
+    func toJSObject() -> [JSObject] {
+        var array: [JSObject] = []
         for location in self {
-            array.append([location.latitude, location.longitude])
+            let json: JSObject = [
+                "latitude": location.latitude,
+                "longitude": location.longitude
+            ]
+            array.append(json)
         }
         return array
     }

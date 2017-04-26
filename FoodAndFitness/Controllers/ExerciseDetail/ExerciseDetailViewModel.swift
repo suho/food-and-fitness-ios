@@ -26,11 +26,9 @@ class ExerciseDetailViewModel: NSObject {
 
     func save(duration: Int, completion: @escaping Completion) {
         if User.me == nil {
-            guard let user = User.me else {
-                let error = NSError(message: Strings.Errors.tokenError)
-                completion(.failure(error))
-                return
-            }
+            let error = NSError(message: Strings.Errors.tokenError)
+            completion(.failure(error))
+            return
         } else {
             let params = UserExerciseParams(exerciseId: exercise.id, duration: duration)
             ExerciseServices.save(params: params, completion: completion)
