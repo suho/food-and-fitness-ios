@@ -11,7 +11,6 @@ import RealmSwift
 import RealmS
 
 struct UserExerciseParams {
-    var userId: Int
     var exerciseId: Int
     var duration: Int
 }
@@ -26,13 +25,14 @@ class ExerciseDetailViewModel: NSObject {
     }
 
     func save(duration: Int, completion: @escaping Completion) {
-        guard let user = User.me else {
+        if User.me == nil {
             let error = NSError(message: Strings.Errors.tokenError)
             completion(.failure(error))
             return
+        } else {
+            let params = UserExerciseParams(exerciseId: exercise.id, duration: duration)
+            ExerciseServices.save(params: params, completion: completion)
         }
-        let params = UserExerciseParams(userId: user.id, exerciseId: exercise.id, duration: duration)
-        ExerciseServices.save(params: params, completion: completion)
     }
 
     func dataForHeaderView() -> MealHeaderView.Data? {

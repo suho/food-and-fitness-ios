@@ -52,6 +52,15 @@ final class UserExercisesDetailViewModel {
         })
     }
 
+    func delete(at index: Int, completion: @escaping Completion) {
+        guard index >= 0, index < userExercises.count else {
+            completion(.failure(NSError(message: Strings.Errors.indexNotValidate)))
+            return
+        }
+        let userExercise = userExercises[index]
+        ExerciseServices(userExerciseId: userExercise.id).delete(completion: completion)
+    }
+
     func dataForUserExercise(at index: Int) -> UserFoodCell.Data? {
         guard index >= 0 && index <= userExercises.count - 1 else { return nil }
         let userExercise = userExercises[index]
@@ -59,6 +68,16 @@ final class UserExercisesDetailViewModel {
         let name = exercise.name
         let calories = Double(userExercise.duration) * Double(exercise.calories) / Double(exercise.duration)
         let detail = "\(Int(calories)) \(Strings.kilocalories) - \(userExercise.duration) \(Strings.minute)"
+        return UserFoodCell.Data(title: name, detail: detail)
+    }
+
+    func dataForSuggestExercise(at index: Int) -> UserFoodCell.Data? {
+        guard index >= 0 && index <= suggestExercises.count - 1 else { return nil }
+        let exercise = suggestExercises[index]
+        let name = exercise.name
+        let calories = exercise.calories
+        let duration = exercise.duration
+        let detail = "\(calories) \(Strings.kilocalories) - \(duration) \(Strings.minute)"
         return UserFoodCell.Data(title: name, detail: detail)
     }
 

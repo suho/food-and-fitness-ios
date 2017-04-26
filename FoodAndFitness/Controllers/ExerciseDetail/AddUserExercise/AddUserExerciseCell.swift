@@ -64,10 +64,10 @@ extension AddUserExerciseCell: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
         guard let number = Int(text + string) else { return false }
+        updateCalories(withDuration: number)
         if number > AddUserExerciseCell.maxValue, string != Strings.empty {
             return false
         }
-        updateCalories(withDuration: number)
         return true
     }
 

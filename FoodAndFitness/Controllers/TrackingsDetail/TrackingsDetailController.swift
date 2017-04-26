@@ -1,41 +1,39 @@
 //
-//  UserExercisesDetailController.swift
+//  TrackingsDetailController.swift
 //  FoodAndFitness
 //
-//  Created by Mylo Ho on 4/18/17.
+//  Created by Mylo Ho on 4/25/17.
 //  Copyright © 2017 SuHoVan. All rights reserved.
 //
 
 import UIKit
 import SwiftUtils
 
-final class UserExercisesDetailController: BaseViewController {
+final class TrackingsDetailController: BaseViewController {
     @IBOutlet fileprivate(set) weak var tableView: TableView!
-    var viewModel: UserExercisesDetailViewModel!
+
+    var viewModel: TrackingsDetailViewModel = TrackingsDetailViewModel(activity: .tracking)
 
     enum Sections: Int {
-        case userExercises
+        case trackings
         case information
-        case suggestion
 
         static var count: Int {
-            return self.suggestion.hashValue + 1
+            return self.information.rawValue + 1
         }
 
         var title: String {
             switch self {
-            case .userExercises:
+            case .trackings:
                 return Strings.empty
             case .information:
-                return Strings.informationExercise
-            case .suggestion:
-                return Strings.suggestionExercise
+                return Strings.informationTracking
             }
         }
 
         var heightForHeader: CGFloat {
             switch self {
-            case .userExercises:
+            case .trackings:
                 return 160
             default:
                 return 70
@@ -46,9 +44,10 @@ final class UserExercisesDetailController: BaseViewController {
     enum InformationRows: Int {
         case calories
         case duration
+        case distance
 
         static var count: Int {
-            return self.duration.rawValue + 1
+            return self.distance.rawValue + 1
         }
 
         var title: String {
@@ -57,6 +56,8 @@ final class UserExercisesDetailController: BaseViewController {
                 return Strings.calories
             case .duration:
                 return Strings.duration
+            case .distance:
+                return Strings.distance
             }
         }
     }
@@ -82,17 +83,17 @@ final class UserExercisesDetailController: BaseViewController {
 }
 
 // MARK: - UserExercisesDetailViewModelDelegate
-extension UserExercisesDetailController: UserExercisesDetailViewModelDelegate {
-    func viewModel(_ viewModel: UserExercisesDetailViewModel, needsPerformAction action: UserExercisesDetailViewModel.Action) {
+extension TrackingsDetailController: TrackingsDetailViewModelDelegate {
+    func viewModel(_ viewModel: TrackingsDetailViewModel, needsPerformAction action: TrackingsDetailViewModel.Action) {
         switch action {
-        case .userExercisesChanged:
+        case .trackingsChanged:
             tableView.reloadData()
         }
     }
 }
 
 // MARK: - UITableViewDataSource
-extension UserExercisesDetailController: UITableViewDataSource {
+extension TrackingsDetailController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return Sections.count
@@ -103,12 +104,10 @@ extension UserExercisesDetailController: UITableViewDataSource {
             fatalError(Strings.Errors.enumError)
         }
         switch sections {
-        case .userExercises:
-            return viewModel.userExercises.count + 1
+        case .trackings:
+            return viewModel.trackings.count + 1
         case .information:
             return InformationRows.count
-        case .suggestion:
-            return viewModel.suggestExercises.count
         }
     }
 
@@ -117,7 +116,7 @@ extension UserExercisesDetailController: UITableViewDataSource {
             fatalError(Strings.Errors.enumError)
         }
         switch sections {
-        case .userExercises:
+        case .trackings:
             switch indexPath.row {
             case 0:
                 let cell = tableView.dequeue(AddUserFoodCell.self)
@@ -127,7 +126,7 @@ extension UserExercisesDetailController: UITableViewDataSource {
             default:
                 let cell = tableView.dequeue(UserFoodCell.self)
                 cell.accessoryType = .none
-                cell.data = viewModel.dataForUserExercise(at: indexPath.row - 1)
+                cell.data = viewModel.dataForTracking(at: indexPath.row - 1)
                 return cell
             }
         case .information:
@@ -135,33 +134,22 @@ extension UserExercisesDetailController: UITableViewDataSource {
                 fatalError(Strings.Errors.enumError)
             }
             let cell = tableView.dequeue(InfomationNutritionCell.self)
-            cell.data = viewModel.dataForInformationExercise(at: rows)
-            return cell
-        case .suggestion:
-            let cell = tableView.dequeue(UserFoodCell.self)
-            cell.accessoryType = .disclosureIndicator
-            cell.data = viewModel.dataForSuggestExercise(at: indexPath.row)
+            cell.data = viewModel.dataForInformationTrackings(at: rows)
             return cell
         }
     }
 }
 
 // MARK: - UITableViewDelegate
-extension UserExercisesDetailController: UITableViewDelegate {
+extension TrackingsDetailController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let sections = Sections(rawValue: indexPath.section) else {
             fatalError(Strings.Errors.enumError)
         }
         switch sections {
-        case .userExercises: break
+        case .trackings: break
         case .information: break
-        case .suggestion:
-            let exercises = viewModel.suggestExercises
-            guard indexPath.row >= 0, indexPath.row < exercises.count else { break }
-            let exerciseDetailController = ExerciseDetailController()
-            exerciseDetailController.viewModel = ExerciseDetailViewModel(exercise: exercises[indexPath.row], activity: viewModel.activity)
-            navigationController?.pushViewController(exerciseDetailController, animated: true)
         }
     }
 
@@ -170,9 +158,9 @@ extension UserExercisesDetailController: UITableViewDelegate {
             fatalError(Strings.Errors.enumError)
         }
         switch sections {
-        case .userExercises:
+        case .trackings:
             return true
-        case .information, .suggestion:
+        case .information:
             return false
         }
     }
@@ -203,15 +191,15 @@ extension UserExercisesDetailController: UITableViewDelegate {
         guard let sections = Sections(rawValue: indexPath.section) else {
             fatalError(Strings.Errors.enumError)
         }
-        if sections == .userExercises && indexPath.row == 0 { return 60 }
-        return 50
+        if sections == .trackings && indexPath.row == 0 { return 60 }
+        return 60
     }
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         guard let sections = Sections(rawValue: section) else {
             fatalError(Strings.Errors.enumError)
         }
-        if sections == .userExercises && viewModel.userExercises.isEmpty {
+        if sections == .trackings && viewModel.trackings.isEmpty {
             return .leastNormalMagnitude
         } else {
             return 10
@@ -223,11 +211,11 @@ extension UserExercisesDetailController: UITableViewDelegate {
             fatalError(Strings.Errors.enumError)
         }
         switch sections {
-        case .userExercises:
+        case .trackings:
             let headerView: MealHeaderView = MealHeaderView.loadNib()
             headerView.data = viewModel.dataForHeaderView()
             return headerView
-        default:
+        case .information:
             let headerView: TitleCell = TitleCell.loadNib()
             headerView.data = TitleCell.Data(title: sections.title)
             return headerView.contentView
@@ -236,13 +224,12 @@ extension UserExercisesDetailController: UITableViewDelegate {
 }
 
 // MARK: - AddUserFoodCellDelegate
-extension UserExercisesDetailController: AddUserFoodCellDelegate {
+extension TrackingsDetailController: AddUserFoodCellDelegate {
     func cell(_ cell: AddUserFoodCell, needsPerformAction action: AddUserFoodCell.Action) {
         switch action {
         case .add:
-            let addActivityController = AddActivityController()
-            addActivityController.viewModel = AddActivityViewModel(activity: viewModel.activity)
-            navigationController?.pushViewController(addActivityController, animated: true)
+            let trackingController = TrackingController()
+            navigationController?.pushViewController(trackingController, animated: true)
         }
     }
 }

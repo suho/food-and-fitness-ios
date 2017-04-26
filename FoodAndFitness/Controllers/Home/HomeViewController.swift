@@ -159,8 +159,8 @@ extension HomeViewController: UITableViewDelegate {
                 userExercisesController.viewModel = UserExercisesDetailViewModel(activity: activity)
                 navigationController?.pushViewController(userExercisesController, animated: true)
             case .tracking:
-                let trackingController = TrackingController()
-                navigationController?.pushViewController(trackingController, animated: true)
+                let trackingsDetailController = TrackingsDetailController()
+                navigationController?.pushViewController(trackingsDetailController, animated: true)
             }
         }
     }
