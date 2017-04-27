@@ -65,10 +65,10 @@ extension SaveUserFoodCell: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
         guard let number = Int(text + string) else { return false }
-        updateCalories(withWeight: number)
         if number > SaveUserFoodCell.maxValue, string != Strings.empty {
             return false
         }
+        updateCalories(withWeight: number)
         return true
     }
 
