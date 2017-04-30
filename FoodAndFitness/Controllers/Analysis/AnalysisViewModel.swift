@@ -13,12 +13,10 @@ import SwiftDate
 
 class AnalysisViewModel {
 
-    var eatenCalories: [Int]
-    var burnedCalories: [Int]
+    var eatenCalories: [Int] = [Int]()
+    var burnedCalories: [Int] = [Int]()
 
     init() {
-        eatenCalories = [Int]()
-        burnedCalories = [Int]()
         let now = DateInRegion(absoluteDate: Date())
         for i in 0..<7 {
             let date = now - (7 - i).days

@@ -121,6 +121,12 @@
                     <constraint firstItem="YxO-gH-dKZ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tRN-Xb-cJv"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="caloriesLabel" destination="vaE-cS-hUP" id="ADA-dR-U5S"/>
+                <outlet property="carbsLabel" destination="ca5-0g-9g5" id="oU6-zy-vdG"/>
+                <outlet property="fatLabel" destination="bht-YY-m6v" id="Hd2-Wu-v4e"/>
+                <outlet property="proteinLabel" destination="qBa-4A-ZHW" id="xfC-J2-g6q"/>
+            </connections>
             <point key="canvasLocation" x="-221" y="87.5"/>
         </tableViewCell>
     </objects>
