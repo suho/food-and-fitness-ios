@@ -137,6 +137,8 @@ class CircleProgressView: UIView {
         if isAnimation {
             drawCircleAnimation(with: duration)
         }
+        setNeedsDisplay()
+        setNeedsLayout()
     }
 }
 

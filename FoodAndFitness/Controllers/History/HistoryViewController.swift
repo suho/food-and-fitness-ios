@@ -7,76 +7,184 @@
 //
 
 import UIKit
-import PureLayout
+import SwiftUtils
 
 final class HistoryViewController: BaseViewController {
-    @IBOutlet fileprivate(set) weak var contentView: UIView!
-    @IBOutlet fileprivate(set) weak var nutritionButton: UIButton!
-    @IBOutlet fileprivate(set) weak var fitnessButton: UIButton!
-    fileprivate var pageController: UIPageViewController!
-    lazy var nutritionController: UINavigationController = UINavigationController(rootViewController: NutritionHistoryController())
-    lazy var fitnessController: UINavigationController = UINavigationController(rootViewController: FitnessHistoryController())
+    @IBOutlet fileprivate(set) weak var tableView: TableView!
+    var viewModel: HistoryViewModel!
+
+    enum Sections: Int {
+        case progress
+        case breakfast
+        case lunch
+        case dinner
+        case userExercises
+        case trackings
+
+        static var count: Int {
+            return self.trackings.rawValue + 1
+        }
+
+        var title: String {
+            switch self {
+            case .progress:
+                return Strings.empty
+            case .breakfast:
+                return Strings.breakfast
+            case .lunch:
+                return Strings.lunch
+            case .dinner:
+                return Strings.dinner
+            case .userExercises:
+                return Strings.exercise
+            case .trackings:
+                return Strings.tracking
+            }
+        }
+
+        var heightForRow: CGFloat {
+            switch self {
+            case .progress:
+                return 200
+            default:
+                return 60
+            }
+        }
+
+        var heightForHeader: CGFloat {
+            switch self {
+            case .progress:
+                return 0
+            default:
+                return 50
+            }
+        }
+    }
 
     override func setupUI() {
         super.setupUI()
-        configurePageController()
+        configureTableView()
     }
 
-    private func configurePageController() {
-        pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        pageController.removeFromParentViewController()
-        addChildViewController(pageController)
-        contentView.removeAllSubviews()
-        contentView.addSubview(pageController.view)
-        pageController.dataSource = self
-        pageController.delegate = self
-        pageController.view.translatesAutoresizingMaskIntoConstraints = false
-        pageController.view.autoPinEdgesToSuperviewEdges()
-        pageController.setViewControllers([nutritionController], direction: .forward, animated: false, completion: nil)
+    private func configureTableView() {
+        tableView.register(ProgressCell.self)
+        tableView.register(UserFoodCell.self)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.tableFooterView = UIView()
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension HistoryViewController: UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return Sections.count
     }
 
-    fileprivate func changeStatusButton() {
-        nutritionButton.isSelected = !nutritionButton.isSelected
-        fitnessButton.isSelected = !fitnessButton.isSelected
-    }
-
-    @IBAction fileprivate func nutritionTabClicked(_ sender: Any) {
-        if !nutritionButton.isSelected {
-            changeStatusButton()
-            pageController.setViewControllers([nutritionController], direction: .reverse, animated: true, completion: nil)
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let sections = Sections(rawValue: section) else {
+            fatalError(Strings.Errors.enumError)
+        }
+        switch sections {
+        case .progress:
+            return 1
+        case .breakfast:
+            return viewModel.breakfastFoods.count
+        case .lunch:
+            return viewModel.lunchFoods.count
+        case .dinner:
+            return viewModel.dinnerFoods.count
+        case .userExercises:
+            return viewModel.userExercises.count
+        case .trackings:
+            return viewModel.trackings.count
         }
     }
 
-    @IBAction fileprivate func fitnessTabClicked(_ sender: Any) {
-        if !fitnessButton.isSelected {
-            changeStatusButton()
-            pageController.setViewControllers([fitnessController], direction: .forward, animated: true, completion: nil)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let sections = Sections(rawValue: indexPath.section) else {
+            fatalError(Strings.Errors.enumError)
+        }
+        switch sections {
+        case .progress:
+            let cell = tableView.dequeue(ProgressCell.self)
+            cell.data = viewModel.dataForProgressCell()
+            return cell
+        case .breakfast:
+            let cell = tableView.dequeue(UserFoodCell.self)
+            cell.accessoryType = .none
+            let userFood = viewModel.breakfastFoods[indexPath.row]
+            if let food = userFood.food {
+                cell.data = UserFoodCell.Data(title: food.name, detail: "\(food.calories)")
+            }
+            return cell
+        case .lunch:
+            let cell = tableView.dequeue(UserFoodCell.self)
+            cell.accessoryType = .none
+            let userFood = viewModel.lunchFoods[indexPath.row]
+            if let food = userFood.food {
+                cell.data = UserFoodCell.Data(title: food.name, detail: "\(food.calories)")
+            }
+            return cell
+        case .dinner:
+            let cell = tableView.dequeue(UserFoodCell.self)
+            cell.accessoryType = .none
+            let userFood = viewModel.dinnerFoods[indexPath.row]
+            if let food = userFood.food {
+                cell.data = UserFoodCell.Data(title: food.name, detail: "\(food.calories)")
+            }
+            return cell
+        case .userExercises:
+            let cell = tableView.dequeue(UserFoodCell.self)
+            cell.accessoryType = .none
+            let userExercise = viewModel.userExercises[indexPath.row]
+            if let exercise = userExercise.exercise {
+                cell.data = UserFoodCell.Data(title: exercise.name, detail: "\(exercise.calories)")
+            }
+            return cell
+        case .trackings:
+            let cell = tableView.dequeue(UserFoodCell.self)
+            cell.accessoryType = .none
+            let tracking = viewModel.trackings[indexPath.row]
+            cell.data = UserFoodCell.Data(title: tracking.active, detail: "\(tracking.caloriesBurn)")
+            return cell
         }
     }
 }
 
-// MARK: - UIPageViewControllerDataSource
-extension HistoryViewController: UIPageViewControllerDataSource {
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        if let navi = viewController as? UINavigationController, let _ = navi.visibleViewController as? FitnessHistoryController {
-            return nutritionController
+// MARK: - UITableViewDelegate
+extension HistoryViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        guard let sections = Sections(rawValue: section) else {
+            fatalError(Strings.Errors.enumError)
         }
-        return nil
+        return sections.heightForHeader
     }
 
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        if let navi = viewController as? UINavigationController, let _ = navi.visibleViewController as? NutritionHistoryController {
-            return fitnessController
-        }
-        return nil
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
     }
-}
 
-// MARK: - UIPageViewControllerDelegate
-extension HistoryViewController: UIPageViewControllerDelegate {
-    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        if completed {
-            changeStatusButton()
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let sections = Sections(rawValue: section) else {
+            fatalError(Strings.Errors.enumError)
         }
+        switch sections {
+        case .progress:
+            return nil
+        default:
+            let headerView: TitleCell = TitleCell.loadNib()
+            headerView.data = TitleCell.Data(title: sections.title)
+            return headerView.contentView
+        }
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let sections = Sections(rawValue: indexPath.section) else {
+            fatalError(Strings.Errors.enumError)
+        }
+        return sections.heightForRow
     }
 }

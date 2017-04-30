@@ -31,8 +31,6 @@ final class ProgressCell: BaseTableViewCell {
             guard let data = data else { return }
             progressView.maxValue = CGFloat(data.calories)
             progressView.setValue(CGFloat(data.eaten))
-            progressView.setNeedsDisplay()
-            progressView.setNeedsLayout()
             caloriesLabel.text = "\(data.calories - data.eaten)"
             eatenLabel.text = "\(data.eaten)"
             burnLabel.text = "\(data.burn)"

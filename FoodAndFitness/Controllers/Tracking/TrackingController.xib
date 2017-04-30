@@ -50,7 +50,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cycling" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgl-Bn-e5Y">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Walking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgl-Bn-e5Y">
                             <rect key="frame" x="91" y="41.5" width="276" height="25.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -100,7 +100,7 @@
                 <constraint firstAttribute="trailing" secondItem="aJb-NP-zp4" secondAttribute="trailing" id="iqO-Ql-TES"/>
                 <constraint firstAttribute="trailing" secondItem="mfM-IR-dkr" secondAttribute="trailing" id="uLu-eZ-VOc"/>
             </constraints>
-            <point key="canvasLocation" x="-82.5" y="56.5"/>
+            <point key="canvasLocation" x="-508" y="34"/>
         </view>
     </objects>
 </document>

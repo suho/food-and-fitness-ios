@@ -12,7 +12,7 @@ import SwiftDate
 
 final class CalendarController: RootSideMenuViewController {
     @IBOutlet fileprivate(set) weak var calendar: FSCalendar!
-    var currentCell: FSCalendarCell?
+    lazy var viewModel: CalendarViewModel = CalendarViewModel()
 
     override func setupUI() {
         super.setupUI()
@@ -32,20 +32,24 @@ final class CalendarController: RootSideMenuViewController {
     }
 
     fileprivate func rightButtonEnabled() {
-        if let numberOfEvents = currentCell?.numberOfEvents, numberOfEvents > 0 {
-            navigationItem.rightBarButtonItem?.isEnabled = true
-        } else {
+        guard let selectedCell = viewModel.selectedCell else {
             navigationItem.rightBarButtonItem?.isEnabled = false
+            return
         }
+        navigationItem.rightBarButtonItem?.isEnabled = selectedCell.numberOfEvents > 0
     }
 
     @objc private func gotoHistory() {
-        if let numberOfEvents = currentCell?.numberOfEvents, numberOfEvents > 0 {
-            let historyViewController = HistoryViewController()
-            navigationController?.pushViewController(historyViewController, animated: true)
-        } else {
+        guard let selectedCell = viewModel.selectedCell, let selectedDate = viewModel.selectedDate else {
             let error = NSError(message: Strings.Errors.noHistory)
             error.show()
+            return
+        }
+        let numberOfEvents = selectedCell.numberOfEvents
+        if numberOfEvents > 0 {
+            let historyViewController = HistoryViewController()
+            historyViewController.viewModel = HistoryViewModel(date: selectedDate)
+            navigationController?.pushViewController(historyViewController, animated: true)
         }
     }
 }
@@ -53,17 +57,20 @@ final class CalendarController: RootSideMenuViewController {
 // MARK: - FSCalendarDataSource
 extension CalendarController: FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-        if date.ffDate().day % 4 == 0 && date.ffDate() < DateInRegion() {
+//        if !date.isToday && viewModel.didHaveEvents(forDate: date) {
+        if viewModel.didHaveEvents(forDate: date) {
             return 1
+        } else {
+            return 0
         }
-        return 0
     }
 }
 
 // MARK: - FSCalendarDelegate
 extension CalendarController: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        currentCell = calendar.cell(for: date, at: monthPosition)
+        viewModel.selectedCell = calendar.cell(for: date, at: monthPosition)
+        viewModel.selectedDate = date
         rightButtonEnabled()
     }
 }

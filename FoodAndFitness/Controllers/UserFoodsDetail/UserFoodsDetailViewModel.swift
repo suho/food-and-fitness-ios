@@ -20,7 +20,7 @@ final class UserFoodsDetailViewModel {
     var activity: HomeViewController.AddActivity
     var userFoods: [UserFood] {
         return _userFoods.filter({ (userFood) -> Bool in
-            guard let me = User.me, let user = userFood.user else { return false }
+            guard let me = User.me, let user = userFood.userHistory?.user else { return false }
             return userFood.createdAt.isToday && me.id == user.id && userFood.meal == activity.title
         })
     }

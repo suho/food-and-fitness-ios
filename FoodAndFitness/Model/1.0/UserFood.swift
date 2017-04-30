@@ -13,7 +13,7 @@ import RealmS
 final class UserFood: Object, Mappable {
 
     private(set) dynamic var id = 0
-    dynamic var user: User?
+    dynamic var userHistory: UserHistory?
     dynamic var food: Food?
     dynamic var weight: Int = 0
     dynamic var meal: String = ""
@@ -31,7 +31,7 @@ final class UserFood: Object, Mappable {
 
     func mapping(map: Map) {
         food <- map["food"]
-        user <- map["user"]
+        userHistory <- map["user_history"]
         weight <- map["weight"]
         createdAt <- map["created_at"]
         meal <- map["meal"]
