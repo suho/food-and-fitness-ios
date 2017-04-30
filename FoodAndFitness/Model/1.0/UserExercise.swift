@@ -12,7 +12,7 @@ import RealmS
 final class UserExercise: Object, Mappable {
 
     private(set) dynamic var id = 0
-    private(set) dynamic var user: User?
+    dynamic var userHistory: UserHistory?
     private(set) dynamic var exercise: Exercise?
     private(set) dynamic var duration: Int = 0
     private(set) dynamic var createdAt: Date = Date()
@@ -28,7 +28,7 @@ final class UserExercise: Object, Mappable {
     }
 
     func mapping(map: Map) {
-        user <- map["user"]
+        userHistory <- map["user_history"]
         exercise <- map["exercise"]
         duration <- map["duration"]
         createdAt <- map["created_at"]

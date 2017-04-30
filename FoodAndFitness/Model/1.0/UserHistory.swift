@@ -9,6 +9,7 @@
 import RealmSwift
 import ObjectMapper
 import RealmS
+import SwiftDate
 
 final class UserHistory: Object, Mappable {
 
@@ -40,5 +41,40 @@ final class UserHistory: Object, Mappable {
     }
 }
 
-// MARK: - Utils
-extension UserHistory {}
+// MARK: - For Nutrition
+extension UserHistory {
+    var age: Int {
+        guard let user = user else { return NSNotFound }
+        let now = DateInRegion(absoluteDate: Date()).year
+        let birthdayYear = DateInRegion(absoluteDate: user.birthday).year
+        return now - birthdayYear
+    }
+
+    var caloriesToday: Double {
+        guard let user = user,
+            let goal = goal, let active = active,
+            let goals = Goals(rawValue: goal.id),
+            let actives = Actives(rawValue: active.id) else {
+                return 0
+        }
+        var bmrValue = bmr(weight: weight, height: height, age: age, gender: user.gender)
+        switch goals {
+        case .beHealthier: break
+        case .loseWeight:
+            bmrValue -= 500
+        case .gainWeight:
+            bmrValue += 500
+        }
+        switch actives {
+        case .sedentary:
+            bmrValue *= 1.2
+        case .lightlyActive:
+            bmrValue *= 1.4
+        case .modertelyActive:
+            bmrValue *= 1.6
+        case .veryActive:
+            bmrValue *= 1.8
+        }
+        return bmrValue
+    }
+}

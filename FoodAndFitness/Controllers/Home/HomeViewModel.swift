@@ -21,20 +21,20 @@ final class HomeViewModel {
     private let _trackings: Results<Tracking>
     private var userFoods: [UserFood] {
         return _userFoods.filter({ (userFood) -> Bool in
-            guard let me = User.me, let user = userFood.user else { return false }
+            guard let me = User.me, let user = userFood.userHistory?.user else { return false }
             return userFood.createdAt.isToday && me.id == user.id && userFood.meal.isNotEmpty
         })
     }
     private var userExercises: [UserExercise] {
         return _userExercises.filter({ (userExercise) -> Bool in
-            guard let me = User.me, let user = userExercise.user else { return false }
+            guard let me = User.me, let user = userExercise.userHistory?.user else { return false }
             return userExercise.createdAt.isToday && me.id == user.id
         })
     }
 
     private var trackings: [Tracking] {
         return _trackings.filter({ (tracking) -> Bool in
-            guard let me = User.me, let user = tracking.user else { return false }
+            guard let me = User.me, let user = tracking.userHistory?.user else { return false }
             return tracking.createdAt.isToday && me.id == user.id
         })
     }

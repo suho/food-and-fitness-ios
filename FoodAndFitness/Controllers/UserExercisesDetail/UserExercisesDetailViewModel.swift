@@ -19,7 +19,9 @@ final class UserExercisesDetailViewModel {
     var activity: HomeViewController.AddActivity
     var userExercises: [UserExercise] {
         return _userExercises.filter({ (userExercise) -> Bool in
-            guard let me = User.me, let user = userExercise.user else { return false }
+            guard let me = User.me,
+                let userHistory = userExercise.userHistory,
+                let user = userHistory.user else { return false }
             return userExercise.createdAt.isToday && me.id == user.id
         })
     }

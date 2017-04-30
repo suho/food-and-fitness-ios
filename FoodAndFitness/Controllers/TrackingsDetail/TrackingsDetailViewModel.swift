@@ -19,7 +19,7 @@ final class TrackingsDetailViewModel {
     var activity: HomeViewController.AddActivity
     var trackings: [Tracking] {
         return _trackings.filter({ (tracking) -> Bool in
-            guard let me = User.me, let user = tracking.user else { return false }
+            guard let me = User.me, let user = tracking.userHistory?.user else { return false }
             return tracking.createdAt.isToday && me.id == user.id
         })
     }

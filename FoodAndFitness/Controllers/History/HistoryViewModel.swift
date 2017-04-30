@@ -18,12 +18,14 @@ class HistoryViewModel {
     let dinnerFoods: [UserFood]
     let userExercises: [UserExercise]
     let trackings: [Tracking]
+    let date: Date
     fileprivate let userFoods: [UserFood]
 
     init(date: Date) {
+        self.date = date
         let realm = RealmS()
         userFoods = realm.objects(UserFood.self).filter { (userFood) -> Bool in
-            guard let me = User.me, let user = userFood.user else { return false }
+            guard let me = User.me, let user = userFood.userHistory?.user else { return false }
             return me.id == user.id && userFood.createdAt.isInSameDayOf(date: date)
         }
         breakfastFoods = userFoods.filter({ (userFood) -> Bool in
@@ -36,20 +38,24 @@ class HistoryViewModel {
             return userFood.meal == HomeViewController.AddActivity.dinner.title
         })
         userExercises = realm.objects(UserExercise.self).filter({ (userExercise) -> Bool in
-            guard let me = User.me, let user = userExercise.user else { return false }
+            guard let me = User.me, let user = userExercise.userHistory?.user else { return false }
             return me.id == user.id && userExercise.createdAt.isInSameDayOf(date: date)
         })
         trackings = realm.objects(Tracking.self).filter { (tracking) -> Bool in
-            guard let me = User.me, let user = tracking.user else { return false }
+            guard let me = User.me, let user = tracking.userHistory?.user else { return false }
             return me.id == user.id && tracking.createdAt.isInSameDayOf(date: date)
         }
     }
 
     func dataForProgressCell() -> ProgressCell.Data? {
-        guard let user = User.me else { return nil }
+        guard let userHistory = RealmS().objects(UserHistory.self).filter({ (userHistory) -> Bool in
+            let userHistoryDate = DateInRegion(absoluteDate: userHistory.createdAt)
+            let historyDate = DateInRegion(absoluteDate: self.date)
+            return userHistoryDate <= historyDate
+        }).last else { return nil }
         var eaten = eatenToday()
         let burn = burnToday()
-        let calories = user.caloriesToday + Double(burn)
+        let calories = userHistory.caloriesToday + Double(burn)
         if Int(calories) - eaten < 0 {
             eaten = Int(calories)
         }
