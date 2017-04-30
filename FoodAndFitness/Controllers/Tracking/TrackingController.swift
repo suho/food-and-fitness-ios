@@ -58,6 +58,7 @@ final class TrackingController: BaseViewController {
     // MARK: - Private Functions
     private func configureMapView() {
         mapView.delegate = self
+        mapView.showsUserLocation = true
     }
 
     private func configureTimer() {
@@ -128,6 +129,7 @@ extension TrackingController: ChooseActiveTrackingControllerDelegate {
         switch action {
         case .dismiss(let active):
             activeLabel.text = active.title
+            viewModel.active = active
         }
     }
 }

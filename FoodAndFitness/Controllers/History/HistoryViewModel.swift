@@ -49,8 +49,8 @@ class HistoryViewModel {
 
     func dataForProgressCell() -> ProgressCell.Data? {
         guard let userHistory = RealmS().objects(UserHistory.self).filter({ (userHistory) -> Bool in
-            let userHistoryDate = DateInRegion(absoluteDate: userHistory.createdAt)
-            let historyDate = DateInRegion(absoluteDate: self.date)
+            let userHistoryDate = DateInRegion(absoluteDate: userHistory.createdAt).ffDate()
+            let historyDate = DateInRegion(absoluteDate: self.date).ffDate()
             return userHistoryDate <= historyDate
         }).last else { return nil }
         var eaten = eatenToday()

@@ -10,9 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnalysisViewController" customModule="FoodAndFitness" customModuleProvider="target">
             <connections>
-                <outlet property="contentView" destination="der-1q-QVI" id="TQr-2W-gQ8"/>
-                <outlet property="fitnessButton" destination="epc-Ab-zXh" id="aW2-er-g9u"/>
-                <outlet property="nutritionButton" destination="mW2-jJ-Tln" id="kb0-hp-ll4"/>
+                <outlet property="tableView" destination="0j7-qJ-mk5" id="R2h-Z6-V3k"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,52 +19,17 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="der-1q-QVI">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0j7-qJ-mk5" customClass="TableView" customModule="SwiftUtils">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Req-e4-6AP">
-                    <rect key="frame" x="0.0" y="603" width="375" height="64"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mW2-jJ-Tln">
-                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="64"/>
-                            <state key="normal" title="Nutrition"/>
-                            <connections>
-                                <action selector="nutritionTabClicked:" destination="-1" eventType="touchUpInside" id="Kan-cX-UX5"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epc-Ab-zXh">
-                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="64"/>
-                            <state key="normal" title="Fitness"/>
-                            <connections>
-                                <action selector="fitnessTabClicked:" destination="-1" eventType="touchUpInside" id="Yse-Ex-i6K"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <constraints>
-                        <constraint firstItem="epc-Ab-zXh" firstAttribute="centerY" secondItem="Req-e4-6AP" secondAttribute="centerY" id="DAH-aq-mny"/>
-                        <constraint firstAttribute="bottom" secondItem="mW2-jJ-Tln" secondAttribute="bottom" id="FVp-mC-MBH"/>
-                        <constraint firstItem="epc-Ab-zXh" firstAttribute="width" secondItem="mW2-jJ-Tln" secondAttribute="width" id="Mcq-IF-9nI"/>
-                        <constraint firstItem="mW2-jJ-Tln" firstAttribute="centerY" secondItem="Req-e4-6AP" secondAttribute="centerY" id="Oez-8Y-It8"/>
-                        <constraint firstAttribute="bottom" secondItem="epc-Ab-zXh" secondAttribute="bottom" id="Qip-rc-BdO"/>
-                        <constraint firstAttribute="height" constant="64" id="T60-iZ-Kxl"/>
-                        <constraint firstItem="epc-Ab-zXh" firstAttribute="leading" secondItem="mW2-jJ-Tln" secondAttribute="trailing" id="eVu-bl-I8v"/>
-                        <constraint firstItem="mW2-jJ-Tln" firstAttribute="top" secondItem="Req-e4-6AP" secondAttribute="top" id="hJ0-gu-2m0"/>
-                        <constraint firstItem="mW2-jJ-Tln" firstAttribute="leading" secondItem="Req-e4-6AP" secondAttribute="leading" id="oc4-JO-n7N"/>
-                        <constraint firstItem="epc-Ab-zXh" firstAttribute="top" secondItem="Req-e4-6AP" secondAttribute="top" id="otE-MF-aBO"/>
-                        <constraint firstAttribute="trailing" secondItem="epc-Ab-zXh" secondAttribute="trailing" id="vnP-iT-BNb"/>
-                    </constraints>
-                </view>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Req-e4-6AP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BLe-aC-2mh"/>
-                <constraint firstItem="der-1q-QVI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="G5L-rJ-r0s"/>
-                <constraint firstItem="Req-e4-6AP" firstAttribute="top" secondItem="der-1q-QVI" secondAttribute="bottom" id="JTG-45-4oA"/>
-                <constraint firstItem="der-1q-QVI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RRp-bb-8FH"/>
-                <constraint firstAttribute="trailing" secondItem="der-1q-QVI" secondAttribute="trailing" id="ViO-oL-tCh"/>
-                <constraint firstAttribute="trailing" secondItem="Req-e4-6AP" secondAttribute="trailing" id="tNP-It-01s"/>
-                <constraint firstAttribute="bottom" secondItem="Req-e4-6AP" secondAttribute="bottom" id="zW1-ET-b4I"/>
+                <constraint firstItem="0j7-qJ-mk5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="C56-HG-0S0"/>
+                <constraint firstAttribute="bottom" secondItem="0j7-qJ-mk5" secondAttribute="bottom" id="Rw0-Cn-eRW"/>
+                <constraint firstItem="0j7-qJ-mk5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cVa-L9-A8Y"/>
+                <constraint firstAttribute="trailing" secondItem="0j7-qJ-mk5" secondAttribute="trailing" id="wFM-Qc-y8u"/>
             </constraints>
         </view>
     </objects>

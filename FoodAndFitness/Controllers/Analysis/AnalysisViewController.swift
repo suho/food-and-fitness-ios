@@ -7,76 +7,71 @@
 //
 
 import UIKit
-import PureLayout
+import SwiftDate
+import SwiftUtils
 
 final class AnalysisViewController: RootSideMenuViewController {
-    @IBOutlet fileprivate(set) weak var contentView: UIView!
-    @IBOutlet fileprivate(set) weak var nutritionButton: UIButton!
-    @IBOutlet fileprivate(set) weak var fitnessButton: UIButton!
-    fileprivate var pageController: UIPageViewController!
-    lazy var nutritionController: UINavigationController = UINavigationController(rootViewController: NutritionAnalysisController())
-    lazy var fitnessController: UINavigationController = UINavigationController(rootViewController: FitnessAnalysisController())
+    @IBOutlet fileprivate(set) weak var tableView: TableView!
+    var viewModel: AnalysisViewModel = AnalysisViewModel()
+
+    enum Rows: Int {
+        case barChart
+        case nutrition
+        case fitness
+
+        static var count: Int {
+            return self.fitness.rawValue - 1
+        }
+
+        var heightForRow: CGFloat {
+            switch self {
+            case .barChart:
+                return 400
+            case .nutrition:
+                return 100
+            case .fitness:
+                return 100
+            }
+        }
+    }
 
     override func setupUI() {
         super.setupUI()
-        configurePageController()
+        configureTableView()
     }
 
-    private func configurePageController() {
-        pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        pageController.removeFromParentViewController()
-        addChildViewController(pageController)
-        contentView.removeAllSubviews()
-        contentView.addSubview(pageController.view)
-        pageController.dataSource = self
-        pageController.delegate = self
-        pageController.view.translatesAutoresizingMaskIntoConstraints = false
-        pageController.view.autoPinEdgesToSuperviewEdges()
-        pageController.setViewControllers([nutritionController], direction: .forward, animated: false, completion: nil)
+    private func configureTableView() {
+        tableView.register(ChartViewCell.self)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.tableFooterView = UIView()
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension AnalysisViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Rows.count
     }
 
-    fileprivate func changeStatusButton() {
-        nutritionButton.isSelected = !nutritionButton.isSelected
-        fitnessButton.isSelected = !fitnessButton.isSelected
-    }
-
-    @IBAction fileprivate func nutritionTabClicked(_ sender: Any) {
-        if !nutritionButton.isSelected {
-            changeStatusButton()
-            pageController.setViewControllers([nutritionController], direction: .reverse, animated: true, completion: nil)
-        }
-    }
-
-    @IBAction fileprivate func fitnessTabClicked(_ sender: Any) {
-        if !fitnessButton.isSelected {
-            changeStatusButton()
-            pageController.setViewControllers([fitnessController], direction: .forward, animated: true, completion: nil)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let rows = Rows(rawValue: indexPath.row) else { fatalError(Strings.Errors.enumError) }
+        switch rows {
+        case .barChart:
+            let cell = tableView.dequeue(ChartViewCell.self)
+            cell.data = viewModel.dataForChartView()
+            return cell
+        default:
+            return UITableViewCell()
         }
     }
 }
 
-// MARK: - UIPageViewControllerDataSource
-extension AnalysisViewController: UIPageViewControllerDataSource {
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        if let navi = viewController as? UINavigationController, let _ = navi.visibleViewController as? FitnessAnalysisController {
-            return nutritionController
-        }
-        return nil
-    }
-
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        if let navi = viewController as? UINavigationController, let _ = navi.visibleViewController as? NutritionAnalysisController {
-            return fitnessController
-        }
-        return nil
-    }
-}
-
-// MARK: - UIPageViewControllerDelegate
-extension AnalysisViewController: UIPageViewControllerDelegate {
-    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        if completed {
-            changeStatusButton()
-        }
+// MARK: - UITableViewDelegate
+extension AnalysisViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let rows = Rows(rawValue: indexPath.row) else { fatalError(Strings.Errors.enumError) }
+        return rows.heightForRow
     }
 }

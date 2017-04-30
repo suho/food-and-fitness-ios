@@ -57,7 +57,8 @@ final class CalendarController: RootSideMenuViewController {
 // MARK: - FSCalendarDataSource
 extension CalendarController: FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-        if !date.isToday && viewModel.didHaveEvents(forDate: date) {
+//        if !date.isToday && viewModel.didHaveEvents(forDate: date) {
+        if viewModel.didHaveEvents(forDate: date) {
             return 1
         } else {
             return 0

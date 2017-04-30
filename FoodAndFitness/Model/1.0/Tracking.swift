@@ -50,7 +50,11 @@ extension Tracking {
         guard let userHistory = userHistory else { return 0 }
         let bmr = userHistory.caloriesToday
         let activeTracking = ActiveTracking.active(title: active)
-        return caloriesBurned(bmr: bmr, velocity: velocity, active: activeTracking, duration: Double(duration) / 3600)
+        let burned = caloriesBurned(bmr: bmr, velocity: velocity, active: activeTracking, duration: Double(duration) / 3600)
+        if burned == 0 {
+            return 1
+        }
+        return burned
     }
 }
 

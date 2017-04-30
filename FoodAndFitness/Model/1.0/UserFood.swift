@@ -31,7 +31,7 @@ final class UserFood: Object, Mappable {
 
     func mapping(map: Map) {
         food <- map["food"]
-        userHistory <- map["user"]
+        userHistory <- map["user_history"]
         weight <- map["weight"]
         createdAt <- map["created_at"]
         meal <- map["meal"]

@@ -99,7 +99,12 @@ final class TrackingsDetailViewModel {
         case .calories:
             detail = "\(value) \(Strings.kilocalories)"
         case .duration:
-            detail = "\(value) \(Strings.minute)"
+            let minutes = value.toMinutes
+            if minutes >= 1 {
+                detail = "\(value.toMinutes) \(Strings.minute)"
+            } else {
+                detail = "\(value) \(Strings.seconds)"
+            }
         case .distance:
             detail = "\(value) \(Strings.metters)"
         }
