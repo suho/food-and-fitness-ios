@@ -142,6 +142,8 @@
 		99D925231E99E1DB008150EE /* ChooseGoalsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99D925211E99E1DB008150EE /* ChooseGoalsController.xib */; };
 		99F4259E1EB66E8B00D12D22 /* AnalysisNutritionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F4259C1EB66E8B00D12D22 /* AnalysisNutritionCell.swift */; };
 		99F4259F1EB66E8B00D12D22 /* AnalysisNutritionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F4259D1EB66E8B00D12D22 /* AnalysisNutritionCell.xib */; };
+		99F425A21EB6D69100D12D22 /* AnalysisFitnessCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F425A01EB6D69100D12D22 /* AnalysisFitnessCell.swift */; };
+		99F425A31EB6D69100D12D22 /* AnalysisFitnessCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F425A11EB6D69100D12D22 /* AnalysisFitnessCell.xib */; };
 		99FF78801EA21E1B0014EF72 /* SplashScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FF787E1EA21E1B0014EF72 /* SplashScreenController.swift */; };
 		99FF78811EA21E1B0014EF72 /* SplashScreenController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99FF787F1EA21E1B0014EF72 /* SplashScreenController.xib */; };
 		99FF78891EA22BD40014EF72 /* FoodDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FF78871EA22BD40014EF72 /* FoodDetailController.swift */; };
@@ -295,6 +297,8 @@
 		99D925211E99E1DB008150EE /* ChooseGoalsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseGoalsController.xib; sourceTree = "<group>"; };
 		99F4259C1EB66E8B00D12D22 /* AnalysisNutritionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisNutritionCell.swift; sourceTree = "<group>"; };
 		99F4259D1EB66E8B00D12D22 /* AnalysisNutritionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalysisNutritionCell.xib; sourceTree = "<group>"; };
+		99F425A01EB6D69100D12D22 /* AnalysisFitnessCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisFitnessCell.swift; sourceTree = "<group>"; };
+		99F425A11EB6D69100D12D22 /* AnalysisFitnessCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnalysisFitnessCell.xib; sourceTree = "<group>"; };
 		99FF787E1EA21E1B0014EF72 /* SplashScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenController.swift; sourceTree = "<group>"; };
 		99FF787F1EA21E1B0014EF72 /* SplashScreenController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashScreenController.xib; sourceTree = "<group>"; };
 		99FF78871EA22BD40014EF72 /* FoodDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDetailController.swift; sourceTree = "<group>"; };
@@ -597,6 +601,8 @@
 		994E90021EB5EC320029EB8F /* FitnessCell */ = {
 			isa = PBXGroup;
 			children = (
+				99F425A01EB6D69100D12D22 /* AnalysisFitnessCell.swift */,
+				99F425A11EB6D69100D12D22 /* AnalysisFitnessCell.xib */,
 			);
 			path = FitnessCell;
 			sourceTree = "<group>";
@@ -1178,6 +1184,7 @@
 				991DF82D1EAC91700023D099 /* UserFoodCell.xib in Resources */,
 				99BF6F8F1E77F67D00FD743F /* LaunchScreen.storyboard in Resources */,
 				99FF78811EA21E1B0014EF72 /* SplashScreenController.xib in Resources */,
+				99F425A31EB6D69100D12D22 /* AnalysisFitnessCell.xib in Resources */,
 				99D925231E99E1DB008150EE /* ChooseGoalsController.xib in Resources */,
 				993F22E11EA60FB90078D51D /* MealHeaderView.xib in Resources */,
 				99FF788A1EA22BD40014EF72 /* FoodDetailController.xib in Resources */,
@@ -1351,6 +1358,7 @@
 				99536AB01EA049CE00FF0BF2 /* UITextField.swift in Sources */,
 				99BF6F921E77F67D00FD743F /* SwiftDate.swift in Sources */,
 				999C40511E94D72F0059E870 /* RadioCell.swift in Sources */,
+				99F425A21EB6D69100D12D22 /* AnalysisFitnessCell.swift in Sources */,
 				99BF6F9A1E77F67D00FD743F /* Session.swift in Sources */,
 				99FF788C1EA22CBD0014EF72 /* FoodDetailViewModel.swift in Sources */,
 				99CC4D041E9AB05D000EE59E /* ChooseGoalsViewModel.swift in Sources */,

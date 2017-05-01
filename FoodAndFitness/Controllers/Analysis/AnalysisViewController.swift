@@ -20,7 +20,7 @@ final class AnalysisViewController: RootSideMenuViewController {
         case fitness
 
         static var count: Int {
-            return self.fitness.rawValue - 1
+            return self.fitness.rawValue + 1
         }
 
         var heightForRow: CGFloat {
@@ -28,7 +28,7 @@ final class AnalysisViewController: RootSideMenuViewController {
             case .barChart:
                 return 400
             case .nutrition:
-                return 100
+                return 115
             case .fitness:
                 return 100
             }
@@ -41,6 +41,8 @@ final class AnalysisViewController: RootSideMenuViewController {
     }
 
     private func configureTableView() {
+        tableView.register(AnalysisNutritionCell.self)
+        tableView.register(AnalysisFitnessCell.self)
         tableView.register(ChartViewCell.self)
         tableView.delegate = self
         tableView.dataSource = self
@@ -62,8 +64,14 @@ extension AnalysisViewController: UITableViewDataSource {
             let cell = tableView.dequeue(ChartViewCell.self)
             cell.data = viewModel.dataForChartView()
             return cell
-        default:
-            return UITableViewCell()
+        case .nutrition:
+            let cell = tableView.dequeue(AnalysisNutritionCell.self)
+            cell.data = viewModel.dataForNutritionCell()
+            return cell
+        case .fitness:
+            let cell = tableView.dequeue(AnalysisFitnessCell.self)
+            cell.data = viewModel.dataForFitnessCell()
+            return cell
         }
     }
 }

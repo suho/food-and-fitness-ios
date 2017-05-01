@@ -147,7 +147,7 @@ extension HistoryViewController: UITableViewDataSource {
             let cell = tableView.dequeue(UserFoodCell.self)
             cell.accessoryType = .none
             let tracking = viewModel.trackings[indexPath.row]
-            cell.data = UserFoodCell.Data(title: tracking.active, detail: "\(tracking.caloriesBurn)")
+            cell.data = UserFoodCell.Data(title: tracking.active, detail: "\(tracking.caloriesBurn) - \(tracking.distance) - \(tracking.duration)")
             return cell
         }
     }

@@ -38,7 +38,6 @@ final class ApiManager {
     }
 
     func logout() {
-        cleanDatabase()
         session.reset()
     }
 }
