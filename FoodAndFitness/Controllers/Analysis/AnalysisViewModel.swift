@@ -13,17 +13,26 @@ import SwiftDate
 
 class AnalysisViewModel {
 
-    var eatenCalories: [Int] = [Int]()
-    var burnedCalories: [Int] = [Int]()
+    private var eatenCalories: [Int] = [Int]()
+    private var burnedCalories: [Int] = [Int]()
+    private var proteins: [Int] = [Int]()
+    private var carbs: [Int] = [Int]()
+    private var fat: [Int] = [Int]()
 
     init() {
         let now = DateInRegion(absoluteDate: Date())
         for i in 0..<7 {
             let date = now - (7 - i).days
-            let eaten = AnalysisViewModel.eatenCalories(at: date.absoluteDate)
+            let eaten = AnalysisViewModel.nutritionValue(at: date.absoluteDate, type: .calories)
             let burned = AnalysisViewModel.burnedCalories(at: date.absoluteDate)
+            let protein = AnalysisViewModel.nutritionValue(at: date.absoluteDate, type: .protein)
+            let carbs = AnalysisViewModel.nutritionValue(at: date.absoluteDate, type: .carbs)
+            let fat = AnalysisViewModel.nutritionValue(at: date.absoluteDate, type: .fat)
             self.eatenCalories.append(eaten)
             self.burnedCalories.append(burned)
+            self.proteins.append(protein)
+            self.carbs.append(carbs)
+            self.fat.append(fat)
         }
     }
 
@@ -31,17 +40,33 @@ class AnalysisViewModel {
         return ChartViewCell.Data(eatenCalories: eatenCalories, burnedCalories: burnedCalories)
     }
 
-    private class func eatenCalories(at date: Date) -> Int {
+    private enum FoodNutritionType {
+        case calories
+        case protein
+        case carbs
+        case fat
+    }
+
+    private class func nutritionValue(at date: Date, type: FoodNutritionType) -> Int {
         let userFoods = RealmS().objects(UserFood.self).filter { (userFood) -> Bool in
             guard let me = User.me, let user = userFood.userHistory?.user else { return false }
             return me.id == user.id && userFood.createdAt.isInSameDayOf(date: date)
         }
-        let eaten = userFoods.map { (userFood) -> Int in
-            return userFood.calories
-        }.reduce(0) { (result, calories) -> Int in
-            return result + calories
+        let value = userFoods.map { (userFood) -> Int in
+            switch type {
+            case .calories:
+                return userFood.calories
+            case .protein:
+                return userFood.protein
+            case .carbs:
+                return userFood.carbs
+            case .fat:
+                return userFood.fat
+            }
+        }.reduce(0) { (result, protein) -> Int in
+            return result + protein
         }
-        return eaten
+        return value
     }
 
     private class func burnedCalories(at date: Date) -> Int {
