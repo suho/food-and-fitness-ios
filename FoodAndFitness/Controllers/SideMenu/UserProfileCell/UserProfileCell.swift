@@ -34,11 +34,7 @@ final class UserProfileCell: BaseTableViewCell {
     var data: Data? {
         didSet {
             guard let data = data else { return }
-            if let url = data.avatarUrl {
-                avatarImageView.sd_setImage(with: URL(string: url), placeholderImage: #imageLiteral(resourceName: "img_avatar_default"))
-            } else {
-                avatarImageView.image = #imageLiteral(resourceName: "img_avatar_default")
-            }
+            avatarImageView.set(path: data.avatarUrl)
             userNameLabel.text = data.userName
             bmiLabel.attributedText = attributeText(bmi: data.bmi, status: data.status)
         }

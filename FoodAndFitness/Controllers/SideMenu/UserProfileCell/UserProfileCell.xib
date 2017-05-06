@@ -108,7 +108,7 @@
                 <outlet property="bmiLabel" destination="bX5-P4-fUH" id="Usp-53-krw"/>
                 <outlet property="userNameLabel" destination="7lg-Pa-AjB" id="Vw5-eO-1ap"/>
             </connections>
-            <point key="canvasLocation" x="-1094" y="-492.5"/>
+            <point key="canvasLocation" x="-1212" y="-571"/>
         </tableViewCell>
     </objects>
     <resources>
