@@ -22,6 +22,14 @@ final class FoodServices {
     }
 
     @discardableResult
+    class func get(completion: @escaping Completion) -> Request? {
+        let path = ApiPath.userFoods
+        return ApiManager.request(method: .get, urlString: path, completion: { (result) in
+            Mapper<UserFood>().map(result: result, type: .array, completion: completion)
+        })
+    }
+
+    @discardableResult
     class func save(params: UserFoodParams, completion: @escaping Completion) -> Request? {
         let path = ApiPath.userFoods
         let parameters: JSObject = [

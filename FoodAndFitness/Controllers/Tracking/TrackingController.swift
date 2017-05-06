@@ -14,6 +14,7 @@ import HealthKit
 final class TrackingController: BaseViewController {
     @IBOutlet fileprivate(set) weak var mapView: MKMapView!
     @IBOutlet fileprivate(set) weak var activeLabel: UILabel!
+    @IBOutlet fileprivate(set) weak var imageView: UIImageView!
     var viewModel: TrackingViewModel = TrackingViewModel()
 
     enum Action {
@@ -59,6 +60,7 @@ final class TrackingController: BaseViewController {
     private func configureMapView() {
         mapView.delegate = self
         mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
     }
 
     private func configureTimer() {
@@ -130,6 +132,7 @@ extension TrackingController: ChooseActiveTrackingControllerDelegate {
         case .dismiss(let active):
             activeLabel.text = active.title
             viewModel.active = active
+            imageView.image = active.image
         }
     }
 }

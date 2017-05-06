@@ -31,7 +31,7 @@ final class UserExercise: Object, Mappable {
         userHistory <- map["user_history"]
         exercise <- map["exercise"]
         duration <- map["duration"]
-        createdAt <- map["created_at"]
+        createdAt <- (map["created_at"], DataTransform.fullDate)
     }
 }
 

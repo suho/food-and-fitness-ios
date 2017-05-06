@@ -39,6 +39,18 @@ final class SignInViewModel {
             completion(.failure(NSError(message: message)))
         }
     }
+
+    func getUserFoods(completion: @escaping Completion) {
+        FoodServices.get(completion: completion)
+    }
+
+    func getUserExercises(completion: @escaping Completion) {
+        ExerciseServices.get(completion: completion)
+    }
+
+    func getTrackings(completion: @escaping Completion) {
+        TrackingServices.get(completion: completion)
+    }
 }
 
 struct SignInParams {

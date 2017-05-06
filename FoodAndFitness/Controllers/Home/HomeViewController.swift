@@ -65,15 +65,15 @@ final class HomeViewController: RootSideMenuViewController {
         var image: UIImage {
             switch self {
             case .breakfast:
-                return #imageLiteral(resourceName: "breakfast")
+                return #imageLiteral(resourceName: "img_breakfast")
             case .lunch:
-                return #imageLiteral(resourceName: "lunch")
+                return #imageLiteral(resourceName: "img_lunch")
             case .dinner:
-                return #imageLiteral(resourceName: "dinner")
+                return #imageLiteral(resourceName: "img_dinner")
             case .exercise:
-                return #imageLiteral(resourceName: "exercise")
+                return #imageLiteral(resourceName: "img_exercise")
             case .tracking:
-                return #imageLiteral(resourceName: "tracking")
+                return #imageLiteral(resourceName: "img_tracking")
             }
         }
     }

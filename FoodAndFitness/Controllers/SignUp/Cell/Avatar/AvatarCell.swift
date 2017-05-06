@@ -34,7 +34,7 @@ final class AvatarCell: BaseTableViewCell {
             if let image = data.image {
                 avatarImageView.image = image
             } else {
-                avatarImageView.image = #imageLiteral(resourceName: "avatar_default")
+                avatarImageView.image = #imageLiteral(resourceName: "img_avatar_default")
             }
         }
     }

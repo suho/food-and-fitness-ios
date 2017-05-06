@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TrackingController" customModule="FoodAndFitness" customModuleProvider="target">
             <connections>
                 <outlet property="activeLabel" destination="Kgl-Bn-e5Y" id="BBx-Sp-sBu"/>
+                <outlet property="imageView" destination="wXn-Ea-a9D" id="hEI-0m-LMT"/>
                 <outlet property="mapView" destination="ttQ-oU-Adw" id="YXq-0k-wcp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -38,7 +39,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aJb-NP-zp4">
                     <rect key="frame" x="0.0" y="517" width="375" height="75"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wXn-Ea-a9D">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_walking" translatesAutoresizingMaskIntoConstraints="NO" id="wXn-Ea-a9D">
                             <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="wXn-Ea-a9D" secondAttribute="height" multiplier="1:1" id="YFF-ze-p8B"/>
@@ -103,4 +104,7 @@
             <point key="canvasLocation" x="-508" y="34"/>
         </view>
     </objects>
+    <resources>
+        <image name="img_walking" width="510" height="340"/>
+    </resources>
 </document>
