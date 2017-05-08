@@ -113,6 +113,9 @@
 		999C51661EBD9CED00956C61 /* AvatarProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C51641EBD9CED00956C61 /* AvatarProfileCell.swift */; };
 		999C51671EBD9CED00956C61 /* AvatarProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 999C51651EBD9CED00956C61 /* AvatarProfileCell.xib */; };
 		999C516A1EBE233A00956C61 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C51691EBE233A00956C61 /* UIImageView.swift */; };
+		999C516C1EC00AA400956C61 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C516B1EC00AA400956C61 /* ProfileViewModel.swift */; };
+		999C51731EC0146400956C61 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C51711EC0146400956C61 /* DetailCell.swift */; };
+		999C51741EC0146400956C61 /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 999C51721EC0146400956C61 /* DetailCell.xib */; };
 		99AEA17F1E87B240000DA06F /* AddMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AEA17D1E87B240000DA06F /* AddMenuViewController.swift */; };
 		99AEA1801E87B240000DA06F /* AddMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AEA17E1E87B240000DA06F /* AddMenuViewController.xib */; };
 		99B7CEA41EA7D7EC00BE370A /* AddUserFoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B7CEA21EA7D7EC00BE370A /* AddUserFoodCell.swift */; };
@@ -269,6 +272,9 @@
 		999C51641EBD9CED00956C61 /* AvatarProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarProfileCell.swift; sourceTree = "<group>"; };
 		999C51651EBD9CED00956C61 /* AvatarProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvatarProfileCell.xib; sourceTree = "<group>"; };
 		999C51691EBE233A00956C61 /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		999C516B1EC00AA400956C61 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		999C51711EC0146400956C61 /* DetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		999C51721EC0146400956C61 /* DetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
 		99AEA17D1E87B240000DA06F /* AddMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMenuViewController.swift; sourceTree = "<group>"; };
 		99AEA17E1E87B240000DA06F /* AddMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddMenuViewController.xib; sourceTree = "<group>"; };
 		99B7CEA21EA7D7EC00BE370A /* AddUserFoodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUserFoodCell.swift; sourceTree = "<group>"; };
@@ -491,8 +497,10 @@
 			isa = PBXGroup;
 			children = (
 				999C51631EBD9CDB00956C61 /* AvatarCell */,
+				999C51701EC0140100956C61 /* DetailCell */,
 				993404FF1E83C46D009A445F /* ProfileViewController.swift */,
 				993405001E83C46D009A445F /* ProfileViewController.xib */,
+				999C516B1EC00AA400956C61 /* ProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -767,6 +775,15 @@
 				999C51691EBE233A00956C61 /* UIImageView.swift */,
 			);
 			path = ImageView;
+			sourceTree = "<group>";
+		};
+		999C51701EC0140100956C61 /* DetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				999C51711EC0146400956C61 /* DetailCell.swift */,
+				999C51721EC0146400956C61 /* DetailCell.xib */,
+			);
+			path = DetailCell;
 			sourceTree = "<group>";
 		};
 		99AEA17B1E87B216000DA06F /* Popup */ = {
@@ -1205,6 +1222,7 @@
 				999C51671EBD9CED00956C61 /* AvatarProfileCell.xib in Resources */,
 				99B7CEA51EA7D7EC00BE370A /* AddUserFoodCell.xib in Resources */,
 				99FF789B1EA22F5F0014EF72 /* ResultCell.xib in Resources */,
+				999C51741EC0146400956C61 /* DetailCell.xib in Resources */,
 				993F22E91EA621E30078D51D /* UserExercisesDetailController.xib in Resources */,
 				993F22E31EA60FB90078D51D /* UserFoodsDetailController.xib in Resources */,
 				991DF82D1EAC91700023D099 /* UserFoodCell.xib in Resources */,
@@ -1338,6 +1356,7 @@
 				990F2F211EB594BD004D7668 /* Goal.swift in Sources */,
 				990F2F221EB594BD004D7668 /* Location.swift in Sources */,
 				990F2F251EB594BD004D7668 /* UserExercise.swift in Sources */,
+				999C51731EC0146400956C61 /* DetailCell.swift in Sources */,
 				999C40401E9497000059E870 /* TitleCell.swift in Sources */,
 				999C51661EBD9CED00956C61 /* AvatarProfileCell.swift in Sources */,
 				992BB4391EAC65E500B80A17 /* SaveUserFoodCell.swift in Sources */,
@@ -1398,6 +1417,7 @@
 				99CC4D001E9AAD92000EE59E /* ChooseActivesViewModel.swift in Sources */,
 				99317B311EAEEB8A00AFE2CA /* FoodServices.swift in Sources */,
 				990F2F241EB594BD004D7668 /* User.swift in Sources */,
+				999C516C1EC00AA400956C61 /* ProfileViewModel.swift in Sources */,
 				99BF6F971E77F67D00FD743F /* Error.swift in Sources */,
 				99BF6F881E77F67D00FD743F /* ApiPath.swift in Sources */,
 				993404DE1E838306009A445F /* UserProfileCell.swift in Sources */,

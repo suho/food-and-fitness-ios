@@ -78,6 +78,11 @@
                     <constraint firstItem="A03-ga-hOL" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="5/6" id="rqv-Tb-Q3e"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="avatarImageView" destination="n1r-Vw-AU9" id="bXO-0g-eTQ"/>
+                <outlet property="bmiLabel" destination="FiT-j7-Bsu" id="mMz-uH-GVF"/>
+                <outlet property="nameLabel" destination="jTi-Ym-cWO" id="gcp-5B-nXX"/>
+            </connections>
             <point key="canvasLocation" x="-120" y="-196"/>
         </tableViewCell>
     </objects>

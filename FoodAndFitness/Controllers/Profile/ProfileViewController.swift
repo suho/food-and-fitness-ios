@@ -11,31 +11,78 @@ import SwiftUtils
 
 final class ProfileViewController: RootSideMenuViewController {
     @IBOutlet fileprivate(set) weak var tableView: UITableView!
+    let viewModel: ProfileViewModel = ProfileViewModel()
 
     enum Sections: Int {
         case avatar
+        case information
 
         static var count: Int {
-            return self.avatar.rawValue + 1
+            return self.information.rawValue + 1
         }
 
         var numberOfRows: Int {
             switch self {
             case .avatar:
                 return 1
+            case .information:
+                return InfoRows.count
+            }
+        }
+
+        var heightForRows: CGFloat {
+            switch self {
+            case .avatar:
+                return 120
+            case .information:
+                return 50
+            }
+        }
+    }
+
+    enum InfoRows: Int {
+        case weight
+        case height
+        case birthday
+        case gender
+        case caloriesPerDay
+
+        static var count: Int {
+            return self.caloriesPerDay.rawValue + 1
+        }
+
+        var title: String {
+            switch self {
+            case .weight:
+                return Strings.weight
+            case .height:
+                return Strings.height
+            case .birthday:
+                return Strings.birthday
+            case .gender:
+                return Strings.gender
+            case .caloriesPerDay:
+                return Strings.caloriesPerDay
             }
         }
     }
 
     override func setupUI() {
         super.setupUI()
+        configureNavigationBar()
         configureTableView()
     }
 
     private func configureTableView() {
         tableView.register(AvatarProfileCell.self)
+        tableView.register(DetailCell.self)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView()
+    }
+
+    private func configureNavigationBar() {
+        title = Strings.profile
     }
 }
 
@@ -54,8 +101,22 @@ extension ProfileViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(AvatarProfileCell.self)
-        return cell
+        guard let sections = Sections(rawValue: indexPath.section) else {
+            fatalError(Strings.Errors.enumError)
+        }
+        switch sections {
+        case .avatar:
+            let cell = tableView.dequeue(AvatarProfileCell.self)
+            cell.data = viewModel.dataForAvatarCell()
+            return cell
+        case .information:
+            guard let rows = InfoRows(rawValue: indexPath.row) else {
+                fatalError(Strings.Errors.enumError)
+            }
+            let cell = tableView.dequeue(DetailCell.self)
+            cell.data = viewModel.dataForDetailCell(at: rows)
+            return cell
+        }
     }
 }
 
@@ -65,6 +126,13 @@ extension ProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120.0
+        guard let sections = Sections(rawValue: indexPath.section) else {
+            fatalError(Strings.Errors.enumError)
+        }
+        return sections.heightForRows
+    }
+
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
     }
 }
