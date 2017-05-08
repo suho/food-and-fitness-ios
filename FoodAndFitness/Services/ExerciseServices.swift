@@ -22,6 +22,14 @@ final class ExerciseServices {
     }
 
     @discardableResult
+    class func get(completion: @escaping Completion) -> Request? {
+        let path = ApiPath.userExercises
+        return ApiManager.request(method: .get, urlString: path, completion: { (result) in
+            Mapper<UserExercise>().map(result: result, type: .array, completion: completion)
+        })
+    }
+
+    @discardableResult
     class func save(params: UserExerciseParams, completion: @escaping Completion) -> Request? {
         let path = ApiPath.userExercises
         let parameters: JSObject = [

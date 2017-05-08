@@ -22,6 +22,14 @@ final class TrackingServices {
     }
 
     @discardableResult
+    class func get(completion: @escaping Completion) -> Request? {
+        let path = ApiPath.trackings
+        return ApiManager.request(method: .get, urlString: path, completion: { (result) in
+            Mapper<Tracking>().map(result: result, type: .array, completion: completion)
+        })
+    }
+
+    @discardableResult
     class func save(params: TrackingParams, completion: @escaping Completion) -> Request? {
         let path = ApiPath.trackings
         let parameters: JSObject = [

@@ -20,18 +20,58 @@ final class SignInController: BaseViewController {
         title = Strings.signIn
     }
 
+    private func getData() {
+        let group = DispatchGroup()
+        group.enter()
+        viewModel.getUserFoods { [weak self](result) in
+            guard self != nil else { return }
+            group.leave()
+            switch result {
+            case .success(_): break
+            case .failure(let error):
+                HUD.dismiss()
+                error.show()
+            }
+        }
+        group.enter()
+        viewModel.getUserExercises { [weak self](result) in
+            guard self != nil else { return }
+            group.leave()
+            switch result {
+            case .success(_): break
+            case .failure(let error):
+                HUD.dismiss()
+                error.show()
+            }
+        }
+        group.enter()
+        viewModel.getTrackings { [weak self](result) in
+            guard self != nil else { return }
+            group.leave()
+            switch result {
+            case .success(_): break
+            case .failure(let error):
+                HUD.dismiss()
+                error.show()
+            }
+        }
+        group.notify(queue: .main) {
+            HUD.dismiss()
+            AppDelegate.shared.gotoHome()
+        }
+    }
+
     @IBAction fileprivate func signIn(_ sender: Any) {
         viewModel.mail = mailField.string
         viewModel.password = passField.string
         HUD.show()
         viewModel.signIn { [weak self] (result) in
-            HUD.dismiss()
             guard let this = self else { return }
             switch result {
             case .success(_):
-                _ = this.viewModel
-                AppDelegate.shared.gotoHome()
+                this.getData()
             case .failure(let error):
+                HUD.dismiss()
                 error.show()
             }
         }

@@ -11,6 +11,7 @@ import Alamofire
 import ObjectMapper
 import RealmSwift
 import RealmS
+import SwiftDate
 
 enum DataType: Int {
     case object
@@ -69,6 +70,12 @@ final class DataTransform {
         return string?.toDate(format: .date).absoluteDate
     }, toJSON: { (date: Date?) -> String? in
         return date?.ffDate(format: .date).toString(format: .date)
+    })
+
+    static let fullDate = TransformOf<Date, String>(fromJSON: { (string: String?) -> Date? in
+        return string?.toDate(format: .full, region: Region.GMT()).absoluteDate
+    }, toJSON: { (date: Date?) -> String? in
+        return date?.ffDate(format: .full).toString(format: .full)
     })
 
     static let dateTime = TransformOf<Date, String>(fromJSON: { (string: String?) -> Date? in

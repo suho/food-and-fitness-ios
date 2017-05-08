@@ -18,17 +18,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YxO-gH-dKZ">
-                        <rect key="frame" x="16" y="34.5" width="73" height="45.5"/>
+                        <rect key="frame" x="16" y="37" width="115" height="40.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="150" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaE-cS-hUP">
-                                <rect key="frame" x="0.0" y="23" width="73" height="22.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="0.0" y="20.5" width="115" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDh-at-Zn7">
-                                <rect key="frame" x="0.0" y="0.0" width="73" height="23"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eaten Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDh-at-Zn7">
+                                <rect key="frame" x="0.0" y="0.0" width="115" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -46,7 +46,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ga-kL-QGt">
-                        <rect key="frame" x="150" y="30.5" width="154" height="54"/>
+                        <rect key="frame" x="158" y="30.5" width="146" height="54"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hf2-Qg-izE">
                                 <rect key="frame" x="0.0" y="0.0" width="51.5" height="18"/>
@@ -55,7 +55,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBa-4A-ZHW">
-                                <rect key="frame" x="121.5" y="0.0" width="32.5" height="18"/>
+                                <rect key="frame" x="113.5" y="0.0" width="32.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -67,7 +67,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ca5-0g-9g5">
-                                <rect key="frame" x="130.5" y="18" width="23.5" height="18"/>
+                                <rect key="frame" x="122.5" y="18" width="23.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -79,7 +79,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50g" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bht-YY-m6v">
-                                <rect key="frame" x="128" y="36" width="26" height="18"/>
+                                <rect key="frame" x="120" y="36" width="26" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -104,7 +104,7 @@
                             <constraint firstItem="50o-t6-lvS" firstAttribute="height" secondItem="Hf2-Qg-izE" secondAttribute="height" id="kGg-mL-1C0"/>
                             <constraint firstItem="Hf2-Qg-izE" firstAttribute="leading" secondItem="0ga-kL-QGt" secondAttribute="leading" id="pFX-Pv-73Z"/>
                             <constraint firstAttribute="trailing" secondItem="ca5-0g-9g5" secondAttribute="trailing" id="rcF-Xq-rr7"/>
-                            <constraint firstItem="ca5-0g-9g5" firstAttribute="leading" secondItem="50o-t6-lvS" secondAttribute="trailing" constant="32" id="rdi-Td-G0h"/>
+                            <constraint firstItem="ca5-0g-9g5" firstAttribute="leading" secondItem="50o-t6-lvS" secondAttribute="trailing" constant="24" id="rdi-Td-G0h"/>
                             <constraint firstItem="Hf2-Qg-izE" firstAttribute="top" secondItem="0ga-kL-QGt" secondAttribute="top" id="s8z-YU-705"/>
                             <constraint firstItem="LBY-dD-haX" firstAttribute="top" secondItem="50o-t6-lvS" secondAttribute="bottom" id="uUQ-4n-6gV"/>
                             <constraint firstAttribute="bottom" secondItem="bht-YY-m6v" secondAttribute="bottom" id="vee-AU-tuH"/>
@@ -121,7 +121,13 @@
                     <constraint firstItem="YxO-gH-dKZ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tRN-Xb-cJv"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="-221" y="87.5"/>
+            <connections>
+                <outlet property="caloriesLabel" destination="vaE-cS-hUP" id="ADA-dR-U5S"/>
+                <outlet property="carbsLabel" destination="ca5-0g-9g5" id="oU6-zy-vdG"/>
+                <outlet property="fatLabel" destination="bht-YY-m6v" id="Hd2-Wu-v4e"/>
+                <outlet property="proteinLabel" destination="qBa-4A-ZHW" id="xfC-J2-g6q"/>
+            </connections>
+            <point key="canvasLocation" x="-494" y="-27"/>
         </tableViewCell>
     </objects>
 </document>

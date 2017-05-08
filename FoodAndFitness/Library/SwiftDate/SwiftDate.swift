@@ -83,6 +83,14 @@ extension String {
             fatalError(error.localizedDescription)
         }
     }
+
+    func toDate(format: FFDateFormat, region: Region? = nil) -> DateInRegion {
+        do {
+            return try DateInRegion(string: self, format: format.dateFormat, fromRegion: region)
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+    }
 }
 
 // MARK: - NSDateFormatter

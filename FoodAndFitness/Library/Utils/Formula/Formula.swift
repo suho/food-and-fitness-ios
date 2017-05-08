@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum ActiveTracking: Int {
     case walking
@@ -38,6 +39,17 @@ enum ActiveTracking: Int {
             return cycling
         default:
             return walking
+        }
+    }
+
+    var image: UIImage {
+        switch self {
+        case .running:
+            return #imageLiteral(resourceName: "img_running")
+        case .cycling:
+            return #imageLiteral(resourceName: "img_cycling")
+        case .walking:
+            return #imageLiteral(resourceName: "img_walking")
         }
     }
 }

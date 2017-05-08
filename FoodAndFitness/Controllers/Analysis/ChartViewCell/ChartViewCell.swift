@@ -79,7 +79,6 @@ final class ChartViewCell: BaseTableViewCell {
         data.groupBars(fromX: xAxis, groupSpace: groupSpace, barSpace: barSpace)
         return data
     }
-
 }
 
 extension ChartViewCell: ChartViewDelegate { }

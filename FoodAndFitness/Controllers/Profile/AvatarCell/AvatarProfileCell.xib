@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="KGk-i7-Jjw" customClass="AvatarProfileCell" customModule="FoodAndFitness" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mylo Ho" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTi-Ym-cWO">
+                        <rect key="frame" x="16" y="16" width="73" height="23"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMI: 20.01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FiT-j7-Bsu">
+                        <rect key="frame" x="16" y="47" width="72" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A03-ga-hOL" customClass="View" customModule="FoodAndFitness" customModuleProvider="target">
+                        <rect key="frame" x="204.5" y="10" width="99.5" height="99.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_avatar_default" translatesAutoresizingMaskIntoConstraints="NO" id="n1r-Vw-AU9">
+                                <rect key="frame" x="0.0" y="0.0" width="99.5" height="99.5"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="n1r-Vw-AU9" secondAttribute="bottom" id="IRW-cu-TtI"/>
+                            <constraint firstAttribute="trailing" secondItem="n1r-Vw-AU9" secondAttribute="trailing" id="Mu7-5B-e2R"/>
+                            <constraint firstAttribute="width" secondItem="A03-ga-hOL" secondAttribute="height" multiplier="1:1" id="Y0n-He-g0K"/>
+                            <constraint firstItem="n1r-Vw-AU9" firstAttribute="top" secondItem="A03-ga-hOL" secondAttribute="top" id="hrp-7v-GLR"/>
+                            <constraint firstItem="n1r-Vw-AU9" firstAttribute="leading" secondItem="A03-ga-hOL" secondAttribute="leading" id="tlj-Rq-GAr"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="-1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="NO"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isFill" value="NO"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="insetDx">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="insetDy">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="A03-ga-hOL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="4BW-x7-NRp"/>
+                    <constraint firstItem="FiT-j7-Bsu" firstAttribute="top" secondItem="jTi-Ym-cWO" secondAttribute="bottom" constant="8" id="Jrp-is-peR"/>
+                    <constraint firstAttribute="trailing" secondItem="A03-ga-hOL" secondAttribute="trailing" constant="16" id="ODc-Gn-jx6"/>
+                    <constraint firstItem="jTi-Ym-cWO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Qac-Pa-mYZ"/>
+                    <constraint firstItem="jTi-Ym-cWO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="RIq-rX-xqQ"/>
+                    <constraint firstItem="FiT-j7-Bsu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="dcz-i4-akI"/>
+                    <constraint firstItem="A03-ga-hOL" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="5/6" id="rqv-Tb-Q3e"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="-120" y="-196"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="img_avatar_default" width="100" height="100"/>
+    </resources>
+</document>

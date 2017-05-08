@@ -37,7 +37,7 @@ final class UserHistory: Object, Mappable {
         user <- map["user"]
         goal <- map["goal"]
         active <- map["active"]
-        createdAt <- map["created_at"]
+        createdAt <- (map["created_at"], DataTransform.fullDate)
     }
 }
 

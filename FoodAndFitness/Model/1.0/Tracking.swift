@@ -35,7 +35,7 @@ final class Tracking: Object, Mappable {
         duration <- map["duration"]
         distance <- map["distance"]
         userHistory <- map["user_history"]
-        createdAt <- map["created_at"]
+        createdAt <- (map["created_at"], DataTransform.fullDate)
         locations <- map["locations"]
     }
 }

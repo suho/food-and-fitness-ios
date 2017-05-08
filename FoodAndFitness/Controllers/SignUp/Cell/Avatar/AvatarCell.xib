@@ -30,7 +30,7 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4V-sO-rsf" customClass="View" customModule="FoodAndFitness" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="103.5" height="103.5"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default" translatesAutoresizingMaskIntoConstraints="NO" id="Hu0-qw-jqO">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_avatar_default" translatesAutoresizingMaskIntoConstraints="NO" id="Hu0-qw-jqO">
                                         <rect key="frame" x="0.0" y="0.0" width="103.5" height="103.5"/>
                                     </imageView>
                                 </subviews>
@@ -131,7 +131,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="avatar_default" width="100" height="100"/>
         <image name="ic_camera" width="30" height="30"/>
+        <image name="img_avatar_default" width="100" height="100"/>
     </resources>
 </document>
