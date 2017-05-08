@@ -10,19 +10,25 @@ import UIKit
 import MapKit
 import CoreLocation
 import HealthKit
+import SwiftUtils
 
 final class TrackingController: BaseViewController {
     @IBOutlet fileprivate(set) weak var mapView: MKMapView!
     @IBOutlet fileprivate(set) weak var activeLabel: UILabel!
     @IBOutlet fileprivate(set) weak var imageView: UIImageView!
+    @IBOutlet fileprivate(set) weak var button: UIButton!
     var viewModel: TrackingViewModel = TrackingViewModel()
 
     enum Action {
-        case starting
+        case running
         case stopping
     }
 
-    fileprivate var action: Action = .stopping
+    fileprivate var action: Action = .stopping {
+        didSet {
+            configureButton()
+        }
+    }
 
     lazy fileprivate var locationManager: CLLocationManager = {
         var manager = CLLocationManager()
@@ -54,6 +60,7 @@ final class TrackingController: BaseViewController {
     override func setupUI() {
         super.setupUI()
         configureMapView()
+        configureButton()
     }
 
     // MARK: - Private Functions
@@ -67,6 +74,17 @@ final class TrackingController: BaseViewController {
         timer = Timer(timeInterval: 1, target: self, selector: #selector(eachSecond), userInfo: nil, repeats: true)
         if let timer = timer {
             RunLoop.current.add(timer, forMode: .commonModes)
+        }
+    }
+
+    private func configureButton() {
+        switch action {
+        case .running:
+            button.setTitle(Strings.stop, for: .normal)
+            button.backgroundColor = Color.red238
+        case .stopping:
+            button.setTitle(Strings.start, for: .normal)
+            button.backgroundColor = Color.green81
         }
     }
 
@@ -89,28 +107,37 @@ final class TrackingController: BaseViewController {
         locationManager.stopUpdatingLocation()
     }
 
-    // MARK: - Action Functions
-    @IBAction func startOrStop(_ sender: Any) {
-        switch action {
-        case .starting:
-            stopUpdatingLocation()
-            timer?.invalidate()
-            print("Distance: \(viewModel.distance)")
-            print("Duration: \(viewModel.seconds)")
-            action = .stopping
-            viewModel.save(completion: { [weak self](result) in
+    private func showOptions() {
+        let alert = AlertController(title: App.name, message: Strings.choosePhotoAction, preferredStyle: .actionSheet)
+        alert.addAction(Strings.save, handler: {
+            self.viewModel.save(completion: { [weak self](result) in
                 guard let this = self else { return }
                 switch result {
                 case .success(_):
+                    this.action = .stopping
                     this.navigationController?.popViewController(animated: true)
                 case .failure(let error):
                     error.show()
                 }
             })
+        })
+        alert.addAction(Strings.discard, style: .cancel, handler: {
+            self.navigationController?.popViewController(animated: true)
+        })
+        alert.present()
+    }
+
+    // MARK: - Action Functions
+    @IBAction func startOrStop(_ sender: Any) {
+        switch action {
+        case .running:
+            stopUpdatingLocation()
+            timer?.invalidate()
+            showOptions()
         case .stopping:
             configureTimer()
             startUpdatingLocation()
-            action = .starting
+            action = .running
         }
     }
 

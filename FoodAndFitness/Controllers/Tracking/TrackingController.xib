@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TrackingController" customModule="FoodAndFitness" customModuleProvider="target">
             <connections>
                 <outlet property="activeLabel" destination="Kgl-Bn-e5Y" id="BBx-Sp-sBu"/>
+                <outlet property="button" destination="mfM-IR-dkr" id="qcW-l1-Hcy"/>
                 <outlet property="imageView" destination="wXn-Ea-a9D" id="hEI-0m-LMT"/>
                 <outlet property="mapView" destination="ttQ-oU-Adw" id="YXq-0k-wcp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -24,7 +25,7 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfM-IR-dkr">
                     <rect key="frame" x="0.0" y="592" width="375" height="75"/>
-                    <color key="backgroundColor" red="1" green="0.94043958189999999" blue="0.72461670639999998" alpha="1" colorSpace="deviceRGB"/>
+                    <color key="backgroundColor" red="0.31791014663755046" green="0.93293940355329952" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="mfM-IR-dkr" secondAttribute="height" multiplier="5" id="hAs-L8-3u3"/>
                     </constraints>
