@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SDWebImage
+import Kingfisher
 
 extension UIImageView {
     func set(path: String?, placeHolderImage: UIImage = #imageLiteral(resourceName: "img_avatar_default")) {
@@ -15,6 +15,6 @@ extension UIImageView {
             image = placeHolderImage
             return
         }
-        sd_setImage(with: url, placeholderImage: placeHolderImage)
+        kf.setImage(with: url, placeholder: placeHolderImage)
     }
 }

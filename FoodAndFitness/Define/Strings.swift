@@ -103,6 +103,14 @@ final class Strings {
     static let informationTracking = "🚴‍♀️🚴Information Trackings🚵‍♀️🚵"
     static let distance = "Distance"
 
+    static let caloriesPerDay = "Calories/day"
+    static let profile = "Profile"
+
+    static let start = "Start"
+    static let stop = "Stop"
+    static let save = "Save"
+    static let discard = "Discard"
+
     struct Errors {
         // MARK: - Error messages
         static let inputNotValidate = "Input not validate."

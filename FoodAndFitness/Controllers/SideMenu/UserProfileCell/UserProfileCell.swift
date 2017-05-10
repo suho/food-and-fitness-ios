@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SDWebImage
 
 protocol UserProfileCellDelegate: NSObjectProtocol {
     func cell(_ cell: UserProfileCell, needsPerformAction action: UserProfileCell.Action)

@@ -30,12 +30,11 @@ final class ApiPath {
     static var trackings: String { return baseURL / "trackings" }
 
     struct Auth {
+        static var auth: String {
+            return ApiPath.auth
+        }
         static var signin: String {
             return ApiPath.auth / "sign_in"
-        }
-
-        static var signup: String {
-            return ApiPath.auth
         }
     }
 
