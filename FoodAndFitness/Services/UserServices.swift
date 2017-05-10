@@ -16,8 +16,26 @@ import SwiftyJSON
 final class UserServices {
 
     @discardableResult
+    func update(params: UpdateParams, completion: @escaping Completion) -> Request? {
+        let path = ApiPath.Auth.auth
+        var parameters: JSObject!
+        if let weight = params.weight {
+            parameters = [
+                "weight": weight
+            ]
+        } else {
+            parameters = [
+                "height": params.height.toString()
+            ]
+        }
+        return ApiManager.request(method: .put, urlString: path, parameters: parameters, completion: { (result) in
+            Mapper<User>().map(result: result, type: .object, completion: completion)
+        })
+    }
+
+    @discardableResult
     class func signIn(params: SignInParams, completion: @escaping Completion) -> Request? {
-        let path = ApiPath.Auth.signin
+        let path = ApiPath.Auth.auth
         let parameters: JSObject = [
             "email": params.email,
             "password": params.password
@@ -50,7 +68,7 @@ final class UserServices {
 
     @discardableResult
     class func signUp(params: SignUpParams, completion: @escaping Completion) -> Request? {
-        let path = ApiPath.Auth.signup
+        let path = ApiPath.Auth.auth
         var parameter: JSObject = [
             "email": params.email.toString(),
             "password": params.password.toString(),

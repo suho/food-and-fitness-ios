@@ -5,6 +5,7 @@ PODS:
   - Charts/Core (3.0.1)
   - FSCalendar (2.7.4)
   - IQKeyboardManagerSwift (4.0.8)
+  - Kingfisher (3.7.2)
   - LGSideMenuController (2.0.5)
   - MWFeedParser/NSString+HTML (1.0.1)
   - ObjectMapper (2.2.5)
@@ -18,9 +19,6 @@ PODS:
   - RealmSwift (2.5.0):
     - Realm (= 2.5.0)
   - SAMKeychain (1.5.2)
-  - SDWebImage (3.8.2):
-    - SDWebImage/Core (= 3.8.2)
-  - SDWebImage/Core (3.8.2)
   - SVProgressHUD (2.1.2)
   - SwiftDate (4.0.13)
   - SwiftLint (0.16.1)
@@ -35,12 +33,12 @@ DEPENDENCIES:
   - Charts (~> 3.0.1)
   - FSCalendar (~> 2.7.4)
   - IQKeyboardManagerSwift (~> 4.0.8)
+  - Kingfisher (~> 3.7)
   - LGSideMenuController (~> 2.0.5)
   - MWFeedParser/NSString+HTML (~> 1.0.1)
   - PureLayout (~> 3.0.2)
   - RealmS (~> 2.2.0)
   - SAMKeychain (~> 1.5.1)
-  - SDWebImage (~> 3.8)
   - SVProgressHUD (~> 2.1.2)
   - SwiftDate (~> 4.0)
   - SwiftLint (~> 0.16.1)
@@ -53,6 +51,7 @@ SPEC CHECKSUMS:
   Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
   FSCalendar: e95995a746acae531c4a7dd636b8393233125ec5
   IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
+  Kingfisher: 5ddc4ac715615cc200de9fdc54ab1511061ea650
   LGSideMenuController: 3cc82025a53b672926d3ffb3f428f4f3e15e3349
   MWFeedParser: 2cf646014c1baf6ad1b08c480b40a08180079247
   ObjectMapper: fb30f71e08470d1e5a20b199fafe1246281db898
@@ -61,7 +60,6 @@ SPEC CHECKSUMS:
   RealmS: 1fd1ca73d7680c48fee4fe2a53e6cd725192633c
   RealmSwift: 9f1a8f624f2f153410115c2cb7d486be9976565d
   SAMKeychain: 1865333198217411f35327e8da61b43de79b635b
-  SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftDate: 8ec416bb1b5129d1f35e8efaed720421f41d42df
   SwiftLint: b8b683208cc09640898f16318a7a452274e91f61
@@ -69,6 +67,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
 
-PODFILE CHECKSUM: 9706f1ac6dd7c311818590a385c46af63e208b95
+PODFILE CHECKSUM: 8485361283c2e1bc2564b0a22027e1317b7b787f
 
 COCOAPODS: 1.2.0
