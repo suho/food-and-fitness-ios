@@ -41,6 +41,7 @@ final class ProfileViewController: RootSideMenuViewController {
     }
 
     enum InfoRows: Int {
+        case mail
         case weight
         case height
         case birthday
@@ -53,6 +54,8 @@ final class ProfileViewController: RootSideMenuViewController {
 
         var title: String {
             switch self {
+            case .mail:
+                return Strings.email
             case .weight:
                 return Strings.weight
             case .height:
@@ -69,6 +72,7 @@ final class ProfileViewController: RootSideMenuViewController {
 
     override func setupUI() {
         super.setupUI()
+        viewModel.delegate = self
         configureNavigationBar()
         configureTableView()
     }
@@ -83,6 +87,13 @@ final class ProfileViewController: RootSideMenuViewController {
 
     private func configureNavigationBar() {
         title = Strings.profile
+    }
+}
+
+// MARK: - ProfileViewModelDelegate
+extension ProfileViewController: ProfileViewModelDelegate {
+    func viewModel(_ viewModel: ProfileViewModel, needsPerformAction action: ProfileViewModel.Action) {
+        tableView.reloadData()
     }
 }
 
@@ -123,7 +134,30 @@ extension ProfileViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension ProfileViewController: UITableViewDelegate {
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let sections = Sections(rawValue: indexPath.section) else {
+            fatalError(Strings.Errors.enumError)
+        }
+        switch sections {
+        case .avatar: break
+        case .information:
+            guard let rows = InfoRows(rawValue: indexPath.row) else {
+                fatalError(Strings.Errors.enumError)
+            }
+            let updateProfileController = UpdateProfileController()
+            switch rows {
+            case .mail: return
+            case .weight:
+                updateProfileController.viewModel = UpdateProfileViewModel(row: .weight)
+            case .height:
+                updateProfileController.viewModel = UpdateProfileViewModel(row: .height)
+            case .birthday: return
+            case .gender: return
+            case .caloriesPerDay: return
+            }
+            navigationController?.pushViewController(updateProfileController, animated: true)
+        }
+    }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard let sections = Sections(rawValue: indexPath.section) else {

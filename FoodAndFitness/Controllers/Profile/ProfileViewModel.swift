@@ -7,15 +7,33 @@
 //
 
 import UIKit
+import RealmSwift
+
+protocol ProfileViewModelDelegate: class {
+    func viewModel(_ viewModel: ProfileViewModel, needsPerformAction action: ProfileViewModel.Action)
+}
 
 class ProfileViewModel {
     var user: User
+    weak var delegate: ProfileViewModelDelegate?
+    private var userToken: NotificationToken?
+
+    enum Action {
+        case updated
+    }
 
     init() {
         guard let user = User.me else {
             fatalError(Strings.Errors.tokenError)
         }
         self.user = user
+        userToken = self.user.addNotificationBlock({ (change) in
+            switch change {
+            case .change(_):
+                self.delegate?.viewModel(self, needsPerformAction: .updated)
+            default: break
+            }
+        })
     }
 
     func dataForAvatarCell() -> AvatarProfileCell.Data {
@@ -31,6 +49,8 @@ class ProfileViewModel {
     func dataForDetailCell(at row: ProfileViewController.InfoRows) -> DetailCell.Data {
         var detail = ""
         switch row {
+        case .mail:
+            detail = user.email
         case .weight:
             detail = "\(user.weight) \(Strings.kilogam)"
         case .height:

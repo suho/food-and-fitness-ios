@@ -116,6 +116,9 @@
 		999C516C1EC00AA400956C61 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C516B1EC00AA400956C61 /* ProfileViewModel.swift */; };
 		999C51731EC0146400956C61 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C51711EC0146400956C61 /* DetailCell.swift */; };
 		999C51741EC0146400956C61 /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 999C51721EC0146400956C61 /* DetailCell.xib */; };
+		999C517E1EC05F0C00956C61 /* UpdateProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C517C1EC05F0C00956C61 /* UpdateProfileController.swift */; };
+		999C517F1EC05F0C00956C61 /* UpdateProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 999C517D1EC05F0C00956C61 /* UpdateProfileController.xib */; };
+		999C51811EC060CA00956C61 /* UpdateProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999C51801EC060CA00956C61 /* UpdateProfileViewModel.swift */; };
 		99AEA17F1E87B240000DA06F /* AddMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AEA17D1E87B240000DA06F /* AddMenuViewController.swift */; };
 		99AEA1801E87B240000DA06F /* AddMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AEA17E1E87B240000DA06F /* AddMenuViewController.xib */; };
 		99B7CEA41EA7D7EC00BE370A /* AddUserFoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B7CEA21EA7D7EC00BE370A /* AddUserFoodCell.swift */; };
@@ -275,6 +278,9 @@
 		999C516B1EC00AA400956C61 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		999C51711EC0146400956C61 /* DetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		999C51721EC0146400956C61 /* DetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
+		999C517C1EC05F0C00956C61 /* UpdateProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateProfileController.swift; sourceTree = "<group>"; };
+		999C517D1EC05F0C00956C61 /* UpdateProfileController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdateProfileController.xib; sourceTree = "<group>"; };
+		999C51801EC060CA00956C61 /* UpdateProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewModel.swift; sourceTree = "<group>"; };
 		99AEA17D1E87B240000DA06F /* AddMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMenuViewController.swift; sourceTree = "<group>"; };
 		99AEA17E1E87B240000DA06F /* AddMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddMenuViewController.xib; sourceTree = "<group>"; };
 		99B7CEA21EA7D7EC00BE370A /* AddUserFoodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddUserFoodCell.swift; sourceTree = "<group>"; };
@@ -786,6 +792,16 @@
 			path = DetailCell;
 			sourceTree = "<group>";
 		};
+		999C517B1EC05EFE00956C61 /* UpdateProfile */ = {
+			isa = PBXGroup;
+			children = (
+				999C517C1EC05F0C00956C61 /* UpdateProfileController.swift */,
+				999C517D1EC05F0C00956C61 /* UpdateProfileController.xib */,
+				999C51801EC060CA00956C61 /* UpdateProfileViewModel.swift */,
+			);
+			path = UpdateProfile;
+			sourceTree = "<group>";
+		};
 		99AEA17B1E87B216000DA06F /* Popup */ = {
 			isa = PBXGroup;
 			children = (
@@ -875,6 +891,7 @@
 				999C402C1E9489640059E870 /* SignUp */,
 				9906C7D11EA856CA0033D76B /* Tracking */,
 				99317B391EAF43BE00AFE2CA /* TrackingsDetail */,
+				999C517B1EC05EFE00956C61 /* UpdateProfile */,
 				993F22E51EA60FC50078D51D /* UserExercisesDetail */,
 				993F22D91EA60FB90078D51D /* UserFoodsDetail */,
 			);
@@ -1193,6 +1210,7 @@
 				999C40521E94D72F0059E870 /* RadioCell.xib in Resources */,
 				99FF78981EA22F5F0014EF72 /* AddActivityController.xib in Resources */,
 				999C40461E9497160059E870 /* AvatarCell.xib in Resources */,
+				999C517F1EC05F0C00956C61 /* UpdateProfileController.xib in Resources */,
 				993DA6A11EADE7B2001ACF17 /* AddUserExerciseCell.xib in Resources */,
 				99317B3D1EAF43D800AFE2CA /* TrackingsDetailController.xib in Resources */,
 				993404DF1E838306009A445F /* UserProfileCell.xib in Resources */,
@@ -1325,6 +1343,7 @@
 				999C402F1E94897C0059E870 /* SignInController.swift in Sources */,
 				99317B301EAEEB8A00AFE2CA /* ExerciseServices.swift in Sources */,
 				993DA6A31EADEA28001ACF17 /* AddUserExerciseViewModel.swift in Sources */,
+				999C517E1EC05F0C00956C61 /* UpdateProfileController.swift in Sources */,
 				993DA6941EADDC8A001ACF17 /* UserExercisesDetailViewModel.swift in Sources */,
 				99AEA17F1E87B240000DA06F /* AddMenuViewController.swift in Sources */,
 				99536AB21EA049CE00FF0BF2 /* UIViewController.swift in Sources */,
@@ -1390,6 +1409,7 @@
 				993404F11E83C41B009A445F /* AnalysisViewController.swift in Sources */,
 				997EAE7C1E9EA18D0071D5BC /* LeftSideViewModel.swift in Sources */,
 				99317B2C1EAEEB8300AFE2CA /* ConfigServices.swift in Sources */,
+				999C51811EC060CA00956C61 /* UpdateProfileViewModel.swift in Sources */,
 				99FF78991EA22F5F0014EF72 /* AddActivityViewModel.swift in Sources */,
 				99536AB11EA049CE00FF0BF2 /* UIView.swift in Sources */,
 				99FF78801EA21E1B0014EF72 /* SplashScreenController.swift in Sources */,
