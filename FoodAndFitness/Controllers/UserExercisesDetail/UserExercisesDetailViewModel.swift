@@ -26,8 +26,8 @@ final class UserExercisesDetailViewModel {
         })
     }
     var suggestExercises: [Exercise] {
-        return _suggestExercises.filter({ (_) -> Bool in
-            return true
+        return _suggestExercises.filter({ (exercise) -> Bool in
+            return self.filterSuggestExercises(exercise: exercise)
         })
     }
     private let _userExercises: Results<UserExercise>
@@ -52,6 +52,21 @@ final class UserExercisesDetailViewModel {
                 this.delegate?.viewModel(this, needsPerformAction: .userExercisesChanged)
             }
         })
+    }
+
+    private func filterSuggestExercises(exercise: Exercise) -> Bool {
+        guard let user = User.me, let goal = user.goal, let goals = Goals(rawValue: goal.id) else {
+            return false
+        }
+        let calories = exercise.calories
+        switch goals {
+        case .beHealthier:
+            return calories > 100 && calories < 250
+        case .gainWeight:
+            return calories <= 100
+        case .loseWeight:
+            return calories >= 250
+        }
     }
 
     func delete(at index: Int, completion: @escaping Completion) {
