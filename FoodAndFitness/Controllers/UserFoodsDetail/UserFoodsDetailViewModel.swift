@@ -25,8 +25,8 @@ final class UserFoodsDetailViewModel {
         })
     }
     var suggestFoods: [Food] {
-        return _suggestFoods.filter({ (_) -> Bool in
-            return true
+        return _suggestFoods.filter({ (food) -> Bool in
+            return self.filterSuggestFoods(food: food)
         })
     }
     private let _userFoods: Results<UserFood>
@@ -51,6 +51,21 @@ final class UserFoodsDetailViewModel {
                 this.delegate?.viewModel(this, needsPerformAction: .userFoodChanged)
             }
         })
+    }
+
+    private func filterSuggestFoods(food: Food) -> Bool {
+        guard let user = User.me, let goal = user.goal, let goals = Goals(rawValue: goal.id) else {
+            return false
+        }
+        let calories = food.calories
+        switch goals {
+        case .beHealthier:
+            return calories > 100 && calories < 250
+        case .gainWeight:
+            return calories >= 250
+        case .loseWeight:
+            return calories <= 100
+        }
     }
 
     func delete(at index: Int, completion: @escaping Completion) {
