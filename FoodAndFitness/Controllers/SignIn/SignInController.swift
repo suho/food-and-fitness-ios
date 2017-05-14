@@ -18,6 +18,7 @@ final class SignInController: BaseViewController {
     override func setupUI() {
         super.setupUI()
         title = Strings.signIn
+        mailField.becomeFirstResponder()
     }
 
     private func getData() {

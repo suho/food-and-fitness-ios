@@ -58,16 +58,16 @@ final class ChooseGoalsController: BaseViewController {
         beHealthierView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
         loseWeightView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
         gainWeightView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-        UIView.animate(withDuration: 0.8) {
+        UIView.animate(withDuration: 0.5) {
             self.beHealthierView.transform = .identity
         }
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.25) {
-            UIView.animate(withDuration: 0.8) {
+            UIView.animate(withDuration: 0.5) {
                 self.loseWeightView.transform = .identity
             }
         }
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-            UIView.animate(withDuration: 0.8) {
+            UIView.animate(withDuration: 0.5) {
                 self.gainWeightView.transform = .identity
             }
         }
