@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -45,7 +46,9 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hch-4e-G8D">
                                             <rect key="frame" x="0.0" y="0.0" width="296.5" height="53"/>
-                                            <state key="normal" title="Sedentary"/>
+                                            <state key="normal" title="Sedentary">
+                                                <color key="titleColor" red="0.1647058824" green="0.74901960779999999" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
                                             <connections>
                                                 <action selector="sedentary:" destination="-1" eventType="touchUpInside" id="aiJ-yq-oEb"/>
                                             </connections>
@@ -70,7 +73,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" red="0.67382705480000005" green="0.88408380870000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="FA4-8l-I34" secondAttribute="trailing" constant="8" id="0tC-3I-xVb"/>
                                 <constraint firstItem="FA4-8l-I34" firstAttribute="top" secondItem="Wwq-x9-ofw" secondAttribute="top" constant="8" id="CjN-SH-24s"/>
@@ -108,7 +111,9 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DeW-q0-hun">
                                             <rect key="frame" x="0.0" y="0.0" width="296.5" height="53"/>
-                                            <state key="normal" title="Lightly Active"/>
+                                            <state key="normal" title="Lightly Active">
+                                                <color key="titleColor" red="0.1647058824" green="0.74901960779999999" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
                                             <connections>
                                                 <action selector="lightlyActive:" destination="-1" eventType="touchUpInside" id="dcy-Jk-XPm"/>
                                             </connections>
@@ -133,7 +138,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" red="0.67382705480000005" green="0.88408380870000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="zbq-Uk-KaE" firstAttribute="top" secondItem="rzV-e6-t1j" secondAttribute="top" constant="8" id="7Be-GA-7vt"/>
                                 <constraint firstAttribute="trailing" secondItem="zbq-Uk-KaE" secondAttribute="trailing" constant="8" id="A5y-qo-CJd"/>
@@ -167,7 +172,9 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYn-yE-ACM">
                                             <rect key="frame" x="0.0" y="0.0" width="296.5" height="53"/>
-                                            <state key="normal" title="Moderately Active"/>
+                                            <state key="normal" title="Moderately Active">
+                                                <color key="titleColor" red="0.1647058824" green="0.74901960779999999" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
                                             <connections>
                                                 <action selector="moderatelyActive:" destination="-1" eventType="touchUpInside" id="g9Z-CX-OeG"/>
                                             </connections>
@@ -188,7 +195,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" red="0.67382705480000005" green="0.88408380870000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="23B-BV-ESU" firstAttribute="leading" secondItem="AiZ-E6-7aY" secondAttribute="leading" constant="8" id="07Q-mo-n2K"/>
                                 <constraint firstAttribute="bottom" secondItem="23B-BV-ESU" secondAttribute="bottom" constant="8" id="V5Y-ml-xFf"/>
@@ -222,7 +229,9 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Elm-BR-jpX">
                                             <rect key="frame" x="0.0" y="0.0" width="296.5" height="53"/>
-                                            <state key="normal" title="Very Active"/>
+                                            <state key="normal" title="Very Active">
+                                                <color key="titleColor" red="0.1647058824" green="0.74901960779999999" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
                                             <connections>
                                                 <action selector="veryActive:" destination="-1" eventType="touchUpInside" id="m5g-Xj-heR"/>
                                             </connections>
@@ -243,7 +252,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" red="0.67382705480000005" green="0.88408380870000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="gB8-CC-Bsq" secondAttribute="bottom" constant="8" id="AGC-wb-oZa"/>
                                 <constraint firstAttribute="trailing" secondItem="gB8-CC-Bsq" secondAttribute="trailing" constant="8" id="IMi-uH-sOk"/>
@@ -271,12 +280,40 @@
                         </view>
                     </subviews>
                 </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCb-qW-GMB" customClass="View" customModule="FoodAndFitness" customModuleProvider="target">
+                    <rect key="frame" x="125" y="80" width="125" height="125"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_avatar_default" translatesAutoresizingMaskIntoConstraints="NO" id="41m-ry-8tB">
+                            <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="41m-ry-8tB" firstAttribute="top" secondItem="sCb-qW-GMB" secondAttribute="top" id="eyx-M9-bfU"/>
+                        <constraint firstAttribute="bottom" secondItem="41m-ry-8tB" secondAttribute="bottom" id="fMP-0I-LaZ"/>
+                        <constraint firstAttribute="width" secondItem="sCb-qW-GMB" secondAttribute="height" multiplier="1:1" id="lX0-KB-5Rd"/>
+                        <constraint firstAttribute="trailing" secondItem="41m-ry-8tB" secondAttribute="trailing" id="pe2-7s-q9p"/>
+                        <constraint firstItem="41m-ry-8tB" firstAttribute="leading" secondItem="sCb-qW-GMB" secondAttribute="leading" id="rDS-kl-hyW"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="-1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="0.67382705480000005" green="0.88408380870000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="k5n-Vp-x0Y" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="34d-H4-2I6"/>
+                <constraint firstItem="sCb-qW-GMB" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1/3" id="4wn-xJ-8z1"/>
                 <constraint firstItem="gVv-uC-tUc" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="5/6" id="8yE-Fh-VaA"/>
                 <constraint firstItem="VRb-TX-46W" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="CfE-aX-LBk"/>
+                <constraint firstItem="sCb-qW-GMB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="Er3-XB-Sj6"/>
+                <constraint firstItem="sCb-qW-GMB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LLn-pV-1eR"/>
                 <constraint firstItem="k5n-Vp-x0Y" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="WdG-r0-3bp"/>
                 <constraint firstAttribute="bottom" secondItem="gVv-uC-tUc" secondAttribute="bottom" constant="16" id="dNN-KQ-2Ed"/>
                 <constraint firstItem="gVv-uC-tUc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="iyK-nr-Hmy"/>
@@ -286,4 +323,7 @@
             <point key="canvasLocation" x="17" y="-232"/>
         </view>
     </objects>
+    <resources>
+        <image name="img_avatar_default" width="100" height="100"/>
+    </resources>
 </document>

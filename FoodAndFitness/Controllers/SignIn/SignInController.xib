@@ -23,25 +23,25 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BJ4-pJ-Hef">
-                    <rect key="frame" x="62.5" y="139.5" width="250" height="30"/>
+                    <rect key="frame" x="62.5" y="189.5" width="250" height="30"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59d-R0-uCa">
-                    <rect key="frame" x="138" y="50" width="99.5" height="39.5"/>
+                    <rect key="frame" x="138" y="100" width="99.5" height="39.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="33"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XmA-kY-bqG">
-                    <rect key="frame" x="62.5" y="189.5" width="250" height="33"/>
+                    <rect key="frame" x="62.5" y="239.5" width="250" height="33"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptv-wr-Bx0">
-                    <rect key="frame" x="62.5" y="242.5" width="250" height="33"/>
+                    <rect key="frame" x="62.5" y="292.5" width="250" height="33"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="Sign In">
@@ -49,6 +49,14 @@
                     </state>
                     <connections>
                         <action selector="signIn:" destination="-1" eventType="touchUpInside" id="WhF-NB-6Um"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYG-rf-jnj">
+                    <rect key="frame" x="16" y="11" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Back"/>
+                    <connections>
+                        <action selector="back:" destination="-1" eventType="touchUpInside" id="jO9-yQ-JcZ"/>
                     </connections>
                 </button>
             </subviews>
@@ -62,7 +70,7 @@
                 <constraint firstItem="BJ4-pJ-Hef" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="V8s-cA-VXF"/>
                 <constraint firstItem="ptv-wr-Bx0" firstAttribute="centerX" secondItem="XmA-kY-bqG" secondAttribute="centerX" id="Whf-70-cL7"/>
                 <constraint firstItem="ptv-wr-Bx0" firstAttribute="width" secondItem="XmA-kY-bqG" secondAttribute="width" id="XZl-eH-wx1"/>
-                <constraint firstItem="59d-R0-uCa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="nDV-kf-cy5"/>
+                <constraint firstItem="59d-R0-uCa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="nDV-kf-cy5"/>
                 <constraint firstItem="59d-R0-uCa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="o15-fT-bgj"/>
                 <constraint firstItem="BJ4-pJ-Hef" firstAttribute="top" secondItem="59d-R0-uCa" secondAttribute="bottom" constant="50" id="obR-HX-0Bh"/>
                 <constraint firstItem="XmA-kY-bqG" firstAttribute="top" secondItem="BJ4-pJ-Hef" secondAttribute="bottom" constant="20" id="yne-nu-3vM"/>

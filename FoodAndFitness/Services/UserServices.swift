@@ -35,7 +35,7 @@ final class UserServices {
 
     @discardableResult
     class func signIn(params: SignInParams, completion: @escaping Completion) -> Request? {
-        let path = ApiPath.Auth.auth
+        let path = ApiPath.Auth.signin
         let parameters: JSObject = [
             "email": params.email,
             "password": params.password

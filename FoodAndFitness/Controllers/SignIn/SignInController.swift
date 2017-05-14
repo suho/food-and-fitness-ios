@@ -57,8 +57,15 @@ final class SignInController: BaseViewController {
         }
         group.notify(queue: .main) {
             HUD.dismiss()
-            AppDelegate.shared.gotoHome()
+            self.dismiss(animated: true, completion: { 
+                AppDelegate.shared.gotoHome()
+            })
         }
+    }
+
+    override func back(_ sender: Any) {
+        super.back(sender)
+        dismiss(animated: true, completion: nil)
     }
 
     @IBAction fileprivate func signIn(_ sender: Any) {

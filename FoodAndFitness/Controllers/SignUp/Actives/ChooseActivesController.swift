@@ -16,8 +16,9 @@ final class ChooseActivesController: BaseViewController {
         return true
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        configBackground()
     }
 
     fileprivate func choose(active: Active) {
@@ -25,6 +26,14 @@ final class ChooseActivesController: BaseViewController {
         let signUpController = SignUpController()
         signUpController.viewModel = SignUpViewModel(params: viewModel.signUpParams)
         navigationController?.pushViewController(signUpController, animated: true)
+    }
+
+    fileprivate func configBackground() {
+        let gradient = CAGradientLayer()
+        gradient.colors = [Color.green64.cgColor, Color.green2.cgColor]
+        gradient.locations = [0.0, 1.0]
+        gradient.frame = view.bounds
+        view.layer.insertSublayer(gradient, at: 0)
     }
 
     @IBAction fileprivate func sedentary(_ sender: Any) {

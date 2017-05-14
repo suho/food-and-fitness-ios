@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChooseGoalsController" customModule="FoodAndFitness" customModuleProvider="target">
             <connections>
+                <outlet property="beHealthierView" destination="y6u-7t-prG" id="v2W-TY-YSg"/>
+                <outlet property="gainWeightView" destination="8Sv-jU-eJR" id="SW6-Bc-MUk"/>
+                <outlet property="loseWeightView" destination="khf-4r-tmb" id="8MV-o4-9gF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,12 +22,48 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQC-qD-en3">
-                    <rect key="frame" x="78" y="40" width="219.5" height="41"/>
-                    <string key="text">Welcome to FoodAndFitness
-What's your goal?</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQC-qD-en3">
+                    <rect key="frame" x="69" y="40" width="238" height="41.5"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Welcome to">
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" ">
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" metaFont="system" size="17"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="FoodAndFitness">
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="19" name="AmericanTypewriter"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" metaFont="system" size="17"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="What's your goal?">
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dF5-aK-5Zg">
@@ -36,9 +75,36 @@ What's your goal?</string>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Who-IY-igN" customClass="View" customModule="FoodAndFitness" customModuleProvider="target">
                                     <rect key="frame" x="8" y="8" width="321.5" height="69.5"/>
                                     <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZ6-rx-Uga">
+                                            <rect key="frame" x="0.0" y="0.0" width="321.5" height="69.5"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Be Healthier">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.1647058824" green="0.74901960779999999" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content=" ">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.1647058824" green="0.74901960779999999" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="Eat and train for optimum health">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEu-2T-Zid">
                                             <rect key="frame" x="0.0" y="0.0" width="321.5" height="69.5"/>
-                                            <state key="normal" title="Be Healthier">
+                                            <state key="normal">
                                                 <color key="titleColor" red="0.67382705480000005" green="0.88408380870000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                             <connections>
@@ -49,9 +115,13 @@ What's your goal?</string>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="cEu-2T-Zid" firstAttribute="top" secondItem="Who-IY-igN" secondAttribute="top" id="4AZ-6g-hIJ"/>
+                                        <constraint firstAttribute="bottom" secondItem="kZ6-rx-Uga" secondAttribute="bottom" id="6Jn-OA-lPz"/>
+                                        <constraint firstItem="kZ6-rx-Uga" firstAttribute="top" secondItem="Who-IY-igN" secondAttribute="top" id="GwJ-Zf-VgK"/>
                                         <constraint firstAttribute="bottom" secondItem="cEu-2T-Zid" secondAttribute="bottom" id="MBi-Gy-qzp"/>
+                                        <constraint firstAttribute="trailing" secondItem="kZ6-rx-Uga" secondAttribute="trailing" id="RMj-H6-Olq"/>
                                         <constraint firstAttribute="trailing" secondItem="cEu-2T-Zid" secondAttribute="trailing" id="pWh-CK-UEq"/>
                                         <constraint firstItem="cEu-2T-Zid" firstAttribute="leading" secondItem="Who-IY-igN" secondAttribute="leading" id="per-1t-qK3"/>
+                                        <constraint firstItem="kZ6-rx-Uga" firstAttribute="leading" secondItem="Who-IY-igN" secondAttribute="leading" id="uqP-eu-gVK"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -65,7 +135,7 @@ What's your goal?</string>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" red="0.67382705480000005" green="0.88408380870000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="Who-IY-igN" secondAttribute="trailing" constant="8" id="4fc-fn-O36"/>
                                 <constraint firstItem="Who-IY-igN" firstAttribute="top" secondItem="y6u-7t-prG" secondAttribute="top" constant="8" id="Wpa-iE-o4n"/>
@@ -101,9 +171,36 @@ What's your goal?</string>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHM-8H-oIC" customClass="View" customModule="FoodAndFitness" customModuleProvider="target">
                                     <rect key="frame" x="8" y="8" width="321.5" height="70"/>
                                     <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RY9-d0-9id">
+                                            <rect key="frame" x="0.0" y="-0.5" width="321.5" height="70.5"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Lose Weight">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.1647058824" green="0.74901960779999999" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content=" ">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.1647058824" green="0.74901960779999999" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="Get leaner and increase your stamina">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIc-mh-t8r">
                                             <rect key="frame" x="0.0" y="0.0" width="321.5" height="70"/>
-                                            <state key="normal" title="Lose Weight">
+                                            <state key="normal">
                                                 <color key="titleColor" red="0.67382705480000005" green="0.88408380870000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                             <connections>
@@ -113,9 +210,13 @@ What's your goal?</string>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
+                                        <constraint firstItem="RY9-d0-9id" firstAttribute="leading" secondItem="tHM-8H-oIC" secondAttribute="leading" id="7G6-bf-mW2"/>
+                                        <constraint firstAttribute="bottom" secondItem="RY9-d0-9id" secondAttribute="bottom" id="8xJ-td-ozi"/>
                                         <constraint firstItem="aIc-mh-t8r" firstAttribute="leading" secondItem="tHM-8H-oIC" secondAttribute="leading" id="Mh9-bO-dfJ"/>
+                                        <constraint firstAttribute="trailing" secondItem="RY9-d0-9id" secondAttribute="trailing" id="cCo-aW-FII"/>
                                         <constraint firstAttribute="trailing" secondItem="aIc-mh-t8r" secondAttribute="trailing" id="hAp-5O-JnA"/>
                                         <constraint firstAttribute="bottom" secondItem="aIc-mh-t8r" secondAttribute="bottom" id="hzo-dv-Mdp"/>
+                                        <constraint firstItem="RY9-d0-9id" firstAttribute="top" secondItem="tHM-8H-oIC" secondAttribute="top" id="iwN-Zt-uCw"/>
                                         <constraint firstItem="aIc-mh-t8r" firstAttribute="top" secondItem="tHM-8H-oIC" secondAttribute="top" id="uuI-Qp-sXD"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
@@ -130,7 +231,7 @@ What's your goal?</string>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" red="0.67382705480000005" green="0.88408380870000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="tHM-8H-oIC" secondAttribute="bottom" constant="8" id="Gik-i8-ONK"/>
                                 <constraint firstAttribute="trailing" secondItem="tHM-8H-oIC" secondAttribute="trailing" constant="8" id="eLP-Wv-Lhg"/>
@@ -166,9 +267,36 @@ What's your goal?</string>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mtg-KU-cXc" customClass="View" customModule="FoodAndFitness" customModuleProvider="target">
                                     <rect key="frame" x="8" y="8" width="321.5" height="69.5"/>
                                     <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcq-xA-TEu">
+                                            <rect key="frame" x="0.0" y="-0.5" width="321.5" height="70.5"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Gain Weight">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.1647058824" green="0.74901960779999999" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content=" ">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.1647058824" green="0.74901960779999999" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="Build muscle strength">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZq-38-1QB">
                                             <rect key="frame" x="0.0" y="0.0" width="321.5" height="69.5"/>
-                                            <state key="normal" title="Gain Weight">
+                                            <state key="normal">
                                                 <color key="titleColor" red="0.67382705480000005" green="0.88408380870000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                             <connections>
@@ -178,10 +306,14 @@ What's your goal?</string>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="qcq-xA-TEu" secondAttribute="bottom" id="Ezd-Gq-eQh"/>
+                                        <constraint firstItem="qcq-xA-TEu" firstAttribute="top" secondItem="mtg-KU-cXc" secondAttribute="top" id="FoM-5K-6kW"/>
                                         <constraint firstItem="aZq-38-1QB" firstAttribute="leading" secondItem="mtg-KU-cXc" secondAttribute="leading" id="HWC-5G-KoB"/>
                                         <constraint firstItem="aZq-38-1QB" firstAttribute="top" secondItem="mtg-KU-cXc" secondAttribute="top" id="MqE-uR-mey"/>
                                         <constraint firstAttribute="trailing" secondItem="aZq-38-1QB" secondAttribute="trailing" id="eGw-lO-hSF"/>
                                         <constraint firstAttribute="bottom" secondItem="aZq-38-1QB" secondAttribute="bottom" id="ggP-37-K5J"/>
+                                        <constraint firstItem="qcq-xA-TEu" firstAttribute="leading" secondItem="mtg-KU-cXc" secondAttribute="leading" id="iKr-bC-aYn"/>
+                                        <constraint firstAttribute="trailing" secondItem="qcq-xA-TEu" secondAttribute="trailing" id="pju-qE-LAg"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
@@ -195,7 +327,7 @@ What's your goal?</string>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" red="0.67382705480000005" green="0.88408380870000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="mtg-KU-cXc" secondAttribute="trailing" constant="8" id="DJr-ex-VLx"/>
                                 <constraint firstAttribute="bottom" secondItem="mtg-KU-cXc" secondAttribute="bottom" constant="8" id="WNU-a3-4tI"/>
@@ -238,7 +370,6 @@ What's your goal?</string>
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.67382705483816119" green="0.88408380865748681" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="UQC-qD-en3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="4HJ-mc-Rk4"/>
                 <constraint firstItem="UQC-qD-en3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KH8-Z2-UfO"/>
