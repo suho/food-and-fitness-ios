@@ -33,7 +33,8 @@ class BaseViewController: ViewController {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = isNavigationBarHidden
         navigationController?.navigationBar.isTranslucent = false
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: Strings.backNavi, style: .plain, target: self, action: #selector(back))
+        navigationController?.navigationBar.tintColor = Color.green64
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: Strings.empty, style: .plain, target: self, action: #selector(back))
         setupData()
         setupUI()
     }

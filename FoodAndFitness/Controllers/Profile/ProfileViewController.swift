@@ -16,9 +16,10 @@ final class ProfileViewController: RootSideMenuViewController {
     enum Sections: Int {
         case avatar
         case information
+        case logout
 
         static var count: Int {
-            return self.information.rawValue + 1
+            return self.logout.rawValue + 1
         }
 
         var numberOfRows: Int {
@@ -27,6 +28,8 @@ final class ProfileViewController: RootSideMenuViewController {
                 return 1
             case .information:
                 return InfoRows.count
+            case .logout:
+                return 1
             }
         }
 
@@ -35,6 +38,8 @@ final class ProfileViewController: RootSideMenuViewController {
             case .avatar:
                 return 120
             case .information:
+                return 50
+            case .logout:
                 return 50
             }
         }
@@ -127,6 +132,10 @@ extension ProfileViewController: UITableViewDataSource {
             let cell = tableView.dequeue(DetailCell.self)
             cell.data = viewModel.dataForDetailCell(at: rows)
             return cell
+        case .logout:
+            let cell = tableView.dequeue(DetailCell.self)
+            cell.data = DetailCell.Data(title: Strings.logout, detail: Strings.empty)
+            return cell
         }
     }
 }
@@ -156,6 +165,9 @@ extension ProfileViewController: UITableViewDelegate {
             case .caloriesPerDay: return
             }
             navigationController?.pushViewController(updateProfileController, animated: true)
+        case .logout:
+            api.logout()
+            AppDelegate.shared.gotoSignUp()
         }
     }
 

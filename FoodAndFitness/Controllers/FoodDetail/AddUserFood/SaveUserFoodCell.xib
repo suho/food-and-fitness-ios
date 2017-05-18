@@ -19,24 +19,54 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFO-4n-uR2">
-                        <rect key="frame" x="16" y="121.5" width="33.5" height="23"/>
+                        <rect key="frame" x="16" y="122" width="33.5" height="23"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSw-Jk-smD">
-                        <rect key="frame" x="16" y="65.5" width="318" height="40"/>
-                        <color key="backgroundColor" red="0.67382705480000005" green="0.88408380870000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5l-0l-5Jl" customClass="View" customModule="FoodAndFitness" customModuleProvider="target">
+                        <rect key="frame" x="16" y="66" width="318" height="40"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSw-Jk-smD">
+                                <rect key="frame" x="0.0" y="0.0" width="318" height="40"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.74901960779999999" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Add To Diary">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="save:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lJn-GK-h6e"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="pDn-78-2fU"/>
+                            <constraint firstAttribute="bottom" secondItem="bSw-Jk-smD" secondAttribute="bottom" id="6Rh-Kh-1sH"/>
+                            <constraint firstItem="bSw-Jk-smD" firstAttribute="leading" secondItem="y5l-0l-5Jl" secondAttribute="leading" id="EuR-4x-4u4"/>
+                            <constraint firstAttribute="trailing" secondItem="bSw-Jk-smD" secondAttribute="trailing" id="cFX-vo-pb8"/>
+                            <constraint firstAttribute="height" constant="40" id="mIk-OB-ZQJ"/>
+                            <constraint firstItem="bSw-Jk-smD" firstAttribute="top" secondItem="y5l-0l-5Jl" secondAttribute="top" id="qGJ-8N-T9Z"/>
                         </constraints>
-                        <state key="normal" title="Add To Diary">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <connections>
-                            <action selector="save:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lJn-GK-h6e"/>
-                        </connections>
-                    </button>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="-1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isFill" value="NO"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="NO"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="insetDx">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="insetDy">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8t-2Z-Usg">
                         <rect key="frame" x="16" y="32" width="66.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -59,34 +89,34 @@
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kcal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxz-V0-HTt">
-                        <rect key="frame" x="53.5" y="123.5" width="30.5" height="21"/>
+                        <rect key="frame" x="53.5" y="124" width="30.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="y5l-0l-5Jl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="2O5-br-HjL"/>
                     <constraint firstItem="IFO-4n-uR2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="35J-Ut-qBc"/>
                     <constraint firstItem="iZw-Yl-gYg" firstAttribute="leading" secondItem="J8t-2Z-Usg" secondAttribute="trailing" constant="16" id="A5b-m5-PrE"/>
                     <constraint firstItem="J8t-2Z-Usg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="HCz-7h-Dno"/>
-                    <constraint firstItem="bSw-Jk-smD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="KFo-IP-Ady"/>
                     <constraint firstItem="rxz-V0-HTt" firstAttribute="bottom" secondItem="IFO-4n-uR2" secondAttribute="bottom" id="KPH-Lb-Ejd"/>
-                    <constraint firstItem="IFO-4n-uR2" firstAttribute="top" secondItem="bSw-Jk-smD" secondAttribute="bottom" constant="16" id="NH6-l6-Fev"/>
                     <constraint firstItem="iZw-Yl-gYg" firstAttribute="centerY" secondItem="J8t-2Z-Usg" secondAttribute="centerY" id="QkJ-ud-y6Y"/>
+                    <constraint firstItem="IFO-4n-uR2" firstAttribute="top" secondItem="y5l-0l-5Jl" secondAttribute="bottom" constant="16" id="TdY-dr-TLh"/>
                     <constraint firstItem="oZZ-cf-lX5" firstAttribute="centerY" secondItem="J8t-2Z-Usg" secondAttribute="centerY" id="aby-GY-WEr"/>
                     <constraint firstItem="oZZ-cf-lX5" firstAttribute="leading" secondItem="iZw-Yl-gYg" secondAttribute="trailing" constant="8" id="b5M-G4-Rey"/>
                     <constraint firstItem="J8t-2Z-Usg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="32" id="eGQ-FM-3tH"/>
-                    <constraint firstAttribute="trailing" secondItem="bSw-Jk-smD" secondAttribute="trailing" constant="16" id="fJX-cO-Uea"/>
                     <constraint firstItem="rxz-V0-HTt" firstAttribute="leading" secondItem="IFO-4n-uR2" secondAttribute="trailing" constant="4" id="hd8-rz-f9l"/>
+                    <constraint firstItem="y5l-0l-5Jl" firstAttribute="top" secondItem="iZw-Yl-gYg" secondAttribute="bottom" constant="8" id="i8u-DF-0QD"/>
                     <constraint firstAttribute="trailing" secondItem="oZZ-cf-lX5" secondAttribute="trailing" constant="16" id="qDW-K8-uLP"/>
-                    <constraint firstItem="bSw-Jk-smD" firstAttribute="top" secondItem="iZw-Yl-gYg" secondAttribute="bottom" constant="8" id="vmb-Sd-HOY"/>
+                    <constraint firstAttribute="trailing" secondItem="y5l-0l-5Jl" secondAttribute="trailing" constant="16" id="rHJ-A0-bbe"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="label" destination="IFO-4n-uR2" id="vOg-l0-HC1"/>
                 <outlet property="textField" destination="iZw-Yl-gYg" id="t25-E4-7dA"/>
             </connections>
-            <point key="canvasLocation" x="-89" y="-49.5"/>
+            <point key="canvasLocation" x="-99" y="-206.5"/>
         </tableViewCell>
     </objects>
 </document>

@@ -69,6 +69,7 @@ final class UserFoodsDetailController: BaseViewController {
 
     override func setupUI() {
         super.setupUI()
+        title = viewModel.activity.title
         configureTableView()
         configureViewModel()
     }

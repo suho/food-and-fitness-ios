@@ -81,6 +81,7 @@ final class HomeViewController: RootSideMenuViewController {
     // MARK: - Cycle Life
     override func setupUI() {
         super.setupUI()
+        configureNavigationBar()
         configureTableView()
         configureViewModel()
     }

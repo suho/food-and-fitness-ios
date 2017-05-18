@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -29,13 +30,21 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_food" translatesAutoresizingMaskIntoConstraints="NO" id="Z3N-lu-FIR">
+                        <rect key="frame" x="282" y="24" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Z3N-lu-FIR" secondAttribute="height" multiplier="1:1" id="VLm-rn-50g"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Ra2-ST-jNV" firstAttribute="top" secondItem="pcI-eT-6Lj" secondAttribute="bottom" id="61Q-YG-MTS"/>
                     <constraint firstItem="pcI-eT-6Lj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="981-fQ-acA"/>
+                    <constraint firstItem="Z3N-lu-FIR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="9p4-pw-tb3"/>
                     <constraint firstItem="Ra2-ST-jNV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="gOG-up-CGN"/>
                     <constraint firstItem="pcI-eT-6Lj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="hCM-uy-WSm"/>
                     <constraint firstItem="Ra2-ST-jNV" firstAttribute="height" secondItem="pcI-eT-6Lj" secondAttribute="height" id="hcz-NG-9T4"/>
+                    <constraint firstAttribute="trailing" secondItem="Z3N-lu-FIR" secondAttribute="trailing" constant="8" id="iIE-cI-VwV"/>
                     <constraint firstAttribute="bottom" secondItem="Ra2-ST-jNV" secondAttribute="bottom" constant="8" id="iaj-h5-8nR"/>
                 </constraints>
             </tableViewCellContentView>
@@ -46,4 +55,7 @@
             <point key="canvasLocation" x="-92" y="53"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ic_food" width="30" height="30"/>
+    </resources>
 </document>

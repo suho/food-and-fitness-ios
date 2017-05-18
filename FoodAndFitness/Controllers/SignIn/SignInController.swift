@@ -58,9 +58,8 @@ final class SignInController: BaseViewController {
         }
         group.notify(queue: .main) {
             HUD.dismiss()
-            self.dismiss(animated: true, completion: { 
-                AppDelegate.shared.gotoHome()
-            })
+            AppDelegate.shared.gotoHome()
+            self.dismiss(animated: true, completion: nil)
         }
     }
 

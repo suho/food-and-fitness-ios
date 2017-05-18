@@ -111,6 +111,8 @@ final class Strings {
     static let save = "Save"
     static let discard = "Discard"
 
+    static let logout = "Log Out"
+
     struct Errors {
         // MARK: - Error messages
         static let inputNotValidate = "Input not validate."
