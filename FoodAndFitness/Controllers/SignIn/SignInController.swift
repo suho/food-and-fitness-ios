@@ -21,6 +21,19 @@ final class SignInController: BaseViewController {
         mailField.becomeFirstResponder()
     }
 
+//    override func viewWillLayoutSubviews() {
+//        super.viewWillLayoutSubviews()
+//        configBackground()
+//    }
+
+    fileprivate func configBackground() {
+        let gradient = CAGradientLayer()
+        gradient.colors = [Color.green64.cgColor, Color.green2.cgColor]
+        gradient.locations = [0.0, 1.0]
+        gradient.frame = view.bounds
+        view.layer.insertSublayer(gradient, at: 0)
+    }
+
     private func getData() {
         let group = DispatchGroup()
         group.enter()

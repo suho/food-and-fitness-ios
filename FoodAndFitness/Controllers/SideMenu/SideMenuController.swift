@@ -48,9 +48,9 @@ extension SideMenuController: LeftSideViewControllerDelegate {
         case .analysis:
             let analysisController = UINavigationController(rootViewController: AnalysisViewController())
             self.rootViewController = analysisController
-        case .information:
-            let informationController = UINavigationController(rootViewController: InformationViewController())
-            self.rootViewController = informationController
+//        case .information:
+//            let informationController = UINavigationController(rootViewController: InformationViewController())
+//            self.rootViewController = informationController
         }
         currentSideMenu = action
         self.hideLeftView(animated: true, completionHandler: nil)

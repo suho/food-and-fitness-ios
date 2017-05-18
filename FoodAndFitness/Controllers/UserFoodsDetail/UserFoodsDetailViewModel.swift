@@ -83,7 +83,7 @@ final class UserFoodsDetailViewModel {
         guard let food = userFood.food else { return nil }
         let name = food.name
         let calories = Double(userFood.weight) * Double(food.calories) / Double(food.weight)
-        return UserFoodCell.Data(title: name, detail: "\(Int(calories)) kcal - \(userFood.weight) g")
+        return UserFoodCell.Data(title: name, detail: "\(Int(calories)) kcal - \(userFood.weight) g", image: #imageLiteral(resourceName: "ic_food"))
     }
 
     func dataForSuggestFood(at index: Int) -> UserFoodCell.Data? {
@@ -92,7 +92,7 @@ final class UserFoodsDetailViewModel {
         let name = food.name
         let calories = food.calories
         let weight = food.weight
-        return UserFoodCell.Data(title: name, detail: "\(calories) kcal - \(weight) g")
+        return UserFoodCell.Data(title: name, detail: "\(calories) kcal - \(weight) g", image: #imageLiteral(resourceName: "ic_food"))
     }
 
     func dataForHeaderView() -> MealHeaderView.Data? {

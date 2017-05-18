@@ -20,10 +20,10 @@ final class LeftSideViewController: UITableViewController {
         case home
         case history
         case analysis
-        case information
+//        case information
 
         static var count: Int {
-            return self.information.hashValue + 1
+            return self.analysis.hashValue + 1
         }
 
         var title: String {
@@ -36,8 +36,8 @@ final class LeftSideViewController: UITableViewController {
                 return Strings.history
             case .analysis:
                 return Strings.analysis
-            case .information:
-                return Strings.information
+//            case .information:
+//                return Strings.information
             }
         }
 
@@ -60,8 +60,8 @@ final class LeftSideViewController: UITableViewController {
                 return #imageLiteral(resourceName: "ic_history")
             case .analysis:
                 return #imageLiteral(resourceName: "ic_analysis")
-            case .information:
-                return #imageLiteral(resourceName: "ic_info")
+//            case .information:
+//                return #imageLiteral(resourceName: "ic_info")
             }
         }
     }

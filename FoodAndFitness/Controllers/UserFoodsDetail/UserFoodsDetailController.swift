@@ -211,7 +211,7 @@ extension UserFoodsDetailController: UITableViewDelegate {
             fatalError(Strings.Errors.enumError)
         }
         if sections == .userFoods && indexPath.row == 0 { return 60 }
-        return 50
+        return 55
     }
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

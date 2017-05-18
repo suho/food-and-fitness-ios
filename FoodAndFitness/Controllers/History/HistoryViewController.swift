@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUtils
+import SwiftDate
 
 final class HistoryViewController: BaseViewController {
     @IBOutlet fileprivate(set) weak var tableView: TableView!
@@ -63,6 +64,7 @@ final class HistoryViewController: BaseViewController {
 
     override func setupUI() {
         super.setupUI()
+        title = DateInRegion(absoluteDate: viewModel.date).ffDate().toString(format: .date)
         configureTableView()
     }
 
@@ -116,7 +118,7 @@ extension HistoryViewController: UITableViewDataSource {
             cell.accessoryType = .none
             let userFood = viewModel.breakfastFoods[indexPath.row]
             if let food = userFood.food {
-                cell.data = UserFoodCell.Data(title: food.name, detail: "\(food.calories)")
+                cell.data = UserFoodCell.Data(title: food.name, detail: "\(food.calories)", image: #imageLiteral(resourceName: "ic_food"))
             }
             return cell
         case .lunch:
@@ -124,7 +126,7 @@ extension HistoryViewController: UITableViewDataSource {
             cell.accessoryType = .none
             let userFood = viewModel.lunchFoods[indexPath.row]
             if let food = userFood.food {
-                cell.data = UserFoodCell.Data(title: food.name, detail: "\(food.calories)")
+                cell.data = UserFoodCell.Data(title: food.name, detail: "\(food.calories)", image: #imageLiteral(resourceName: "ic_food"))
             }
             return cell
         case .dinner:
@@ -132,7 +134,7 @@ extension HistoryViewController: UITableViewDataSource {
             cell.accessoryType = .none
             let userFood = viewModel.dinnerFoods[indexPath.row]
             if let food = userFood.food {
-                cell.data = UserFoodCell.Data(title: food.name, detail: "\(food.calories)")
+                cell.data = UserFoodCell.Data(title: food.name, detail: "\(food.calories)", image: #imageLiteral(resourceName: "ic_food"))
             }
             return cell
         case .userExercises:
@@ -140,14 +142,14 @@ extension HistoryViewController: UITableViewDataSource {
             cell.accessoryType = .none
             let userExercise = viewModel.userExercises[indexPath.row]
             if let exercise = userExercise.exercise {
-                cell.data = UserFoodCell.Data(title: exercise.name, detail: "\(exercise.calories)")
+                cell.data = UserFoodCell.Data(title: exercise.name, detail: "\(exercise.calories)", image: #imageLiteral(resourceName: "ic_trainers"))
             }
             return cell
         case .trackings:
             let cell = tableView.dequeue(UserFoodCell.self)
             cell.accessoryType = .none
             let tracking = viewModel.trackings[indexPath.row]
-            cell.data = UserFoodCell.Data(title: tracking.active, detail: "\(tracking.caloriesBurn) - \(tracking.distance) - \(tracking.duration)")
+            cell.data = UserFoodCell.Data(title: tracking.active, detail: "\(tracking.caloriesBurn) - \(tracking.distance) - \(tracking.duration)", image: #imageLiteral(resourceName: "ic_trainers"))
             return cell
         }
     }
