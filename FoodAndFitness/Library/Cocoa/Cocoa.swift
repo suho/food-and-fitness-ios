@@ -40,6 +40,17 @@ extension Array where Element == [String:Any] {
     }
 }
 
+// MARK: - Copy UIColor to CGColor
+extension Array where Element == UIColor {
+    func toCgColor() -> [CGColor] {
+        var result: [CGColor] = []
+        for item in self {
+            result.append(item.cgColor)
+        }
+        return result
+    }
+}
+
 // MARK: - CollectionType
 extension Collection {
     var isNotEmpty: Bool {
@@ -242,6 +253,37 @@ extension UIView {
     func addTapGesture(target: Any?, action: Selector) {
         let tap = UITapGestureRecognizer(target: target, action: action)
         addGestureRecognizer(tap)
+    }
+}
+
+// MARK: - CAGradientLayer
+extension CAGradientLayer {
+    convenience init(frame: CGRect, colors: [UIColor]) {
+        self.init()
+        self.frame = frame
+        self.colors = colors.toCgColor()
+        startPoint = CGPoint(x: 0, y: 0)
+        endPoint = CGPoint(x: 0, y: 1)
+    }
+
+    func imageFromLayer() -> UIImage? {
+        var image: UIImage?
+        UIGraphicsBeginImageContext(bounds.size)
+        if let context = UIGraphicsGetCurrentContext() {
+            render(in: context)
+            image = UIGraphicsGetImageFromCurrentImageContext()
+        }
+        return image
+    }
+}
+
+// MARK: - UINavigationBar
+extension UINavigationBar {
+    func setGradientBackground(withColors colors: [UIColor]) {
+        var frame = bounds
+        frame.size.height += 20
+        let gradient = CAGradientLayer(frame: frame, colors: colors)
+        setBackgroundImage(gradient.imageFromLayer(), for: .default)
     }
 }
 

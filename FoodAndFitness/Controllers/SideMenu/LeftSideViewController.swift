@@ -2,7 +2,7 @@
 //  LeftSideViewController.swift
 //  FoodAndFitness
 //
-//  Created by Mylo Ho on 3/21/17.
+//  Created by Mylo Ho on 5/19/17.
 //  Copyright © 2017 SuHoVan. All rights reserved.
 //
 
@@ -13,14 +13,18 @@ protocol LeftSideViewControllerDelegate: NSObjectProtocol {
     func viewController(_ viewController: LeftSideViewController, needsPerformAction action: LeftSideViewController.SideMenu)
 }
 
-final class LeftSideViewController: UITableViewController {
+final class LeftSideViewController: BaseViewController {
+
+    @IBOutlet fileprivate(set) weak var tableView: UITableView!
+    weak var delegate: LeftSideViewControllerDelegate?
+    var viewModel: LeftSideViewModel = LeftSideViewModel()
 
     enum SideMenu: Int {
         case profile
         case home
         case history
         case analysis
-//        case information
+        //        case information
 
         static var count: Int {
             return self.analysis.hashValue + 1
@@ -60,15 +64,12 @@ final class LeftSideViewController: UITableViewController {
                 return #imageLiteral(resourceName: "ic_history")
             case .analysis:
                 return #imageLiteral(resourceName: "ic_analysis")
-//            case .information:
-//                return #imageLiteral(resourceName: "ic_info")
+                //            case .information:
+                //                return #imageLiteral(resourceName: "ic_info")
             }
         }
     }
 
-    weak var delegate: LeftSideViewControllerDelegate?
-    var viewModel: LeftSideViewModel = LeftSideViewModel()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
@@ -85,6 +86,8 @@ final class LeftSideViewController: UITableViewController {
 
     private func configureTableView() {
         tableView.register(UserProfileCell.self)
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.tableFooterView = UIView()
         tableView.contentInset.top = 20
         tableView.separatorInset = .zero
@@ -93,12 +96,12 @@ final class LeftSideViewController: UITableViewController {
 }
 
 // MARK: - UITableViewDataSource
-extension LeftSideViewController {
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension LeftSideViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return SideMenu.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let sideMenu = SideMenu(rawValue: indexPath.row) else {
             fatalError(Strings.Errors.enumError)
         }
@@ -110,28 +113,38 @@ extension LeftSideViewController {
             return cell
         default:
             let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-            cell.textLabel?.text = sideMenu.title
-            cell.imageView?.image = sideMenu.deselectedImage
             cell.selectionStyle = .none
+            cell.backgroundColor = .clear
+            cell.textLabel?.text = sideMenu.title
+            cell.imageView?.image = sideMenu.deselectedImage.withRenderingMode(.alwaysTemplate)
+            if sideMenu == viewModel.selectedMenu {
+                cell.imageView?.tintColor = Color.green64
+                cell.textLabel?.textColor = Color.green64
+            } else {
+                cell.imageView?.tintColor = .white
+                cell.textLabel?.textColor = .white
+            }
             return cell
         }
     }
 }
 
 // MARK: - UITableViewDelegate
-extension LeftSideViewController {
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+extension LeftSideViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard let sideMenu = SideMenu(rawValue: indexPath.row) else {
             fatalError(Strings.Errors.enumError)
         }
         return sideMenu.heightForRow
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let sideMenu = SideMenu(rawValue: indexPath.row) else {
             fatalError(Strings.Errors.enumError)
         }
         if sideMenu == .profile { return }
+        viewModel.selectedMenu = sideMenu
+        tableView.reloadData()
         delegate?.viewController(self, needsPerformAction: sideMenu)
     }
 }
@@ -141,6 +154,8 @@ extension LeftSideViewController: UserProfileCellDelegate {
     func cell(_ cell: UserProfileCell, needsPerformAction action: UserProfileCell.Action) {
         switch action {
         case .settings:
+            viewModel.selectedMenu = .profile
+            tableView.reloadData()
             delegate?.viewController(self, needsPerformAction: .profile)
         }
     }

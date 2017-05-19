@@ -29,10 +29,8 @@ final class ChooseActivesController: BaseViewController {
     }
 
     fileprivate func configBackground() {
-        let gradient = CAGradientLayer()
-        gradient.colors = [Color.green64.cgColor, Color.green2.cgColor]
-        gradient.locations = [0.0, 1.0]
-        gradient.frame = view.bounds
+        let colors: [UIColor] = [Color.green64, Color.green2]
+        let gradient = CAGradientLayer(frame: view.bounds, colors: colors)
         view.layer.insertSublayer(gradient, at: 0)
     }
 

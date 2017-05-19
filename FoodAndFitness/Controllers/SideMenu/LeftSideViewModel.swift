@@ -12,6 +12,7 @@ import RealmSwift
 
 final class LeftSideViewModel {
     let user: User?
+    var selectedMenu: LeftSideViewController.SideMenu = .home
 
     init() {
         user = User.me

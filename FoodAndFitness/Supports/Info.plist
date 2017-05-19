@@ -27,10 +27,10 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>FoodAndFitness would like to use your camera.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>FoodAndFitness would like to use your location.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>FoodAndFitness would like to use your location.</string>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>FoodAndFitness would like to use your location.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>FoodAndFitness would like to use your photos.</string>
 	<key>UIBackgroundModes</key>
@@ -55,5 +55,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>View controller-based status bar appearance</key>
+	<true/>
 </dict>
 </plist>

@@ -16,6 +16,7 @@ final class UserProfileCell: BaseTableViewCell {
     @IBOutlet fileprivate(set) weak var avatarImageView: UIImageView!
     @IBOutlet fileprivate(set) weak var userNameLabel: UILabel!
     @IBOutlet fileprivate(set) weak var bmiLabel: UILabel!
+    @IBOutlet fileprivate(set) weak var settingsButton: UIButton!
     
     weak var delegate: UserProfileCellDelegate?
 
@@ -37,6 +38,17 @@ final class UserProfileCell: BaseTableViewCell {
             userNameLabel.text = data.userName
             bmiLabel.attributedText = attributeText(bmi: data.bmi, status: data.status)
         }
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        configButton()
+    }
+
+    private func configButton() {
+        let image = #imageLiteral(resourceName: "ic_settings").withRenderingMode(.alwaysTemplate)
+        settingsButton.setImage(image, for: .normal)
+        settingsButton.imageView?.tintColor = .white
     }
 
     private func attributeText(bmi: String, status: String) -> NSMutableAttributedString {
