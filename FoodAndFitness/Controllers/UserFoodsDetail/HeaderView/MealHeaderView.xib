@@ -33,6 +33,13 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gk6-8B-r5C">
+                    <rect key="frame" x="8" y="22" width="30" height="30"/>
+                    <state key="normal" image="ic_back"/>
+                    <connections>
+                        <action selector="back:" destination="iN0-l3-epB" eventType="touchUpInside" id="g4F-00-ppV"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -42,6 +49,8 @@
                 <constraint firstItem="T0F-CO-FGV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7M4-0f-XHi"/>
                 <constraint firstAttribute="bottom" secondItem="Yq2-cQ-lUu" secondAttribute="bottom" id="8aL-2e-xUa"/>
                 <constraint firstAttribute="bottom" secondItem="YTO-qd-NoL" secondAttribute="bottom" constant="8" id="Bql-vC-BLh"/>
+                <constraint firstItem="gk6-8B-r5C" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="22" id="Hwa-tV-tl5"/>
+                <constraint firstItem="gk6-8B-r5C" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Mw1-hn-cio"/>
                 <constraint firstItem="T0F-CO-FGV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="NuD-DJ-9fV"/>
                 <constraint firstAttribute="trailing" secondItem="Yq2-cQ-lUu" secondAttribute="trailing" id="OC5-dO-Sef"/>
                 <constraint firstItem="Yq2-cQ-lUu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YBt-QI-KAf"/>
@@ -51,12 +60,16 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="backButton" destination="gk6-8B-r5C" id="e17-Xz-vAX"/>
                 <outlet property="blurView" destination="Yq2-cQ-lUu" id="Btf-6S-pBx"/>
                 <outlet property="detailLabel" destination="YTO-qd-NoL" id="5cT-pH-TBt"/>
                 <outlet property="imageView" destination="T0F-CO-FGV" id="eVs-M2-IFY"/>
                 <outlet property="titleLabel" destination="4Lp-RF-7hx" id="Qzg-IS-zNX"/>
             </connections>
-            <point key="canvasLocation" x="-1151" y="-911"/>
+            <point key="canvasLocation" x="-1418" y="-1061"/>
         </view>
     </objects>
+    <resources>
+        <image name="ic_back" width="30" height="30"/>
+    </resources>
 </document>

@@ -13,11 +13,6 @@ final class HomeViewController: RootSideMenuViewController {
     @IBOutlet fileprivate(set) weak var tableView: UITableView!
     var viewModel: HomeViewModel = HomeViewModel()
 
-    override var gradientColors: [UIColor] {
-        let colors: [UIColor] = [Color.green64, Color.green2]
-        return colors
-    }
-
     enum Sections: Int {
         case progress
         case meals
@@ -96,8 +91,6 @@ final class HomeViewController: RootSideMenuViewController {
     }
 
     private func configureNavigationBar() {
-        navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         title = Strings.nutritionAndFitness
     }
 

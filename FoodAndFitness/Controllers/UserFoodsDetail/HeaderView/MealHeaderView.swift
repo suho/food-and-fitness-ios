@@ -8,11 +8,21 @@
 
 import UIKit
 
+protocol MealHeaderViewDelegate: class {
+    func view(_ view: MealHeaderView, needsPerformAction action: MealHeaderView.Action)
+}
+
 final class MealHeaderView: UIView {
     @IBOutlet fileprivate(set) weak var titleLabel: UILabel!
     @IBOutlet fileprivate(set) weak var detailLabel: UILabel!
     @IBOutlet fileprivate(set) weak var imageView: UIImageView!
     @IBOutlet fileprivate(set) weak var blurView: UIView!
+    @IBOutlet fileprivate(set) weak var backButton: UIButton!
+    weak var delegate: MealHeaderViewDelegate?
+
+    enum Action {
+        case back
+    }
 
     struct Data {
         var title: String
@@ -27,5 +37,9 @@ final class MealHeaderView: UIView {
             detailLabel.text = data.detail
             imageView.image = data.image
         }
+    }
+
+    @IBAction private func back(_ sender: Any) {
+        delegate?.view(self, needsPerformAction: .back)
     }
 }

@@ -17,10 +17,6 @@ class BaseViewController: ViewController {
         return false
     }
 
-    var gradientColors: [UIColor] {
-        return [Color.gray247]
-    }
-
     override required init(nibName: String?, bundle: Bundle?) {
         super.init(nibName: nibName, bundle: bundle)
     }
@@ -39,7 +35,6 @@ class BaseViewController: ViewController {
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.tintColor = Color.green64
         navigationItem.backBarButtonItem = UIBarButtonItem(title: Strings.empty, style: .plain, target: self, action: #selector(back))
-        navigationController?.navigationBar.setGradientBackground(withColors: gradientColors)
         setupData()
         setupUI()
     }
@@ -52,16 +47,12 @@ class BaseViewController: ViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        UIApplication.shared.statusBarStyle = .lightContent
         navigationController?.isNavigationBarHidden = isNavigationBarHidden
-        setNeedsStatusBarAppearanceUpdate()
         isVisible = true
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        UIApplication.shared.statusBarStyle = .default
-        setNeedsStatusBarAppearanceUpdate()
         isVisible = false
     }
 
@@ -78,6 +69,6 @@ class BaseViewController: ViewController {
 // MARK: - Action
 extension BaseViewController {
     @IBAction dynamic func back(_ sender: Any) {
-        _ = navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
 }
