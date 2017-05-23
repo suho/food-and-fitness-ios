@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUtils
 
 final class SignInController: BaseViewController {
     @IBOutlet fileprivate(set) weak var mailField: UITextField!
@@ -79,7 +80,7 @@ final class SignInController: BaseViewController {
                 this.getData()
             case .failure(let error):
                 HUD.dismiss()
-                error.show()
+                this.present(AlertController.alertWithError(error as NSError, level: .require), animated: true, completion: nil)
             }
         }
     }

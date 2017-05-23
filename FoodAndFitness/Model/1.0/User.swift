@@ -18,7 +18,7 @@ final class User: Object, Mappable {
     private(set) dynamic var email: String = ""
     private(set) dynamic var avatarUrl: String = ""
     private(set) dynamic var birthday: Date = Date(timeIntervalSince1970: 0)
-    private(set) dynamic var genderRaw = Gender.others.rawValue
+    private(set) dynamic var genderRaw = Gender.male.rawValue
     private(set) dynamic var height: Int = 0
     private(set) dynamic var weight: Int = 0
     private(set) dynamic var goal: Goal?
@@ -33,7 +33,7 @@ final class User: Object, Mappable {
             if let gender = gender {
                 return gender
             } else {
-                return .others
+                return .male
             }
         }
     }

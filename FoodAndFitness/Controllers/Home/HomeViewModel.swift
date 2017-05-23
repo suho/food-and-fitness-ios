@@ -126,6 +126,31 @@ final class HomeViewModel {
         return AddActivityCell.Data(thumbnail: activity.image, title: activity.title, recommend: recommend, addImage: #imageLiteral(resourceName: "ic_add"))
     }
 
+    func valueForProgressBar() -> ProgressCell.ProgressBarValue? {
+        guard let user = User.me else { return nil }
+        let burn = burnToday()
+        let calories = user.caloriesToday + Double(burn)
+
+        let carbsEaten = userFoods.map { (userFood) -> Int in
+            return userFood.carbs
+            }.reduce(0) { (result, carbs) -> Int in
+                return result + carbs
+        }
+        let proteinEaten = userFoods.map { (userFood) -> Int in
+            return userFood.protein
+            }.reduce(0) { (result, protein) -> Int in
+                return result + protein
+        }
+        let fatEaten = userFoods.map { (userFood) -> Int in
+            return userFood.fat
+            }.reduce(0) { (result, fat) -> Int in
+                return result + fat
+        }
+        return ProgressCell.ProgressBarValue(carbs: carbsEaten, carbsMax: carbs(calories: calories),
+                                             protein: proteinEaten, proteinMax: protein(calories: calories),
+                                             fat: fatEaten, fatMax: fat(calories: calories))
+    }
+
     func dataForProgressCell() -> ProgressCell.Data? {
         guard let user = User.me else { return nil }
         var eaten = eatenToday()

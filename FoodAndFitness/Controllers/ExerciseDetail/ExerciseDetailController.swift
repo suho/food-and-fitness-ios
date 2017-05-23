@@ -14,6 +14,10 @@ class ExerciseDetailController: BaseViewController {
 
     var viewModel: ExerciseDetailViewModel!
 
+    override var isNavigationBarHidden: Bool {
+        return true
+    }
+
     enum Rows: Int {
         case addUserExercise
 
@@ -79,13 +83,21 @@ extension ExerciseDetailController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 170
+        return 234
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView: MealHeaderView = MealHeaderView.loadNib()
+        headerView.delegate = self
         headerView.data = viewModel.dataForHeaderView()
         return headerView
+    }
+}
+
+// MARK: - 
+extension ExerciseDetailController: MealHeaderViewDelegate {
+    func view(_ view: MealHeaderView, needsPerformAction action: MealHeaderView.Action) {
+        back(view.backButton)
     }
 }
 

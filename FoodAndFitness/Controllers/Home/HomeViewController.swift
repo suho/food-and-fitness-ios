@@ -86,12 +86,14 @@ final class HomeViewController: RootSideMenuViewController {
         configureViewModel()
     }
 
+    // MARK: - Private Functions
     private func configureViewModel() {
         viewModel.delegate = self
     }
 
     private func configureNavigationBar() {
         title = Strings.nutritionAndFitness
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_info"), style: .plain, target: self, action: #selector(showSuggest))
     }
 
     private func configureTableView() {
@@ -100,6 +102,10 @@ final class HomeViewController: RootSideMenuViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
+    }
+
+    @objc private func showSuggest() {
+        print("Show Suggestion")
     }
 }
 
@@ -127,6 +133,7 @@ extension HomeViewController: UITableViewDataSource {
         case .progress:
             let cell = tableView.dequeue(ProgressCell.self)
             cell.data = viewModel.dataForProgressCell()
+            cell.progressValue = viewModel.valueForProgressBar()
             return cell
         case .meals:
             guard let activity = AddActivity(rawValue: indexPath.row) else { fatalError(Strings.Errors.enumError) }

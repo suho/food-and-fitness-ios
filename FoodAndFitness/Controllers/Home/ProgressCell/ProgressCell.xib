@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -161,12 +161,40 @@
                                             <constraint firstAttribute="trailing" secondItem="ess-Vt-2ab" secondAttribute="trailing" id="uui-66-XHI"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wgw-Mb-F3v" customClass="ProgressBarView" customModule="FoodAndFitness" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="49" width="66" height="23"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                <real key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                <real key="value" value="100"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lineBackgroundColor">
+                                                <color key="value" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                <color key="value" red="1" green="0.70393571050000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineCap">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.67382705480000005" green="0.88408380870000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Wgw-Mb-F3v" secondAttribute="bottom" id="4KX-ok-Blj"/>
                                     <constraint firstItem="17g-Z6-CPn" firstAttribute="leading" secondItem="CoC-ZU-hbK" secondAttribute="leading" id="UsG-jC-X1b"/>
+                                    <constraint firstItem="Wgw-Mb-F3v" firstAttribute="leading" secondItem="CoC-ZU-hbK" secondAttribute="leading" constant="10" id="YdN-cS-i5F"/>
+                                    <constraint firstItem="Wgw-Mb-F3v" firstAttribute="top" secondItem="17g-Z6-CPn" secondAttribute="bottom" id="dMk-5k-cmF"/>
                                     <constraint firstItem="17g-Z6-CPn" firstAttribute="centerY" secondItem="CoC-ZU-hbK" secondAttribute="centerY" id="fVy-EY-nTd"/>
                                     <constraint firstAttribute="trailing" secondItem="17g-Z6-CPn" secondAttribute="trailing" id="hB6-n7-KAs"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wgw-Mb-F3v" secondAttribute="trailing" constant="10" id="mQL-zo-OUA"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="web-ln-icK">
@@ -199,12 +227,40 @@
                                             <constraint firstItem="lj5-VB-dNz" firstAttribute="leading" secondItem="zfO-zd-eSg" secondAttribute="leading" id="mJr-07-xz7"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="21R-ZN-NCA" customClass="ProgressBarView" customModule="FoodAndFitness" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="49" width="65" height="22"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                <real key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                <real key="value" value="100"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lineBackgroundColor">
+                                                <color key="value" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                <color key="value" red="1" green="0.70393571050000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineCap">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="21R-ZN-NCA" firstAttribute="top" secondItem="zfO-zd-eSg" secondAttribute="bottom" id="11B-Kf-j7X"/>
+                                    <constraint firstItem="21R-ZN-NCA" firstAttribute="leading" secondItem="web-ln-icK" secondAttribute="leading" constant="10" id="KTC-bG-dWS"/>
                                     <constraint firstItem="zfO-zd-eSg" firstAttribute="centerY" secondItem="web-ln-icK" secondAttribute="centerY" id="QJE-OI-R0L"/>
+                                    <constraint firstAttribute="trailing" secondItem="21R-ZN-NCA" secondAttribute="trailing" constant="10" id="e7V-18-9mg"/>
                                     <constraint firstAttribute="trailing" secondItem="zfO-zd-eSg" secondAttribute="trailing" id="odn-Y7-ppc"/>
                                     <constraint firstItem="zfO-zd-eSg" firstAttribute="leading" secondItem="web-ln-icK" secondAttribute="leading" id="v4a-Sv-FWf"/>
+                                    <constraint firstAttribute="bottom" secondItem="21R-ZN-NCA" secondAttribute="bottom" id="v6y-B6-vzT"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O1T-dB-On5">
@@ -237,11 +293,39 @@
                                             <constraint firstAttribute="bottom" secondItem="Xwu-u2-C74" secondAttribute="bottom" id="ycH-Os-5KW"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SbJ-PZ-sJN" customClass="ProgressBarView" customModule="FoodAndFitness" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="49" width="65.5" height="22.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                <real key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                <real key="value" value="100"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lineBackgroundColor">
+                                                <color key="value" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                <color key="value" red="1" green="0.70393571050000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineCap">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.94043958189999999" blue="0.72461670639999998" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
+                                    <constraint firstItem="SbJ-PZ-sJN" firstAttribute="leading" secondItem="O1T-dB-On5" secondAttribute="leading" constant="10" id="546-cl-KSP"/>
                                     <constraint firstItem="Ko8-wM-HPW" firstAttribute="leading" secondItem="O1T-dB-On5" secondAttribute="leading" id="6nz-Nz-IEj"/>
                                     <constraint firstAttribute="trailing" secondItem="Ko8-wM-HPW" secondAttribute="trailing" id="bso-Ee-zao"/>
+                                    <constraint firstAttribute="trailing" secondItem="SbJ-PZ-sJN" secondAttribute="trailing" constant="10" id="cRw-Cc-ntx"/>
+                                    <constraint firstAttribute="bottom" secondItem="SbJ-PZ-sJN" secondAttribute="bottom" id="dHw-gX-tEq"/>
+                                    <constraint firstItem="SbJ-PZ-sJN" firstAttribute="top" secondItem="Ko8-wM-HPW" secondAttribute="bottom" id="hat-DG-Grq"/>
                                     <constraint firstItem="Ko8-wM-HPW" firstAttribute="centerY" secondItem="O1T-dB-On5" secondAttribute="centerY" id="xGI-GO-98N"/>
                                 </constraints>
                             </view>
@@ -272,12 +356,15 @@
                 <outlet property="burnLabel" destination="BmQ-z3-gxw" id="YEL-2C-Ipv"/>
                 <outlet property="caloriesLabel" destination="iKu-3P-sEg" id="4aD-2t-HtF"/>
                 <outlet property="carbsLabel" destination="W9G-3m-wje" id="PMA-gB-dmq"/>
+                <outlet property="carbsProgressView" destination="Wgw-Mb-F3v" id="ZBV-G4-bc7"/>
                 <outlet property="eatenLabel" destination="6TM-1m-4Ow" id="mxH-lU-Mt7"/>
                 <outlet property="fatLabel" destination="Xwu-u2-C74" id="HnL-Ry-M2I"/>
+                <outlet property="fatProgressView" destination="SbJ-PZ-sJN" id="XK9-bo-haq"/>
                 <outlet property="progressView" destination="TJa-iE-9IS" id="l7o-Xm-n4K"/>
                 <outlet property="proteinLabel" destination="lj5-VB-dNz" id="9GU-yA-QqD"/>
+                <outlet property="proteinProgressView" destination="21R-ZN-NCA" id="gJQ-ea-7br"/>
             </connections>
-            <point key="canvasLocation" x="-607" y="6"/>
+            <point key="canvasLocation" x="-1155" y="-6"/>
         </tableViewCell>
     </objects>
 </document>

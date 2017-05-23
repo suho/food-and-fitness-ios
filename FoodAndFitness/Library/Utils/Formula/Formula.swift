@@ -105,7 +105,6 @@ func bmr(weight: Int, height: Int, age: Int, gender: Gender) -> Double {
         return value + 5
     case .female:
         return value - 161
-    case .others: return 0
     }
 }
 

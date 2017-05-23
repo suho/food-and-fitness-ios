@@ -16,6 +16,9 @@ final class ProgressCell: BaseTableViewCell {
     @IBOutlet fileprivate(set) weak var carbsLabel: UILabel!
     @IBOutlet fileprivate(set) weak var proteinLabel: UILabel!
     @IBOutlet fileprivate(set) weak var fatLabel: UILabel!
+    @IBOutlet fileprivate(set) weak var carbsProgressView: ProgressBarView!
+    @IBOutlet fileprivate(set) weak var proteinProgressView: ProgressBarView!
+    @IBOutlet fileprivate(set) weak var fatProgressView: ProgressBarView!
 
     struct Data {
         var calories: Int
@@ -24,6 +27,15 @@ final class ProgressCell: BaseTableViewCell {
         var carbs: String
         var protein: String
         var fat: String
+    }
+
+    struct ProgressBarValue {
+        var carbs: Int
+        var carbsMax: Int
+        var protein: Int
+        var proteinMax: Int
+        var fat: Int
+        var fatMax: Int
     }
 
     var data: Data? {
@@ -37,6 +49,18 @@ final class ProgressCell: BaseTableViewCell {
             carbsLabel.text =  data.carbs
             proteinLabel.text = data.protein
             fatLabel.text = data.fat
+        }
+    }
+
+    var progressValue: ProgressBarValue? {
+        didSet {
+            guard let data = progressValue else { return }
+            carbsProgressView.maxValue = CGFloat(data.carbsMax)
+            carbsProgressView.setValue(CGFloat(data.carbs))
+            proteinProgressView.maxValue = CGFloat(data.proteinMax)
+            proteinProgressView.setValue(CGFloat(data.protein))
+            fatProgressView.maxValue = CGFloat(data.fatMax)
+            fatProgressView.setValue(CGFloat(data.fat))
         }
     }
 }
