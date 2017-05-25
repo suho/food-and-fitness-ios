@@ -105,7 +105,8 @@ final class HomeViewController: RootSideMenuViewController {
     }
 
     @objc private func showSuggest() {
-        print("Show Suggestion")
+        let vc = SuggestionController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

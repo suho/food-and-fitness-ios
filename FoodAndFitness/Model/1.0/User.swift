@@ -67,7 +67,7 @@ extension User {
         guard let userID = api.session.userID else { return nil }
         return RealmS().object(ofType: User.self, forPrimaryKey: userID)
     }
-    
+
     static var isLogin: Bool {
         return me != nil
     }
@@ -77,6 +77,17 @@ enum Goals: Int {
     case beHealthier = 1
     case loseWeight
     case gainWeight
+
+    var title: String {
+        switch self {
+        case .beHealthier:
+            return Strings.beHealthier
+        case .loseWeight:
+            return Strings.loseWeight
+        case .gainWeight:
+            return Strings.gainWeight
+        }
+    }
 }
 
 enum Actives: Int {
@@ -84,6 +95,19 @@ enum Actives: Int {
     case lightlyActive
     case modertelyActive
     case veryActive
+
+    var title: String {
+        switch self {
+        case .sedentary:
+            return Strings.sedentary
+        case .lightlyActive:
+            return Strings.lightlyActive
+        case .modertelyActive:
+            return Strings.modertelyActive
+        case .veryActive:
+            return Strings.veryActive
+        }
+    }
 }
 
 // MARK: - For Nutrition

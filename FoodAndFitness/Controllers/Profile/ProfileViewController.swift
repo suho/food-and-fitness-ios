@@ -52,9 +52,11 @@ final class ProfileViewController: RootSideMenuViewController {
         case birthday
         case gender
         case caloriesPerDay
+        case goal
+        case active
 
         static var count: Int {
-            return self.caloriesPerDay.rawValue + 1
+            return self.active.rawValue + 1
         }
 
         var title: String {
@@ -71,6 +73,10 @@ final class ProfileViewController: RootSideMenuViewController {
                 return Strings.gender
             case .caloriesPerDay:
                 return Strings.caloriesPerDay
+            case .goal:
+                return Strings.goal
+            case .active:
+                return Strings.active
             }
         }
     }
@@ -153,18 +159,28 @@ extension ProfileViewController: UITableViewDelegate {
             guard let rows = InfoRows(rawValue: indexPath.row) else {
                 fatalError(Strings.Errors.enumError)
             }
-            let updateProfileController = UpdateProfileController()
             switch rows {
             case .mail: return
             case .weight:
+                let updateProfileController = UpdateProfileController()
                 updateProfileController.viewModel = UpdateProfileViewModel(row: .weight)
+                navigationController?.pushViewController(updateProfileController, animated: true)
             case .height:
+                let updateProfileController = UpdateProfileController()
                 updateProfileController.viewModel = UpdateProfileViewModel(row: .height)
+                navigationController?.pushViewController(updateProfileController, animated: true)
             case .birthday: return
             case .gender: return
             case .caloriesPerDay: return
+            case .goal:
+                let chooseUpdateController = ChooseUpdateController()
+                chooseUpdateController.viewModel = ChooseUpdateViewModel(dataType: .goal)
+                navigationController?.pushViewController(chooseUpdateController, animated: true)
+            case .active:
+                let chooseUpdateController = ChooseUpdateController()
+                chooseUpdateController.viewModel = ChooseUpdateViewModel(dataType: .active)
+                navigationController?.pushViewController(chooseUpdateController, animated: true)
             }
-            navigationController?.pushViewController(updateProfileController, animated: true)
         case .logout:
             api.logout()
             AppDelegate.shared.gotoSignUp()

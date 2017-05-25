@@ -9,8 +9,26 @@
 import UIKit
 
 struct UpdateParams {
-    let weight: String?
-    let height: String?
+    var weight: String? = nil
+    var height: String? = nil
+    var goalId: Int? = nil
+    var activeId: Int? = nil
+
+    init(weight: String) {
+        self.weight = weight
+    }
+
+    init(height: String) {
+        self.height = height
+    }
+
+    init(goalId: Int) {
+        self.goalId = goalId
+    }
+
+    init(activeId: Int) {
+        self.activeId = activeId
+    }
 }
 
 class UpdateProfileViewModel {
@@ -59,9 +77,9 @@ class UpdateProfileViewModel {
             var params: UpdateParams!
             switch row {
             case .weight:
-                params = UpdateParams(weight: value, height: nil)
+                params = UpdateParams(weight: value)
             case .height:
-                params = UpdateParams(weight: nil, height: value)
+                params = UpdateParams(height: value)
             }
             UserServices().update(params: params, completion: completion)
         case .failure(let message):

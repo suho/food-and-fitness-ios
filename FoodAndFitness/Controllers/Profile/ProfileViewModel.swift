@@ -61,6 +61,12 @@ class ProfileViewModel {
             detail = user.gender.description
         case .caloriesPerDay:
             detail = "\(user.caloriesToday)"
+        case .goal:
+            let name = user.goal?.name
+            detail = "\(name.toString())"
+        case .active:
+            let name = user.active?.name
+            detail = "\(name.toString())"
         }
         return DetailCell.Data(title: row.title, detail: detail)
     }

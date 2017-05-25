@@ -57,6 +57,17 @@ final class SignInController: BaseViewController {
                 error.show()
             }
         }
+        group.enter()
+        viewModel.getSuggestion { [weak self](result) in
+            guard self != nil else { return }
+            group.leave()
+            switch result {
+            case .success(_): break
+            case .failure(let error):
+                HUD.dismiss()
+                error.show()
+            }
+        }
         group.notify(queue: .main) {
             HUD.dismiss()
             AppDelegate.shared.gotoHome()
