@@ -26,9 +26,10 @@ final class UserExercisesDetailViewModel {
         })
     }
     var suggestExercises: [Exercise] {
-        return _suggestExercises.filter({ (exercise) -> Bool in
+        let exercises = _suggestExercises.filter({ (exercise) -> Bool in
             return self.filterSuggestExercises(exercise: exercise)
         })
+        return Array(exercises.prefix(5))
     }
     private let _userExercises: Results<UserExercise>
     private let _suggestExercises: Results<Exercise>

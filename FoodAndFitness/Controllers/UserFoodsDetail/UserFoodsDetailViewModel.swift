@@ -25,9 +25,10 @@ final class UserFoodsDetailViewModel {
         })
     }
     var suggestFoods: [Food] {
-        return _suggestFoods.filter({ (food) -> Bool in
+        let foods: [Food] = _suggestFoods.filter({ (food) -> Bool in
             return self.filterSuggestFoods(food: food)
         })
+        return Array(foods.prefix(5))
     }
     private let _userFoods: Results<UserFood>
     private let _suggestFoods: Results<Food>

@@ -105,8 +105,16 @@ final class HomeViewController: RootSideMenuViewController {
     }
 
     @objc private func showSuggest() {
-        let vc = SuggestionController()
-        navigationController?.pushViewController(vc, animated: true)
+        viewModel.getSuggestionsIfNeeds { [weak self](result) in
+            guard let this = self else { return }
+            switch result {
+            case .success(_):
+                let vc = SuggestionController()
+                this.navigationController?.pushViewController(vc, animated: true)
+            case .failure(let error):
+                error.show()
+            }
+        }
     }
 }
 

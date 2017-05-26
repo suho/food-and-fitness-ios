@@ -58,7 +58,7 @@ final class SignInController: BaseViewController {
             }
         }
         group.enter()
-        viewModel.getSuggestion { [weak self](result) in
+        viewModel.getSuggestions { [weak self](result) in
             guard self != nil else { return }
             group.leave()
             switch result {

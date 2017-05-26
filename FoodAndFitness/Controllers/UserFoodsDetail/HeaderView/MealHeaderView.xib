@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -28,7 +28,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breakfast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lp-RF-7hx">
-                    <rect key="frame" x="8" y="82.5" width="120.5" height="35"/>
+                    <rect key="frame" x="8" y="82.5" width="359" height="35"/>
                     <fontDescription key="fontDescription" type="system" pointSize="29"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -56,6 +56,7 @@
                 <constraint firstItem="Yq2-cQ-lUu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YBt-QI-KAf"/>
                 <constraint firstAttribute="bottom" secondItem="T0F-CO-FGV" secondAttribute="bottom" id="ZNa-Fh-3ef"/>
                 <constraint firstItem="4Lp-RF-7hx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="abN-uk-GRK"/>
+                <constraint firstAttribute="trailing" secondItem="4Lp-RF-7hx" secondAttribute="trailing" constant="8" id="gN2-36-kgs"/>
                 <constraint firstAttribute="trailing" secondItem="T0F-CO-FGV" secondAttribute="trailing" id="pK8-kS-UJ3"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -66,7 +67,7 @@
                 <outlet property="imageView" destination="T0F-CO-FGV" id="eVs-M2-IFY"/>
                 <outlet property="titleLabel" destination="4Lp-RF-7hx" id="Qzg-IS-zNX"/>
             </connections>
-            <point key="canvasLocation" x="-1418" y="-1061"/>
+            <point key="canvasLocation" x="-1240" y="-1241"/>
         </view>
     </objects>
     <resources>

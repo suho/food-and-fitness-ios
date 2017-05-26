@@ -24,7 +24,7 @@ final class SuggestionCell: BaseTableViewCell {
             guard let data = data else { return }
             thumbnailImageView.image = data.image
             mealLabel.text = data.meal
-            detailLabel.text = data.detail ?? "abc"
+            detailLabel.text = data.detail
         }
     }
 }

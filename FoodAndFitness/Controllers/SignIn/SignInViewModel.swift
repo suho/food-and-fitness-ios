@@ -40,7 +40,7 @@ final class SignInViewModel {
         }
     }
 
-    func getSuggestion(completion: @escaping Completion) {
+    func getSuggestions(completion: @escaping Completion) {
         guard let me = User.me, let goal = me.goal else {
             completion(.failure(NSError(message: Strings.Errors.tokenError)))
             return

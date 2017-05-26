@@ -25,5 +25,4 @@ final class SuggestionServices {
             Mapper<Suggestion>().map(result: result, type: .array, completion: completion)
         })
     }
-
 }

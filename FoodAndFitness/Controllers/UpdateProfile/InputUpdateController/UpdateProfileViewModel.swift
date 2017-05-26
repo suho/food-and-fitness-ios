@@ -9,10 +9,10 @@
 import UIKit
 
 struct UpdateParams {
-    var weight: String? = nil
-    var height: String? = nil
-    var goalId: Int? = nil
-    var activeId: Int? = nil
+    var weight: String?
+    var height: String?
+    var goalId: Int?
+    var activeId: Int?
 
     init(weight: String) {
         self.weight = weight

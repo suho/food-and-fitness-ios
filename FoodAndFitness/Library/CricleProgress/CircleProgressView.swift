@@ -133,7 +133,11 @@ class CircleProgressView: UIView {
 
     // MARK: - Public Functions
     func setValue(_ value: CGFloat, duration: CFTimeInterval = 1) {
-        self.value = value
+        if value > maxValue {
+            self.value = maxValue
+        } else {
+            self.value = value
+        }
         if isAnimation {
             drawCircleAnimation(with: duration)
         }

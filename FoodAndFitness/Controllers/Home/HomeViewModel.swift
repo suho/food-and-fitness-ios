@@ -229,4 +229,19 @@ final class HomeViewModel {
         }
         return exercisesBurn + trackingsBurn
     }
+
+    func getSuggestionsIfNeeds(completion: @escaping Completion) {
+        let suggestions: [Suggestion] = RealmS().objects(Suggestion.self).filter { (suggestion) -> Bool in
+            return SuggestionViewModel.filterByGoal(suggestion: suggestion)
+        }
+        if suggestions.isEmpty {
+            guard let me = User.me, let goal = me.goal else {
+                completion(.failure(NSError(message: Strings.Errors.tokenError)))
+                return
+            }
+            SuggestionServices.get(goalId: goal.id, completion: completion)
+        } else {
+            completion(.success([:]))
+        }
+    }
 }
