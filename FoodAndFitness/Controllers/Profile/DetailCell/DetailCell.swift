@@ -15,6 +15,7 @@ class DetailCell: BaseTableViewCell {
     struct Data {
         var title: String
         var detail: String
+        var detailColor: UIColor
     }
 
     var data: Data? {
@@ -22,6 +23,7 @@ class DetailCell: BaseTableViewCell {
             guard let data = data else { return }
             titleLabel.text = data.title
             detailLabel.text = data.detail
+            detailLabel.textColor = data.detailColor
         }
     }
 }

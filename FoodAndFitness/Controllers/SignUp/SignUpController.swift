@@ -63,6 +63,8 @@ final class SignUpController: BaseViewController {
                 return 100
             case .informationTitle:
                 return 60
+            case .button:
+                return 75
             default:
                 return 55
 
@@ -100,10 +102,17 @@ final class SignUpController: BaseViewController {
             switch result {
             case .success(_):
                 this.upload()
-                AppDelegate.shared.gotoHome()
+                this.getSuggestions()
             case .failure(let error):
                 error.show()
             }
+        }
+    }
+
+    fileprivate func getSuggestions() {
+        viewModel.getSuggestions { [weak self](_) in
+            guard self != nil else { return }
+            AppDelegate.shared.gotoHome()
         }
     }
 }
@@ -214,7 +223,7 @@ extension SignUpController: AvatarCellDelegate {
             alert.addAction(Strings.openGallery, handler: {
                 accessLibrary.openPhoto(sender: nil)
             })
-            alert.addAction(Strings.openCamera, handler: { 
+            alert.addAction(Strings.openCamera, handler: {
                 accessLibrary.openCamera(sender: nil)
             })
             alert.addAction(Strings.cancel, style: .cancel, handler: nil)

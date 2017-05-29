@@ -27,6 +27,9 @@
 		991C34D91E9646C400FABEDE /* NextButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 991C34D71E9646C400FABEDE /* NextButtonCell.xib */; };
 		991DF82C1EAC91700023D099 /* UserFoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991DF82A1EAC91700023D099 /* UserFoodCell.swift */; };
 		991DF82D1EAC91700023D099 /* UserFoodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 991DF82B1EAC91700023D099 /* UserFoodCell.xib */; };
+		991FCA8F1EDC086800533459 /* TrackingDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991FCA8D1EDC086800533459 /* TrackingDetailController.swift */; };
+		991FCA901EDC086800533459 /* TrackingDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 991FCA8E1EDC086800533459 /* TrackingDetailController.xib */; };
+		991FCA921EDC087800533459 /* TrackingDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991FCA911EDC087800533459 /* TrackingDetailViewModel.swift */; };
 		9921B1061EB5F045006A9F16 /* AnalysisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9921B1051EB5F045006A9F16 /* AnalysisViewModel.swift */; };
 		992313F11EA9B5900069B157 /* ChooseActiveTrackingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992313EF1EA9B5900069B157 /* ChooseActiveTrackingController.swift */; };
 		992313F21EA9B5900069B157 /* ChooseActiveTrackingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 992313F01EA9B5900069B157 /* ChooseActiveTrackingController.xib */; };
@@ -202,6 +205,9 @@
 		991C34D71E9646C400FABEDE /* NextButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NextButtonCell.xib; sourceTree = "<group>"; };
 		991DF82A1EAC91700023D099 /* UserFoodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFoodCell.swift; sourceTree = "<group>"; };
 		991DF82B1EAC91700023D099 /* UserFoodCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserFoodCell.xib; sourceTree = "<group>"; };
+		991FCA8D1EDC086800533459 /* TrackingDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingDetailController.swift; sourceTree = "<group>"; };
+		991FCA8E1EDC086800533459 /* TrackingDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackingDetailController.xib; sourceTree = "<group>"; };
+		991FCA911EDC087800533459 /* TrackingDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingDetailViewModel.swift; sourceTree = "<group>"; };
 		9921B1051EB5F045006A9F16 /* AnalysisViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisViewModel.swift; sourceTree = "<group>"; };
 		992313EF1EA9B5900069B157 /* ChooseActiveTrackingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseActiveTrackingController.swift; sourceTree = "<group>"; };
 		992313F01EA9B5900069B157 /* ChooseActiveTrackingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseActiveTrackingController.xib; sourceTree = "<group>"; };
@@ -421,6 +427,16 @@
 				992313F01EA9B5900069B157 /* ChooseActiveTrackingController.xib */,
 			);
 			path = ActiveTracking;
+			sourceTree = "<group>";
+		};
+		992AC2981EDB44D000A0F4D6 /* TrackingDetail */ = {
+			isa = PBXGroup;
+			children = (
+				991FCA8D1EDC086800533459 /* TrackingDetailController.swift */,
+				991FCA8E1EDC086800533459 /* TrackingDetailController.xib */,
+				991FCA911EDC087800533459 /* TrackingDetailViewModel.swift */,
+			);
+			path = TrackingDetail;
 			sourceTree = "<group>";
 		};
 		992BB4361EAC65D600B80A17 /* AddUserFood */ = {
@@ -966,6 +982,7 @@
 				999C402C1E9489640059E870 /* SignUp */,
 				99645EA01ED56866005B3B5C /* Suggestion */,
 				9906C7D11EA856CA0033D76B /* Tracking */,
+				992AC2981EDB44D000A0F4D6 /* TrackingDetail */,
 				99317B391EAF43BE00AFE2CA /* TrackingsDetail */,
 				999C517B1EC05EFE00956C61 /* UpdateProfile */,
 				993F22E51EA60FC50078D51D /* UserExercisesDetail */,
@@ -1296,6 +1313,7 @@
 				99645EA41ED56878005B3B5C /* SuggestionController.xib in Resources */,
 				993404DF1E838306009A445F /* UserProfileCell.xib in Resources */,
 				993404FA1E83C44E009A445F /* HistoryViewController.xib in Resources */,
+				991FCA901EDC086800533459 /* TrackingDetailController.xib in Resources */,
 				99F18B621ECEB09A002A9EAF /* LeftSideViewController.xib in Resources */,
 				993496F91EA2084400F9B108 /* AddActivityCell.xib in Resources */,
 				999C40301E94897C0059E870 /* SignInController.xib in Resources */,
@@ -1430,6 +1448,7 @@
 				99536AB21EA049CE00FF0BF2 /* UIViewController.swift in Sources */,
 				993DA6591EACE4FE001ACF17 /* InfomationNutritionCell.swift in Sources */,
 				993F22E01EA60FB90078D51D /* MealHeaderView.swift in Sources */,
+				991FCA8F1EDC086800533459 /* TrackingDetailController.swift in Sources */,
 				99645EAC1ED56D2A005B3B5C /* SuggestionCell.swift in Sources */,
 				99645EBB1ED5A728005B3B5C /* UpdateProfileController.swift in Sources */,
 				993496F81EA2084400F9B108 /* AddActivityCell.swift in Sources */,
@@ -1491,6 +1510,7 @@
 				99BF6F911E77F67D00FD743F /* Cocoa.swift in Sources */,
 				997EAE7F1E9EA8580071D5BC /* View.swift in Sources */,
 				99317B3C1EAF43D800AFE2CA /* TrackingsDetailController.swift in Sources */,
+				991FCA921EDC087800533459 /* TrackingDetailViewModel.swift in Sources */,
 				99BF6F991E77F67D00FD743F /* ResponseSerializer.swift in Sources */,
 				99317B361EAEFBC400AFE2CA /* TrackingViewModel.swift in Sources */,
 				993404F11E83C41B009A445F /* AnalysisViewController.swift in Sources */,

@@ -36,10 +36,10 @@ final class InputCell: BaseTableViewCell {
                 textField.text = DateInRegion(timeIntervalSince1970: 0).toString(format: .date)
             case .height:
                 textField.keyboardType = .numberPad
-                textField.setUnit(text: Strings.centimeter, textColor: Color.blue63)
+                textField.setUnit(text: Strings.centimeter, textColor: Color.green64)
             case .weight:
                 textField.keyboardType = .numberPad
-                textField.setUnit(text: Strings.kilogam, textColor: Color.blue63)
+                textField.setUnit(text: Strings.kilogam, textColor: Color.green64)
             default: break
             }
         }

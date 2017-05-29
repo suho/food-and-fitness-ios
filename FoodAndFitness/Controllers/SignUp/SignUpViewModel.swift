@@ -70,6 +70,14 @@ final class SignUpViewModel {
         }
     }
 
+    func getSuggestions(completion: @escaping Completion) {
+        guard let me = User.me, let goal = me.goal else {
+            completion(.failure(NSError(message: Strings.Errors.tokenError)))
+            return
+        }
+        SuggestionServices.get(goalId: goal.id, completion: completion)
+    }
+
     func uploadPhoto(completion: @escaping Completion) {
         guard let avatar = signUpParams.avatar else {
             let error = NSError(message: Strings.Errors.emptyImage)

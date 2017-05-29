@@ -140,7 +140,7 @@ extension ProfileViewController: UITableViewDataSource {
             return cell
         case .logout:
             let cell = tableView.dequeue(DetailCell.self)
-            cell.data = DetailCell.Data(title: Strings.logout, detail: Strings.empty)
+            cell.data = DetailCell.Data(title: Strings.logout, detail: Strings.empty, detailColor: .black)
             return cell
         }
     }

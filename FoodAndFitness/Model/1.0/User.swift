@@ -133,13 +133,6 @@ extension User {
                 return 0
         }
         var bmrValue = bmr(weight: weight, height: height, age: age, gender: gender)
-        switch goals {
-        case .beHealthier: break
-        case .loseWeight:
-            bmrValue -= 500
-        case .gainWeight:
-            bmrValue += 500
-        }
         switch actives {
         case .sedentary:
             bmrValue *= 1.2
@@ -149,6 +142,13 @@ extension User {
             bmrValue *= 1.6
         case .veryActive:
             bmrValue *= 1.8
+        }
+        switch goals {
+        case .beHealthier: break
+        case .loseWeight:
+            bmrValue -= 500
+        case .gainWeight:
+            bmrValue += 500
         }
         return bmrValue
     }
