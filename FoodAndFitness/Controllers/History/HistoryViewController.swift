@@ -117,39 +117,44 @@ extension HistoryViewController: UITableViewDataSource {
             let cell = tableView.dequeue(UserFoodCell.self)
             cell.accessoryType = .none
             let userFood = viewModel.breakfastFoods[indexPath.row]
+            let detail = "Calories: \(userFood.calories) - Weight: \(userFood.weight)"
             if let food = userFood.food {
-                cell.data = UserFoodCell.Data(title: food.name, detail: "\(food.calories)", image: #imageLiteral(resourceName: "ic_food"))
+                cell.data = UserFoodCell.Data(title: food.name, detail: detail, image: #imageLiteral(resourceName: "ic_food"))
             }
             return cell
         case .lunch:
             let cell = tableView.dequeue(UserFoodCell.self)
             cell.accessoryType = .none
             let userFood = viewModel.lunchFoods[indexPath.row]
+            let detail = "Calories: \(userFood.calories) - Weight: \(userFood.weight)"
             if let food = userFood.food {
-                cell.data = UserFoodCell.Data(title: food.name, detail: "\(food.calories)", image: #imageLiteral(resourceName: "ic_food"))
+                cell.data = UserFoodCell.Data(title: food.name, detail: detail, image: #imageLiteral(resourceName: "ic_food"))
             }
             return cell
         case .dinner:
             let cell = tableView.dequeue(UserFoodCell.self)
             cell.accessoryType = .none
             let userFood = viewModel.dinnerFoods[indexPath.row]
+            let detail = "Calories: \(userFood.calories) - Weight: \(userFood.weight)"
             if let food = userFood.food {
-                cell.data = UserFoodCell.Data(title: food.name, detail: "\(food.calories)", image: #imageLiteral(resourceName: "ic_food"))
+                cell.data = UserFoodCell.Data(title: food.name, detail: detail, image: #imageLiteral(resourceName: "ic_food"))
             }
             return cell
         case .userExercises:
             let cell = tableView.dequeue(UserFoodCell.self)
             cell.accessoryType = .none
             let userExercise = viewModel.userExercises[indexPath.row]
+            let detail = "Calories: \(userExercise.calories) - Duration: \(userExercise.duration)"
             if let exercise = userExercise.exercise {
-                cell.data = UserFoodCell.Data(title: exercise.name, detail: "\(exercise.calories)", image: #imageLiteral(resourceName: "ic_trainers"))
+                cell.data = UserFoodCell.Data(title: exercise.name, detail: detail, image: #imageLiteral(resourceName: "ic_trainers"))
             }
             return cell
         case .trackings:
             let cell = tableView.dequeue(UserFoodCell.self)
             cell.accessoryType = .none
             let tracking = viewModel.trackings[indexPath.row]
-            cell.data = UserFoodCell.Data(title: tracking.active, detail: "\(tracking.caloriesBurn) - \(tracking.distance) - \(tracking.duration)", image: #imageLiteral(resourceName: "ic_trainers"))
+            let detail = "Calories: \(tracking.caloriesBurn) - Distance: \(tracking.distance) - Duration\(tracking.duration)"
+            cell.data = UserFoodCell.Data(title: tracking.active, detail: detail, image: #imageLiteral(resourceName: "ic_trainers"))
             return cell
         }
     }

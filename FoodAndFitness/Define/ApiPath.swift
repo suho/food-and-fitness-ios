@@ -16,7 +16,11 @@ private protocol URLStringConvertible {
 
 final class ApiPath {
 
-    static var baseURL = "http://localhost:3000"
+    #if (arch(i386) || arch(x86_64)) && os(iOS)
+        static var baseURL = "http://localhost:3000"
+    #else
+        static var baseURL = "http://172.20.10.2:3000"
+    #endif
 
     static var googleMapURL = "https://maps.googleapis.com/maps/api/"
 
