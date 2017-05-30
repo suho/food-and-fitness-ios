@@ -48,16 +48,16 @@ class ProfileViewModel {
 
     func dataForDetailCell(at row: ProfileViewController.InfoRows) -> DetailCell.Data {
         var detail = ""
-        var detailColor: UIColor = .black
+        var detailColor: UIColor = .lightGray
         switch row {
         case .mail:
             detail = user.email
         case .weight:
             detail = "\(user.weight) \(Strings.kilogam)"
-            detailColor = .lightGray
+            detailColor = .black
         case .height:
             detail = "\(user.height) \(Strings.centimeter)"
-            detailColor = .lightGray
+            detailColor = .black
         case .birthday:
             detail = "\(user.birthday.ffDate().toString(format: .date))"
         case .gender:
@@ -67,11 +67,11 @@ class ProfileViewModel {
         case .goal:
             let name = user.goal?.name
             detail = "\(name.toString())"
-            detailColor = .lightGray
+            detailColor = .black
         case .active:
             let name = user.active?.name
             detail = "\(name.toString())"
-            detailColor = .lightGray
+            detailColor = .black
         }
         return DetailCell.Data(title: row.title, detail: detail, detailColor: detailColor)
     }

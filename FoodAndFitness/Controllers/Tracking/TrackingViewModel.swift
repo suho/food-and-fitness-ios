@@ -26,6 +26,13 @@ class TrackingViewModel {
     var seconds: Double = 0.0
     var distance: Double = 0.0
 
+    var params: TrackingParams {
+        let velocity = distance / seconds
+        return TrackingParams(active: active.title, duration: Int(seconds), distance: Int(distance), velocity: velocity, locations: locations.map({ (clLocation) -> Location in
+            return clLocation.toLocation
+        }))
+    }
+
     func save(completion: @escaping Completion) {
         if User.me == nil {
             let error = NSError(message: Strings.Errors.tokenError)

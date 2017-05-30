@@ -135,6 +135,7 @@ final class TrackingController: BaseViewController {
             stopUpdatingLocation()
             timer?.invalidate()
             showOptions()
+            action = .stopping
         case .stopping:
             configureTimer()
             startUpdatingLocation()
