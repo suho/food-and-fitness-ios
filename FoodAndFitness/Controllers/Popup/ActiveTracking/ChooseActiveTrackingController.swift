@@ -51,6 +51,8 @@ extension ChooseActiveTrackingController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let active = ActiveTracking(rawValue: indexPath.row) else { fatalError(Strings.Errors.enumError) }
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        cell.imageView?.image = active.icon
+        cell.selectionStyle = .none
         cell.textLabel?.text = active.title
         return cell
     }
@@ -63,7 +65,19 @@ extension ChooseActiveTrackingController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let active = ActiveTracking(rawValue: indexPath.row) else { fatalError(Strings.Errors.enumError) }
+        guard let active = ActiveTracking(rawValue: indexPath.row) else { fatalError(Strings.Errors.enumError)
+        }
         currentActive = active
+        guard let cell = tableView.cellForRow(at: indexPath) else {
+            fatalError(Strings.Errors.enumError)
+        }
+        cell.accessoryType = .checkmark
+    }
+
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) else {
+            fatalError(Strings.Errors.enumError)
+        }
+        cell.accessoryType = .none
     }
 }

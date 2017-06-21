@@ -16,9 +16,10 @@ final class ProfileViewController: RootSideMenuViewController {
     enum Sections: Int {
         case avatar
         case information
+        case logout
 
         static var count: Int {
-            return self.information.rawValue + 1
+            return self.logout.rawValue + 1
         }
 
         var numberOfRows: Int {
@@ -27,6 +28,8 @@ final class ProfileViewController: RootSideMenuViewController {
                 return 1
             case .information:
                 return InfoRows.count
+            case .logout:
+                return 1
             }
         }
 
@@ -35,6 +38,8 @@ final class ProfileViewController: RootSideMenuViewController {
             case .avatar:
                 return 120
             case .information:
+                return 50
+            case .logout:
                 return 50
             }
         }
@@ -47,9 +52,11 @@ final class ProfileViewController: RootSideMenuViewController {
         case birthday
         case gender
         case caloriesPerDay
+        case goal
+        case active
 
         static var count: Int {
-            return self.caloriesPerDay.rawValue + 1
+            return self.active.rawValue + 1
         }
 
         var title: String {
@@ -66,6 +73,10 @@ final class ProfileViewController: RootSideMenuViewController {
                 return Strings.gender
             case .caloriesPerDay:
                 return Strings.caloriesPerDay
+            case .goal:
+                return Strings.goal
+            case .active:
+                return Strings.active
             }
         }
     }
@@ -127,6 +138,10 @@ extension ProfileViewController: UITableViewDataSource {
             let cell = tableView.dequeue(DetailCell.self)
             cell.data = viewModel.dataForDetailCell(at: rows)
             return cell
+        case .logout:
+            let cell = tableView.dequeue(DetailCell.self)
+            cell.data = DetailCell.Data(title: Strings.logout, detail: Strings.empty, detailColor: .black)
+            return cell
         }
     }
 }
@@ -144,18 +159,31 @@ extension ProfileViewController: UITableViewDelegate {
             guard let rows = InfoRows(rawValue: indexPath.row) else {
                 fatalError(Strings.Errors.enumError)
             }
-            let updateProfileController = UpdateProfileController()
             switch rows {
             case .mail: return
             case .weight:
+                let updateProfileController = UpdateProfileController()
                 updateProfileController.viewModel = UpdateProfileViewModel(row: .weight)
+                navigationController?.pushViewController(updateProfileController, animated: true)
             case .height:
+                let updateProfileController = UpdateProfileController()
                 updateProfileController.viewModel = UpdateProfileViewModel(row: .height)
+                navigationController?.pushViewController(updateProfileController, animated: true)
             case .birthday: return
             case .gender: return
             case .caloriesPerDay: return
+            case .goal:
+                let chooseUpdateController = ChooseUpdateController()
+                chooseUpdateController.viewModel = ChooseUpdateViewModel(dataType: .goal)
+                navigationController?.pushViewController(chooseUpdateController, animated: true)
+            case .active:
+                let chooseUpdateController = ChooseUpdateController()
+                chooseUpdateController.viewModel = ChooseUpdateViewModel(dataType: .active)
+                navigationController?.pushViewController(chooseUpdateController, animated: true)
             }
-            navigationController?.pushViewController(updateProfileController, animated: true)
+        case .logout:
+            api.logout()
+            AppDelegate.shared.gotoSignUp()
         }
     }
 

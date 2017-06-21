@@ -5,6 +5,8 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,20 +20,70 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Dzc-Ke-f5F">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <view alpha="0.55000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvF-dh-0Pb">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food And Fitness" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cka-T5-VeZ">
-                    <rect key="frame" x="0.0" y="319" width="375" height="30"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                    <nil key="textColor"/>
+                    <rect key="frame" x="0.0" y="314.5" width="375" height="38.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1V-yn-WsU" customClass="View" customModule="FoodAndFitness" customModuleProvider="target">
+                    <rect key="frame" x="125" y="159.5" width="125" height="125"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_logo" translatesAutoresizingMaskIntoConstraints="NO" id="bXs-aT-5SK">
+                            <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="bXs-aT-5SK" secondAttribute="trailing" id="ISu-x6-GA0"/>
+                        <constraint firstAttribute="width" secondItem="C1V-yn-WsU" secondAttribute="height" multiplier="1:1" id="P8W-Xe-Yl5"/>
+                        <constraint firstAttribute="bottom" secondItem="bXs-aT-5SK" secondAttribute="bottom" id="aoM-X2-rj2"/>
+                        <constraint firstItem="bXs-aT-5SK" firstAttribute="leading" secondItem="C1V-yn-WsU" secondAttribute="leading" id="oyE-hu-cT9"/>
+                        <constraint firstItem="bXs-aT-5SK" firstAttribute="top" secondItem="C1V-yn-WsU" secondAttribute="top" id="pPA-zZ-yWv"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="30"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isFill" value="NO"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Cka-T5-VeZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0hB-n7-94c"/>
+                <constraint firstItem="zvF-dh-0Pb" firstAttribute="bottom" secondItem="Dzc-Ke-f5F" secondAttribute="bottom" id="0rZ-cC-Xkg"/>
+                <constraint firstItem="zvF-dh-0Pb" firstAttribute="top" secondItem="Dzc-Ke-f5F" secondAttribute="top" id="7F6-KT-7UO"/>
+                <constraint firstItem="zvF-dh-0Pb" firstAttribute="leading" secondItem="Dzc-Ke-f5F" secondAttribute="leading" id="7R5-bi-XQc"/>
                 <constraint firstItem="Cka-T5-VeZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9F1-lC-oEt"/>
+                <constraint firstAttribute="trailing" secondItem="Dzc-Ke-f5F" secondAttribute="trailing" id="Lef-L7-3HJ"/>
+                <constraint firstItem="C1V-yn-WsU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="M9l-Fq-4Q4"/>
+                <constraint firstItem="Dzc-Ke-f5F" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SfG-Xf-Ro9"/>
+                <constraint firstAttribute="bottom" secondItem="Dzc-Ke-f5F" secondAttribute="bottom" id="blf-oB-jWN"/>
+                <constraint firstItem="Dzc-Ke-f5F" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iBH-5M-Aik"/>
                 <constraint firstItem="Cka-T5-VeZ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="mtP-Ak-pvz"/>
+                <constraint firstItem="C1V-yn-WsU" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1/3" id="rPS-oq-Hvy"/>
+                <constraint firstItem="Cka-T5-VeZ" firstAttribute="top" secondItem="C1V-yn-WsU" secondAttribute="bottom" constant="30" id="uXy-aD-wCW"/>
+                <constraint firstItem="zvF-dh-0Pb" firstAttribute="trailing" secondItem="Dzc-Ke-f5F" secondAttribute="trailing" id="ue1-6N-m5L"/>
                 <constraint firstAttribute="trailing" secondItem="Cka-T5-VeZ" secondAttribute="trailing" id="xgY-Rr-fMk"/>
             </constraints>
+            <point key="canvasLocation" x="-403" y="-591"/>
         </view>
     </objects>
+    <resources>
+        <image name="img_bg" width="1732" height="974"/>
+        <image name="img_logo" width="1024" height="1024"/>
+    </resources>
 </document>

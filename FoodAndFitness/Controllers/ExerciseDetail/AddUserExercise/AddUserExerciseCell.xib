@@ -39,19 +39,42 @@
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bip-OW-3kQ">
-                        <rect key="frame" x="16" y="50" width="288" height="40"/>
-                        <color key="backgroundColor" red="0.67382705480000005" green="0.88408380870000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JcC-Y3-WRq" customClass="View" customModule="FoodAndFitness" customModuleProvider="target">
+                        <rect key="frame" x="16" y="50.5" width="288" height="40"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bip-OW-3kQ">
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="40"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.74901960779999999" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Add To Diary">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="save:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="UKe-dH-agB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="NAx-aI-bsL"/>
+                            <constraint firstItem="bip-OW-3kQ" firstAttribute="top" secondItem="JcC-Y3-WRq" secondAttribute="top" id="7lX-xq-Xtz"/>
+                            <constraint firstAttribute="height" constant="40" id="Nsn-L5-xdQ"/>
+                            <constraint firstAttribute="bottom" secondItem="bip-OW-3kQ" secondAttribute="bottom" id="fKj-dp-tbj"/>
+                            <constraint firstAttribute="trailing" secondItem="bip-OW-3kQ" secondAttribute="trailing" id="gEv-7r-iFc"/>
+                            <constraint firstItem="bip-OW-3kQ" firstAttribute="leading" secondItem="JcC-Y3-WRq" secondAttribute="leading" id="qem-52-THd"/>
                         </constraints>
-                        <state key="normal" title="Add To Diary"/>
-                        <connections>
-                            <action selector="save:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="UKe-dH-agB"/>
-                        </connections>
-                    </button>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="-1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isFill" value="NO"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="NO"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CpN-dv-5h0">
-                        <rect key="frame" x="121.5" y="106" width="77" height="23"/>
+                        <rect key="frame" x="121.5" y="106.5" width="77" height="23"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kse-AM-Z6Y">
                                 <rect key="frame" x="0.0" y="0.0" width="33.5" height="23"/>
@@ -79,15 +102,15 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="bip-OW-3kQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="0bn-PX-ake"/>
                     <constraint firstItem="Zsi-Zb-bET" firstAttribute="leading" secondItem="pPU-kU-OWI" secondAttribute="trailing" constant="8" id="19n-Ae-4wu"/>
                     <constraint firstItem="eY0-Ks-XFJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="92a-bb-pN9"/>
                     <constraint firstAttribute="trailing" secondItem="Zsi-Zb-bET" secondAttribute="trailing" constant="16" id="Lbr-FF-c5u"/>
                     <constraint firstItem="pPU-kU-OWI" firstAttribute="leading" secondItem="eY0-Ks-XFJ" secondAttribute="trailing" constant="16" id="Lh0-wX-tXH"/>
-                    <constraint firstAttribute="trailing" secondItem="bip-OW-3kQ" secondAttribute="trailing" constant="16" id="Lyd-wN-tiy"/>
-                    <constraint firstItem="bip-OW-3kQ" firstAttribute="top" secondItem="pPU-kU-OWI" secondAttribute="bottom" constant="8" id="QaC-wE-3Vg"/>
+                    <constraint firstItem="JcC-Y3-WRq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Ngd-Sq-G38"/>
+                    <constraint firstItem="JcC-Y3-WRq" firstAttribute="top" secondItem="Zsi-Zb-bET" secondAttribute="bottom" constant="8" id="Okh-iI-xYu"/>
                     <constraint firstItem="Zsi-Zb-bET" firstAttribute="centerY" secondItem="pPU-kU-OWI" secondAttribute="centerY" id="TdG-Dp-qSo"/>
-                    <constraint firstItem="CpN-dv-5h0" firstAttribute="top" secondItem="bip-OW-3kQ" secondAttribute="bottom" constant="16" id="haP-v6-cBf"/>
+                    <constraint firstItem="CpN-dv-5h0" firstAttribute="top" secondItem="JcC-Y3-WRq" secondAttribute="bottom" constant="16" id="TzO-sR-9Le"/>
+                    <constraint firstAttribute="trailing" secondItem="JcC-Y3-WRq" secondAttribute="trailing" constant="16" id="eir-uP-TIZ"/>
                     <constraint firstItem="eY0-Ks-XFJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="kot-pm-eTB"/>
                     <constraint firstItem="pPU-kU-OWI" firstAttribute="centerY" secondItem="eY0-Ks-XFJ" secondAttribute="centerY" id="z61-dC-2n9"/>
                 </constraints>
@@ -99,7 +122,7 @@
                 <outlet property="label" destination="kse-AM-Z6Y" id="b8r-R9-vNn"/>
                 <outlet property="textField" destination="pPU-kU-OWI" id="hFJ-rT-HMK"/>
             </connections>
-            <point key="canvasLocation" x="-108" y="21"/>
+            <point key="canvasLocation" x="-282" y="-51"/>
         </tableViewCell>
     </objects>
 </document>

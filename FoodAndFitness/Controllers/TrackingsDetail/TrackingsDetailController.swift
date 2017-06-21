@@ -14,6 +14,10 @@ final class TrackingsDetailController: BaseViewController {
 
     var viewModel: TrackingsDetailViewModel = TrackingsDetailViewModel(activity: .tracking)
 
+    override var isNavigationBarHidden: Bool {
+        return true
+    }
+
     enum Sections: Int {
         case trackings
         case information
@@ -34,7 +38,7 @@ final class TrackingsDetailController: BaseViewController {
         var heightForHeader: CGFloat {
             switch self {
             case .trackings:
-                return 160
+                return 224
             default:
                 return 70
             }
@@ -213,6 +217,7 @@ extension TrackingsDetailController: UITableViewDelegate {
         switch sections {
         case .trackings:
             let headerView: MealHeaderView = MealHeaderView.loadNib()
+            headerView.delegate = self
             headerView.data = viewModel.dataForHeaderView()
             return headerView
         case .information:
@@ -220,6 +225,13 @@ extension TrackingsDetailController: UITableViewDelegate {
             headerView.data = TitleCell.Data(title: sections.title)
             return headerView.contentView
         }
+    }
+}
+
+// MARK: - MealHeaderViewDelegate
+extension TrackingsDetailController: MealHeaderViewDelegate {
+    func view(_ view: MealHeaderView, needsPerformAction action: MealHeaderView.Action) {
+        back(view.backButton)
     }
 }
 

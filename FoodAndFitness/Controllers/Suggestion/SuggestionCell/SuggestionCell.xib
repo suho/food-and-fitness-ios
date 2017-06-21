@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="268" id="KGk-i7-Jjw" customClass="SuggestionCell" customModule="FoodAndFitness" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="268"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="267.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUm-UT-ycn" customClass="View" customModule="FoodAndFitness" customModuleProvider="target">
+                        <rect key="frame" x="8" y="4" width="304" height="259.5"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J0d-y8-iwc">
+                                <rect key="frame" x="0.0" y="0.0" width="304" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Fmf-0J-8Xg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breakfast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQs-8G-bfN">
+                                <rect key="frame" x="8" y="91" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7S-C6-PBi">
+                                <rect key="frame" x="8" y="128" width="288" height="123.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="J0d-y8-iwc" secondAttribute="trailing" id="3WQ-4i-bUe"/>
+                            <constraint firstItem="l7S-C6-PBi" firstAttribute="leading" secondItem="JUm-UT-ycn" secondAttribute="leading" constant="8" id="HEE-cq-VBB"/>
+                            <constraint firstItem="J0d-y8-iwc" firstAttribute="top" secondItem="JUm-UT-ycn" secondAttribute="top" id="OUx-9w-L1U"/>
+                            <constraint firstAttribute="trailing" secondItem="dQs-8G-bfN" secondAttribute="trailing" constant="8" id="PWD-q8-Nfz"/>
+                            <constraint firstItem="J0d-y8-iwc" firstAttribute="leading" secondItem="JUm-UT-ycn" secondAttribute="leading" id="Yq9-SF-VrX"/>
+                            <constraint firstItem="l7S-C6-PBi" firstAttribute="top" secondItem="J0d-y8-iwc" secondAttribute="bottom" constant="8" id="ail-gU-POe"/>
+                            <constraint firstAttribute="trailing" secondItem="l7S-C6-PBi" secondAttribute="trailing" constant="8" id="amr-rB-oe0"/>
+                            <constraint firstAttribute="bottom" secondItem="l7S-C6-PBi" secondAttribute="bottom" constant="8" id="gjq-ew-wbs"/>
+                            <constraint firstItem="dQs-8G-bfN" firstAttribute="bottom" secondItem="J0d-y8-iwc" secondAttribute="bottom" constant="-8" id="otd-Gz-Pl8"/>
+                            <constraint firstItem="dQs-8G-bfN" firstAttribute="leading" secondItem="JUm-UT-ycn" secondAttribute="leading" constant="8" id="sgA-L8-8us"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="topLeft" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="topRight" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isFill" value="NO"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="NO"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" red="0.1647058824" green="0.74901960779999999" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="JUm-UT-ycn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="UqH-OJ-lYr"/>
+                    <constraint firstItem="JUm-UT-ycn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="al2-IG-vGP"/>
+                    <constraint firstAttribute="bottom" secondItem="JUm-UT-ycn" secondAttribute="bottom" constant="4" id="tlk-jZ-cPg"/>
+                    <constraint firstAttribute="trailing" secondItem="JUm-UT-ycn" secondAttribute="trailing" constant="8" id="wiN-8K-fZm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="detailLabel" destination="l7S-C6-PBi" id="a3S-MO-6ji"/>
+                <outlet property="mealLabel" destination="dQs-8G-bfN" id="YNE-6s-VY1"/>
+                <outlet property="thumbnailImageView" destination="J0d-y8-iwc" id="w2s-QT-iwL"/>
+            </connections>
+            <point key="canvasLocation" x="-587" y="-115"/>
+        </tableViewCell>
+    </objects>
+</document>

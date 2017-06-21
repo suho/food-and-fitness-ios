@@ -18,14 +18,25 @@ final class UserServices {
     @discardableResult
     func update(params: UpdateParams, completion: @escaping Completion) -> Request? {
         let path = ApiPath.Auth.auth
-        var parameters: JSObject!
+        var parameters: JSObject = [:]
         if let weight = params.weight {
             parameters = [
                 "weight": weight
             ]
-        } else {
+        }
+        if let height = params.height {
             parameters = [
-                "height": params.height.toString()
+                "height": height
+            ]
+        }
+        if let goalId = params.goalId {
+            parameters = [
+                "goal_id": goalId
+            ]
+        }
+        if let activeId = params.activeId {
+            parameters = [
+                "active_id": activeId
             ]
         }
         return ApiManager.request(method: .put, urlString: path, parameters: parameters, completion: { (result) in
@@ -35,7 +46,7 @@ final class UserServices {
 
     @discardableResult
     class func signIn(params: SignInParams, completion: @escaping Completion) -> Request? {
-        let path = ApiPath.Auth.auth
+        let path = ApiPath.Auth.signin
         let parameters: JSObject = [
             "email": params.email,
             "password": params.password

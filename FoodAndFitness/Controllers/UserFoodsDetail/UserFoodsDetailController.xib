@@ -25,14 +25,13 @@
                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                 </tableView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="AwY-66-cZ9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ItF-ej-f3s"/>
                 <constraint firstItem="AwY-66-cZ9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Oe6-Ns-uOR"/>
                 <constraint firstAttribute="bottom" secondItem="AwY-66-cZ9" secondAttribute="bottom" id="qI5-5s-mdI"/>
                 <constraint firstAttribute="trailing" secondItem="AwY-66-cZ9" secondAttribute="trailing" id="vrz-DU-mUx"/>
             </constraints>
-            <point key="canvasLocation" x="-143" y="48"/>
+            <point key="canvasLocation" x="-436" y="-21"/>
         </view>
     </objects>
 </document>

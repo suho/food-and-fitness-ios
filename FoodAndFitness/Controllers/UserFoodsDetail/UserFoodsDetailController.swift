@@ -13,6 +13,10 @@ final class UserFoodsDetailController: BaseViewController {
     @IBOutlet fileprivate(set) weak var tableView: TableView!
     var viewModel: UserFoodsDetailViewModel!
 
+    override var isNavigationBarHidden: Bool {
+        return true
+    }
+
     enum Sections: Int {
         case userFoods
         case information
@@ -36,7 +40,7 @@ final class UserFoodsDetailController: BaseViewController {
         var heightForHeader: CGFloat {
             switch self {
             case .userFoods:
-                return 160
+                return 224
             default:
                 return 70
             }
@@ -69,6 +73,7 @@ final class UserFoodsDetailController: BaseViewController {
 
     override func setupUI() {
         super.setupUI()
+        title = viewModel.activity.title
         configureTableView()
         configureViewModel()
     }
@@ -210,7 +215,7 @@ extension UserFoodsDetailController: UITableViewDelegate {
             fatalError(Strings.Errors.enumError)
         }
         if sections == .userFoods && indexPath.row == 0 { return 60 }
-        return 50
+        return 55
     }
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -231,6 +236,7 @@ extension UserFoodsDetailController: UITableViewDelegate {
         switch sections {
         case .userFoods:
             let headerView: MealHeaderView = MealHeaderView.loadNib()
+            headerView.delegate = self
             headerView.data = viewModel.dataForHeaderView()
             return headerView
         default:
@@ -238,6 +244,13 @@ extension UserFoodsDetailController: UITableViewDelegate {
             headerView.data = TitleCell.Data(title: sections.title)
             return headerView.contentView
         }
+    }
+}
+
+// MARK: - MealHeaderViewDelegate
+extension UserFoodsDetailController: MealHeaderViewDelegate {
+    func view(_ view: MealHeaderView, needsPerformAction action: MealHeaderView.Action) {
+        back(view.backButton)
     }
 }
 

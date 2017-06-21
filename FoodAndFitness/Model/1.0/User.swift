@@ -18,7 +18,7 @@ final class User: Object, Mappable {
     private(set) dynamic var email: String = ""
     private(set) dynamic var avatarUrl: String = ""
     private(set) dynamic var birthday: Date = Date(timeIntervalSince1970: 0)
-    private(set) dynamic var genderRaw = Gender.others.rawValue
+    private(set) dynamic var genderRaw = Gender.male.rawValue
     private(set) dynamic var height: Int = 0
     private(set) dynamic var weight: Int = 0
     private(set) dynamic var goal: Goal?
@@ -33,7 +33,7 @@ final class User: Object, Mappable {
             if let gender = gender {
                 return gender
             } else {
-                return .others
+                return .male
             }
         }
     }
@@ -67,7 +67,7 @@ extension User {
         guard let userID = api.session.userID else { return nil }
         return RealmS().object(ofType: User.self, forPrimaryKey: userID)
     }
-    
+
     static var isLogin: Bool {
         return me != nil
     }
@@ -77,6 +77,17 @@ enum Goals: Int {
     case beHealthier = 1
     case loseWeight
     case gainWeight
+
+    var title: String {
+        switch self {
+        case .beHealthier:
+            return Strings.beHealthier
+        case .loseWeight:
+            return Strings.loseWeight
+        case .gainWeight:
+            return Strings.gainWeight
+        }
+    }
 }
 
 enum Actives: Int {
@@ -84,6 +95,19 @@ enum Actives: Int {
     case lightlyActive
     case modertelyActive
     case veryActive
+
+    var title: String {
+        switch self {
+        case .sedentary:
+            return Strings.sedentary
+        case .lightlyActive:
+            return Strings.lightlyActive
+        case .modertelyActive:
+            return Strings.modertelyActive
+        case .veryActive:
+            return Strings.veryActive
+        }
+    }
 }
 
 // MARK: - For Nutrition
@@ -109,13 +133,6 @@ extension User {
                 return 0
         }
         var bmrValue = bmr(weight: weight, height: height, age: age, gender: gender)
-        switch goals {
-        case .beHealthier: break
-        case .loseWeight:
-            bmrValue -= 500
-        case .gainWeight:
-            bmrValue += 500
-        }
         switch actives {
         case .sedentary:
             bmrValue *= 1.2
@@ -125,6 +142,13 @@ extension User {
             bmrValue *= 1.6
         case .veryActive:
             bmrValue *= 1.8
+        }
+        switch goals {
+        case .beHealthier: break
+        case .loseWeight:
+            bmrValue -= 500
+        case .gainWeight:
+            bmrValue += 500
         }
         return bmrValue
     }

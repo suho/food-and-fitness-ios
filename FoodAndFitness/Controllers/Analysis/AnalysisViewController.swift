@@ -37,6 +37,7 @@ final class AnalysisViewController: RootSideMenuViewController {
 
     override func setupUI() {
         super.setupUI()
+        title = Strings.analysis
         configureTableView()
     }
 

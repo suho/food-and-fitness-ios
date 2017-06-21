@@ -30,14 +30,14 @@ final class FFError {
 }
 
 extension Error {
-    func show(level: AlertLevel = .normal) {
+    func show(level: AlertLevel = .require) {
         let this = self as NSError
-        this.show()
+        this.show(level: level)
     }
 }
 
 extension NSError {
-    func show(level: AlertLevel = .normal) {
+    func show(level: AlertLevel = .require) {
         let alert = AlertController.alertWithError(self, level: level)
         alert.present()
     }

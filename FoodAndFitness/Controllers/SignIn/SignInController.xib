@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,26 +24,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BJ4-pJ-Hef">
-                    <rect key="frame" x="62.5" y="139.5" width="250" height="30"/>
+                    <rect key="frame" x="62.5" y="245" width="250" height="30"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59d-R0-uCa">
-                    <rect key="frame" x="138" y="50" width="99.5" height="39.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XmA-kY-bqG">
-                    <rect key="frame" x="62.5" y="189.5" width="250" height="33"/>
+                    <rect key="frame" x="62.5" y="295" width="250" height="33"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptv-wr-Bx0">
-                    <rect key="frame" x="62.5" y="242.5" width="250" height="33"/>
-                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <rect key="frame" x="62.5" y="348" width="250" height="33"/>
+                    <color key="backgroundColor" red="0.1647058824" green="0.74901960779999999" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="Sign In">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,23 +46,44 @@
                         <action selector="signIn:" destination="-1" eventType="touchUpInside" id="WhF-NB-6Um"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYG-rf-jnj">
+                    <rect key="frame" x="16" y="16" width="48" height="30"/>
+                    <state key="normal" title="Cancel">
+                        <color key="titleColor" red="0.1647058824" green="0.74901960779999999" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="back:" destination="-1" eventType="touchUpInside" id="jO9-yQ-JcZ"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_logo" translatesAutoresizingMaskIntoConstraints="NO" id="kH4-Dv-3WB">
+                    <rect key="frame" x="125" y="100" width="125" height="125"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="kH4-Dv-3WB" secondAttribute="height" multiplier="1:1" id="0Gh-Sb-4Ge"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="BJ4-pJ-Hef" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="2/3" id="DhS-xP-xEa"/>
                 <constraint firstItem="ptv-wr-Bx0" firstAttribute="height" secondItem="XmA-kY-bqG" secondAttribute="height" id="Gz7-xy-9sU"/>
+                <constraint firstItem="kH4-Dv-3WB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HhB-Vu-4MT"/>
                 <constraint firstItem="ptv-wr-Bx0" firstAttribute="top" secondItem="XmA-kY-bqG" secondAttribute="bottom" constant="20" id="JsD-g1-Fhb"/>
+                <constraint firstItem="yYG-rf-jnj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="NZK-4g-Egk"/>
                 <constraint firstItem="XmA-kY-bqG" firstAttribute="centerX" secondItem="BJ4-pJ-Hef" secondAttribute="centerX" id="OT0-Ne-OTn"/>
+                <constraint firstItem="BJ4-pJ-Hef" firstAttribute="top" secondItem="kH4-Dv-3WB" secondAttribute="bottom" constant="20" id="P4E-au-18E"/>
                 <constraint firstItem="XmA-kY-bqG" firstAttribute="width" secondItem="BJ4-pJ-Hef" secondAttribute="width" id="PRF-IL-CLW"/>
                 <constraint firstItem="BJ4-pJ-Hef" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="V8s-cA-VXF"/>
+                <constraint firstItem="kH4-Dv-3WB" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1/3" id="Vcz-zp-M9B"/>
                 <constraint firstItem="ptv-wr-Bx0" firstAttribute="centerX" secondItem="XmA-kY-bqG" secondAttribute="centerX" id="Whf-70-cL7"/>
+                <constraint firstItem="kH4-Dv-3WB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="X8K-rf-G26"/>
                 <constraint firstItem="ptv-wr-Bx0" firstAttribute="width" secondItem="XmA-kY-bqG" secondAttribute="width" id="XZl-eH-wx1"/>
-                <constraint firstItem="59d-R0-uCa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="nDV-kf-cy5"/>
-                <constraint firstItem="59d-R0-uCa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="o15-fT-bgj"/>
-                <constraint firstItem="BJ4-pJ-Hef" firstAttribute="top" secondItem="59d-R0-uCa" secondAttribute="bottom" constant="50" id="obR-HX-0Bh"/>
+                <constraint firstItem="yYG-rf-jnj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="qkY-Ou-oeW"/>
                 <constraint firstItem="XmA-kY-bqG" firstAttribute="top" secondItem="BJ4-pJ-Hef" secondAttribute="bottom" constant="20" id="yne-nu-3vM"/>
             </constraints>
-            <point key="canvasLocation" x="-408" y="-212"/>
+            <point key="canvasLocation" x="-630" y="-265"/>
         </view>
     </objects>
+    <resources>
+        <image name="img_logo" width="1024" height="1024"/>
+    </resources>
 </document>

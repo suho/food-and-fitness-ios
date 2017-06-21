@@ -59,6 +59,7 @@ final class TrackingController: BaseViewController {
 
     override func setupUI() {
         super.setupUI()
+        title = Strings.tracking
         configureMapView()
         configureButton()
     }
@@ -112,9 +113,9 @@ final class TrackingController: BaseViewController {
         alert.addAction(Strings.save, handler: {
             self.viewModel.save(completion: { [weak self](result) in
                 guard let this = self else { return }
+                this.action = .stopping
                 switch result {
                 case .success(_):
-                    this.action = .stopping
                     this.navigationController?.popViewController(animated: true)
                 case .failure(let error):
                     error.show()
@@ -142,6 +143,9 @@ final class TrackingController: BaseViewController {
     }
 
     @IBAction func chooseActive(_ sender: Any) {
+        if action == .running {
+            return
+        }
         let chooseActiveTrackingController = ChooseActiveTrackingController()
         chooseActiveTrackingController.delegate = self
         present(chooseActiveTrackingController, animated: true) {

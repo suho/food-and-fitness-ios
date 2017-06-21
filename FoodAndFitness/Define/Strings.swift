@@ -85,6 +85,8 @@ final class Strings {
     static let informationNutrion = "🥙🍟Information Nutrion🍔🌭"
     static let suggestionNutrion = "🥝🥑Foods for you🍣🥗"
 
+    static let suggestion = "🥝🥑Suggest for you🎿⛹️‍♀️"
+
     static let informationExercise = "🎿⛹️‍♀️Information Exercises🏊‍♀️🚴‍♀️"
     static let suggestionExercise = "🚵‍♀️🚣‍♀️Exercises for you🏌️‍♀️🤾‍♂️"
 
@@ -110,6 +112,20 @@ final class Strings {
     static let stop = "Stop"
     static let save = "Save"
     static let discard = "Discard"
+
+    static let logout = "Logout"
+
+    static let goal = "Goal"
+    static let active = "Active"
+
+    static let sedentary = "Sedentary"
+    static let lightlyActive = "Lightly Active"
+    static let modertelyActive = "Modertely Active"
+    static let veryActive = "Very Active"
+
+    static let beHealthier = "Be Healthier"
+    static let loseWeight = "Lose Weight"
+    static let gainWeight = "Gain Weight"
 
     struct Errors {
         // MARK: - Error messages

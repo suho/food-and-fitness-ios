@@ -13,6 +13,10 @@ final class UserExercisesDetailController: BaseViewController {
     @IBOutlet fileprivate(set) weak var tableView: TableView!
     var viewModel: UserExercisesDetailViewModel!
 
+    override var isNavigationBarHidden: Bool {
+        return true
+    }
+
     enum Sections: Int {
         case userExercises
         case information
@@ -36,7 +40,7 @@ final class UserExercisesDetailController: BaseViewController {
         var heightForHeader: CGFloat {
             switch self {
             case .userExercises:
-                return 160
+                return 224
             default:
                 return 70
             }
@@ -204,7 +208,7 @@ extension UserExercisesDetailController: UITableViewDelegate {
             fatalError(Strings.Errors.enumError)
         }
         if sections == .userExercises && indexPath.row == 0 { return 60 }
-        return 50
+        return 55
     }
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -225,6 +229,7 @@ extension UserExercisesDetailController: UITableViewDelegate {
         switch sections {
         case .userExercises:
             let headerView: MealHeaderView = MealHeaderView.loadNib()
+            headerView.delegate = self
             headerView.data = viewModel.dataForHeaderView()
             return headerView
         default:
@@ -232,6 +237,13 @@ extension UserExercisesDetailController: UITableViewDelegate {
             headerView.data = TitleCell.Data(title: sections.title)
             return headerView.contentView
         }
+    }
+}
+
+// MARK: - MealHeaderViewDelegate
+extension UserExercisesDetailController: MealHeaderViewDelegate {
+    func view(_ view: MealHeaderView, needsPerformAction action: MealHeaderView.Action) {
+        back(view.backButton)
     }
 }
 

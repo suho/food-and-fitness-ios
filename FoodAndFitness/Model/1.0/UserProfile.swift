@@ -13,13 +13,11 @@ import RealmS
 enum Gender: Int, CustomStringConvertible {
     case female = 0
     case male = 1
-    case others = 2
 
     var description: String {
         switch self {
         case .male: return "Male"
         case .female: return "Female"
-        case .others: return "Others"
         }
     }
 }
@@ -30,7 +28,7 @@ final class UserProfile: Object, Mappable {
     
     dynamic var nickname = ""
     
-    private(set) dynamic var genderRaw = Gender.others.rawValue
+    private(set) dynamic var genderRaw = Gender.female.rawValue
 
     var gender: Gender {
         set {
@@ -41,7 +39,7 @@ final class UserProfile: Object, Mappable {
             if let gender = gender {
                 return gender
             } else {
-                return .others
+                return .female
             }
         }
     }

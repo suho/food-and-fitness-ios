@@ -25,14 +25,15 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmr-D0-ris">
                                         <rect key="frame" x="0.0" y="0.0" width="304" height="58.5"/>
-                                        <color key="backgroundColor" red="0.67382705480000005" green="0.88408380870000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Add More Foods"/>
+                                        <color key="backgroundColor" red="0.1647058824" green="0.74901960779999999" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Add More Foods">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="add:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NAZ-yb-iB8"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="zmr-D0-ris" firstAttribute="top" secondItem="tRr-zh-7Od" secondAttribute="top" id="AlD-Fc-KBS"/>
                                     <constraint firstItem="zmr-D0-ris" firstAttribute="leading" secondItem="tRr-zh-7Od" secondAttribute="leading" id="GYw-g2-U7G"/>
@@ -47,7 +48,6 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="tRr-zh-7Od" firstAttribute="top" secondItem="jI7-ys-PQ3" secondAttribute="top" constant="8" id="FFh-vp-m4h"/>
                             <constraint firstAttribute="trailing" secondItem="tRr-zh-7Od" secondAttribute="trailing" constant="8" id="JGa-VP-iaO"/>
@@ -58,7 +58,7 @@
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="-1"/>
                             </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="NO"/>
                             <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
                                 <real key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
@@ -81,7 +81,7 @@
             <connections>
                 <outlet property="button" destination="zmr-D0-ris" id="iaf-yM-sEn"/>
             </connections>
-            <point key="canvasLocation" x="47" y="44.5"/>
+            <point key="canvasLocation" x="-169" y="-95"/>
         </tableViewCell>
     </objects>
 </document>

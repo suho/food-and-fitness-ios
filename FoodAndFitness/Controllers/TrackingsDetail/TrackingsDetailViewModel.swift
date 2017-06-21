@@ -67,7 +67,7 @@ final class TrackingsDetailViewModel {
             timeDetails = "\(tracking.duration) \(Strings.seconds)"
         }
         let detail = "\(Int(tracking.caloriesBurn)) \(Strings.kilocalories) - \(timeDetails)"
-        return UserFoodCell.Data(title: name, detail: detail)
+        return UserFoodCell.Data(title: name, detail: detail, image: #imageLiteral(resourceName: "ic_trainers"))
     }
 
     func dataForHeaderView() -> MealHeaderView.Data? {

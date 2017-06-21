@@ -32,15 +32,15 @@
                                 <action selector="okey:" destination="-1" eventType="touchUpInside" id="GA4-sG-5fu"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wJs-Ag-w9a">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_logo" translatesAutoresizingMaskIntoConstraints="NO" id="wJs-Ag-w9a">
                             <rect key="frame" x="112.5" y="8" width="75" height="75"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="wJs-Ag-w9a" secondAttribute="height" multiplier="1:1" id="MBK-g5-dCq"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUD-3J-juT">
-                            <rect key="frame" x="121.5" y="91" width="57" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <rect key="frame" x="119.5" y="91" width="61" height="21"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -83,4 +83,7 @@
             <point key="canvasLocation" x="188" y="-28"/>
         </view>
     </objects>
+    <resources>
+        <image name="img_logo" width="1024" height="1024"/>
+    </resources>
 </document>

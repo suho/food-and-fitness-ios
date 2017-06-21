@@ -16,7 +16,11 @@ private protocol URLStringConvertible {
 
 final class ApiPath {
 
-    static var baseURL = "http://localhost:3000"
+    #if (arch(i386) || arch(x86_64)) && os(iOS)
+        static var baseURL = "http://localhost:3000"
+    #else
+        static var baseURL = "http://172.20.10.2:3000"
+    #endif
 
     static var googleMapURL = "https://maps.googleapis.com/maps/api/"
 
@@ -28,6 +32,7 @@ final class ApiPath {
     static var userFoods: String { return baseURL / "user_foods" }
     static var userExercises: String { return baseURL / "user_exercises" }
     static var trackings: String { return baseURL / "trackings" }
+    static var suggestions: String { return baseURL / "suggestions" }
 
     struct Auth {
         static var auth: String {

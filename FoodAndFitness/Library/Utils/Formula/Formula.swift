@@ -52,6 +52,17 @@ enum ActiveTracking: Int {
             return #imageLiteral(resourceName: "img_walking")
         }
     }
+
+    var icon: UIImage {
+        switch self {
+        case .running:
+            return #imageLiteral(resourceName: "ic_running")
+        case .cycling:
+            return #imageLiteral(resourceName: "ic_cycling")
+        case .walking:
+            return #imageLiteral(resourceName: "ic_walking")
+        }
+    }
 }
 
 // MARK: - BMI Calculator
@@ -94,7 +105,6 @@ func bmr(weight: Int, height: Int, age: Int, gender: Gender) -> Double {
         return value + 5
     case .female:
         return value - 161
-    case .others: return 0
     }
 }
 

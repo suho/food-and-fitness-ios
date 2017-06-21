@@ -13,6 +13,10 @@ final class FoodDetailController: BaseViewController {
     @IBOutlet fileprivate(set) weak var tableView: TableView!
     var viewModel: FoodDetailViewModel!
 
+    override var isNavigationBarHidden: Bool {
+        return true
+    }
+
     enum Rows: Int {
         case addUserFood
         case informations
@@ -87,13 +91,21 @@ extension FoodDetailController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 170
+        return 234
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView: MealHeaderView = MealHeaderView.loadNib()
+        headerView.delegate = self
         headerView.data = viewModel.dataForHeaderView()
         return headerView
+    }
+}
+
+// MARK: - MealHeaderViewDelegate
+extension FoodDetailController: MealHeaderViewDelegate {
+    func view(_ view: MealHeaderView, needsPerformAction action: MealHeaderView.Action) {
+        back(view.backButton)
     }
 }
 
