@@ -39,4 +39,8 @@ end
 target 'FoodAndFitness' do
     app_pods
     shared_pods
+
+target 'FoodAndFitnessTests' do
+    inherit! :search_paths
+end
 end
