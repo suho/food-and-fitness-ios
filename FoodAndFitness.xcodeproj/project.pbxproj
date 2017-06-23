@@ -111,6 +111,7 @@
 		99645EC11ED5A73D005B3B5C /* ChooseUpdateController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99645EBF1ED5A73D005B3B5C /* ChooseUpdateController.xib */; };
 		99645EC31ED5A870005B3B5C /* ChooseUpdateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99645EC21ED5A870005B3B5C /* ChooseUpdateViewModel.swift */; };
 		99670CD11EB0D0F700CA2CC2 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99670CD01EB0D0F700CA2CC2 /* HistoryViewModel.swift */; };
+		9972DD551EFCF4A200C6A495 /* SignupControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9972DD541EFCF4A200C6A495 /* SignupControllerUITests.swift */; };
 		997971001E9E4095005E1E7C /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997970FF1E9E4095005E1E7C /* Formula.swift */; };
 		997EAE7C1E9EA18D0071D5BC /* LeftSideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997EAE7B1E9EA18D0071D5BC /* LeftSideViewModel.swift */; };
 		997EAE7F1E9EA8580071D5BC /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997EAE7E1E9EA8580071D5BC /* View.swift */; };
@@ -185,6 +186,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9972DD4C1EFCF3EF00C6A495 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 99BF6F301E77F41500FD743F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 99BF6F371E77F41500FD743F;
+			remoteInfo = FoodAndFitness;
+		};
 		99DE29411EFA84D500A97B1B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 99BF6F301E77F41500FD743F /* Project object */;
@@ -304,6 +312,10 @@
 		99645EBF1ED5A73D005B3B5C /* ChooseUpdateController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseUpdateController.xib; sourceTree = "<group>"; };
 		99645EC21ED5A870005B3B5C /* ChooseUpdateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseUpdateViewModel.swift; sourceTree = "<group>"; };
 		99670CD01EB0D0F700CA2CC2 /* HistoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		9972DD471EFCF3EF00C6A495 /* FoodAndFitnessUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodAndFitnessUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9972DD4B1EFCF3EF00C6A495 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9972DD531EFCF4A200C6A495 /* FoodAndFitnessUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FoodAndFitnessUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		9972DD541EFCF4A200C6A495 /* SignupControllerUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupControllerUITests.swift; sourceTree = "<group>"; };
 		997970FF1E9E4095005E1E7C /* Formula.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
 		997EAE7B1E9EA18D0071D5BC /* LeftSideViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSideViewModel.swift; sourceTree = "<group>"; };
 		997EAE7E1E9EA8580071D5BC /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
@@ -382,6 +394,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9972DD441EFCF3EF00C6A495 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		99BF6F351E77F41500FD743F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -773,6 +792,32 @@
 			path = InputUpdateController;
 			sourceTree = "<group>";
 		};
+		9972DD481EFCF3EF00C6A495 /* FoodAndFitnessUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9972DD511EFCF47600C6A495 /* View */,
+				9972DD4B1EFCF3EF00C6A495 /* Info.plist */,
+			);
+			path = FoodAndFitnessUITests;
+			sourceTree = "<group>";
+		};
+		9972DD511EFCF47600C6A495 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9972DD521EFCF47600C6A495 /* Controllers */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9972DD521EFCF47600C6A495 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9972DD541EFCF4A200C6A495 /* SignupControllerUITests.swift */,
+				9972DD531EFCF4A200C6A495 /* FoodAndFitnessUITests-Bridging-Header.h */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		997970FA1E9E4016005E1E7C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -956,6 +1001,7 @@
 			children = (
 				99BF6F3A1E77F41500FD743F /* FoodAndFitness */,
 				99DE293D1EFA84D500A97B1B /* FoodAndFitnessTests */,
+				9972DD481EFCF3EF00C6A495 /* FoodAndFitnessUITests */,
 				99BF6F391E77F41500FD743F /* Products */,
 				9494A8AA5040BE0F3627AA64 /* Pods */,
 				671E3A33C71B9FFABC57C328 /* Frameworks */,
@@ -967,6 +1013,7 @@
 			children = (
 				99BF6F381E77F41500FD743F /* FoodAndFitness.app */,
 				99DE293C1EFA84D500A97B1B /* FoodAndFitnessTests.xctest */,
+				9972DD471EFCF3EF00C6A495 /* FoodAndFitnessUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1299,6 +1346,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9972DD461EFCF3EF00C6A495 /* FoodAndFitnessUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9972DD4E1EFCF3EF00C6A495 /* Build configuration list for PBXNativeTarget "FoodAndFitnessUITests" */;
+			buildPhases = (
+				9972DD431EFCF3EF00C6A495 /* Sources */,
+				9972DD441EFCF3EF00C6A495 /* Frameworks */,
+				9972DD451EFCF3EF00C6A495 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9972DD4D1EFCF3EF00C6A495 /* PBXTargetDependency */,
+			);
+			name = FoodAndFitnessUITests;
+			productName = FoodAndFitnessUITests;
+			productReference = 9972DD471EFCF3EF00C6A495 /* FoodAndFitnessUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		99BF6F371E77F41500FD743F /* FoodAndFitness */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99BF6F4A1E77F41500FD743F /* Build configuration list for PBXNativeTarget "FoodAndFitness" */;
@@ -1352,6 +1417,12 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = SuHoVan;
 				TargetAttributes = {
+					9972DD461EFCF3EF00C6A495 = {
+						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 99BF6F371E77F41500FD743F;
+					};
 					99BF6F371E77F41500FD743F = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = W6VWBYHU5C;
@@ -1387,11 +1458,19 @@
 			targets = (
 				99BF6F371E77F41500FD743F /* FoodAndFitness */,
 				99DE293B1EFA84D500A97B1B /* FoodAndFitnessTests */,
+				9972DD461EFCF3EF00C6A495 /* FoodAndFitnessUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9972DD451EFCF3EF00C6A495 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		99BF6F361E77F41500FD743F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1579,6 +1658,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9972DD431EFCF3EF00C6A495 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9972DD551EFCF4A200C6A495 /* SignupControllerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		99BF6F341E77F41500FD743F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1719,6 +1806,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9972DD4D1EFCF3EF00C6A495 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 99BF6F371E77F41500FD743F /* FoodAndFitness */;
+			targetProxy = 9972DD4C1EFCF3EF00C6A495 /* PBXContainerItemProxy */;
+		};
 		99DE29421EFA84D500A97B1B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 99BF6F371E77F41500FD743F /* FoodAndFitness */;
@@ -1727,6 +1819,39 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		9972DD4F1EFCF3EF00C6A495 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = FoodAndFitnessUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.suho.datn.FoodAndFitnessUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FoodAndFitnessUITests/View/Controllers/FoodAndFitnessUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = FoodAndFitness;
+			};
+			name = Debug;
+		};
+		9972DD501EFCF3EF00C6A495 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = FoodAndFitnessUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.suho.datn.FoodAndFitnessUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FoodAndFitnessUITests/View/Controllers/FoodAndFitnessUITests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = FoodAndFitness;
+			};
+			name = Release;
+		};
 		99BF6F481E77F41500FD743F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1889,6 +2014,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9972DD4E1EFCF3EF00C6A495 /* Build configuration list for PBXNativeTarget "FoodAndFitnessUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9972DD4F1EFCF3EF00C6A495 /* Debug */,
+				9972DD501EFCF3EF00C6A495 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		99BF6F331E77F41500FD743F /* Build configuration list for PBXProject "FoodAndFitness" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
