@@ -1,4 +1,4 @@
-# FoodAndFitness - DUT's Project
+# Food And Fitness iOS - DUT's Project
 
 [![Build Status](https://travis-ci.org/hovansuit/FoodAndFitness.svg?branch=master)](https://travis-ci.org/hovansuit/FoodAndFitness)
 
