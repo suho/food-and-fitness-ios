@@ -17,4 +17,13 @@ extension UIViewController {
         alert.addAction(okeyAction)
         alert.present(from: self, animated: true, completion: nil)
     }
+
+    func viewDidUpdated() {
+        let nc = NotificationCenter.default
+        nc.post(name: .viewDidUpdated, object: self)
+    }
+}
+
+extension NSNotification.Name {
+    public static let viewDidUpdated = NSNotification.Name("viewDidUpdated")
 }

@@ -15,4 +15,9 @@ extension UIView {
             view.removeFromSuperview()
         }
     }
+
+    func viewDidUpdated() {
+        let nc = NotificationCenter.default
+        nc.post(name: .viewDidUpdated, object: self)
+    }
 }

@@ -14,12 +14,22 @@ final class SignInController: BaseViewController {
     @IBOutlet fileprivate(set) weak var passField: UITextField!
     @IBOutlet fileprivate(set) weak var signInButton: UIButton!
 
-    var viewModel: SignInViewModel = SignInViewModel(user: nil)
+    var viewModel: SignInViewModel = SignInViewModel(user: nil) {
+        didSet {
+            updateView()
+        }
+    }
 
     override func setupUI() {
         super.setupUI()
         title = Strings.signIn
         mailField.becomeFirstResponder()
+    }
+
+    private func updateView() {
+        guard isViewLoaded else { return }
+        mailField.text = viewModel.mail
+        passField.text = viewModel.password
     }
 
     private func getData() {
@@ -70,6 +80,7 @@ final class SignInController: BaseViewController {
         }
         group.notify(queue: .main) {
             HUD.dismiss()
+            self.viewDidUpdated()
             AppDelegate.shared.gotoHome()
             self.dismiss(animated: true, completion: nil)
         }
@@ -89,6 +100,7 @@ final class SignInController: BaseViewController {
             switch result {
             case .success(_):
                 this.getData()
+                this.viewDidUpdated()
             case .failure(let error):
                 HUD.dismiss()
                 this.present(AlertController.alertWithError(error as NSError, level: .require), animated: true, completion: nil)
